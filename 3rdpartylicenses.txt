@@ -13232,6 +13232,9 @@ SOFTWARE.
 
 
 
+ngx-countdown
+MIT
+
 ngx-doc-viewer
 MIT
 
