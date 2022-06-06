@@ -16822,8 +16822,8 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   },
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵNgOnChangesFeature"]],
   decls: 124,
-  vars: 20,
-  consts: [[1, "row", "with-filter-panel"], [1, "col-md-3", "col-lg-3"], [1, "left-sideabr"], [1, "filter-by"], ["id", "accordionFilter", "role", "tablist", "aria-multiselectable", "true", 1, "accordion", "filter-accordion"], [1, "card"], ["role", "tab", 1, "card-header"], ["data-toggle", "collapse", "data-parent", "#accordionFilter", "href", "#salary", "aria-expanded", "true", "aria-controls", "salary", 1, ""], [1, "mb-0"], ["id", "salary", "role", "tabpanel", "aria-labelledby", "salary", 1, "collapse", "show"], [1, "card-body"], [1, "form-control", "sm", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["value", "null", "disabled", "", "selected", "", "hidden", ""], ["data-toggle", "collapse", "href", "#reference", "aria-expanded", "false", "aria-controls", "reference", 1, ""], ["id", "reference", "role", "tabpanel", "aria-labelledby", "reference", 1, "collapse"], [1, "card-body", "filter-card-body"], ["matInput", "", "placeholder", "Ex. search", 3, "keyup"], ["input", ""], [1, "example-container", "mat-elevation-z8"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["referenceMat", "", "referenceMatSort", "matSort"], ["matColumnDef", "select"], ["mat-header-cell", "", "class", "width-40", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "name"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], ["data-toggle", "collapse", "href", "#assesment", "aria-expanded", "true", "aria-controls", "assesment", 1, ""], ["id", "assesment", "role", "tabpanel", "aria-labelledby", "ref", 1, "collapse", "show"], [3, "value", "highValue", "options", "mouseup", "valueChange", "highValueChange"], ["data-toggle", "collapse", "href", "#interviews", "aria-expanded", "true", "aria-controls", "interviews", 1, ""], ["id", "interviews", "role", "tabpanel", "aria-labelledby", "ref", 1, "collapse", "show"], ["data-toggle", "collapse", "href", "#duration", "aria-expanded", "true", "aria-controls", "duration", 1, ""], ["id", "duration", "role", "tabpanel", "aria-labelledby", "ref", 1, "collapse", "show"], [1, "col-lg-9", "col-md-12", "col-xs-12"], [1, "table-responsive", "mb-2"], ["id", "excel-table", "datatable", "", 1, "table", "table-sm-1", "table-striped", "table-fixed-head", "table-bordered", "table-tests-v-align", 3, "dtOptions", "dtTrigger"], [1, "width-100"], [1, "width-80"], [4, "ngIf"], ["id", "showfullreference", 1, "modal"], [1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-header", "with-tabs"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "sm", "mb-0"], [1, "nav-item"], ["data-toggle", "tab", "href", "#view-reference", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#initiate-reference", 1, "nav-link"], ["data-toggle", "tab", "href", "#initiated-references", 1, "nav-link", 3, "click"], ["type", "button", "data-dismiss", "modal", 1, "close", 3, "click"], ["class", "tab-content", 4, "ngIf"], ["mat-header-cell", "", 1, "width-40"], ["mat-cell", ""], [3, "ngModel", "ngModelChange"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "pl-2"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"], [4, "ngFor", "ngForOf"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "badge badge-secondary", 4, "ngIf"], ["class", "badge badge-danger", 4, "ngIf"], ["class", "badge badge-success", 4, "ngIf"], [1, "text-center"], [1, "text-cap"], ["href", "javascript:void(0);", 1, "text-semibold", 3, "click"], ["data-toggle", "modal", "data-target", "#showfullreference", 1, "icon-eye", "mr-1", "font-medium-3"], [1, "badge", "badge-primary"], [1, "badge", "badge-secondary"], [1, "badge", "badge-danger"], [1, "badge", "badge-success"], ["colspan", "13", 1, "no-data-available"], [1, "tab-content"], ["id", "view-reference", 1, "tab-pane", "active"], [1, "modal-body", "modal-full-height", "with-footer"], [1, "row", "mb-3"], [1, "col-md-7", "col-lg-7"], [1, "table-responsive", "mb-1", "max-height-210"], [1, "table", "table-striped", "table-sm", "v-align-middle", "table-fixed-head", "mb-1"], [1, "text-right", "font-medium-3", "mb-3"], [1, "text-muted", "font-medium-1", "pr-2"], [1, "text-semibold", "text-success"], [1, "card", "mb-3"], [1, "card-body", "p-3"], [1, "row", "align-items-center"], [1, "col-lg-5", "mb-2", "mb-lg-0"], [1, "card-title"], [1, "font-small-3", "text-muted"], ["class", "text-semibold", "download", "", 3, "href", 4, "ngIf"], [1, "font-small-3", "text-muted", "line-height-small-3"], [1, "col-lg-7", "mb-2", "mb-lg-0"], [1, "col-lg-5"], [1, "switch", "switch-primary"], ["disabled", "", "type", "checkbox", "id", "switch-p-001", 3, "ngModel", "ngModelChange"], ["for", "switch-p-001", 1, "cr", "top-0"], [1, "col-md-5", "col-lg-5"], [1, "list-group", "list-group-bg-light", "bg-white"], [1, "list-group-item", "d-flex", "justify-content-between", "align-items-center"], [1, "form-group"], [1, "label-control"], [1, "row"], [1, "col-sm-4"], ["readonly", "", "type", "text", 1, "form-control", "sm", "width-120", 3, "ngModel", "ngModelChange"], [1, "p-1", "font-medium-1", "text-muted"], [1, "pretty", "pretty-sm", "p-default", "mr-0"], ["disabled", "", "type", "checkbox", 3, "ngModel", "ngModelChange"], [1, "state", "p-primary"], [1, "list-group-item"], [1, "form-group", "field-md"], ["readonly", "", "type", "text", 1, "form-control", "sm", 3, "ngModel", "ngModelChange"], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-light", "btn-sm"], ["id", "initiate-reference", 1, "tab-pane"], [3, "reference_id"], ["id", "initiated-references", 1, "tab-pane"], [3, "reference_id", "timestamp"], ["type", "checkbox", "disabled", "", 3, "checked"], ["download", "", 1, "text-semibold", 3, "href"], [1, "icon-file-download2", "mr-1"]],
+  vars: 26,
+  consts: [[1, "row", "with-filter-panel"], [1, "col-md-3", "col-lg-3"], [1, "left-sideabr"], [1, "filter-by"], ["aria-multiselectable", "true", "id", "accordionFilter", "role", "tablist", 1, "accordion", "filter-accordion"], [1, "card"], ["role", "tab", 1, "card-header"], ["aria-controls", "salary", "aria-expanded", "true", "data-parent", "#accordionFilter", "data-toggle", "collapse", "href", "#salary", 1, ""], [1, "mb-0"], ["aria-labelledby", "salary", "id", "salary", "role", "tabpanel", 1, "collapse", "show"], [1, "card-body"], [1, "form-control", "sm", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["disabled", "", "hidden", "", "selected", "", "value", "null"], ["aria-controls", "reference", "aria-expanded", "false", "data-toggle", "collapse", "href", "#reference", 1, ""], ["aria-labelledby", "reference", "id", "reference", "role", "tabpanel", 1, "collapse"], [1, "card-body", "filter-card-body"], ["matInput", "", "placeholder", "Ex. search", 3, "keyup"], ["input", ""], [1, "example-container", "mat-elevation-z8"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["referenceMat", "", "referenceMatSort", "matSort"], ["matColumnDef", "select"], ["class", "width-40", "mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "name"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], ["aria-controls", "assesment", "aria-expanded", "true", "data-toggle", "collapse", "href", "#assesment", 1, ""], ["aria-labelledby", "ref", "id", "assesment", "role", "tabpanel", 1, "collapse", "show"], [3, "highValue", "value", "options", "mouseup", "highValueChange", "valueChange"], ["aria-controls", "interviews", "aria-expanded", "true", "data-toggle", "collapse", "href", "#interviews", 1, ""], ["aria-labelledby", "ref", "id", "interviews", "role", "tabpanel", 1, "collapse", "show"], ["aria-controls", "duration", "aria-expanded", "true", "data-toggle", "collapse", "href", "#duration", 1, ""], ["aria-labelledby", "ref", "id", "duration", "role", "tabpanel", 1, "collapse", "show"], [1, "col-lg-9", "col-md-12", "col-xs-12"], [1, "table-responsive", "mb-2"], ["datatable", "", "id", "excel-table", 1, "table", "table-sm-1", "table-striped", "table-fixed-head", "table-bordered", "table-tests-v-align", 3, "dtOptions", "dtTrigger"], [1, "width-100"], [1, "width-80"], [4, "ngIf"], ["id", "showfullreference", 1, "modal"], [1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-header", "with-tabs"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "sm", "mb-0"], [1, "nav-item"], ["data-toggle", "tab", "href", "#view-reference", 1, "nav-link"], ["data-toggle", "tab", "href", "#initiate-reference", 1, "nav-link"], ["data-toggle", "tab", "href", "#initiated-references", 1, "nav-link", 3, "click"], ["data-dismiss", "modal", "data-target", "#showfullreference", "type", "button", 1, "close", 3, "click"], ["class", "tab-content", 4, "ngIf"], ["mat-header-cell", "", 1, "width-40"], ["mat-cell", ""], [3, "ngModel", "ngModelChange"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "pl-2"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"], [4, "ngFor", "ngForOf"], ["class", "badge badge-primary", 4, "ngIf"], ["class", "badge badge-secondary", 4, "ngIf"], ["class", "badge badge-danger", 4, "ngIf"], ["class", "badge badge-success", 4, "ngIf"], [1, "text-center"], [1, "text-cap"], ["href", "javascript:void(0);", 1, "text-semibold", 3, "click"], ["data-target", "#showfullreference", "data-toggle", "modal", 1, "icon-eye", "mr-1", "font-medium-3"], [1, "badge", "badge-primary"], [1, "badge", "badge-secondary"], [1, "badge", "badge-danger"], [1, "badge", "badge-success"], ["colspan", "13", 1, "no-data-available"], [1, "tab-content"], ["id", "view-reference", 1, "tab-pane", "active"], [1, "modal-body", "modal-full-height", "with-footer"], [1, "row", "mb-3"], [1, "col-md-7", "col-lg-7"], [1, "table-responsive", "mb-1", "max-height-210"], [1, "table", "table-striped", "table-sm", "v-align-middle", "table-fixed-head", "mb-1"], [1, "text-right", "font-medium-3", "mb-3"], [1, "text-muted", "font-medium-1", "pr-2"], [1, "text-semibold", "text-success"], [1, "card", "mb-3"], [1, "card-body", "p-3"], [1, "row", "align-items-center"], [1, "col-lg-5", "mb-2", "mb-lg-0"], [1, "card-title"], [1, "font-small-3", "text-muted"], ["class", "text-semibold", "download", "", 3, "href", 4, "ngIf"], [1, "font-small-3", "text-muted", "line-height-small-3"], [1, "col-lg-7", "mb-2", "mb-lg-0"], [1, "col-lg-5"], [1, "switch", "switch-primary"], ["disabled", "", "id", "switch-p-001", "type", "checkbox", 3, "ngModel", "ngModelChange"], ["for", "switch-p-001", 1, "cr", "top-0"], [1, "col-md-5", "col-lg-5"], [1, "list-group", "list-group-bg-light", "bg-white"], [1, "list-group-item", "d-flex", "justify-content-between", "align-items-center"], [1, "form-group"], [1, "label-control"], [1, "row"], [1, "col-sm-4"], ["readonly", "", "type", "text", 1, "form-control", "sm", "width-120", 3, "ngModel", "ngModelChange"], [1, "p-1", "font-medium-1", "text-muted"], [1, "pretty", "pretty-sm", "p-default", "mr-0"], ["disabled", "", "type", "checkbox", 3, "ngModel", "ngModelChange"], [1, "state", "p-primary"], [1, "list-group-item"], [1, "form-group", "field-md"], ["readonly", "", "type", "text", 1, "form-control", "sm", 3, "ngModel", "ngModelChange"], [1, "modal-footer"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-light", "btn-sm"], ["id", "initiate-reference", 1, "tab-pane"], [3, "reference_id"], ["id", "initiated-references", 1, "tab-pane"], [3, "reference_id", "timestamp"], ["disabled", "", "type", "checkbox", 3, "checked"], ["download", "", 1, "text-semibold", 3, "href"], [1, "icon-file-download2", "mr-1"]],
   template: function ViewReferenceComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h5");
@@ -16833,10 +16833,10 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](11, " Status ");
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](12, "div", 9)(13, "div", 10)(14, "select", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("ngModelChange", function ViewReferenceComponent_Template_select_ngModelChange_14_listener($event) {
-        return ctx.status = $event;
-      })("ngModelChange", function ViewReferenceComponent_Template_select_ngModelChange_14_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("ngModelChange", function ViewReferenceComponent_Template_select_ngModelChange_14_listener() {
         return ctx.refreshDataTable();
+      })("ngModelChange", function ViewReferenceComponent_Template_select_ngModelChange_14_listener($event) {
+        return ctx.status = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](15, "option", 12);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](16, "Select");
@@ -16886,10 +16886,10 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](57, "div", 30)(58, "div", 10)(59, "ngx-slider", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("mouseup", function ViewReferenceComponent_Template_ngx_slider_mouseup_59_listener() {
         return ctx.refreshDataTable();
-      })("valueChange", function ViewReferenceComponent_Template_ngx_slider_valueChange_59_listener($event) {
-        return ctx.no_of_tests_low_value = $event;
       })("highValueChange", function ViewReferenceComponent_Template_ngx_slider_highValueChange_59_listener($event) {
         return ctx.no_of_tests_high_value = $event;
+      })("valueChange", function ViewReferenceComponent_Template_ngx_slider_valueChange_59_listener($event) {
+        return ctx.no_of_tests_low_value = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](60, "div", 5)(61, "div", 6)(62, "a", 32)(63, "h5", 8);
@@ -16898,10 +16898,10 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](65, "div", 33)(66, "div", 10)(67, "ngx-slider", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("mouseup", function ViewReferenceComponent_Template_ngx_slider_mouseup_67_listener() {
         return ctx.refreshDataTable();
-      })("valueChange", function ViewReferenceComponent_Template_ngx_slider_valueChange_67_listener($event) {
-        return ctx.no_of_interviews_low_value = $event;
       })("highValueChange", function ViewReferenceComponent_Template_ngx_slider_highValueChange_67_listener($event) {
         return ctx.no_of_interviews_high_value = $event;
+      })("valueChange", function ViewReferenceComponent_Template_ngx_slider_valueChange_67_listener($event) {
+        return ctx.no_of_interviews_low_value = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](68, "div", 5)(69, "div", 6)(70, "a", 34)(71, "h5", 8);
@@ -16910,10 +16910,10 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](73, "div", 35)(74, "div", 10)(75, "ngx-slider", 31);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("mouseup", function ViewReferenceComponent_Template_ngx_slider_mouseup_75_listener() {
         return ctx.refreshDataTable();
-      })("valueChange", function ViewReferenceComponent_Template_ngx_slider_valueChange_75_listener($event) {
-        return ctx.duration_low_value = $event;
       })("highValueChange", function ViewReferenceComponent_Template_ngx_slider_highValueChange_75_listener($event) {
         return ctx.duration_high_value = $event;
+      })("valueChange", function ViewReferenceComponent_Template_ngx_slider_valueChange_75_listener($event) {
+        return ctx.duration_low_value = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()()()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](76, "div", 36)(77, "div", 37)(78, "table", 38)(79, "thead")(80, "tr")(81, "th");
@@ -16971,7 +16971,7 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ViewReferenceComponent_Template_button_click_121_listener() {
         return ctx.closeFullScreenReference();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](122, "\u00D7");
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](122, "\u00D7 ");
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](123, ViewReferenceComponent_div_123_Template, 142, 20, "div", 52);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()();
@@ -16979,7 +16979,7 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
 
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngModel", ctx.status)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](19, _c1));
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngModel", ctx.status)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](25, _c1));
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](26);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("dataSource", ctx.dataSource_reference);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](9);
@@ -16987,18 +16987,24 @@ ViewReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("matRowDefColumns", ctx.displayedColumns_reference);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("value", ctx.no_of_tests_low_value)("highValue", ctx.no_of_tests_high_value)("options", ctx.test_options);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("highValue", ctx.no_of_tests_high_value)("value", ctx.no_of_tests_low_value)("options", ctx.test_options);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("value", ctx.no_of_interviews_low_value)("highValue", ctx.no_of_interviews_high_value)("options", ctx.interview_options);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("highValue", ctx.no_of_interviews_high_value)("value", ctx.no_of_interviews_low_value)("options", ctx.interview_options);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("value", ctx.duration_low_value)("highValue", ctx.duration_high_value)("options", ctx.duration_options);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("highValue", ctx.duration_high_value)("value", ctx.duration_low_value)("options", ctx.duration_options);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("dtOptions", ctx.dtOptions)("dtTrigger", ctx.dtTrigger);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](27);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", (ctx.reference_data == null ? null : ctx.reference_data.length) != 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", (ctx.reference_data == null ? null : ctx.reference_data.length) == 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵclassProp"]("active", ctx.showfullreference);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵclassProp"]("active", !ctx.showfullreference);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵclassProp"]("active", !ctx.showfullreference);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.showfullreference);
     }
   },
