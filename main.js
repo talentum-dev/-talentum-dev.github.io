@@ -9632,8 +9632,8 @@ class InterviewComponent {
     this.completed_data = [];
     this.upcoming_data = [];
     this.upcoming_data.length = 0;
-    let no_of_interviews = 0;
-    this.spinnerVisibilityService.show();
+    let no_of_interviews = 0; // this.spinnerVisibilityService.show();
+
     this.apiService.fetch_interviews(interviewdata).then(data => {
       let count_scheduled = 0;
       let count_completed = 0;
@@ -9650,6 +9650,7 @@ class InterviewComponent {
             reference_id: element.referral_id
           };
           let recording_required = false;
+          this.spinnerVisibilityService.show();
           this.apiService.fetch_reference_details(input).then(data => {
             console.log(data);
             data[0].interview_video_on == 1 ? recording_required = true : recording_required = false;
@@ -9678,6 +9679,7 @@ class InterviewComponent {
           let input = {
             reference_id: element.referral_id
           };
+          this.spinnerVisibilityService.show();
           this.apiService.fetch_reference_details(input).then(data => {
             this.completed_data[count_completed] = {
               id: element.id,
@@ -9708,10 +9710,6 @@ class InterviewComponent {
         // console.log(this.upcoming_data)
 
       });
-    }).finally(() => {
-      if (no_of_interviews == 0) {
-        this.spinnerVisibilityService.hide();
-      }
     });
   }
 
