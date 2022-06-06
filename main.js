@@ -9632,16 +9632,18 @@ class InterviewComponent {
     this.completed_data = [];
     this.upcoming_data = [];
     this.upcoming_data.length = 0;
+    let no_of_interviews = 0;
     this.spinnerVisibilityService.show();
     this.apiService.fetch_interviews(interviewdata).then(data => {
       let count_scheduled = 0;
       let count_completed = 0;
       this.upcoming_data = [];
       this.completed_data = [];
-      console.log(data);
+      no_of_interviews = data.length;
       this.complete_interview_details = data;
       data.forEach(element => {
-        // console.log(JSON.parse(element.remarks).payment)
+        console.log("entered");
+
         if (element.status == 'scheduled') {
           console.log(element);
           let input = {
@@ -9706,6 +9708,10 @@ class InterviewComponent {
         // console.log(this.upcoming_data)
 
       });
+    }).finally(() => {
+      if (no_of_interviews == 0) {
+        this.spinnerVisibilityService.hide();
+      }
     });
   }
 
