@@ -2808,43 +2808,23 @@ function ResetPasswordComponent_div_26_Template(rf, ctx) {
   }
 }
 
-function ResetPasswordComponent_button_27_Template(rf, ctx) {
+function ResetPasswordComponent_button_29_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ResetPasswordComponent_button_27_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r8);
-      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return ctx_r7.onClickGetOtp();
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, " Get OTP ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-
-  if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx_r5.userNameFormControl.invalid || ctx_r5.otpRequestSend);
-  }
-}
-
-function ResetPasswordComponent_button_28_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ResetPasswordComponent_button_28_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r10);
-      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return ctx_r9.onClickResetPassword();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ResetPasswordComponent_button_29_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7);
+      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return ctx_r6.onClickResetPassword();
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, " Reset Password ");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
 
   if (rf & 2) {
-    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx_r6.resetPasswordFormGroup.invalid);
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx_r5.resetPasswordFormGroup.invalid);
   }
 }
 
@@ -3001,9 +2981,9 @@ ResetPasswordComponent.ɵfac = function ResetPasswordComponent_Factory(t) {
 ResetPasswordComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
   type: ResetPasswordComponent,
   selectors: [["app-reset-password"]],
-  decls: 29,
+  decls: 30,
   vars: 10,
-  consts: [[1, "section"], [1, "container"], [1, "row", "justify-content-center"], [1, "col-lg-5", "col-md-6", "col-xs-12"], [1, "card"], [1, "card-header"], [1, "card-title"], [1, "card-body"], ["class", "alert alert-danger alert-dismissible mb-3", "role", "alert", 4, "ngIf"], [3, "formGroup"], [1, "form-group"], [1, "required"], ["autocomplete", "user-name", "name", "email", "placeholder", "User Name", "type", "text", 1, "form-control", 3, "formControl"], ["class", "text-danger font-medium-1", 4, "ngIf"], ["autocomplete", "off", "placeholder", "OTP", "type", "text", 1, "form-control", 3, "formControl"], ["class", "form-group", 4, "ngIf"], ["class", "btn btn-primary mb-2", 3, "disabled", "click", 4, "ngIf"], ["class", "btn btn-primary mb-2 ml-2", 3, "disabled", "click", 4, "ngIf"], ["role", "alert", 1, "alert", "alert-danger", "alert-dismissible", "mb-3"], [1, "d-flex"], [1, "icon-warning22", "pt-1", "pr-3"], [1, "text-semibold"], [1, "text-danger", "font-medium-1"], ["autocomplete", "new-password", "placeholder", "New Password", "type", "password", 1, "form-control", 3, "formControl"], ["autocomplete", "confirm-password", "placeholder", "Confirm Password", "type", "password", 1, "form-control", 3, "formControl"], [1, "btn", "btn-primary", "mb-2", 3, "disabled", "click"], [1, "btn", "btn-primary", "mb-2", "ml-2", 3, "disabled", "click"]],
+  consts: [[1, "section"], [1, "container"], [1, "row", "justify-content-center"], [1, "col-lg-5", "col-md-6", "col-xs-12"], [1, "card"], [1, "card-header"], [1, "card-title"], [1, "card-body"], ["class", "alert alert-danger alert-dismissible mb-3", "role", "alert", 4, "ngIf"], [3, "formGroup"], [1, "form-group"], [1, "required"], ["autocomplete", "user-name", "name", "email", "placeholder", "User Name", "type", "text", 1, "form-control", 3, "formControl"], ["class", "text-danger font-medium-1", 4, "ngIf"], ["autocomplete", "off", "placeholder", "OTP", "type", "text", 1, "form-control", 3, "formControl"], ["class", "form-group", 4, "ngIf"], [1, "btn", "btn-primary", "mb-2", 3, "disabled", "click"], ["class", "btn btn-primary mb-2 ml-2", 3, "disabled", "click", 4, "ngIf"], ["role", "alert", 1, "alert", "alert-danger", "alert-dismissible", "mb-3"], [1, "d-flex"], [1, "icon-warning22", "pt-1", "pr-3"], [1, "text-semibold"], [1, "text-danger", "font-medium-1"], ["autocomplete", "new-password", "placeholder", "New Password", "type", "password", 1, "form-control", 3, "formControl"], ["autocomplete", "confirm-password", "placeholder", "Confirm Password", "type", "password", 1, "form-control", 3, "formControl"], [1, "btn", "btn-primary", "mb-2", "ml-2", 3, "disabled", "click"]],
   template: function ResetPasswordComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "div", 4)(5, "div", 5)(6, "h4", 6);
@@ -3029,8 +3009,13 @@ ResetPasswordComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](25, ResetPasswordComponent_div_25_Template, 6, 1, "div", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](26, ResetPasswordComponent_div_26_Template, 6, 1, "div", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](27, ResetPasswordComponent_button_27_Template, 2, 1, "button", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, ResetPasswordComponent_button_28_Template, 2, 1, "button", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "button", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ResetPasswordComponent_Template_button_click_27_listener() {
+        return ctx.onClickGetOtp();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](28, " Get OTP ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](29, ResetPasswordComponent_button_29_Template, 2, 1, "button", 17);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()()()();
     }
 
@@ -3052,8 +3037,8 @@ ResetPasswordComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.otpFormControl.valid);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.otpFormControl.invalid);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx.userNameFormControl.invalid || ctx.otpRequestSend);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.otpFormControl.valid);
     }
   },
