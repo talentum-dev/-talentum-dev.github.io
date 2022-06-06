@@ -8328,8 +8328,8 @@ textarea {
    }
 .form-control:disabled,
    .form-control[readonly] {
-       background-color: #f3f4f5;
-       border: 1px solid #f3f7fb;
+       background-color: #C0C0C0;
+       border: 1px solid #C0C4C8;
        opacity: 1;
    }
 .contact-info {
@@ -12319,6 +12319,7 @@ label {
        width:100%;
        height: calc(100vh - 70px);
    }
+
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css ***!
   \********************************************************************************************************************************************************************************************************/
