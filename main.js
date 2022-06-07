@@ -3931,7 +3931,7 @@ function TestComponent_div_17_Template(rf, ctx) {
 
 function TestComponent_p_23_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
@@ -3939,7 +3939,7 @@ function TestComponent_p_23_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r2.referenceIdSummary.errorMessage);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r2.errorMessage);
   }
 }
 
@@ -3947,7 +3947,7 @@ function TestComponent_a_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
 
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "a", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "a", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function TestComponent_a_28_Template_a_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r7);
       const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -3960,7 +3960,7 @@ function TestComponent_a_28_Template(rf, ctx) {
 
 function TestComponent_tr_49_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr")(1, "td", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr")(1, "td", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "No record found!");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
   }
@@ -4004,6 +4004,16 @@ class TestComponent {
     });
     this.referenceIdSummary = {};
     this.testURL = ''; //
+  }
+
+  get errorMessage() {
+    const errorMessage = this.referenceIdSummary.errorMessage;
+
+    if (errorMessage && errorMessage.startsWith("not enough questions available")) {
+      return "Invalid reference Id";
+    } else {
+      return errorMessage;
+    }
   }
 
   get noOfAttempts() {
@@ -4060,7 +4070,7 @@ TestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
   selectors: [["candidate-test"]],
   decls: 51,
   vars: 9,
-  consts: [["id", "test", 1, "tab-pane", "active"], [1, "card", "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#take-test", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#summary", 1, "nav-link", 3, "click"], [1, "tab-content"], ["id", "take-test", 1, "tab-pane", "active"], [1, "mb-3"], [1, "card-title", "mb-0"], [1, "alert", "alert-secondary"], [1, "row"], ["class", "col-md-4", 4, "ngIf"], [1, "col-md-4"], [1, "text-muted"], [1, "text-bold"], [4, "ngIf"], [1, "d-flex", "mb-3"], ["placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "formControl"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-border", "btn-sm", "ml-2", 3, "disabled", "click"], ["class", "btn btn-primary ml-2", "data-target", "#myModal", "data-toggle", "modal", 3, "click", 4, "ngIf"], ["id", "summary", 1, "tab-pane"], [1, "mb-0"], [1, "table-responsive", "max-height-400"], [1, "table", "table-striped", "table-fixed-head"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-primary", "ml-2", 3, "click"], ["colspan", "4", 1, "no-data-available"]],
+  consts: [["id", "test", 1, "tab-pane", "active"], [1, "card", "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#take-test", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#summary", 1, "nav-link", 3, "click"], [1, "tab-content"], ["id", "take-test", 1, "tab-pane", "active"], [1, "mb-3"], [1, "card-title", "mb-0"], [1, "alert", "alert-secondary"], [1, "row"], ["class", "col-md-4", 4, "ngIf"], [1, "col-md-4"], [1, "text-muted"], [1, "text-bold"], ["class", "mat-error", 4, "ngIf"], [1, "d-flex", "mb-3"], ["placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "formControl"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-border", "btn-sm", "ml-2", 3, "disabled", "click"], ["class", "btn btn-primary ml-2", "data-target", "#myModal", "data-toggle", "modal", 3, "click", 4, "ngIf"], ["id", "summary", 1, "tab-pane"], [1, "mb-0"], [1, "table-responsive", "max-height-400"], [1, "table", "table-striped", "table-fixed-head"], ["scope", "col"], [4, "ngIf"], [4, "ngFor", "ngForOf"], [1, "mat-error"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-primary", "ml-2", 3, "click"], ["colspan", "4", 1, "no-data-available"]],
   template: function TestComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "ul", 2)(3, "li", 3)(4, "a", 4);
@@ -4116,8 +4126,8 @@ TestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](47, "Date & Time");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](48, "tbody");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](49, TestComponent_tr_49_Template, 3, 0, "tr", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](50, TestComponent_tr_50_Template, 9, 4, "tr", 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](49, TestComponent_tr_49_Template, 3, 0, "tr", 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](50, TestComponent_tr_50_Template, 9, 4, "tr", 27);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()()()()();
     }
 
@@ -4129,7 +4139,7 @@ TestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.noOfAttempts);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.referenceIdSummary.errorMessage);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.errorMessage);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formControl", ctx.referenceIdForm);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
