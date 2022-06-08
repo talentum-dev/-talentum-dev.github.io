@@ -2337,7 +2337,7 @@ function CandidateSignUpComponent_div_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, " Account successful created.");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](10, "An account activation link has been sent to your registered email address.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](10, "Please Login to your account, for first time users you might need to verify your email id.");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "a", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](12, "Sign In Now");
@@ -4010,7 +4010,7 @@ class TestComponent {
     const errorMessage = this.referenceIdSummary.errorMessage;
 
     if (errorMessage && errorMessage.startsWith("not enough questions available")) {
-      return "Invalid reference Id";
+      return "Invalid reference Id, not enough questions";
     } else {
       return errorMessage;
     }
