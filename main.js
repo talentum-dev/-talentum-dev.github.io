@@ -2936,7 +2936,9 @@ class ResetPasswordComponent {
 
         _this2.matDialog.open(_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, {
           data: {
-            message: 'Password Reset Successfully, You can login using your new password'
+            message: 'Password Reset Successfully, You can login using your new password',
+            onClose: () => _this2.router.navigate(['/login']),
+            closeButtonName: 'Login'
           }
         });
       } catch (e) {
@@ -14947,13 +14949,12 @@ class InitiateReferenceComponent {
       try {
         _this2.spinnerVisibilityService.show();
 
-        const resp = yield _this2.apiService.initiateReference({
+        yield _this2.apiService.initiateReference({
           referenceId: _this2.reference_id,
           candidateDetails: _this2.referenceData
         }).finally(() => {
           _this2.spinnerVisibilityService.hide();
         });
-        ;
 
         _this2.matDialog.open(_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, {
           data: {
