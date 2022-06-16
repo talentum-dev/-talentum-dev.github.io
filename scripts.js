@@ -19,7 +19,14 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 //# sourceMappingURL=bootstrap.min.js.map
 ;
 
+
 $(document).ready(function () {
+
+    $(".navbar-nav a.nav-link").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "fast");
+        return false;
+     });
+
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
     

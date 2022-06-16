@@ -8328,9 +8328,10 @@ textarea {
    }
 .form-control:disabled,
    .form-control[readonly] {
-       background-color: #C0C0C0;
-       border: 1px solid #C0C4C8;
-       opacity: 1;
+     background-color: #C0C0C0;
+     border: 1px solid #C0C4C8;
+     opacity: 1;
+     cursor: not-allowed;
    }
 .contact-info {
        padding: 4px;
