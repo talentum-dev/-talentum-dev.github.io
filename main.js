@@ -15232,7 +15232,7 @@ class InitiatedReferencesComponent {
         const wb = xlsx__WEBPACK_IMPORTED_MODULE_0__.utils.book_new();
         xlsx__WEBPACK_IMPORTED_MODULE_0__.utils.book_append_sheet(wb, ws, 'Sheet1');
         /* save to file */
-        xlsx__WEBPACK_IMPORTED_MODULE_0__.writeFile(wb, "testfile");
+        xlsx__WEBPACK_IMPORTED_MODULE_0__.writeFile(wb, "testfile.xlsx");
     }
     show_full_timeline() {
         console.log(this.full_timeline);
