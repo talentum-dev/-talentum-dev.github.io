@@ -9894,6 +9894,7 @@ class InterviewComponent {
     // ]
     this.schedule_new = [];
     let distinct_candidates = [];
+    let distinct_candidates_count = 0;
     let candidate_count = 0;
     let found;
     this.spinnerVisibilityService.show();
@@ -9919,7 +9920,7 @@ class InterviewComponent {
           }
 
           if (!found) {
-            this.schedule_new.push({
+            this.schedule_new[distinct_candidates_count] = {
               candidate_id: element.candidate_id,
               interviewer_id: element.interviewer_id,
               datetime: [{
@@ -9929,7 +9930,8 @@ class InterviewComponent {
               reference_id: element.reference_id,
               interview_skills: element.interview_skills,
               reference_skills: JSON.parse(reference_data[0].skills_and_count).skill_details
-            });
+            };
+            distinct_candidates_count = distinct_candidates_count + 1;
             distinct_candidates.push({
               slot: candidate_count,
               candidate_id: element.candidate_id,
