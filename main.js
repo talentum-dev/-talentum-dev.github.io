@@ -15181,7 +15181,7 @@ class InitiatedReferencesComponent {
         this.apiService.initiatedReferences(this.initiated_references_input)
             .then(data => {
             return data.map(data => {
-                data.time = new Date(data.time).toLocaleString();
+                data.time = new Date(data.time + ' UTC').toLocaleString();
                 return data;
             });
         })
