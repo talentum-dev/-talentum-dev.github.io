@@ -13523,19 +13523,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
 /* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/table */ 97217);
 /* harmony import */ var src_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/util/alert-dialog/alert-dialog.component */ 12278);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var src_app_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api.service */ 51491);
-/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ng-http-loader */ 23020);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/form-field */ 44770);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/input */ 43365);
-/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/sort */ 64316);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ng-http-loader */ 23020);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 44770);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/input */ 43365);
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/sort */ 64316);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
 /* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/button */ 87317);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/icon */ 65590);
+
 
 
 
@@ -13645,6 +13646,14 @@ function CreateReferenceComponent_tr_24_Template(rf, ctx) {
   }
 }
 
+function CreateReferenceComponent_ng_container_57_tr_1_em_5_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "em", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Please enter a value between 1 and 20.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
+}
+
 function CreateReferenceComponent_ng_container_57_tr_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
@@ -13655,88 +13664,87 @@ function CreateReferenceComponent_ng_container_57_tr_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "td")(4, "input", 92);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_change_4_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
-      const skill_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().$implicit;
-      const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r26.addtototal(skill_r23.count);
-    })("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_4_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
-      const skill_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().$implicit;
-      return skill_r23.count = $event;
+      const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+      return ctx_r27.updateTotal();
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "td", 25)(6, "input", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_change_6_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](5, CreateReferenceComponent_ng_container_57_tr_1_em_5_Template, 2, 0, "em", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "td", 25)(7, "input", 94);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_change_7_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
+      const i_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
+      const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return ctx_r29.complexity_change(ctx_r29.low_complexity[i_r24], "L", i_r24);
+    })("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_7_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const i_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
       const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r31.complexity_change(ctx_r31.low_complexity[i_r24], "L", i_r24);
-    })("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_6_listener($event) {
+      return ctx_r31.low_complexity[i_r24] = $event;
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "td", 25)(9, "input", 94);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_change_9_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const i_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
       const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r33.low_complexity[i_r24] = $event;
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "td", 25)(8, "input", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_change_8_listener() {
+      return ctx_r33.complexity_change(ctx_r33.medium_complexity[i_r24], "M", i_r24);
+    })("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_9_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const i_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
       const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r35.complexity_change(ctx_r35.medium_complexity[i_r24], "M", i_r24);
-    })("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_8_listener($event) {
+      return ctx_r35.medium_complexity[i_r24] = $event;
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "td", 25)(11, "input", 94);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_change_11_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const i_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
       const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r37.medium_complexity[i_r24] = $event;
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "td", 25)(10, "input", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_change_10_listener() {
+      return ctx_r37.complexity_change(ctx_r37.high_complexity[i_r24], "H", i_r24);
+    })("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_11_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const i_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
       const ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r39.complexity_change(ctx_r39.high_complexity[i_r24], "H", i_r24);
-    })("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_10_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
-      const i_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
-      const ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r41.high_complexity[i_r24] = $event;
+      return ctx_r39.high_complexity[i_r24] = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "td", 25)(12, "input", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_12_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "td", 25)(13, "input", 95);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_13_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const skill_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().$implicit;
       return skill_r23.custom_bank = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](13, "td", 25)(14, "input", 63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_14_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](14, "td", 25)(15, "input", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function CreateReferenceComponent_ng_container_57_tr_1_Template_input_ngModelChange_15_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const skill_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().$implicit;
       return skill_r23.live_code = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "td", 25)(16, "a", 95);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CreateReferenceComponent_ng_container_57_tr_1_Template_a_click_16_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](16, "td", 25)(17, "a", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CreateReferenceComponent_ng_container_57_tr_1_Template_a_click_17_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r28);
       const skill_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().$implicit;
-      const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r47.removeskill(skill_r23);
+      const ctx_r45 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return ctx_r45.removeskill(skill_r23);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](17, "i", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](18, "i", 97);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
   }
 
   if (rf & 2) {
-    const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    const skill_r23 = ctx_r49.$implicit;
-    const i_r24 = ctx_r49.index;
+    const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    const skill_r23 = ctx_r47.$implicit;
+    const i_r24 = ctx_r47.index;
     const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](skill_r23.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", skill_r23.count);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("formControl", skill_r23.count);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", skill_r23.count.invalid);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx_r25.low_complexity[i_r24]);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
@@ -13753,7 +13761,7 @@ function CreateReferenceComponent_ng_container_57_tr_1_Template(rf, ctx) {
 function CreateReferenceComponent_ng_container_57_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, CreateReferenceComponent_ng_container_57_tr_1_Template, 18, 8, "tr", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, CreateReferenceComponent_ng_container_57_tr_1_Template, 19, 9, "tr", 91);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerEnd"]();
   }
 
@@ -13766,15 +13774,15 @@ function CreateReferenceComponent_ng_container_57_Template(rf, ctx) {
 
 function CreateReferenceComponent_button_79_Template(rf, ctx) {
   if (rf & 1) {
-    const _r51 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r49 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 99);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CreateReferenceComponent_button_79_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r51);
-      const ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r50.fileChange(null);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r49);
+      const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return ctx_r48.fileChange(null);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "mat-icon", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "mat-icon", 100);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "close");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
   }
@@ -13782,15 +13790,15 @@ function CreateReferenceComponent_button_79_Template(rf, ctx) {
 
 function CreateReferenceComponent_button_97_Template(rf, ctx) {
   if (rf & 1) {
-    const _r53 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r51 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 99);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CreateReferenceComponent_button_97_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r53);
-      const ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r52.fileChange_questions(null);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r51);
+      const ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return ctx_r50.fileChange_questions(null);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "mat-icon", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "mat-icon", 100);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "close");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
   }
@@ -13798,27 +13806,28 @@ function CreateReferenceComponent_button_97_Template(rf, ctx) {
 
 function CreateReferenceComponent_option_232_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "option", 99);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "option", 101);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
 
   if (rf & 2) {
-    const subscription_r54 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngValue", subscription_r54);
+    const subscription_r52 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngValue", subscription_r52);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", subscription_r54.description, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", subscription_r52.description, " ");
   }
 }
 
 const ELEMENT_DATA = [// { position: 0, name: 'Angular', hide: false,count: 0 }
 ];
 class CreateReferenceComponent {
-  constructor(matDialog, http, apiService, spinnerVisibilityService) {
+  constructor(matDialog, http, apiService, spinnerVisibilityService, formBuilder) {
     this.matDialog = matDialog;
     this.http = http;
     this.apiService = apiService;
     this.spinnerVisibilityService = spinnerVisibilityService;
+    this.formBuilder = formBuilder;
     this.question_bank = [];
     this.low_complexity = [];
     this.medium_complexity = [];
@@ -13847,6 +13856,22 @@ class CreateReferenceComponent {
     this.selected_skills = [];
   }
 
+  get fileName() {
+    var _a;
+
+    return (_a = this.file) === null || _a === void 0 ? void 0 : _a.name;
+  }
+
+  get fileName_questions() {
+    var _a;
+
+    return (_a = this.file_questions) === null || _a === void 0 ? void 0 : _a.name;
+  }
+
+  get isInValid() {
+    return this.dataSource.data.filter(data => data.hide).map(data => data.count.invalid).reduce((initial, current) => initial || current, false);
+  }
+
   ngOnInit() {
     this.fetch_skills("");
     this.dataSource.data.forEach((element, index) => {
@@ -13868,16 +13893,18 @@ class CreateReferenceComponent {
     this.complexity_change(true, 'M', row.position);
     this.selected_skills = this.dataSource.data;
 
-    if (this.dataSource.data[row.position].hide) {// this.skills_array.push({name:this.dataSource.data[row.position].name,position:this.dataSource.data[row.position].position,count:0})
+    if (this.dataSource.data[row.position].hide) {
+      // this.skills_array.push({name:this.dataSource.data[row.position].name,position:this.dataSource.data[row.position].position,count:0})
       // this.datasource_array_map.set(row.position,this.skills_array.length-1)
+      this.dataSource.data[row.position].count = this.getQuestionCountController(1);
     } else {
-      this.dataSource.data[row.position].count = 0;
+      this.dataSource.data[row.position].count = this.getQuestionCountController(0);
     }
 
     this.total_questions = 0;
     this.dataSource.data.forEach(element => {
       if (element.hide) {
-        this.total_questions = this.total_questions + Number(element.count);
+        this.total_questions = this.total_questions + Number(element.count.value);
       }
     });
 
@@ -13899,7 +13926,7 @@ class CreateReferenceComponent {
           skillid: element.id,
           name: element.name,
           hide: false,
-          count: 0,
+          count: this.getQuestionCountController(),
           complexity: "M",
           custom_bank: false,
           live_code: false
@@ -13912,7 +13939,7 @@ class CreateReferenceComponent {
 
   removeskill(skill) {
     this.dataSource.data[skill.position].hide = false;
-    this.dataSource.data[skill.position].count = 0;
+    this.dataSource.data[skill.position].count = this.getQuestionCountController();
     this.selected_skills = this.dataSource.data;
     this.total_questions = 0;
     this.dataSource.data.forEach(element => {
@@ -13942,24 +13969,17 @@ class CreateReferenceComponent {
     });
   }
 
-  addtototal(i) {
-    console.log(i); // this.total_questions = this.total_questions + Number(i)
-
-    this.total_questions = 0;
-    this.dataSource.data.forEach(element => {
-      element.hide ? this.total_questions = this.total_questions + Number(element.count) : "";
-    });
+  updateTotal() {
+    this.total_questions = this.dataSource.data.filter(data => data.hide).map(data => data.count.value).reduce((total, element) => total + element, 0);
   }
 
   create_reference() {
     console.log(this.fileName == null ? "its null" : this.fileName);
     console.log(this.fileName_questions == null ? "its null" : this.fileName_questions);
-    let skills_array = [];
-    this.dataSource.data.forEach(element => {
-      if (element.hide) {
-        skills_array.push(element);
-        console.log(element);
-      }
+    const skills_array = this.dataSource.data.filter(data => data.hide).map(data => {
+      return Object.assign(Object.assign({}, data), {
+        count: data.count.value
+      });
     });
     let input = {
       skills: skills_array,
@@ -14000,18 +14020,6 @@ class CreateReferenceComponent {
     } else {
       this.openDialog(this.verify_create_reference(input).error_message, "ERROR");
     }
-  }
-
-  get fileName() {
-    var _a;
-
-    return (_a = this.file) === null || _a === void 0 ? void 0 : _a.name;
-  }
-
-  get fileName_questions() {
-    var _a;
-
-    return (_a = this.file_questions) === null || _a === void 0 ? void 0 : _a.name;
   }
 
   fileChange(files) {
@@ -14227,10 +14235,16 @@ class CreateReferenceComponent {
     this.spinnerVisibilityService.hide();
   }
 
+  getQuestionCountController(value = 0) {
+    return this.formBuilder.control(value, {
+      validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.min(1), _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.max(20), _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]
+    });
+  }
+
 }
 
 CreateReferenceComponent.ɵfac = function CreateReferenceComponent_Factory(t) {
-  return new (t || CreateReferenceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_8__.SpinnerVisibilityService));
+  return new (t || CreateReferenceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_9__.SpinnerVisibilityService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder));
 };
 
 CreateReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
@@ -14250,11 +14264,11 @@ CreateReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MO
     }
   },
   decls: 238,
-  vars: 26,
-  consts: [[1, "row", "mb-3"], [1, "col-md-3", "col-lg-3"], [1, "example-container1", "card"], [1, "card-header", "filter-by"], [1, "mb-0"], [1, "card-body", "filter-card-body", "create-test-skills-table"], ["matInput", "", "placeholder", "Ex. search", 3, "keyup"], ["input", ""], [1, "example-container", "mat-elevation-z8", "mb-3"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["skillsMat", "", "skillsMatSort", "matSort"], ["matColumnDef", "select"], ["mat-header-cell", "", "class", "width-40", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "name"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], [1, "pretty", "p-default", "pretty-sm", "ml-2"], ["type", "checkbox", 3, "ngModel", "ngModelChange", "change"], [1, "state", "p-primary"], [1, "col-md-5", "col-lg-6"], [1, "table-responsive", "mb-1", "max-height-210"], [1, "table", "table-striped", "table-sm", "v-align-middle", "table-fixed-head", "mb-1"], [1, "text-center"], [4, "ngFor", "ngForOf"], [1, "text-right", "font-medium-3", "mb-2"], [1, "text-muted", "font-medium-1", "pr-2"], [1, "text-semibold", "text-success"], [1, "card", "mb-3"], [1, "card-body", "p-3"], [1, "row", "align-items-center"], [1, "col-lg-5", "mb-2", "mb-lg-0"], [1, "card-title"], [1, "font-small-3", "text-muted"], [1, "col-lg-2"], [1, "upload-btn-wrapper"], ["hidden", "", "type", "file", 3, "change"], ["fileInput", ""], [1, "btn", "btn-border", "btn-sm", 3, "click"], [1, "col-lg-5"], [1, "d-flex"], ["aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", "class", "button-close-file", 3, "click", 4, "ngIf"], ["matInput", "", "readonly", "", "type", "text", 1, "font-small-3", "text-black", 3, "value"], [1, "font-small-3", "text-muted", "line-height-small-3"], ["fileInputquestions", ""], ["class", "button-close-file", "aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["matInput", "", "readonly", "", "type", "text", 1, "font-small-3", "text-success", 3, "value"], [1, "col-lg-7", "mb-2", "mb-lg-0"], [1, "switch", "switch-primary"], ["type", "checkbox", "id", "switch-p-001", 3, "ngModel", "ngModelChange"], ["for", "switch-p-001", 1, "cr", "top-0"], [1, "col-md-4", "col-lg-3"], [1, "list-group", "list-group-bg-light"], [1, "list-group-item", "d-flex", "justify-content-between", "align-items-center"], [1, "form-group"], [1, "label-control", "mb-2"], [1, "d-flex", "align-items-center"], ["type", "checkbox", "id", "switch-p-002", 1, "", 3, "ngModel", "change", "ngModelChange"], ["for", "switch-p-002", 1, "cr", "top-0"], [1, "pl-4"], [1, "pretty", "pretty-sm", "p-default", "mr-0"], ["type", "checkbox", 3, "ngModel", "disabled", "ngModelChange"], ["type", "checkbox", "id", "switch-p-004", 3, "ngModel", "change", "ngModelChange"], ["for", "switch-p-004", 1, "cr", "top-0"], [1, "list-group-item"], [1, "label-control"], [1, "form-control", "xs", "width-60", 3, "ngModel", "ngModelChange"], ["value", "0"], [1, "p-1", "font-medium-1", "text-muted"], [1, "form-control", "xs", "width-60", "ml-1", 3, "ngModel", "ngModelChange"], ["hidden", "", "value", "", "disabled", "", "selected", "selected"], ["value", "30"], [1, "form-group", "field-md"], ["type", "text", 1, "form-control", "sm", 3, "ngModel", "ngModelChange"], [1, "form-control", "sm", 3, "ngModel", "ngModelChange"], ["value", "null", "disabled", "", "selected", "", "hidden", ""], [3, "ngValue", 4, "ngFor", "ngForOf"], [1, "text-right"], [1, "btn", "btn-border", "mr-2", 3, "click"], [1, "btn", "btn-primary", "create-test", 3, "click"], ["mat-header-cell", "", 1, "width-40"], ["mat-cell", ""], [3, "ngModel", "ngModelChange"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "pl-2"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"], [4, "ngIf"], ["min", "0", "type", "number", 1, "form-control", "xs", "pl-1", "width-70", 3, "ngModel", "change", "ngModelChange"], ["type", "checkbox", 3, "ngModel", "change", "ngModelChange"], ["type", "checkbox", 3, "ngModel", "ngModelChange"], ["href", "javascript:void(0);", "title", "Remove", 3, "click"], [1, "icon-bin", "text-danger"], ["aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", 1, "button-close-file", 3, "click"], [1, "font-medium-2", "text-danger"], [3, "ngValue"]],
+  vars: 27,
+  consts: [[1, "row", "mb-3"], [1, "col-md-3", "col-lg-3"], [1, "example-container1", "card"], [1, "card-header", "filter-by"], [1, "mb-0"], [1, "card-body", "filter-card-body", "create-test-skills-table"], ["matInput", "", "placeholder", "Ex. search", 3, "keyup"], ["input", ""], [1, "example-container", "mat-elevation-z8", "mb-3"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["skillsMat", "", "skillsMatSort", "matSort"], ["matColumnDef", "select"], ["mat-header-cell", "", "class", "width-40", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "name"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], [1, "pretty", "p-default", "pretty-sm", "ml-2"], ["type", "checkbox", 3, "ngModel", "ngModelChange", "change"], [1, "state", "p-primary"], [1, "col-md-5", "col-lg-6"], [1, "table-responsive", "mb-1", "max-height-210"], [1, "table", "table-striped", "table-sm", "v-align-middle", "table-fixed-head", "mb-1"], [1, "text-center"], [4, "ngFor", "ngForOf"], [1, "text-right", "font-medium-3", "mb-2"], [1, "text-muted", "font-medium-1", "pr-2"], [1, "text-semibold", "text-success"], [1, "card", "mb-3"], [1, "card-body", "p-3"], [1, "row", "align-items-center"], [1, "col-lg-5", "mb-2", "mb-lg-0"], [1, "card-title"], [1, "font-small-3", "text-muted"], [1, "col-lg-2"], [1, "upload-btn-wrapper"], ["hidden", "", "type", "file", 3, "change"], ["fileInput", ""], [1, "btn", "btn-border", "btn-sm", 3, "click"], [1, "col-lg-5"], [1, "d-flex"], ["aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", "class", "button-close-file", 3, "click", 4, "ngIf"], ["matInput", "", "readonly", "", "type", "text", 1, "font-small-3", "text-black", 3, "value"], [1, "font-small-3", "text-muted", "line-height-small-3"], ["fileInputquestions", ""], ["class", "button-close-file", "aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["matInput", "", "readonly", "", "type", "text", 1, "font-small-3", "text-success", 3, "value"], [1, "col-lg-7", "mb-2", "mb-lg-0"], [1, "switch", "switch-primary"], ["type", "checkbox", "id", "switch-p-001", 3, "ngModel", "ngModelChange"], ["for", "switch-p-001", 1, "cr", "top-0"], [1, "col-md-4", "col-lg-3"], [1, "list-group", "list-group-bg-light"], [1, "list-group-item", "d-flex", "justify-content-between", "align-items-center"], [1, "form-group"], [1, "label-control", "mb-2"], [1, "d-flex", "align-items-center"], ["type", "checkbox", "id", "switch-p-002", 1, "", 3, "ngModel", "change", "ngModelChange"], ["for", "switch-p-002", 1, "cr", "top-0"], [1, "pl-4"], [1, "pretty", "pretty-sm", "p-default", "mr-0"], ["type", "checkbox", 3, "ngModel", "disabled", "ngModelChange"], ["type", "checkbox", "id", "switch-p-004", 3, "ngModel", "change", "ngModelChange"], ["for", "switch-p-004", 1, "cr", "top-0"], [1, "list-group-item"], [1, "label-control"], [1, "form-control", "xs", "width-60", 3, "ngModel", "ngModelChange"], ["value", "0"], [1, "p-1", "font-medium-1", "text-muted"], [1, "form-control", "xs", "width-60", "ml-1", 3, "ngModel", "ngModelChange"], ["hidden", "", "value", "", "disabled", "", "selected", "selected"], ["value", "30"], [1, "form-group", "field-md"], ["type", "text", 1, "form-control", "sm", 3, "ngModel", "ngModelChange"], [1, "form-control", "sm", 3, "ngModel", "ngModelChange"], ["value", "null", "disabled", "", "selected", "", "hidden", ""], [3, "ngValue", 4, "ngFor", "ngForOf"], [1, "text-right"], [1, "btn", "btn-border", "mr-2", 3, "click"], [1, "btn", "btn-primary", "create-test", 3, "disabled", "click"], ["mat-header-cell", "", 1, "width-40"], ["mat-cell", ""], [3, "ngModel", "ngModelChange"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "pl-2"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"], [4, "ngIf"], ["min", "0", "type", "number", 1, "form-control", "xs", "pl-1", "width-70", 3, "formControl", "change"], ["class", "mat-error", 4, "ngIf"], ["type", "checkbox", 3, "ngModel", "change", "ngModelChange"], ["type", "checkbox", 3, "ngModel", "ngModelChange"], ["href", "javascript:void(0);", "title", "Remove", 3, "click"], [1, "icon-bin", "text-danger"], [1, "mat-error"], ["aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", 1, "button-close-file", 3, "click"], [1, "font-medium-2", "text-danger"], [3, "ngValue"]],
   template: function CreateReferenceComponent_Template(rf, ctx) {
     if (rf & 1) {
-      const _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+      const _r53 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h5", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5, "Skills");
@@ -14346,7 +14360,7 @@ CreateReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MO
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](75, "button", 40);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CreateReferenceComponent_Template_button_click_75_listener() {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r55);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r53);
 
         const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](74);
 
@@ -14371,7 +14385,7 @@ CreateReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MO
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](93, "button", 40);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CreateReferenceComponent_Template_button_click_93_listener() {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r55);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r53);
 
         const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](92);
 
@@ -14628,9 +14642,11 @@ CreateReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MO
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.selected_subscription);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.active_subscriptions);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.isInValid);
     }
   },
-  directives: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_10__.MatInput, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatTable, _angular_material_sort__WEBPACK_IMPORTED_MODULE_11__.MatSort, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatCell, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_12__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_14__.NativeElementInjectorDirective, _angular_material_sort__WEBPACK_IMPORTED_MODULE_11__.MatSortHeader, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatNoDataRow, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.CheckboxControlValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.MinValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.DefaultValueAccessor, _angular_material_button__WEBPACK_IMPORTED_MODULE_16__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatSuffix, _angular_material_icon__WEBPACK_IMPORTED_MODULE_17__.MatIcon, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵNgSelectMultipleOption"]],
+  directives: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_11__.MatInput, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatTable, _angular_material_sort__WEBPACK_IMPORTED_MODULE_12__.MatSort, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatCell, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_14__.NativeElementInjectorDirective, _angular_material_sort__WEBPACK_IMPORTED_MODULE_12__.MatSortHeader, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatNoDataRow, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.CheckboxControlValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.MinValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlDirective, _angular_material_button__WEBPACK_IMPORTED_MODULE_16__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatSuffix, _angular_material_icon__WEBPACK_IMPORTED_MODULE_17__.MatIcon, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgSelectMultipleOption"]],
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjcmVhdGUtcmVmZXJlbmNlLmNvbXBvbmVudC5jc3MifQ== */"]
 });
 
