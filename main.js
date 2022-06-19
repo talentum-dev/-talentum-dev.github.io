@@ -15178,7 +15178,14 @@ class InitiatedReferencesComponent {
         };
         this.reference_data = [];
         this.spinnerVisibilityService.show();
-        this.apiService.initiatedReferences(this.initiated_references_input).then((data) => {
+        this.apiService.initiatedReferences(this.initiated_references_input)
+            .then(data => {
+            return data.map(data => {
+                data.time = new Date(data.time).toLocaleString();
+                return data;
+            });
+        })
+            .then(data => {
             let temp_array = [];
             console.log(data);
             if (this.full_timeline) {
@@ -15203,7 +15210,9 @@ class InitiatedReferencesComponent {
                 });
                 this.reference_data = temp_array;
             }
-        }).finally(() => {
+        })
+            .catch(err => console.error(err))
+            .finally(() => {
             this.spinnerVisibilityService.hide();
         });
     }
