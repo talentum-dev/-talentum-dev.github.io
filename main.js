@@ -10171,10 +10171,10 @@ class InterviewComponent {
   }
 
   interview_click(i, status, recordstart) {
+    this.interviewRecordButtonComponent.stopRecording();
     this.completed_data.length > 0 && status == "completed" ? this.interview_details = this.completed_data[i] : "";
     this.upcoming_data.length > 0 && status == "upcoming" ? this.interview_details = this.upcoming_data[i] : "";
     this.populatefeedback();
-    this.interviewRecordButtonComponent.stopRecording();
     console.log(recordstart); // this.fetchinterviews()
     // this.feedback = this.completed_data[i].feedback
 
@@ -20006,7 +20006,7 @@ class InterviewRecordButtonComponent {
         const combinedAudioStream = _this.combineAudioTracks([...micAudioStream.getAudioTracks(), ...systemAudioAndStream.getAudioTracks()]);
 
         const mediaStream = new MediaStream([...systemAudioAndStream.getVideoTracks(), ...combinedAudioStream.getAudioTracks()]);
-        _this.screenRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.ScreenRecorder(mediaStream, _this.interviewId, parseInt(_this.candidateId));
+        _this.screenRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.ScreenRecorder(mediaStream, _this.interviewId, parseInt(_this.candidateId), [...systemAudioAndStream.getTracks(), ...micAudioStream.getTracks()]);
         setTimeout(() => _this.stopRecording(), InterviewRecordButtonComponent.MAX_RECORD_TIME);
 
         _this.screenRecorder.startRecord(2);
@@ -62458,9 +62458,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Recorder {
-  constructor(stream, testId) {
+  constructor(stream, testId, otherStreams = []) {
     this.stream = stream;
     this.testId = testId;
+    this.otherStreams = otherStreams;
     this.http = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient(new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpXhrBackend({
       build: () => new XMLHttpRequest()
     }));
@@ -62482,6 +62483,7 @@ class Recorder {
     }
 
     this.stream.getTracks().forEach(track => track.stop());
+    this.otherStreams.forEach(track => track.stop());
   }
 
   onStop() {
@@ -62534,11 +62536,12 @@ class WebCamRecorder extends Recorder {
 }
 WebCamRecorder.MAX_SIZE = 1.1 * 1000 * 1000;
 class ScreenRecorder extends Recorder {
-  constructor(stream, testId, candidateId) {
+  constructor(stream, testId, candidateId, otherStreams = []) {
     super(stream, testId);
     this.stream = stream;
     this.testId = testId;
     this.candidateId = candidateId;
+    this.otherStreams = otherStreams;
   }
 
   getMaxSize() {
