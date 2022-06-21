@@ -1,5 +1,82 @@
 (self["webpackChunktraining_app"] = self["webpackChunktraining_app"] || []).push([["main"],{
 
+/***/ 80081:
+/*!********************************************************************************************!*\
+  !*** ./src/app/admin/candidate-interviewer-match/candidate-interviewer-match.component.ts ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CandidateInterviewerMatchComponent": () => (/* binding */ CandidateInterviewerMatchComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
+/* harmony import */ var src_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/util/alert-dialog/alert-dialog.component */ 12278);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var src_app_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/api.service */ 51491);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng-http-loader */ 23020);
+
+
+
+
+
+
+
+class CandidateInterviewerMatchComponent {
+    constructor(renderer, matDialog, apiService, http, spinnerVisibilityService) {
+        this.renderer = renderer;
+        this.matDialog = matDialog;
+        this.apiService = apiService;
+        this.http = http;
+        this.spinnerVisibilityService = spinnerVisibilityService;
+    }
+    ngOnInit() {
+    }
+    openDialog(message, type) {
+        const dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__.MatDialogConfig();
+        // dialogConfig.data = message;
+        dialogConfig.data = { "message": message, "type": type };
+        let dialogRef = this.matDialog.open(src_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_0__.AlertDialogComponent, dialogConfig);
+    }
+    match() {
+        this.output = "";
+        this.spinnerVisibilityService.show();
+        this.apiService.match_candidate_interviewer("").then((data) => {
+            console.log(data);
+            data.forEach(element => {
+                this.output = this.output + JSON.stringify(element) + '\r\n';
+            });
+            // this.output = JSON.stringify(data)
+            console.log(this.output);
+            this.openDialog("Interview matching service ran successfully", "success");
+        }).finally(() => {
+            this.spinnerVisibilityService.hide();
+        });
+    }
+}
+CandidateInterviewerMatchComponent.ɵfac = function CandidateInterviewerMatchComponent_Factory(t) { return new (t || CandidateInterviewerMatchComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__.Renderer2), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_5__.SpinnerVisibilityService)); };
+CandidateInterviewerMatchComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: CandidateInterviewerMatchComponent, selectors: [["app-candidate-interviewer-match"]], decls: 9, vars: 1, consts: [["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary", "btn-sm", "save", 3, "click"], ["disabled", "", "id", "message", "rows", "8", 1, "form-control"]], template: function CandidateInterviewerMatchComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CandidateInterviewerMatchComponent_Template_button_click_0_listener() { return ctx.match(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Match candidate & interviewer");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "br")(3, "br")(4, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](6, "Output from matching algorithm");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "textarea", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.output);
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjYW5kaWRhdGUtaW50ZXJ2aWV3ZXItbWF0Y2guY29tcG9uZW50LmNzcyJ9 */"] });
+
+
+/***/ }),
+
 /***/ 17254:
 /*!************************************************************************!*\
   !*** ./src/app/admin/verifytest-videos/verifytest-videos.component.ts ***!
@@ -1102,6 +1179,29 @@ class ApiService {
     return postData();
   }
 
+  match_candidate_interviewer(input) {
+    function postData() {
+      return _postData38.apply(this, arguments);
+    }
+
+    function _postData38() {
+      _postData38 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        const apiName = 'MyCustomLambda';
+        const path = '/matchinterviews';
+        const myInit = {
+          body: input,
+          headers: {
+            Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
+          }
+        };
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+      });
+      return _postData38.apply(this, arguments);
+    }
+
+    return postData();
+  }
+
 }
 
 ApiService.ɵfac = function ApiService_Factory(t) {
@@ -1128,7 +1228,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule),
 /* harmony export */   "RoutingComponent": () => (/* binding */ RoutingComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var _recruiter_recruiter_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./recruiter/recruiter.component */ 43991);
 /* harmony import */ var _recruiter_profiles_profiles_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recruiter/profiles/profiles.component */ 63493);
 /* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home-page/home-page.component */ 5079);
@@ -1161,7 +1261,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth_change_password_change_password_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./auth/change-password/change-password.component */ 14044);
 /* harmony import */ var _auth_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./auth/reset-password/reset-password.component */ 88310);
 /* harmony import */ var _auth_verify_email_verify_email_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./auth/verify-email/verify-email.component */ 14825);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _admin_candidate_interviewer_match_candidate_interviewer_match_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./admin/candidate-interviewer-match/candidate-interviewer-match.component */ 80081);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/core */ 3184);
+
 
 
 
@@ -1270,11 +1372,15 @@ const routes = [
     },
     {
         path: 'admin',
+        canActivate: [_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_24__.AuthGuard],
+        canActivateChild: [_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_24__.AuthGuard],
+        data: { roles: [_models_auth_model__WEBPACK_IMPORTED_MODULE_25__.Roles.ADMIN] },
         children: [
             { path: "verifytests/:user_id/:test_id", component: _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_13__.VerifytestsComponent, },
             { path: "verifytestvideos/:user_id/:test_id", component: _admin_verifytest_videos_verifytest_videos_component__WEBPACK_IMPORTED_MODULE_21__.VerifytestVideosComponent, },
             { path: "viewquestions", component: _questions_view_questions_view_questions_component__WEBPACK_IMPORTED_MODULE_26__.ViewQuestionsComponent, },
             { path: "uploadquestions", component: _questions_upload_questions_upload_questions_component__WEBPACK_IMPORTED_MODULE_27__.UploadQuestionsComponent, },
+            { path: "matchinterviews", component: _admin_candidate_interviewer_match_candidate_interviewer_match_component__WEBPACK_IMPORTED_MODULE_32__.CandidateInterviewerMatchComponent, },
         ]
     },
     {
@@ -1292,9 +1398,9 @@ const routes = [
 class AppRoutingModule {
 }
 AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); };
-AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_32__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_32__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_33__.RouterModule.forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_33__.RouterModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_32__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_33__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_33__.RouterModule] }); })();
+AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_33__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
+AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_33__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_34__.RouterModule.forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_34__.RouterModule] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_33__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_34__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_34__.RouterModule] }); })();
 const RoutingComponent = [
     _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_7__.CandidateLoginComponent,
     _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_6__.CandidateRegisterComponent,
@@ -1553,41 +1659,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 90158);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 55041);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api.service */ 51491);
-/* harmony import */ var ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! ngx-doc-viewer */ 13778);
+/* harmony import */ var ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! ngx-doc-viewer */ 13778);
 /* harmony import */ var ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-bootstrap/accordion */ 34495);
 /* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-bootstrap/modal */ 26528);
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! ngx-toastr */ 34101);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! ngx-toastr */ 34101);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
 /* harmony import */ var _recruiter_recruiter_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./recruiter/recruiter.component */ 43991);
 /* harmony import */ var _recruiter_profiles_profiles_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./recruiter/profiles/profiles.component */ 63493);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! @angular/material/input */ 43365);
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! @angular/material/table */ 97217);
-/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! @angular/material/sort */ 64316);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(/*! @angular/material/card */ 11961);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(/*! @angular/material/button */ 87317);
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(/*! @angular/material/toolbar */ 64517);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(/*! @angular/material/icon */ 65590);
-/* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! @angular/material/sidenav */ 7216);
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! @angular/material/list */ 26131);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! @angular/material/select */ 91434);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! @angular/material/input */ 43365);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! @angular/material/table */ 97217);
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(/*! @angular/material/sort */ 64316);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(/*! @angular/material/card */ 11961);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(/*! @angular/material/button */ 87317);
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(/*! @angular/material/toolbar */ 64517);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! @angular/material/icon */ 65590);
+/* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! @angular/material/sidenav */ 7216);
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! @angular/material/list */ 26131);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! @angular/material/select */ 91434);
 /* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home-page/home-page.component */ 5079);
 /* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! angular-datatables */ 51282);
-/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! @angular/material/slider */ 61859);
-/* harmony import */ var _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(/*! @angular-slider/ngx-slider */ 92498);
+/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(/*! @angular/material/slider */ 61859);
+/* harmony import */ var _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(/*! @angular-slider/ngx-slider */ 92498);
 /* harmony import */ var src_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/guards/auth/auth.guard */ 9740);
 /* harmony import */ var src_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/services/auth/auth.service */ 74067);
 /* harmony import */ var _recruiter_video_links_video_links_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./recruiter/video-links/video-links.component */ 54781);
 /* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./header/header.component */ 93482);
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./footer/footer.component */ 10970);
 /* harmony import */ var _recruiter_assessment_test_assessment_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./recruiter/assessment-test/assessment-test.component */ 74913);
-/* harmony import */ var ngx_countdown__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(/*! ngx-countdown */ 96439);
+/* harmony import */ var ngx_countdown__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(/*! ngx-countdown */ 96439);
 /* harmony import */ var _candidate_recruitment_hiretest_hiretest_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./candidate/recruitment/hiretest/hiretest.component */ 83829);
 /* harmony import */ var _candidate_recruitment_recruitment_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./candidate/recruitment/recruitment.component */ 46752);
 /* harmony import */ var _candidate_profile_skills_skills_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./candidate/profile/skills/skills.component */ 36272);
@@ -1599,14 +1705,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _candidate_assessment_test_test_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./candidate/assessment/test/test.component */ 70616);
 /* harmony import */ var _candidate_assessment_profile_activity_profile_activity_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./candidate/assessment/profile-activity/profile-activity.component */ 90477);
 /* harmony import */ var _candidate_assessment_interview_interview_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./candidate/assessment/interview/interview.component */ 43796);
-/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(/*! ng-http-loader */ 23020);
+/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! ng-http-loader */ 23020);
 /* harmony import */ var _error_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./error/not-found/not-found.component */ 48694);
 /* harmony import */ var _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./admin/verifytests/verifytests.component */ 61531);
-/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! @angular/material/chips */ 81196);
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! @angular/material/autocomplete */ 43188);
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! @angular/material/chips */ 81196);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! @angular/material/autocomplete */ 43188);
 /* harmony import */ var _auth_candidate_sign_in_candidate_sign_in_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./auth/candidate-sign-in/candidate-sign-in.component */ 21091);
 /* harmony import */ var _auth_candidate_sign_up_candidate_sign_up_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./auth/candidate-sign-up/candidate-sign-up.component */ 73318);
-/* harmony import */ var _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! @fullcalendar/angular */ 35717);
+/* harmony import */ var _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! @fullcalendar/angular */ 35717);
 /* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fullcalendar/daygrid */ 13947);
 /* harmony import */ var _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fullcalendar/timegrid */ 69901);
 /* harmony import */ var _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fullcalendar/interaction */ 85194);
@@ -1614,9 +1720,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _interviewer_assessment_interview_interview_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./interviewer/assessment/interview/interview.component */ 72597);
 /* harmony import */ var _util_location_select_location_select_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./util/location-select/location-select.component */ 2129);
 /* harmony import */ var _util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./util/alert-dialog/alert-dialog.component */ 12278);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
 /* harmony import */ var _util_reference_select_reference_select_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./util/reference-select/reference-select.component */ 26984);
-/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
+/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
 /* harmony import */ var _candidate_assessment_test_take_test_take_test_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./candidate/assessment/test/take-test/take-test.component */ 90744);
 /* harmony import */ var _modules_test_test_module__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../modules/test/test.module */ 98459);
 /* harmony import */ var _util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./util/profile-card/profile-card.component */ 56078);
@@ -1640,13 +1746,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _recruiter_my_account_initiate_reference_initiate_reference_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./recruiter/my-account/initiate-reference/initiate-reference.component */ 19301);
 /* harmony import */ var _recruiter_my_account_initiated_references_initiated_references_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./recruiter/my-account/initiated-references/initiated-references.component */ 25006);
 /* harmony import */ var _util_button_interview_record_button_interview_record_button_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./util/button/interview-record-button/interview-record-button.component */ 64622);
-/* harmony import */ var _recruiter_my_account_wallet_wallet_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./recruiter/my-account/wallet/wallet.component */ 73109);
-/* harmony import */ var _recruiter_my_account_reference_id_reference_id_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./recruiter/my-account/reference-id/reference-id.component */ 50333);
-/* harmony import */ var _recruiter_my_account_subscription_subscription_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./recruiter/my-account/subscription/subscription.component */ 43290);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./candidate/candidate-login/candidate-login.component */ 22271);
-/* harmony import */ var _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./candidate/candidate-register/candidate-register.component */ 18638);
-/* harmony import */ var _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./candidate/profile/profile.component */ 27531);
+/* harmony import */ var _admin_candidate_interviewer_match_candidate_interviewer_match_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./admin/candidate-interviewer-match/candidate-interviewer-match.component */ 80081);
+/* harmony import */ var _recruiter_my_account_wallet_wallet_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./recruiter/my-account/wallet/wallet.component */ 73109);
+/* harmony import */ var _recruiter_my_account_reference_id_reference_id_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./recruiter/my-account/reference-id/reference-id.component */ 50333);
+/* harmony import */ var _recruiter_my_account_subscription_subscription_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./recruiter/my-account/subscription/subscription.component */ 43290);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./candidate/candidate-login/candidate-login.component */ 22271);
+/* harmony import */ var _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./candidate/candidate-register/candidate-register.component */ 18638);
+/* harmony import */ var _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ./candidate/profile/profile.component */ 27531);
 
 
 
@@ -1748,7 +1855,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_fullcalendar_angular__WEBPACK_IMPORTED_MODULE_67__.FullCalendarModule.registerPlugins([
+
+_fullcalendar_angular__WEBPACK_IMPORTED_MODULE_68__.FullCalendarModule.registerPlugins([
     _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_30__["default"],
     _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_32__["default"],
     _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_31__["default"]
@@ -1756,42 +1864,42 @@ _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_67__.FullCalendarModule.registerP
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_68__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent] });
-AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_68__["ɵɵdefineInjector"]({ providers: [_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService, src_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__.AuthGuard, src_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_10__.AuthService], imports: [[
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_69__.BrowserModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_70__.ReactiveFormsModule,
+AppModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_69__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent] });
+AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_69__["ɵɵdefineInjector"]({ providers: [_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService, src_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__.AuthGuard, src_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_10__.AuthService], imports: [[
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_70__.BrowserModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_71__.ReactiveFormsModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_71__.HttpClientModule,
-            ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_72__.NgxDocViewerModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_72__.HttpClientModule,
+            ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_73__.NgxDocViewerModule,
             ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__.ModalModule.forRoot(),
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_73__.BrowserAnimationsModule,
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_74__.ToastrModule.forRoot(),
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_74__.BrowserAnimationsModule,
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_75__.ToastrModule.forRoot(),
             ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__.AccordionModule.forRoot(),
-            _angular_forms__WEBPACK_IMPORTED_MODULE_70__.FormsModule,
-            _angular_material_input__WEBPACK_IMPORTED_MODULE_75__.MatInputModule,
-            _angular_material_table__WEBPACK_IMPORTED_MODULE_76__.MatTableModule,
-            _angular_material_sort__WEBPACK_IMPORTED_MODULE_77__.MatSortModule,
-            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_78__.MatCheckboxModule,
-            _angular_material_card__WEBPACK_IMPORTED_MODULE_79__.MatCardModule,
-            _angular_material_button__WEBPACK_IMPORTED_MODULE_80__.MatButtonModule,
-            _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_81__.MatToolbarModule,
-            _angular_material_icon__WEBPACK_IMPORTED_MODULE_82__.MatIconModule,
-            _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_83__.MatSidenavModule,
-            _angular_material_list__WEBPACK_IMPORTED_MODULE_84__.MatListModule,
-            _angular_material_select__WEBPACK_IMPORTED_MODULE_85__.MatSelectModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_71__.FormsModule,
+            _angular_material_input__WEBPACK_IMPORTED_MODULE_76__.MatInputModule,
+            _angular_material_table__WEBPACK_IMPORTED_MODULE_77__.MatTableModule,
+            _angular_material_sort__WEBPACK_IMPORTED_MODULE_78__.MatSortModule,
+            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_79__.MatCheckboxModule,
+            _angular_material_card__WEBPACK_IMPORTED_MODULE_80__.MatCardModule,
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_81__.MatButtonModule,
+            _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_82__.MatToolbarModule,
+            _angular_material_icon__WEBPACK_IMPORTED_MODULE_83__.MatIconModule,
+            _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_84__.MatSidenavModule,
+            _angular_material_list__WEBPACK_IMPORTED_MODULE_85__.MatListModule,
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_86__.MatSelectModule,
             angular_datatables__WEBPACK_IMPORTED_MODULE_8__.DataTablesModule,
-            _angular_material_slider__WEBPACK_IMPORTED_MODULE_86__.MatSliderModule,
-            _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_87__.NgxSliderModule,
-            ngx_countdown__WEBPACK_IMPORTED_MODULE_88__.CountdownModule,
-            ng_http_loader__WEBPACK_IMPORTED_MODULE_89__.NgHttpLoaderModule.forRoot(),
-            _angular_material_chips__WEBPACK_IMPORTED_MODULE_90__.MatChipsModule,
-            _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_91__.MatAutocompleteModule,
-            _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_67__.FullCalendarModule,
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_92__.MatDialogModule,
-            ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_93__.NgxIntlTelInputModule,
+            _angular_material_slider__WEBPACK_IMPORTED_MODULE_87__.MatSliderModule,
+            _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_88__.NgxSliderModule,
+            ngx_countdown__WEBPACK_IMPORTED_MODULE_89__.CountdownModule,
+            ng_http_loader__WEBPACK_IMPORTED_MODULE_90__.NgHttpLoaderModule.forRoot(),
+            _angular_material_chips__WEBPACK_IMPORTED_MODULE_91__.MatChipsModule,
+            _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_92__.MatAutocompleteModule,
+            _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_68__.FullCalendarModule,
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_93__.MatDialogModule,
+            ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_94__.NgxIntlTelInputModule,
             _modules_test_test_module__WEBPACK_IMPORTED_MODULE_39__.TestModule,
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_68__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_64__.CandidateLoginComponent, _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_65__.CandidateRegisterComponent, _candidate_candidate_component__WEBPACK_IMPORTED_MODULE_19__.CandidateComponent, _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_66__.ProfileComponent, _candidate_profile_resume_resume_component__WEBPACK_IMPORTED_MODULE_20__.ResumeComponent, _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__.HomePageComponent, _candidate_recruitment_recruitment_component__WEBPACK_IMPORTED_MODULE_16__.RecruitmentComponent,
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_69__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_65__.CandidateLoginComponent, _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_66__.CandidateRegisterComponent, _candidate_candidate_component__WEBPACK_IMPORTED_MODULE_19__.CandidateComponent, _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_67__.ProfileComponent, _candidate_profile_resume_resume_component__WEBPACK_IMPORTED_MODULE_20__.ResumeComponent, _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__.HomePageComponent, _candidate_recruitment_recruitment_component__WEBPACK_IMPORTED_MODULE_16__.RecruitmentComponent,
         _candidate_recruitment_hiretest_hiretest_component__WEBPACK_IMPORTED_MODULE_15__.HiretestComponent,
         _recruiter_recruiter_component__WEBPACK_IMPORTED_MODULE_5__.RecruiterComponent,
         _recruiter_profiles_profiles_component__WEBPACK_IMPORTED_MODULE_6__.ProfilesComponent,
@@ -1840,32 +1948,33 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_68__["ɵ�
         _recruiter_my_account_initiate_reference_initiate_reference_component__WEBPACK_IMPORTED_MODULE_58__.InitiateReferenceComponent,
         _recruiter_my_account_initiated_references_initiated_references_component__WEBPACK_IMPORTED_MODULE_59__.InitiatedReferencesComponent,
         _util_button_interview_record_button_interview_record_button_component__WEBPACK_IMPORTED_MODULE_60__.InterviewRecordButtonComponent,
-        _recruiter_my_account_reference_id_reference_id_component__WEBPACK_IMPORTED_MODULE_62__.ReferenceIdComponent,
-        _recruiter_my_account_subscription_subscription_component__WEBPACK_IMPORTED_MODULE_63__.SubscriptionComponent,
-        _recruiter_my_account_wallet_wallet_component__WEBPACK_IMPORTED_MODULE_61__.WalletComponent], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_69__.BrowserModule,
-        _angular_forms__WEBPACK_IMPORTED_MODULE_70__.ReactiveFormsModule,
+        _admin_candidate_interviewer_match_candidate_interviewer_match_component__WEBPACK_IMPORTED_MODULE_61__.CandidateInterviewerMatchComponent,
+        _recruiter_my_account_reference_id_reference_id_component__WEBPACK_IMPORTED_MODULE_63__.ReferenceIdComponent,
+        _recruiter_my_account_subscription_subscription_component__WEBPACK_IMPORTED_MODULE_64__.SubscriptionComponent,
+        _recruiter_my_account_wallet_wallet_component__WEBPACK_IMPORTED_MODULE_62__.WalletComponent], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_70__.BrowserModule,
+        _angular_forms__WEBPACK_IMPORTED_MODULE_71__.ReactiveFormsModule,
         _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
-        _angular_common_http__WEBPACK_IMPORTED_MODULE_71__.HttpClientModule,
-        ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_72__.NgxDocViewerModule, ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__.ModalModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_73__.BrowserAnimationsModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_74__.ToastrModule, ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__.AccordionModule, _angular_forms__WEBPACK_IMPORTED_MODULE_70__.FormsModule,
-        _angular_material_input__WEBPACK_IMPORTED_MODULE_75__.MatInputModule,
-        _angular_material_table__WEBPACK_IMPORTED_MODULE_76__.MatTableModule,
-        _angular_material_sort__WEBPACK_IMPORTED_MODULE_77__.MatSortModule,
-        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_78__.MatCheckboxModule,
-        _angular_material_card__WEBPACK_IMPORTED_MODULE_79__.MatCardModule,
-        _angular_material_button__WEBPACK_IMPORTED_MODULE_80__.MatButtonModule,
-        _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_81__.MatToolbarModule,
-        _angular_material_icon__WEBPACK_IMPORTED_MODULE_82__.MatIconModule,
-        _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_83__.MatSidenavModule,
-        _angular_material_list__WEBPACK_IMPORTED_MODULE_84__.MatListModule,
-        _angular_material_select__WEBPACK_IMPORTED_MODULE_85__.MatSelectModule,
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_72__.HttpClientModule,
+        ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_73__.NgxDocViewerModule, ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__.ModalModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_74__.BrowserAnimationsModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_75__.ToastrModule, ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__.AccordionModule, _angular_forms__WEBPACK_IMPORTED_MODULE_71__.FormsModule,
+        _angular_material_input__WEBPACK_IMPORTED_MODULE_76__.MatInputModule,
+        _angular_material_table__WEBPACK_IMPORTED_MODULE_77__.MatTableModule,
+        _angular_material_sort__WEBPACK_IMPORTED_MODULE_78__.MatSortModule,
+        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_79__.MatCheckboxModule,
+        _angular_material_card__WEBPACK_IMPORTED_MODULE_80__.MatCardModule,
+        _angular_material_button__WEBPACK_IMPORTED_MODULE_81__.MatButtonModule,
+        _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_82__.MatToolbarModule,
+        _angular_material_icon__WEBPACK_IMPORTED_MODULE_83__.MatIconModule,
+        _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_84__.MatSidenavModule,
+        _angular_material_list__WEBPACK_IMPORTED_MODULE_85__.MatListModule,
+        _angular_material_select__WEBPACK_IMPORTED_MODULE_86__.MatSelectModule,
         angular_datatables__WEBPACK_IMPORTED_MODULE_8__.DataTablesModule,
-        _angular_material_slider__WEBPACK_IMPORTED_MODULE_86__.MatSliderModule,
-        _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_87__.NgxSliderModule,
-        ngx_countdown__WEBPACK_IMPORTED_MODULE_88__.CountdownModule, ng_http_loader__WEBPACK_IMPORTED_MODULE_89__.NgHttpLoaderModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_90__.MatChipsModule,
-        _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_91__.MatAutocompleteModule,
-        _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_67__.FullCalendarModule,
-        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_92__.MatDialogModule,
-        ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_93__.NgxIntlTelInputModule,
+        _angular_material_slider__WEBPACK_IMPORTED_MODULE_87__.MatSliderModule,
+        _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_88__.NgxSliderModule,
+        ngx_countdown__WEBPACK_IMPORTED_MODULE_89__.CountdownModule, ng_http_loader__WEBPACK_IMPORTED_MODULE_90__.NgHttpLoaderModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_91__.MatChipsModule,
+        _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_92__.MatAutocompleteModule,
+        _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_68__.FullCalendarModule,
+        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_93__.MatDialogModule,
+        ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_94__.NgxIntlTelInputModule,
         _modules_test_test_module__WEBPACK_IMPORTED_MODULE_39__.TestModule] }); })();
 
 
