@@ -14131,7 +14131,7 @@ class CreateReferenceComponent {
 
   fetch_subscriptions() {
     this.apiService.fetchSubscriptions("").then(data => {
-      this.active_subscriptions = data;
+      this.active_subscriptions = data['details'];
     });
   }
 
@@ -16935,200 +16935,222 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewSubscriptionComponent": () => (/* binding */ ViewSubscriptionComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var src_app_api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api.service */ 51491);
+/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng-http-loader */ 23020);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
+
+
+
+
 
 
 
 
 function ViewSubscriptionComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 9)(1, "div", 10)(2, "div", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "i", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div")(5, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Currently you do not have any subscription. Please go to ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "span", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "BUY NEW SUBSCRIPTION");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " tab and buy a subscription. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "p")(11, "span", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Please note:");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, " If you do not have any active subscription, the amount for creating a test or interview will be debited from your wallet.");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 9)(1, "div", 10)(2, "div", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "i", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div")(5, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Currently you do not have any subscription. Please go to ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "span", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "BUY NEW SUBSCRIPTION");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, " tab and buy a subscription. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "p")(11, "span", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "Please note:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, " If you do not have any active subscription, the amount for creating a test or interview will be debited from your wallet.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
 } }
 function ViewSubscriptionComponent_div_11_span_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const subscription_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](subscription_r2.status);
+    const subscription_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.status);
 } }
 function ViewSubscriptionComponent_div_11_span_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const subscription_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](subscription_r2.status);
+    const subscription_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.status);
 } }
 function ViewSubscriptionComponent_div_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 14)(1, "div", 15)(2, "div", 16)(3, "div", 17)(4, "h5");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "p", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "span", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ViewSubscriptionComponent_div_11_span_11_Template, 2, 1, "span", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, ViewSubscriptionComponent_div_11_span_12_Template, 2, 1, "span", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 23)(14, "div", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Subscription ID");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 23)(19, "div", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "Expiry");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "i", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 26)(25, "div", 27)(26, "div", 28)(27, "div", 29)(28, "div", 30)(29, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 31)(32, "span", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "i", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, " Still Images");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "span", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "i", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, " Video");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](39, "div", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "span", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 28)(43, "div", 29)(44, "div", 30)(45, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 31)(48, "span", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](49, "i", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, " Video ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](52, "div", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "span", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()()()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 14)(1, "div", 15)(2, "div", 16)(3, "div", 17)(4, "h5");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "p", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "span", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, ViewSubscriptionComponent_div_11_span_11_Template, 2, 1, "span", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, ViewSubscriptionComponent_div_11_span_12_Template, 2, 1, "span", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 23)(14, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Expiry");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](17, "i", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 26)(20, "div", 27)(21, "div", 28)(22, "div", 29)(23, "div", 30)(24, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "div", 31)(27, "span", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "i", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](29, " Still Images");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "span", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](31, "i", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, " Video");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "div", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](34, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "span", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "div", 28)(38, "div", 29)(39, "div", 30)(40, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](42, "div", 31)(43, "span", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](44, "i", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](45, " Video ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](46, "div", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](47, "div", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](48, "span", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "div", 23)(51, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](52, "Per test \u20B9");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](54);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "div", 23)(56, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](57, "Per interview \u20B9");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()();
 } if (rf & 2) {
     const subscription_r2 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](subscription_r2.plan_name);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("\u20B9 ", subscription_r2.total_cost, "/");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](subscription_r2.frequency);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", subscription_r2.status == "active");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", subscription_r2.status == "expired");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](subscription_r2.subscription_id);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", subscription_r2.expiry_date, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_tests, " candidates tests");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", subscription_r2.test_cam_on ? "icon-checkmark2" : "icon-cross3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", subscription_r2.test_video_on ? "icon-checkmark2" : "icon-cross3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("width", subscription_r2.tests_conducted / subscription_r2.no_of_tests * 100 + "%");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_tests - subscription_r2.tests_conducted, " Remaining");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_interviews, " interviews");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", subscription_r2.interview_video_on ? "icon-checkmark2" : "icon-cross3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("width", subscription_r2.interviews_conducted / subscription_r2.no_of_interviews * 100 + "%");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_interviews - subscription_r2.interviews_conducted, " Remaining");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.plan_name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("\u20B9 ", subscription_r2.total_cost, "/");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.frequency);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", subscription_r2.status == "active");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", subscription_r2.status == "expired");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", subscription_r2.expiry_date, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_tests, " candidates tests");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", subscription_r2.test_cam_on ? "icon-checkmark2" : "icon-cross3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", subscription_r2.test_video_on ? "icon-checkmark2" : "icon-cross3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("width", subscription_r2.tests_conducted / subscription_r2.no_of_tests * 100 + "%");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_tests - subscription_r2.tests_conducted, " Remaining");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_interviews, " interviews");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", subscription_r2.interview_video_on ? "icon-checkmark2" : "icon-cross3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("width", subscription_r2.interviews_conducted / subscription_r2.no_of_interviews * 100 + "%");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("", subscription_r2.no_of_interviews - subscription_r2.interviews_conducted, " Remaining");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.per_test_price);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.per_interview_price);
 } }
 class ViewSubscriptionComponent {
-    constructor() {
+    // subscriptions: subscription_data[] = [
+    //   {
+    //     plan_name: "GOLD",
+    //     subscription_id: "xxxxx",
+    //     frequency: "MONTHLY",
+    //     no_of_tests: 200,
+    //     no_of_interviews: 50,
+    //     test_cam_on: false,
+    //     test_video_on: true,
+    //     interview_video_on: true,
+    //     per_test_price: 200,
+    //     per_interview_price: 2000,
+    //     total_cost: 100000,
+    //     expiry_date: "10-OCTOBER-2022",
+    //     status: "active",
+    //     tests_conducted: 15,
+    //     interviews_conducted: 10
+    //   },
+    //   {
+    //     plan_name: "GOLD",
+    //     subscription_id: "yyyyyy",
+    //     frequency: "SIX-MONTHLY",
+    //     no_of_tests: 1300,
+    //     no_of_interviews: 320,
+    //     test_cam_on: false,
+    //     test_video_on: true,
+    //     interview_video_on: true,
+    //     per_test_price: 200,
+    //     per_interview_price: 2000,
+    //     total_cost: 600000,
+    //     expiry_date: "02-APR-2022",
+    //     status: "expired",
+    //     tests_conducted: 150,
+    //     interviews_conducted: 100
+    //   },
+    //   {
+    //     plan_name: "SILVER",
+    //     subscription_id: "xxxxx",
+    //     frequency: "MONTHLY",
+    //     no_of_tests: 200,
+    //     no_of_interviews: 20,
+    //     test_cam_on: false,
+    //     test_video_on: true,
+    //     interview_video_on: false,
+    //     per_test_price: 200,
+    //     per_interview_price: 2000,
+    //     total_cost: 60000,
+    //     expiry_date: "01-APR-2022",
+    //     status: "expired",
+    //     tests_conducted: 15,
+    //     interviews_conducted: 10
+    //   },
+    // ]
+    constructor(matDialog, http, apiService, spinnerVisibilityService) {
+        this.matDialog = matDialog;
+        this.http = http;
+        this.apiService = apiService;
+        this.spinnerVisibilityService = spinnerVisibilityService;
         this.subscriptionStatus = 'active';
         this.display_subscriptions = [];
-        this.subscriptions = [
-            {
-                plan_name: "GOLD",
-                subscription_id: "xxxxx",
-                frequency: "MONTHLY",
-                no_of_tests: 200,
-                no_of_interviews: 50,
-                test_cam_on: false,
-                test_video_on: true,
-                interview_video_on: true,
-                per_test_price: 200,
-                per_interview_price: 2000,
-                total_cost: 100000,
-                expiry_date: "10-OCTOBER-2022",
-                status: "active",
-                tests_conducted: 15,
-                interviews_conducted: 10
-            },
-            {
-                plan_name: "GOLD",
-                subscription_id: "yyyyyy",
-                frequency: "SIX-MONTHLY",
-                no_of_tests: 1300,
-                no_of_interviews: 320,
-                test_cam_on: false,
-                test_video_on: true,
-                interview_video_on: true,
-                per_test_price: 200,
-                per_interview_price: 2000,
-                total_cost: 600000,
-                expiry_date: "02-APR-2022",
-                status: "expired",
-                tests_conducted: 150,
-                interviews_conducted: 100
-            },
-            {
-                plan_name: "SILVER",
-                subscription_id: "xxxxx",
-                frequency: "MONTHLY",
-                no_of_tests: 200,
-                no_of_interviews: 20,
-                test_cam_on: false,
-                test_video_on: true,
-                interview_video_on: false,
-                per_test_price: 200,
-                per_interview_price: 2000,
-                total_cost: 60000,
-                expiry_date: "01-APR-2022",
-                status: "expired",
-                tests_conducted: 15,
-                interviews_conducted: 10
-            },
-        ];
+        this.subscriptions = [];
     }
     ngOnInit() {
-        this.subscription_status_change();
+        this.fetch_subscriptions();
+        // this.subscription_status_change()
     }
     subscription_status_change() {
         console.log(this.subscriptionStatus);
@@ -17139,33 +17161,75 @@ class ViewSubscriptionComponent {
             }
         });
     }
+    fetch_subscriptions() {
+        let count = 0;
+        this.apiService.fetchSubscriptions("").then((data) => {
+            console.log(data);
+            let status = "";
+            let frequency = "";
+            data['details'].forEach((element, index) => {
+                status = element['is_active'] ? "active" : "inactive";
+                if ((new Date(element['expiry_date'])) < (new Date())) {
+                    status = "expired";
+                }
+                if (element['frequency'] == 'M') {
+                    frequency = "MONTHLY";
+                }
+                else if (element['frequency'] == 'S') {
+                    frequency = "SIX-MONTHLY";
+                }
+                else if (element['frequency'] == 'Y') {
+                    frequency = "YEARLY";
+                }
+                this.subscriptions[count] = {
+                    plan_name: element['name'],
+                    frequency: frequency,
+                    no_of_tests: element['tests'],
+                    no_of_interviews: element['interviews'],
+                    test_cam_on: element['test_cam_on'] ? true : false,
+                    test_video_on: element['test_video_on'] ? true : false,
+                    interview_video_on: element['interview_video_on'] ? true : false,
+                    per_test_price: element['per_test_price'],
+                    per_interview_price: element['per_interview_price'],
+                    total_cost: element['total_cost'],
+                    expiry_date: element['expiry_date'],
+                    status: status,
+                    tests_conducted: data['no_of_tests'][index],
+                    interviews_conducted: data['no_of_interviews'][index]
+                };
+                count = count + 1;
+            });
+            this.subscription_status_change();
+            console.log(this.subscriptions);
+        });
+    }
 }
-ViewSubscriptionComponent.ɵfac = function ViewSubscriptionComponent_Factory(t) { return new (t || ViewSubscriptionComponent)(); };
-ViewSubscriptionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewSubscriptionComponent, selectors: [["app-view-subscription"]], decls: 12, vars: 3, consts: [[1, "tab-pane", "active"], ["class", "alert alert-info", 4, "ngIf"], [1, "form-group", "form-inline"], [1, "control-label", "pr-2"], [1, "form-control", "field-sm", "sm", 3, "ngModel", "change", "ngModelChange"], ["value", "active"], ["value", "expired"], [1, "subscriptions-list"], ["class", "subscriptions", 4, "ngFor", "ngForOf"], [1, "alert", "alert-info"], [1, "d-flex"], [1, "pr-2"], [1, "icon-info22", "m-2", "font-large-4", "text-primary"], [1, "text-bold"], [1, "subscriptions"], [1, "body"], [1, "row", "row-subscription", "align-items-center"], [1, "col", "col-md-2", "mb-2", "mb-md-0"], [1, "font-large-3"], [1, "font-small-3"], [1, "col", "col-status", "col-md-1", "mb-2", "mb-md-0"], ["class", "badge badge-success", 4, "ngIf"], ["class", "badge badge-warning", 4, "ngIf"], [1, "col", "col-expiry", "col-md-2", "mb-2", "mb-md-0"], [1, "text-head"], [1, "icon-calendar", "font-small-2"], [1, "col", "col-subscription", "col-md-5", "mb-2", "mb-md-0"], [1, "row", "row-seamless", "align-items-center"], [1, "col-sm-6", "mb-2", "mb-md-0"], [1, "alert", "alert-success", "p-2", "m-0", "mr-1", "ml-1"], [1, "pb-1"], [1, "font-small-3", "video-and-tests"], [1, "pr-3", "icons"], [3, "ngClass"], [1, "progress", "progress-subscription"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.tests_conducted/subscription.no_of_tests*100", "role", "progressbar", 1, "progress-bar", "bg-success"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.interviews_conducted/subscription.no_of_interviews*100", "role", "progressbar", 1, "progress-bar", "bg-success"], [1, "badge", "badge-success"], [1, "badge", "badge-warning"]], template: function ViewSubscriptionComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewSubscriptionComponent_div_1_Template, 14, 0, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2)(3, "label", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Filter By:");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "select", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function ViewSubscriptionComponent_Template_select_change_5_listener() { return ctx.subscription_status_change(); })("ngModelChange", function ViewSubscriptionComponent_Template_select_ngModelChange_5_listener($event) { return ctx.subscriptionStatus = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "option", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Active");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "option", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Expired");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ViewSubscriptionComponent_div_11_Template, 55, 18, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+ViewSubscriptionComponent.ɵfac = function ViewSubscriptionComponent_Factory(t) { return new (t || ViewSubscriptionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_4__.SpinnerVisibilityService)); };
+ViewSubscriptionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ViewSubscriptionComponent, selectors: [["app-view-subscription"]], decls: 12, vars: 3, consts: [[1, "tab-pane", "active"], ["class", "alert alert-info", 4, "ngIf"], [1, "form-group", "form-inline"], [1, "control-label", "pr-2"], [1, "form-control", "field-sm", "sm", 3, "ngModel", "change", "ngModelChange"], ["value", "active"], ["value", "expired"], [1, "subscriptions-list"], ["class", "subscriptions", 4, "ngFor", "ngForOf"], [1, "alert", "alert-info"], [1, "d-flex"], [1, "pr-2"], [1, "icon-info22", "m-2", "font-large-4", "text-primary"], [1, "text-bold"], [1, "subscriptions"], [1, "body"], [1, "row", "row-subscription", "align-items-center"], [1, "col", "col-md-2", "mb-2", "mb-md-0"], [1, "font-large-3"], [1, "font-small-3"], [1, "col", "col-status", "col-md-1", "mb-2", "mb-md-0"], ["class", "badge badge-success", 4, "ngIf"], ["class", "badge badge-warning", 4, "ngIf"], [1, "col", "col-expiry", "col-md-2", "mb-2", "mb-md-0"], [1, "text-head"], [1, "icon-calendar", "font-small-2"], [1, "col", "col-subscription", "col-md-5", "mb-2", "mb-md-0"], [1, "row", "row-seamless", "align-items-center"], [1, "col-sm-6", "mb-2", "mb-md-0"], [1, "alert", "alert-success", "p-2", "m-0", "mr-1", "ml-1"], [1, "pb-1"], [1, "font-small-3", "video-and-tests"], [1, "pr-3", "icons"], [3, "ngClass"], [1, "progress", "progress-subscription"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.tests_conducted/subscription.no_of_tests*100", "role", "progressbar", 1, "progress-bar", "bg-success"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.interviews_conducted/subscription.no_of_interviews*100", "role", "progressbar", 1, "progress-bar", "bg-success"], [1, "badge", "badge-success"], [1, "badge", "badge-warning"]], template: function ViewSubscriptionComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ViewSubscriptionComponent_div_1_Template, 14, 0, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2)(3, "label", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Filter By:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "select", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("change", function ViewSubscriptionComponent_Template_select_change_5_listener() { return ctx.subscription_status_change(); })("ngModelChange", function ViewSubscriptionComponent_Template_select_ngModelChange_5_listener($event) { return ctx.subscriptionStatus = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "option", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Active");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "option", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Expired");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, ViewSubscriptionComponent_div_11_Template, 60, 19, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.display_subscriptions.length == 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.subscriptionStatus);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.display_subscriptions);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_3__.NativeElementInjectorDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2aWV3LXN1YnNjcmlwdGlvbi5jb21wb25lbnQuY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.display_subscriptions.length == 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.subscriptionStatus);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.display_subscriptions);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_7__.NativeElementInjectorDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgClass], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2aWV3LXN1YnNjcmlwdGlvbi5jb21wb25lbnQuY3NzIn0= */"] });
 
 
 /***/ }),
