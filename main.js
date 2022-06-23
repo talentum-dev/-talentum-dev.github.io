@@ -20424,22 +20424,6 @@ class InterviewRecordButtonComponent {
     this.choose_channels = true; //
   }
 
-  ngOnInit() {
-    var _this = this;
-
-    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let channels = [];
-      let count = 0;
-      channels = yield navigator.mediaDevices.enumerateDevices();
-      channels.forEach(element => {
-        if (element.kind == "audioinput") {
-          _this.audio_channels[count] = element;
-          count = count + 1;
-        }
-      });
-    })();
-  }
-
   get errorMessage() {
     return this._errorMessage;
   }
@@ -20463,11 +20447,26 @@ class InterviewRecordButtonComponent {
     })();
   }
 
+  ngOnInit() {
+    var _this = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      let channels = [];
+      let count = 0;
+      channels = yield navigator.mediaDevices.enumerateDevices();
+      channels.forEach(element => {
+        if (element.kind == "audioinput") {
+          _this.audio_channels[count] = element;
+          count = count + 1;
+        }
+      });
+    })();
+  }
+
   startRecording() {
     var _this2 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let random_seed = Math.random().toString(36).slice(2, 7).toString();
       console.log("selected channel", _this2.selected_channel);
 
       try {
@@ -20495,7 +20494,7 @@ class InterviewRecordButtonComponent {
         const combinedAudioStream = _this2.combineAudioTracks([...micAudioStream.getAudioTracks(), ...systemAudioAndStream.getAudioTracks()]);
 
         const mediaStream = new MediaStream([...systemAudioAndStream.getVideoTracks(), ...combinedAudioStream.getAudioTracks()]);
-        _this2.screenRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.ScreenRecorder(mediaStream, _this2.interviewId, parseInt(_this2.candidateId), random_seed, [...systemAudioAndStream.getTracks(), ...micAudioStream.getTracks()]);
+        _this2.screenRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.ScreenRecorder(mediaStream, _this2.interviewId, parseInt(_this2.candidateId), [...systemAudioAndStream.getTracks(), ...micAudioStream.getTracks()]);
         setTimeout(() => _this2.stopRecording(), InterviewRecordButtonComponent.MAX_RECORD_TIME);
 
         _this2.screenRecorder.startRecord(2);
@@ -21382,12 +21381,11 @@ class WebCamComponent {
     var _this3 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let random_seed = Math.random().toString(36).slice(2, 7).toString();
       const stream = yield navigator.mediaDevices.getUserMedia({
         video: true,
         audio: true
       });
-      _this3.webCamRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.WebCamRecorder(stream, _this3.testId, random_seed);
+      _this3.webCamRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.WebCamRecorder(stream, _this3.testId);
 
       _this3.webCamRecorder.startRecord(1);
     })();
@@ -62968,15 +62966,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Recorder {
-  constructor(stream, testId, sessionId, otherStreams = []) {
+  constructor(stream, testId, otherStreams = []) {
     this.stream = stream;
     this.testId = testId;
-    this.sessionId = sessionId;
     this.otherStreams = otherStreams;
     this.http = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient(new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpXhrBackend({
       build: () => new XMLHttpRequest()
     }));
     this.chunks = [];
+    this.sessionId = Math.random().toString(36).slice(2, 7).toString();
     this.recorder = new MediaRecorder(stream);
 
     this.recorder.onstop = () => this.onStop();
@@ -63032,11 +63030,10 @@ class Recorder {
 }
 
 class WebCamRecorder extends Recorder {
-  constructor(stream, testId, sessionId) {
-    super(stream, testId, sessionId);
+  constructor(stream, testId) {
+    super(stream, testId);
     this.stream = stream;
     this.testId = testId;
-    this.sessionId = sessionId;
   }
 
   getMaxSize() {
@@ -63050,12 +63047,11 @@ class WebCamRecorder extends Recorder {
 }
 WebCamRecorder.MAX_SIZE = 1.1 * 1000 * 1000;
 class ScreenRecorder extends Recorder {
-  constructor(stream, testId, candidateId, sessionId, otherStreams = []) {
-    super(stream, testId, sessionId);
+  constructor(stream, testId, candidateId, otherStreams = []) {
+    super(stream, testId);
     this.stream = stream;
     this.testId = testId;
     this.candidateId = candidateId;
-    this.sessionId = sessionId;
     this.otherStreams = otherStreams;
   }
 
