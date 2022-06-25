@@ -20345,13 +20345,13 @@ function InterviewRecordButtonComponent_a_0_Template(rf, ctx) {
 
 function InterviewRecordButtonComponent_button_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewRecordButtonComponent_button_1_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r4);
-      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r3.stopRecording();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r5);
+      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return ctx_r4.stopRecording();
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "span", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "i", 21);
@@ -20368,10 +20368,25 @@ function InterviewRecordButtonComponent_option_17_Template(rf, ctx) {
   }
 
   if (rf & 2) {
-    const channel_r5 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", channel_r5.deviceId);
+    const channel_r6 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", channel_r6.deviceId);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](channel_r5.label);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](channel_r6.label);
+  }
+}
+
+function InterviewRecordButtonComponent_option_24_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "option", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
+
+  if (rf & 2) {
+    const channel_r7 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", channel_r7.deviceId);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](channel_r7.label);
   }
 }
 
@@ -20387,6 +20402,8 @@ class InterviewRecordButtonComponent {
     this.recording = false;
     this.audio_channels = [];
     this.selected_channel = "";
+    this.audio_channels_output = [];
+    this.selected_channel_output = "";
     this.choose_channels = true; //
   }
 
@@ -20419,11 +20436,18 @@ class InterviewRecordButtonComponent {
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let channels = [];
       let count = 0;
+      let count_output = 0;
       channels = yield navigator.mediaDevices.enumerateDevices();
+      console.log(channels);
       channels.forEach(element => {
         if (element.kind == "audioinput") {
           _this.audio_channels[count] = element;
           count = count + 1;
+        }
+
+        if (element.kind == "audiooutput") {
+          _this.audio_channels_output[count_output] = element;
+          count_output = count_output + 1;
         }
       });
     })();
@@ -20444,8 +20468,8 @@ class InterviewRecordButtonComponent {
 
           _this2.matDialog.open(_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, {
             data: {
-              "message": "You Have stopped sharing the screen. This will stop the recording. Please record again !",
-              "type": "ERROR"
+              message: "You Have stopped sharing the screen. This will stop the recording. Please record again !",
+              dialogLevel: "ERROR"
             }
           });
         };
@@ -20454,18 +20478,53 @@ class InterviewRecordButtonComponent {
           deviceId: {
             exact: _this2.selected_channel
           }
-        }; // const micAudioStream = await navigator.mediaDevices.getUserMedia({audio: true})
+        };
+        var constraints_output = {
+          deviceId: {
+            exact: _this2.selected_channel_output
+          }
+        };
+        let check_input = navigator.mediaDevices.getUserMedia({
+          audio: constraints
+        });
+        let check_output = navigator.mediaDevices.getUserMedia({
+          audio: constraints_output
+        });
+        yield setTimeout(() => {
+          Promise.resolve(check_input).catch(error => {
+            _this2.matDialog.open(_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, {
+              data: {
+                "message": `Input audio track is not available ! Please change system settings.
+                          Please refresh your page after changing system audio settings`,
+                "dialogLevel": "ERROR"
+              }
+            });
 
+            systemAudioAndStream.getTracks().forEach(track => track.stop());
+          });
+          Promise.resolve(check_output).catch(error => {
+            _this2.matDialog.open(_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, {
+              data: {
+                "message": `Output audio track is not available ! Please change system settings.
+                          Please refresh your page after changing system audio settings`,
+                "dialogLevel": "ERROR"
+              }
+            });
+
+            systemAudioAndStream.getTracks().forEach(track => track.stop());
+          });
+        }, 3000);
         const micAudioStream = yield navigator.mediaDevices.getUserMedia({
           audio: constraints
         });
-        console.log(micAudioStream.getAudioTracks());
-        console.log("systemaudiostream", systemAudioAndStream.getAudioTracks());
+        const speakerAudioStream = yield navigator.mediaDevices.getUserMedia({
+          audio: constraints_output
+        });
 
-        const combinedAudioStream = _this2.combineAudioTracks([...micAudioStream.getAudioTracks(), ...systemAudioAndStream.getAudioTracks()]);
+        const combinedAudioStream = _this2.combineAudioTracks([...micAudioStream.getAudioTracks(), ...speakerAudioStream.getAudioTracks(), ...systemAudioAndStream.getAudioTracks()]);
 
         const mediaStream = new MediaStream([...systemAudioAndStream.getVideoTracks(), ...combinedAudioStream.getAudioTracks()]);
-        _this2.screenRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.ScreenRecorder(mediaStream, _this2.interviewId, parseInt(_this2.candidateId), [...systemAudioAndStream.getTracks(), ...micAudioStream.getTracks()]);
+        _this2.screenRecorder = new _models_webcam_model__WEBPACK_IMPORTED_MODULE_1__.ScreenRecorder(mediaStream, _this2.interviewId, parseInt(_this2.candidateId), [...systemAudioAndStream.getTracks(), ...micAudioStream.getTracks(),, ...speakerAudioStream.getTracks()]);
         setTimeout(() => _this2.stopRecording(), InterviewRecordButtonComponent.MAX_RECORD_TIME);
 
         _this2.screenRecorder.startRecord(2);
@@ -20478,7 +20537,7 @@ class InterviewRecordButtonComponent {
           _this2.matDialog.open(_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, {
             data: {
               "message": _this2._errorMessage,
-              "type": "ERROR"
+              "dialogLevel": "ERROR"
             }
           });
         }
@@ -20523,21 +20582,21 @@ InterviewRecordButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPOR
     interviewId: "interviewId",
     candidateId: "candidateId"
   },
-  decls: 21,
-  vars: 8,
+  decls: 28,
+  vars: 13,
   consts: [["class", "text-semibold", "data-target", "#choose_channel", "data-toggle", "modal", "href", "#", 4, "ngIf"], ["class", "text-semibold", 3, "click", 4, "ngIf"], ["id", "choose_channel", 1, "modal"], [1, "modal-dialog", "modal-md"], [1, "modal-content"], [1, "modal-header"], [1, "modal-title"], ["data-dismiss", "modal", "type", "button", 1, "close"], [1, "modal-body"], [1, "form-group"], [1, "control-label"], [1, "form-control", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["disabled", "", 3, "ngValue"], [3, "value", 4, "ngFor", "ngForOf"], [1, "modal-footer"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-primary", "btn-sm", "save", 3, "disabled", "click"], ["data-target", "#choose_channel", "data-toggle", "modal", "href", "#", 1, "text-semibold"], [1, "ml-2", "btn", "btn-primary", "btn-xss"], [1, "icon-play4", "font-small-3", "mr-1"], [1, "text-semibold", 3, "click"], [1, "ml-2", "btn", "btn-danger", "btn-xss"], [1, "icon-stop", "font-small-3", "mr-1"], [3, "value"]],
   template: function InterviewRecordButtonComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, InterviewRecordButtonComponent_a_0_Template, 4, 1, "a", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, InterviewRecordButtonComponent_button_1_Template, 4, 0, "button", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 2)(3, "div", 3)(4, "div", 4)(5, "div", 5)(6, "h4", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](7, "Choose input audio channel");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](7, "Choose audio channels");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "button", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, "\u00D7");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "div", 8)(11, "div", 9)(12, "label", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](13, "Channels");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](13, "Input channels");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](14, "select", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function InterviewRecordButtonComponent_Template_select_ngModelChange_14_listener($event) {
@@ -20547,12 +20606,24 @@ InterviewRecordButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPOR
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16, "Select");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](17, InterviewRecordButtonComponent_option_17_Template, 2, 2, "option", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "div", 9)(19, "label", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Output channels");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](21, "select", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function InterviewRecordButtonComponent_Template_select_ngModelChange_21_listener($event) {
+        return ctx.selected_channel_output = $event;
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](22, "option", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](23, "Select");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](24, InterviewRecordButtonComponent_option_24_Template, 2, 2, "option", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "div", 14)(19, "button", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewRecordButtonComponent_Template_button_click_19_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](25, "div", 14)(26, "button", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewRecordButtonComponent_Template_button_click_26_listener() {
         return ctx.startRecording();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Start recording ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](27, "Start recording ");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()()()();
     }
 
@@ -20561,11 +20632,17 @@ InterviewRecordButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPOR
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.recording);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.selected_channel)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](7, _c0));
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.selected_channel)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](11, _c0));
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngValue", "none");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.audio_channels);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.selected_channel_output)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](12, _c0));
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngValue", "none");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.audio_channels_output);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.selected_channel == "" ? true : false);
     }
