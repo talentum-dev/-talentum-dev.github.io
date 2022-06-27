@@ -15138,7 +15138,7 @@ class InitiateReferenceComponent {
       }).then(() => {
         _this2.matDialog.open(_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, {
           data: {
-            message: `Reference Initiated for ${_this2.referenceData.length}` + ' candidates',
+            message: `Request submitted for ${_this2.referenceData.length}` + ' candidates. Please check initiated references for status',
             dialogLevel: "SUCCESS"
           }
         });
@@ -20542,6 +20542,10 @@ class InterviewRecordButtonComponent {
     var _this3 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const stream = yield navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true
+      });
       var constraints = {
         deviceId: {
           exact: _this3.selected_channel
