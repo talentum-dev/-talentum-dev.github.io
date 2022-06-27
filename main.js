@@ -15033,17 +15033,20 @@ class InitiateReferenceComponent {
   }
 
   get isValidInitiateReferenceForm() {
-    return this.referenceData.length > 0 && this.referenceData.filter(data => !!data.Name && !!data.Email && !!data.Phone).length === this.referenceData.length;
+    return this.referenceData.length > 0 && this.referenceData.filter(data => !!data.Name && !!data.Email && !!data.Phone).length === this.referenceData.length && this.validateReferenceError == null;
   }
 
   get validateReferenceError() {
+    let regexp_phone = new RegExp('[+][0-9]+');
+    let regexp_email = new RegExp('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9+_.-]+\.[a-zA-Z0-9+_.-]+$');
+
     for (const [i, data] of this.referenceData.entries()) {
       if (!data.Name) {
         return `row: ${i + 1}, Name field Empty`;
-      } else if (!data.Email) {
-        return `row: ${i + 1}, Email field Empty`;
-      } else if (!data.Phone) {
-        return `row: ${i + 1}, Phone field Empty`;
+      } else if (!regexp_email.test(data.Email)) {
+        return `row: ${i + 1}, Please enter valid email`;
+      } else if (!regexp_phone.test(data.Phone)) {
+        return `row: ${i + 1}, Please enter country code with +`;
       }
     }
 
