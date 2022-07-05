@@ -21347,13 +21347,8 @@ class SkillsComponentUtil {
         this.spinnerVisibilityService = spinnerVisibilityService;
         this.apiService = apiService;
         this.skillInput = { testid: null };
-        this.test_id = 13;
         this.dtOptions_feedback = {};
         this.dtTrigger_feedback = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Subject();
-        this.skills = [
-            { name: "Angular", score: 40 },
-            { name: "Core Java", score: 30 }
-        ];
     }
     ngOnInit() {
         this.skillInput.testid = this.test_id;
