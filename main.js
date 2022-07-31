@@ -77,104 +77,218 @@ CandidateInterviewerMatchComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_
 
 /***/ }),
 
-/***/ 17254:
-/*!************************************************************************!*\
-  !*** ./src/app/admin/verifytest-videos/verifytest-videos.component.ts ***!
-  \************************************************************************/
+/***/ 11807:
+/*!*************************************************************************!*\
+  !*** ./src/app/admin/verifytest-videos/verify-test-videos.component.ts ***!
+  \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "VerifytestVideosComponent": () => (/* binding */ VerifytestVideosComponent)
+/* harmony export */   "VerifyTestVideosComponent": () => (/* binding */ VerifyTestVideosComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var src_app_api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api.service */ 51491);
+/* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var src_app_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/api.service */ 51491);
+/* harmony import */ var _services_admin_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/admin.service */ 47455);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
 
 
 
-const _c0 = ["videoPlayer"];
-class VerifytestVideosComponent {
-    constructor(route, apiService) {
-        this.route = route;
-        this.apiService = apiService;
-        this.video_file = "";
-        this.video_toggle = false;
-        this.path = "assets/assessment/test/videos/";
-    }
-    ngOnInit() {
-        console.log(this.route.snapshot.paramMap.get('id'));
-        this.video_file = this.path + this.route.snapshot.paramMap.get('user_id') + "/" + this.route.snapshot.paramMap.get('test_id') + "/test_video.mp4";
-        console.log(this.video_file);
-    }
+
+
+
+
+function VerifyTestVideosComponent_video_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "video", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "source", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
 }
-VerifytestVideosComponent.ɵfac = function VerifytestVideosComponent_Factory(t) { return new (t || VerifytestVideosComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService)); };
-VerifytestVideosComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: VerifytestVideosComponent, selectors: [["app-verifytest-videos"]], viewQuery: function VerifytestVideosComponent_Query(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_c0, 5);
-    } if (rf & 2) {
-        let _t;
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.videoplayer = _t.first);
-    } }, decls: 8, vars: 1, consts: [["height", "315", "width", "100%", "controls", "", "controlsList", "nodownload", "preload", "none"], ["videoPlayer", ""], ["type", "video/mp4", 3, "src"], ["type", "video/mp4", "src", "assets/not_available.mp4"], [2, "position", "absolute", "top", "25%"]], template: function VerifytestVideosComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "body")(1, "video", 0, 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "source", 2)(4, "source", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 4)(6, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "This video is playing for recruiter id #a2349cd. Copying this by any means is a breach of this platform's policies. and would be considered illegal. ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("src", ctx.video_file, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2ZXJpZnl0ZXN0LXZpZGVvcy5jb21wb25lbnQuY3NzIn0= */"] });
 
+function VerifyTestVideosComponent_video_2_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "video", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "source", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
+
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpropertyInterpolate"]("src", ctx_r1.video_file, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsanitizeUrl"]);
+  }
+}
+
+class VerifyTestVideosComponent {
+  constructor(route, apiService, adminService) {
+    this.route = route;
+    this.apiService = apiService;
+    this.adminService = adminService;
+    this.video_file = null;
+  }
+
+  ngOnInit() {
+    var _this = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log(_this.route.snapshot.paramMap.get('id'));
+
+      try {
+        const userId = parseInt(_this.route.snapshot.paramMap.get('user_id'));
+        const testId = parseInt(_this.route.snapshot.paramMap.get('test_id'));
+
+        if (isNaN(userId) || isNaN(testId)) {
+          _this.video_file = null;
+        } else {
+          _this.video_file = yield _this.adminService.get_interview_test_video(userId, testId);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    })();
+  }
+
+}
+
+VerifyTestVideosComponent.ɵfac = function VerifyTestVideosComponent_Factory(t) {
+  return new (t || VerifyTestVideosComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_services_admin_service__WEBPACK_IMPORTED_MODULE_2__.AdminService));
+};
+
+VerifyTestVideosComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
+  type: VerifyTestVideosComponent,
+  selectors: [["app-verify-test-videos"]],
+  decls: 6,
+  vars: 2,
+  consts: [["height", "315", "width", "100%", "controls", "", "controlsList", "nodownload", "preload", "none", 4, "ngIf"], [2, "position", "absolute", "top", "25%"], ["height", "315", "width", "100%", "controls", "", "controlsList", "nodownload", "preload", "none"], ["type", "video/mp4", "src", "assets/not_available.mp4"], ["type", "video/mp4", 3, "src"]],
+  template: function VerifyTestVideosComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "body");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, VerifyTestVideosComponent_video_1_Template, 2, 0, "video", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, VerifyTestVideosComponent_video_2_Template, 2, 1, "video", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "div", 1)(4, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5, "This video is playing for recruiter id #a2349cd. Copying this by any means is a breach of this platform's policies. and would be considered illegal. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
+    }
+
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx.video_file);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.video_file);
+    }
+  },
+  directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf],
+  styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2ZXJpZnktdGVzdC12aWRlb3MuY29tcG9uZW50LmNzcyJ9 */"]
+});
 
 /***/ }),
 
-/***/ 61531:
-/*!************************************************************!*\
-  !*** ./src/app/admin/verifytests/verifytests.component.ts ***!
-  \************************************************************/
+/***/ 90145:
+/*!*************************************************************!*\
+  !*** ./src/app/admin/verifytests/verify-tests.component.ts ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "VerifytestsComponent": () => (/* binding */ VerifytestsComponent)
+/* harmony export */   "VerifyTestsComponent": () => (/* binding */ VerifyTestsComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _services_admin_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/admin.service */ 47455);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
 
 
-class VerifytestsComponent {
-    constructor(route) {
-        this.route = route;
-        this.testid = "";
-    }
-    ngOnChanges() {
-    }
-    ngOnInit() {
-        // this.testid = "assets/assessment/test/images/" + this.route.snapshot.paramMap.get('user_id') + "/" + this.route.snapshot.paramMap.get('test_id')  + "/" 
-        this.testid = "assets/assessment/test/images/" + this.user_id + "/" + this.test_id + "/";
-        console.log(this.testid);
-    }
+
+
+
+
+function VerifyTestsComponent_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "img", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
+  }
+
+  if (rf & 2) {
+    const image_r1 = ctx.$implicit;
+    const i_r2 = ctx.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("alt", i_r2)("src", image_r1, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsanitizeUrl"]);
+  }
 }
-VerifytestsComponent.ɵfac = function VerifytestsComponent_Factory(t) { return new (t || VerifytestsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__.ActivatedRoute)); };
-VerifytestsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VerifytestsComponent, selectors: [["app-verifytests"]], inputs: { user_id: "user_id", test_id: "test_id" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 6, vars: 6, consts: [[3, "src"]], template: function VerifytestsComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 0)(1, "img", 0)(2, "img", 0)(3, "img", 0)(4, "img", 0)(5, "img", 0);
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "", ctx.testid, "1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "", ctx.testid, "2.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "", ctx.testid, "3.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "", ctx.testid, "4.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "", ctx.testid, "5.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "", ctx.testid, "6.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2ZXJpZnl0ZXN0cy5jb21wb25lbnQuY3NzIn0= */"] });
 
+class VerifyTestsComponent {
+  constructor(route, adminService) {
+    this.route = route;
+    this.adminService = adminService;
+    this.images = [];
+  }
+
+  get userId() {
+    return this.user_id || this.route.snapshot.paramMap.get('user_id');
+  }
+
+  get testId() {
+    return this.test_id || this.route.snapshot.paramMap.get('test_id');
+  }
+
+  ngOnChanges() {}
+
+  ngOnInit() {
+    var _this = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      try {
+        const userId = parseInt(_this.userId);
+        const testId = parseInt(_this.testId);
+
+        if (isNaN(userId) || isNaN(testId)) {
+          _this.images = [];
+        } else {
+          _this.images = yield _this.adminService.get_interview_test_images(userId, testId);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    })();
+  }
+
+}
+
+VerifyTestsComponent.ɵfac = function VerifyTestsComponent_Factory(t) {
+  return new (t || VerifyTestsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_admin_service__WEBPACK_IMPORTED_MODULE_1__.AdminService));
+};
+
+VerifyTestsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+  type: VerifyTestsComponent,
+  selectors: [["app-verifytests"]],
+  inputs: {
+    user_id: "user_id",
+    test_id: "test_id"
+  },
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]],
+  decls: 1,
+  vars: 1,
+  consts: [[4, "ngFor", "ngForOf"], ["height", "200", "width", "200", 1, "ml-1", 3, "alt", "src"]],
+  template: function VerifyTestsComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, VerifyTestsComponent_ng_container_0_Template, 2, 2, "ng-container", 0);
+    }
+
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.images);
+    }
+  },
+  directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf],
+  styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2ZXJpZnktdGVzdHMuY29tcG9uZW50LmNzcyJ9 */"]
+});
 
 /***/ }),
 
@@ -1288,7 +1402,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _candidate_candidate_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./candidate/candidate.component */ 87955);
 /* harmony import */ var _candidate_assessment_assessment_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./candidate/assessment/assessment.component */ 95368);
 /* harmony import */ var _error_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./error/not-found/not-found.component */ 48694);
-/* harmony import */ var _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./admin/verifytests/verifytests.component */ 61531);
+/* harmony import */ var _admin_verifytests_verify_tests_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./admin/verifytests/verify-tests.component */ 90145);
 /* harmony import */ var _auth_candidate_sign_in_candidate_sign_in_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./auth/candidate-sign-in/candidate-sign-in.component */ 21091);
 /* harmony import */ var _auth_candidate_sign_up_candidate_sign_up_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./auth/candidate-sign-up/candidate-sign-up.component */ 73318);
 /* harmony import */ var _interviewer_interviewer_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./interviewer/interviewer.component */ 37102);
@@ -1296,7 +1410,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_test_test_test_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../modules/test/test/test.component */ 44184);
 /* harmony import */ var _general_about_about_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./general/about/about.component */ 4443);
 /* harmony import */ var _general_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./general/contact-us/contact-us.component */ 36759);
-/* harmony import */ var _admin_verifytest_videos_verifytest_videos_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./admin/verifytest-videos/verifytest-videos.component */ 17254);
+/* harmony import */ var _admin_verifytest_videos_verify_test_videos_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./admin/verifytest-videos/verify-test-videos.component */ 11807);
 /* harmony import */ var _general_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./general/privacy-policy/privacy-policy.component */ 20671);
 /* harmony import */ var _general_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./general/terms-conditions/terms-conditions.component */ 41487);
 /* harmony import */ var _guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../guards/auth/auth.guard */ 9740);
@@ -1422,8 +1536,8 @@ const routes = [
         canActivateChild: [_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_24__.AuthGuard],
         data: { roles: [_models_auth_model__WEBPACK_IMPORTED_MODULE_25__.Roles.ADMIN] },
         children: [
-            { path: "verifytests/:user_id/:test_id", component: _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_13__.VerifytestsComponent, },
-            { path: "verifytestvideos/:user_id/:test_id", component: _admin_verifytest_videos_verifytest_videos_component__WEBPACK_IMPORTED_MODULE_21__.VerifytestVideosComponent, },
+            { path: "verifytests/:user_id/:test_id", component: _admin_verifytests_verify_tests_component__WEBPACK_IMPORTED_MODULE_13__.VerifyTestsComponent, },
+            { path: "verifytestvideos/:user_id/:test_id", component: _admin_verifytest_videos_verify_test_videos_component__WEBPACK_IMPORTED_MODULE_21__.VerifyTestVideosComponent, },
             { path: "viewquestions", component: _questions_view_questions_view_questions_component__WEBPACK_IMPORTED_MODULE_26__.ViewQuestionsComponent, },
             { path: "uploadquestions", component: _questions_upload_questions_upload_questions_component__WEBPACK_IMPORTED_MODULE_27__.UploadQuestionsComponent, },
             { path: "matchinterviews", component: _admin_candidate_interviewer_match_candidate_interviewer_match_component__WEBPACK_IMPORTED_MODULE_32__.CandidateInterviewerMatchComponent, },
@@ -1753,7 +1867,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _candidate_assessment_interview_interview_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./candidate/assessment/interview/interview.component */ 43796);
 /* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! ng-http-loader */ 23020);
 /* harmony import */ var _error_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./error/not-found/not-found.component */ 48694);
-/* harmony import */ var _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./admin/verifytests/verifytests.component */ 61531);
+/* harmony import */ var _admin_verifytests_verify_tests_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./admin/verifytests/verify-tests.component */ 90145);
 /* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! @angular/material/chips */ 81196);
 /* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! @angular/material/autocomplete */ 43188);
 /* harmony import */ var _auth_candidate_sign_in_candidate_sign_in_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./auth/candidate-sign-in/candidate-sign-in.component */ 21091);
@@ -1775,7 +1889,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _general_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./general/contact-us/contact-us.component */ 36759);
 /* harmony import */ var _general_about_about_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./general/about/about.component */ 4443);
 /* harmony import */ var _general_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./general/privacy-policy/privacy-policy.component */ 20671);
-/* harmony import */ var _admin_verifytest_videos_verifytest_videos_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./admin/verifytest-videos/verifytest-videos.component */ 17254);
+/* harmony import */ var _admin_verifytest_videos_verify_test_videos_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./admin/verifytest-videos/verify-test-videos.component */ 11807);
 /* harmony import */ var _general_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./general/terms-conditions/terms-conditions.component */ 41487);
 /* harmony import */ var _util_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./util/feedback/feedback.component */ 60243);
 /* harmony import */ var _util_skills_skills_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./util/skills/skills.component */ 7704);
@@ -1964,7 +2078,7 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_69__["ɵ�
         _candidate_assessment_profile_activity_profile_activity_component__WEBPACK_IMPORTED_MODULE_24__.ProfileActivityComponent,
         _candidate_assessment_interview_interview_component__WEBPACK_IMPORTED_MODULE_25__.InterviewComponent,
         _error_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_26__.NotFoundComponent,
-        _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_27__.VerifytestsComponent,
+        _admin_verifytests_verify_tests_component__WEBPACK_IMPORTED_MODULE_27__.VerifyTestsComponent,
         _auth_candidate_sign_in_candidate_sign_in_component__WEBPACK_IMPORTED_MODULE_28__.CandidateSignInComponent,
         _auth_candidate_sign_up_candidate_sign_up_component__WEBPACK_IMPORTED_MODULE_29__.CandidateSignUpComponent,
         _interviewer_interviewer_component__WEBPACK_IMPORTED_MODULE_33__.InterviewerComponent,
@@ -1976,7 +2090,7 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_69__["ɵ�
         _util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_40__.ProfileCardComponent,
         _general_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_41__.ContactUsComponent,
         _general_about_about_component__WEBPACK_IMPORTED_MODULE_42__.AboutComponent,
-        _admin_verifytest_videos_verifytest_videos_component__WEBPACK_IMPORTED_MODULE_44__.VerifytestVideosComponent,
+        _admin_verifytest_videos_verify_test_videos_component__WEBPACK_IMPORTED_MODULE_44__.VerifyTestVideosComponent,
         _general_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_43__.PrivacyPolicyComponent,
         _general_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_45__.TermsConditionsComponent,
         _util_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_46__.FeedbackComponent,
@@ -17588,7 +17702,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
 /* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../admin/verifytests/verifytests.component */ 61531);
+/* harmony import */ var _admin_verifytests_verify_tests_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../admin/verifytests/verify-tests.component */ 90145);
 /* harmony import */ var _util_skills_skills_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../util/skills/skills.component */ 7704);
 /* harmony import */ var _util_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../util/feedback/feedback.component */ 60243);
 
@@ -18966,8 +19080,6 @@ class ProfilesComponent {
     this.fetch_locations();
     this.fetch_referrals();
     this.fetch_job_ids();
-    this.recruiterService.get_recruiters_profiles(null).then(data => console.log(data)); // TODO remove this console log
-
     this.video_play();
     this.video_play_test();
     this.timing_event_test = setInterval(() => {
@@ -20012,7 +20124,7 @@ ProfilesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_13
       _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵproperty"]("ngIf", ctx.showfullprofile);
     }
   },
-  directives: [_util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_9__.ProfileCardComponent, _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_22__["ɵa"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_24__.MatInput, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatTable, _angular_material_sort__WEBPACK_IMPORTED_MODULE_25__.MatSort, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatCell, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_26__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_27__.NativeElementInjectorDirective, _angular_material_sort__WEBPACK_IMPORTED_MODULE_25__.MatSortHeader, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatNoDataRow, _angular_common__WEBPACK_IMPORTED_MODULE_28__.NgForOf, angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_28__.NgIf, _admin_verifytests_verifytests_component__WEBPACK_IMPORTED_MODULE_10__.VerifytestsComponent, _util_skills_skills_component__WEBPACK_IMPORTED_MODULE_11__.SkillsComponentUtil, _util_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_12__.FeedbackComponent],
+  directives: [_util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_9__.ProfileCardComponent, _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_22__["ɵa"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_24__.MatInput, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatTable, _angular_material_sort__WEBPACK_IMPORTED_MODULE_25__.MatSort, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatCell, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_26__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_27__.NativeElementInjectorDirective, _angular_material_sort__WEBPACK_IMPORTED_MODULE_25__.MatSortHeader, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatNoDataRow, _angular_common__WEBPACK_IMPORTED_MODULE_28__.NgForOf, angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_28__.NgIf, _admin_verifytests_verify_tests_component__WEBPACK_IMPORTED_MODULE_10__.VerifyTestsComponent, _util_skills_skills_component__WEBPACK_IMPORTED_MODULE_11__.SkillsComponentUtil, _util_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_12__.FeedbackComponent],
   styles: ["table.dataTable td.dataTables_empty {\n    display: none;\n}\n\n.example-container[_ngcontent-%COMP%] {\n    height: 200px;\n    overflow: auto;\n}\n\n.btn-common[_ngcontent-%COMP%] {\n    background: #26ae61;\n    position: relative;\n    z-index: 1;\n    float: right;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2ZpbGVzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxtQkFBbUI7SUFDbkIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixZQUFZO0FBQ2hCIiwiZmlsZSI6InByb2ZpbGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6Om5nLWRlZXAgdGFibGUuZGF0YVRhYmxlIHRkLmRhdGFUYWJsZXNfZW1wdHkge1xuICAgIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5leGFtcGxlLWNvbnRhaW5lciB7XG4gICAgaGVpZ2h0OiAyMDBweDtcbiAgICBvdmVyZmxvdzogYXV0bztcbn1cblxuLmJ0bi1jb21tb24ge1xuICAgIGJhY2tncm91bmQ6ICMyNmFlNjE7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHotaW5kZXg6IDE7XG4gICAgZmxvYXQ6IHJpZ2h0O1xufSJdfQ== */"]
 });
 
@@ -64483,6 +64595,72 @@ TestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["�
 
 /***/ }),
 
+/***/ 47455:
+/*!***************************************!*\
+  !*** ./src/services/admin.service.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AdminService": () => (/* binding */ AdminService)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var _models_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/constants */ 47709);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 54363);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 28784);
+
+
+
+
+
+class AdminService {
+  constructor(http) {
+    this.http = http;
+  }
+
+  get_interview_test_video(userId, testId) {
+    var _this = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const URL = `${_models_constants__WEBPACK_IMPORTED_MODULE_1__.END_POINT}/v1/admin/interview/video/${userId}/${testId}`;
+      const httpHeaders = yield (0,_models_constants__WEBPACK_IMPORTED_MODULE_1__.HTTP_HEADERS)();
+      const resp = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.firstValueFrom)(yield _this.http.get(URL, {
+        headers: httpHeaders
+      }));
+      return resp['url'];
+    })();
+  }
+
+  get_interview_test_images(userId, testId) {
+    var _this2 = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const URL = `${_models_constants__WEBPACK_IMPORTED_MODULE_1__.END_POINT}/v1/admin/interview/images/${userId}/${testId}`;
+      const httpHeaders = yield (0,_models_constants__WEBPACK_IMPORTED_MODULE_1__.HTTP_HEADERS)();
+      const resp = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.firstValueFrom)(yield _this2.http.get(URL, {
+        headers: httpHeaders
+      }));
+      return resp['urls'];
+    })();
+  }
+
+}
+
+AdminService.ɵfac = function AdminService_Factory(t) {
+  return new (t || AdminService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient));
+};
+
+AdminService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
+  token: AdminService,
+  factory: AdminService.ɵfac,
+  providedIn: 'root'
+});
+
+/***/ }),
+
 /***/ 97495:
 /*!***************************************!*\
   !*** ./src/services/asset.service.ts ***!
@@ -65163,44 +65341,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RecruiterService": () => (/* binding */ RecruiterService)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var _models_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/constants */ 47709);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-
-
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 28784);
 
 
 class RecruiterService {
-  constructor(http) {
-    this.http = http;
-  }
-
-  get_recruiters_profiles(body) {
-    var _this = this;
-
-    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const httpHeaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
-      return yield _this.http.get(sample_request, {
-        headers: httpHeaders
-      }).toPromise();
-    })();
-  }
-
+    constructor(http) {
+        this.http = http;
+    }
 }
+RecruiterService.ɵfac = function RecruiterService_Factory(t) { return new (t || RecruiterService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
+RecruiterService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: RecruiterService, factory: RecruiterService.ɵfac, providedIn: "root" });
 
-RecruiterService.ɵfac = function RecruiterService_Factory(t) {
-  return new (t || RecruiterService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient));
-};
-
-RecruiterService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
-  token: RecruiterService,
-  factory: RecruiterService.ɵfac,
-  providedIn: "root"
-});
-const sample_request = 'https://reqres.in/api/users/2';
-const URI = `${_models_constants__WEBPACK_IMPORTED_MODULE_1__.END_POINT}/recruiterprofiles/`;
 
 /***/ }),
 
