@@ -14140,7 +14140,7 @@ function CreateReferenceComponent_tr_25_Template(rf, ctx) {
 function CreateReferenceComponent_ng_container_58_tr_1_em_5_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "em", 98);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "Please enter a value between 1 and 20.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "Please enter a value between greater than 0.");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
 }
