@@ -14725,7 +14725,7 @@ class CreateReferenceComponent {
 
   getQuestionCountController(value = 0) {
     return this.formBuilder.control(value, {
-      validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.min(1), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.max(20), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]
+      validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.min(1), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]
     });
   }
 
