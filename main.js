@@ -10635,6 +10635,8 @@ class InterviewComponent {
   complete_interview() {
     let completed_interview_data = {
       interview_id: this.interview_details.id,
+      candidate_id: this.interview_details.candidate_id,
+      reference_id: this.interview_details.reference_id,
       candidate_attend: this.candidate_attend == "Yes" ? true : false
     };
     this.spinnerVisibilityService.show();
