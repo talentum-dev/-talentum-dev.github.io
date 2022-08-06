@@ -10556,6 +10556,29 @@ class InterviewComponent {
     let interview_id = this.interview_details.id;
     let technical_feedback_temp = [];
     let general_feedback_temp = [];
+
+    while (this.technical_feedback.length - 1) {
+      this.technical_feedback.pop();
+    }
+
+    this.technical_feedback[0] = {
+      skill: '',
+      feedback: 0
+    };
+
+    while (this.technical_feedback.length - 1) {
+      this.technical_feedback.pop();
+    }
+
+    this.technical_feedback[0] = {
+      skill: '',
+      feedback: 0
+    };
+    this.soft_feedback.forEach(element => {
+      element.score = 0;
+    });
+    this.overall_feedback = 0;
+    this.feedbacktext = '';
     console.log(this.interview_details.id, "interview details id");
     let feedback;
     console.log(this.complete_interview_details, "complete details");
