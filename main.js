@@ -20898,6 +20898,12 @@ class InterviewRecordButtonComponent {
       let channels = [];
       let count = 0;
       let count_output = 0;
+      yield navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: true
+      });
+      let devices = yield navigator.mediaDevices.enumerateDevices();
+      console.log(devices);
       channels = yield navigator.mediaDevices.enumerateDevices();
       console.log(channels);
       channels.forEach(element => {
