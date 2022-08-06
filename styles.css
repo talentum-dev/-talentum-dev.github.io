@@ -8329,8 +8329,8 @@ textarea {
    }
 .form-control:disabled,
    .form-control[readonly] {
-     background-color: #C0C0C0;
-     border: 1px solid #C0C4C8;
+     background-color: #ecf1f5;
+     border: 1px solid #d5dee5;
      opacity: 1;
      cursor: not-allowed;
    }
@@ -12547,6 +12547,8 @@ label {
   font-size: 12px!important;
 }.fc .fc-toolbar-title {
   font-size: 18px!important;
+}.input-mobile .form-control {
+  padding-left: 78px!important;
 }
 
 /*# sourceMappingURL=styles.css.map*/
