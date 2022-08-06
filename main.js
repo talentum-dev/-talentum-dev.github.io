@@ -21095,8 +21095,8 @@ function FeedbackComponent_tr_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr")(1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "td", null, 34)(5, "fieldset", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "input", 35)(7, "label", 36)(8, "input", 37)(9, "label", 38)(10, "input", 39)(11, "label", 36)(12, "input", 40)(13, "label", 38)(14, "input", 41)(15, "label", 36)(16, "input", 42)(17, "label", 38)(18, "input", 43)(19, "label", 36)(20, "input", 44)(21, "label", 38)(22, "input", 45)(23, "label", 36)(24, "input", 46)(25, "label", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "td", null, 35)(5, "fieldset", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "input", 36)(7, "label", 37)(8, "input", 38)(9, "label", 39)(10, "input", 40)(11, "label", 37)(12, "input", 41)(13, "label", 39)(14, "input", 42)(15, "label", 37)(16, "input", 43)(17, "label", 39)(18, "input", 44)(19, "label", 37)(20, "input", 45)(21, "label", 39)(22, "input", 46)(23, "label", 37)(24, "input", 47)(25, "label", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](26, "span", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](27);
@@ -21160,11 +21160,11 @@ function FeedbackComponent_tr_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("", ctx_r0.technical_feedback[i_r3].feedback, "/5");
 } }
 function FeedbackComponent_div_15_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 47)(1, "span", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 48)(1, "span", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 9)(4, "fieldset", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "input", 35)(6, "label", 36)(7, "input", 37)(8, "label", 38)(9, "input", 39)(10, "label", 36)(11, "input", 40)(12, "label", 38)(13, "input", 41)(14, "label", 36)(15, "input", 42)(16, "label", 38)(17, "input", 43)(18, "label", 36)(19, "input", 44)(20, "label", 38)(21, "input", 45)(22, "label", 36)(23, "input", 46)(24, "label", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 50)(4, "fieldset", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "input", 36)(6, "label", 37)(7, "input", 38)(8, "label", 39)(9, "input", 40)(10, "label", 37)(11, "input", 41)(12, "label", 39)(13, "input", 42)(14, "label", 37)(15, "input", 51)(16, "label", 39)(17, "input", 52)(18, "label", 37)(19, "input", 53)(20, "label", 39)(21, "input", 54)(22, "label", 37)(23, "input", 55)(24, "label", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](25, "span", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](26);
@@ -21290,6 +21290,32 @@ class FeedbackComponent {
         this.feedbacktext = JSON.parse(feedback).feedback;
         console.log(this.technical_feedback);
     }
+    get ratingText() {
+        switch (this.overall_feedback) {
+            case 1:
+            case 1.5:
+                return 'Weak';
+            case 2:
+                return 'Below Average';
+            case 2.5:
+            case 3:
+                return 'Average';
+            case 3.5:
+                debugger;
+                return 'Above Average';
+            case 4:
+            case 4.5:
+                return 'Strong';
+            case 5:
+                return 'Exceptional';
+            case null:
+            case undefined:
+                return '';
+            default:
+                console.error(this.overall_feedback);
+                return '';
+        }
+    }
     fetchinterviews() {
         console.log(this.interview_id);
         let interviewdata = {
@@ -21316,7 +21342,7 @@ class FeedbackComponent {
     }
 }
 FeedbackComponent.ɵfac = function FeedbackComponent_Factory(t) { return new (t || FeedbackComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_4__.SpinnerVisibilityService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService)); };
-FeedbackComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: FeedbackComponent, selectors: [["app-feedback"]], inputs: { interview_id: "interview_id" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], decls: 47, vars: 16, consts: [[1, "row", "mb-4"], [1, "col-lg-6"], [1, "table-responsive", "mb-1"], ["id", "upcoming-table", "datatable", "", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "font-medium-3"], ["class", "row mb-1", 4, "ngFor", "ngForOf"], [1, "row"], [1, "col-4", "col-sm-5"], [1, "col-6", "col-sm-5"], [1, "rating"], ["type", "radio", "id", "4star5", "name", "4rating", "value", "5", 3, "checked"], ["for", "4star5", 1, "full"], ["type", "radio", "id", "4star4half", "name", "4rating", "value", "4 and a half", 3, "checked"], ["for", "4star4half", 1, "half"], ["type", "radio", "id", "4star4", "name", "4rating", "value", "4", 3, "checked"], ["for", "4star4", 1, "full"], ["type", "radio", "id", "4star3half", "name", "4rating", "value", "3 and a half", 3, "checked"], ["for", "4star3half", 1, "half"], ["type", "radio", "id", "4star3", "name", "4rating", "value", "3", 3, "checked"], ["for", "4star3", 1, "full"], ["type", "radio", "id", "4star2half", "name", "4rating", "value", "2 and a half", 3, "checked"], ["for", "4star2half", 1, "half"], ["type", "radio", "id", "4star2", "name", "4rating", "value", "2", 3, "checked"], ["for", "4star2", 1, "full"], ["type", "radio", "id", "4star1half", "name", "4rating", "value", "1 and a half", 3, "checked"], ["for", "4star1half", 1, "half"], ["type", "radio", "id", "4star1", "name", "4rating", "value", "1", 3, "checked"], ["for", "4star1", 1, "full"], ["type", "radio", "id", "4starhalf", "name", "4rating", "value", "half", 3, "checked"], ["for", "4starhalf", 1, "half"], [1, "col-2", "col-sm-2"], ["appearance", "outline", 1, "input-field", 2, "width", "100%"], ["matInput", "", "name", "feedbackText", "rows", "8", "placeholder", "Enter feedback", "required", "", 3, "ngModel", "ngModelChange"], ["feedback_column", ""], ["type", "radio", "value", "5", 3, "id", "name", "checked"], [1, "full", 3, "for"], ["type", "radio", "value", "4 and a half", 3, "id", "name", "checked"], [1, "half", 3, "for"], ["type", "radio", "value", "4", 3, "id", "name", "checked"], ["type", "radio", "value", "3 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "3", 3, "id", "name", "checked"], ["type", "radio", "value", "2 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "2", 3, "id", "name", "checked"], ["type", "radio", "value", "1 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "1", 3, "id", "name", "checked"], ["type", "radio", "value", "half", 3, "id", "name", "checked"], [1, "row", "mb-1"]], template: function FeedbackComponent_Template(rf, ctx) { if (rf & 1) {
+FeedbackComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: FeedbackComponent, selectors: [["app-feedback"]], inputs: { interview_id: "interview_id" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], decls: 51, vars: 28, consts: [[1, "row", "mb-4"], [1, "col-lg-6"], [1, "table-responsive", "mb-1"], ["id", "upcoming-table", "datatable", "", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "font-medium-3"], ["class", "row mb-1", 4, "ngFor", "ngForOf"], [1, "row"], [1, "col-5", "col-sm-3"], [1, "col-5", "col-sm-7"], [1, "rating"], ["id", "4star5", "name", "4rating", "type", "radio", "value", "5", 3, "checked"], ["for", "4star5", 1, "full"], ["id", "4star4half", "name", "4rating", "type", "radio", "value", "4 and a half", 3, "checked"], ["for", "4star4half", 1, "half"], ["id", "4star4", "name", "4rating", "type", "radio", "value", "4", 3, "checked"], ["for", "4star4", 1, "full"], ["id", "4star3half", "name", "4rating", "type", "radio", "value", "3 and a half", 3, "checked"], ["for", "4star3half", 1, "half"], ["id", "4star3", "name", "4rating", "type", "radio", "value", "3", 3, "checked"], ["for", "4star3", 1, "full"], ["id", "4star2half", "name", "4rating", "type", "radio", "value", "2 and a half", 3, "checked"], ["for", "4star2half", 1, "half"], ["id", "4star2", "name", "4rating", "type", "radio", "value", "2", 3, "checked"], ["for", "4star2", 1, "full"], ["id", "4star1half", "name", "4rating", "type", "radio", "value", "1 and a half", 3, "checked"], ["for", "4star1half", 1, "half"], ["id", "4star1", "name", "4rating", "type", "radio", "value", "1", 3, "checked"], ["for", "4star1", 1, "full"], ["id", "4starhalf", "name", "4rating", "type", "radio", "value", "half", 3, "checked"], ["for", "4starhalf", 1, "half"], [1, "col-2", "col-sm-2"], ["disabled", "", 1, "badge", "ml-1"], ["appearance", "outline", 1, "input-field", 2, "width", "100%"], ["matInput", "", "name", "feedbackText", "rows", "8", "placeholder", "Enter feedback", "required", "", 3, "ngModel", "ngModelChange"], ["feedback_column", ""], ["type", "radio", "value", "5", 3, "id", "name", "checked"], [1, "full", 3, "for"], ["type", "radio", "value", "4 and a half", 3, "id", "name", "checked"], [1, "half", 3, "for"], ["type", "radio", "value", "4", 3, "id", "name", "checked"], ["type", "radio", "value", "3 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "3", 3, "id", "name", "checked"], ["type", "radio", "value", "2 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "2", 3, "id", "name", "checked"], ["type", "radio", "value", "1 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "1", 3, "id", "name", "checked"], ["type", "radio", "value", "half", 3, "id", "name", "checked"], [1, "row", "mb-1"], [1, "col-4", "col-sm-5"], [1, "col-6", "col-sm-5"], ["type", "radio", "value", "2 and a half", 3, "checked", "id", "name"], ["type", "radio", "value", "2", 3, "checked", "id", "name"], ["type", "radio", "value", "1 and a half", 3, "checked", "id", "name"], ["type", "radio", "value", "1", 3, "checked", "id", "name"], ["type", "radio", "value", "half", 3, "checked", "id", "name"]], template: function FeedbackComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "table", 3)(4, "thead")(5, "tr")(6, "th");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Candidate skill ");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
@@ -21336,12 +21362,18 @@ FeedbackComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "div", 9)(22, "fieldset", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](23, "input", 11)(24, "label", 12)(25, "input", 13)(26, "label", 14)(27, "input", 15)(28, "label", 16)(29, "input", 17)(30, "label", 18)(31, "input", 19)(32, "label", 20)(33, "input", 21)(34, "label", 22)(35, "input", 23)(36, "label", 24)(37, "input", 25)(38, "label", 26)(39, "input", 27)(40, "label", 28)(41, "input", 29)(42, "label", 30);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](43, "span", 31);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](44);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](45, "mat-form-field", 32)(46, "textarea", 33);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function FeedbackComponent_Template_textarea_ngModelChange_46_listener($event) { return ctx.feedbacktext = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](45, "span", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](46);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](47, "span", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](48);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](49, "mat-form-field", 33)(50, "textarea", 34);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function FeedbackComponent_Template_textarea_ngModelChange_50_listener($event) { return ctx.feedbacktext = $event; });
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
@@ -21372,6 +21404,14 @@ FeedbackComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback === 0.5);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("", ctx.overall_feedback, "/5");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("badge-danger", ctx.overall_feedback < 3)("success", ctx.overall_feedback >= 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.overall_feedback < 3 ? "Rejected" : "Cleared");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("badge-danger", ctx.overall_feedback < 3)("badge-warning", ctx.overall_feedback == 3)("success", ctx.overall_feedback > 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.ratingText);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.feedbacktext);
     } }, directives: [angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_7__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_9__.NativeElementInjectorDirective], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmZWVkYmFjay5jb21wb25lbnQuY3NzIn0= */"] });
