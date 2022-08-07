@@ -55,9 +55,24 @@ class CandidateInterviewerMatchComponent {
             this.spinnerVisibilityService.hide();
         });
     }
+    slot_notification() {
+        this.output = "";
+        this.spinnerVisibilityService.show();
+        this.apiService.send_slot_notification("").then((data) => {
+            console.log(data);
+            data.forEach(element => {
+                this.output = this.output + JSON.stringify(element) + '\r\n';
+            });
+            // this.output = JSON.stringify(data)
+            console.log(this.output);
+            this.openDialog("Interview matching service ran successfully", "success");
+        }).finally(() => {
+            this.spinnerVisibilityService.hide();
+        });
+    }
 }
 CandidateInterviewerMatchComponent.ɵfac = function CandidateInterviewerMatchComponent_Factory(t) { return new (t || CandidateInterviewerMatchComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__.Renderer2), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_5__.SpinnerVisibilityService)); };
-CandidateInterviewerMatchComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: CandidateInterviewerMatchComponent, selectors: [["app-candidate-interviewer-match"]], decls: 9, vars: 1, consts: [["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary", "btn-sm", "save", 3, "click"], ["disabled", "", "id", "message", "rows", "8", 1, "form-control"]], template: function CandidateInterviewerMatchComponent_Template(rf, ctx) { if (rf & 1) {
+CandidateInterviewerMatchComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: CandidateInterviewerMatchComponent, selectors: [["app-candidate-interviewer-match"]], decls: 11, vars: 1, consts: [["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary", "btn-sm", "save", 3, "click"], ["disabled", "", "id", "message", "rows", "8", 1, "form-control"]], template: function CandidateInterviewerMatchComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CandidateInterviewerMatchComponent_Template_button_click_0_listener() { return ctx.match(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Match candidate & interviewer");
@@ -68,6 +83,10 @@ CandidateInterviewerMatchComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "textarea", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function CandidateInterviewerMatchComponent_Template_button_click_9_listener() { return ctx.slot_notification(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](10, "Send slot notifications");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](8);
@@ -1316,7 +1335,7 @@ class ApiService {
     return postData();
   }
 
-  change_reference_status(input) {
+  send_slot_notification(input) {
     function postData() {
       return _postData39.apply(this, arguments);
     }
@@ -1324,7 +1343,7 @@ class ApiService {
     function _postData39() {
       _postData39 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         const apiName = 'MyCustomLambda';
-        const path = '/changereferencestatus';
+        const path = '/slotnotifications';
         const myInit = {
           body: input,
           headers: {
@@ -1339,13 +1358,36 @@ class ApiService {
     return postData();
   }
 
-  fetch_wallet(input) {
+  change_reference_status(input) {
     function postData() {
       return _postData40.apply(this, arguments);
     }
 
     function _postData40() {
       _postData40 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        const apiName = 'MyCustomLambda';
+        const path = '/changereferencestatus';
+        const myInit = {
+          body: input,
+          headers: {
+            Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
+          }
+        };
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+      });
+      return _postData40.apply(this, arguments);
+    }
+
+    return postData();
+  }
+
+  fetch_wallet(input) {
+    function postData() {
+      return _postData41.apply(this, arguments);
+    }
+
+    function _postData41() {
+      _postData41 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         const apiName = 'MyCustomLambda';
         const path = '/fetchwallet';
         const myInit = {
@@ -1356,7 +1398,7 @@ class ApiService {
         };
         return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
       });
-      return _postData40.apply(this, arguments);
+      return _postData41.apply(this, arguments);
     }
 
     return postData();
