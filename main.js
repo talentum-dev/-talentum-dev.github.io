@@ -3718,13 +3718,13 @@ function InterviewComponent_tbody_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "No record found!");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
 } }
-function InterviewComponent_tbody_45_tr_1_Template(rf, ctx) { if (rf & 1) {
+function InterviewComponent_tbody_47_tr_1_Template(rf, ctx) { if (rf & 1) {
     const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "tr")(1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "td")(4, "a", 41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewComponent_tbody_45_tr_1_Template_a_click_4_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r15); const row_r12 = restoredCtx.$implicit; const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2); return ctx_r14.set_interview_id(row_r12.id); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewComponent_tbody_47_tr_1_Template_a_click_4_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r15); const row_r12 = restoredCtx.$implicit; const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2); return ctx_r14.set_interview_id(row_r12.id); });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5, " Decline ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
 } if (rf & 2) {
@@ -3732,21 +3732,21 @@ function InterviewComponent_tbody_45_tr_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](row_r12.datetime);
 } }
-function InterviewComponent_tbody_45_Template(rf, ctx) { if (rf & 1) {
+function InterviewComponent_tbody_47_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "tbody");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, InterviewComponent_tbody_45_tr_1_Template, 6, 1, "tr", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, InterviewComponent_tbody_47_tr_1_Template, 6, 1, "tr", 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx_r3.upcoming_data);
 } }
-function InterviewComponent_tbody_46_Template(rf, ctx) { if (rf & 1) {
+function InterviewComponent_tbody_48_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "tbody")(1, "tr")(2, "td", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "No record found!");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
 } }
-function InterviewComponent_option_74_Template(rf, ctx) { if (rf & 1) {
+function InterviewComponent_option_76_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "option");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -3804,7 +3804,7 @@ class InterviewComponent {
             },
             navLinks: true,
             firstDay: this.getDay(),
-            height: 280,
+            height: 300,
             selectMirror: true,
             // select: function (arg) {
             //   arg.addEvent({
@@ -3814,10 +3814,13 @@ class InterviewComponent {
             //   calendar.unselect()
             // },
             select: this.addselectevent.bind(this),
+            eventBackgroundColor: 'transparent',
+            eventBorderColor: 'green',
+            eventTextColor: 'black',
             eventClick: function (arg) {
                 const calendarApi = arg.view.calendar;
                 calendarApi.unselect();
-                if (arg.event.title == 'Secondary') {
+                if (arg.event.title == 'Requested') {
                     if (confirm('Are you sure you want to delete this slot?')) {
                         arg.event.remove();
                         this.updatecalendardata = [];
@@ -3825,19 +3828,29 @@ class InterviewComponent {
                         console.log(calendarApi.getEvents());
                     }
                 }
-                else {
-                    if (arg.event.title == 'Primary') {
-                        //  const cal = arg.view.calendar
-                        //  cal.getEventById('1')?.setProp('Title','Secondary')
-                        //  cal.refetchEvents()
-                        arg.event.setProp('title', 'Secondary');
-                        arg.event.setProp('backgroundColor', 'orange');
-                        this.updatecalendardata = [];
-                        this.updatecalendardata = calendarApi.getEvents();
-                        console.log(calendarApi.getEvents());
-                    }
-                }
+                // else if (arg.event.title == 'Selected') {
+                //     arg.event.setProp('startEditable',false)
+                //     arg.event.setProp('durationEditable',false)          
+                //     arg.event.setProp('title', 'Available')
+                //     arg.event.setProp('display','foreground')
+                //     arg.event.setProp('backgroundColor', 'orange')
+                //     this.updatecalendardata = []
+                //     this.updatecalendardata = calendarApi.getEvents()
+                //     console.log(calendarApi.getEvents())
+                // }
+                //  else if (arg.event.title == 'Available') {
+                //   arg.event.setProp('startEditable',false)
+                //   arg.event.setProp('durationEditable',false)
+                //   arg.event.setProp('display','background')
+                //   // arg.event.setProp('title', 'Selected')
+                //   arg.event.setProp('backgroundColor', 'green')
+                //   console.log(arg.event)
+                //   this.updatecalendardata = []
+                //   this.updatecalendardata = calendarApi.getEvents()
+                // }
             },
+            eventStartEditable: false,
+            eventDurationEditable: false,
             editable: true,
             dayMaxEvents: true,
             timeZone: 'UTC'
@@ -3919,7 +3932,7 @@ class InterviewComponent {
         const calendarApi = selectInfo.view.calendar;
         calendarApi.unselect(); // clear date selection
         calendarApi.addEvent({
-            title: "Primary",
+            title: "Requested",
             start: selectInfo.startStr,
             end: selectInfo.endStr,
             allDay: selectInfo.allDay
@@ -3950,7 +3963,21 @@ class InterviewComponent {
             this.mycalendar.getApi().removeAllEvents();
             data.forEach(element => {
                 console.log(JSON.parse(element.slotdetails));
-                this.mycalendar.getApi().addEvent(JSON.parse(element.slotdetails));
+                let details = JSON.parse(element.slotdetails);
+                console.log(details);
+                if (details['title'] == '') {
+                    details['backgroundColor'] = '#b9efd2';
+                    details['startEditable'] = false;
+                    details['durationEditable'] = false;
+                    details['display'] = 'background';
+                    details['borderColor'] = 'black';
+                }
+                if (details['title'] == 'Requested') {
+                    details['backgroundColor'] = 'transparent';
+                    details['display'] = 'block';
+                }
+                this.mycalendar.getApi().addEvent(details);
+                // this.mycalendar.getApi().getEventById('atul').setProp('display','background')
             });
         }).finally(() => {
             this.spinnerVisibilityService.hide();
@@ -4019,7 +4046,7 @@ InterviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx.mycalendar = _t.first);
-    } }, decls: 78, vars: 14, consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link", "active", 3, "click"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", 3, "click"], ["data-toggle", "tab", "href", "#completed", 1, "nav-link", 3, "click"], [1, "tab-content"], ["id", "completed", 1, "tab-pane", "active"], [1, "table-responsive", "mb-4"], ["datatable", "", "id", "completed-table", 1, "table", "table-bordered", "table-striped", "table-hover", "v-align-middle", 3, "dtOptions", "dtTrigger"], [4, "ngIf"], ["id", "schedule", 1, "tab-pane"], [1, "alert", "alert-info", "alert-sm"], ["id", "calendar"], [3, "options"], ["mycalendar", ""], [1, "btn", "btn-common", "btn-sm", 3, "click"], ["id", "upcoming", 1, "tab-pane"], ["datatable", "", "id", "upcoming-table", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], ["id", "feedback", 1, "modal"], [1, "modal-dialog", "modal-md"], [1, "modal-content"], [1, "modal-header"], [1, "modal-title"], ["data-dismiss", "modal", "type", "button", 1, "close"], [1, "modal-body"], ["disabled", "", "id", "message", "rows", "8", 1, "form-control"], [1, "modal-footer"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-light", "btn-sm"], ["id", "cancel-interview", 1, "modal"], [1, "form-group"], [1, "control-label"], [1, "form-control", 3, "ngModel", "ngModelOptions", "ngModelChange"], [4, "ngFor", "ngForOf"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-primary", "btn-sm", "save", 3, "click"], ["data-target", "#feedback", "data-toggle", "modal", "href", "#", 1, "text-semibold", 3, "click"], [1, "btn", "btn-border", "btn-xss"], [1, "icon-eye", "mr-1", "font-small-3"], ["colspan", "3", 1, "no-data-available"], ["data-target", "#cancel-interview", "data-toggle", "modal", "href", "#", 1, "text-semibold", "text-danger", 3, "click"], ["colspan", "2", 1, "no-data-available"]], template: function InterviewComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 80, vars: 14, consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link", "active", 3, "click"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", 3, "click"], ["data-toggle", "tab", "href", "#completed", 1, "nav-link", 3, "click"], [1, "tab-content"], ["id", "completed", 1, "tab-pane", "active"], [1, "table-responsive", "mb-4"], ["datatable", "", "id", "completed-table", 1, "table", "table-bordered", "table-striped", "table-hover", "v-align-middle", 3, "dtOptions", "dtTrigger"], [4, "ngIf"], ["id", "schedule", 1, "tab-pane"], [1, "alert", "alert-info", "alert-sm"], ["id", "calendar"], [3, "options"], ["mycalendar", ""], [1, "btn", "btn-common", "btn-sm", 3, "click"], ["id", "upcoming", 1, "tab-pane"], ["datatable", "", "id", "upcoming-table", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], ["id", "feedback", 1, "modal"], [1, "modal-dialog", "modal-md"], [1, "modal-content"], [1, "modal-header"], [1, "modal-title"], ["data-dismiss", "modal", "type", "button", 1, "close"], [1, "modal-body"], ["disabled", "", "id", "message", "rows", "8", 1, "form-control"], [1, "modal-footer"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-light", "btn-sm"], ["id", "cancel-interview", 1, "modal"], [1, "form-group"], [1, "control-label"], [1, "form-control", 3, "ngModel", "ngModelOptions", "ngModelChange"], [4, "ngFor", "ngForOf"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-primary", "btn-sm", "save", 3, "click"], ["data-target", "#feedback", "data-toggle", "modal", "href", "#", 1, "text-semibold", 3, "click"], [1, "btn", "btn-border", "btn-xss"], [1, "icon-eye", "mr-1", "font-small-3"], ["colspan", "3", 1, "no-data-available"], ["data-target", "#cancel-interview", "data-toggle", "modal", "href", "#", 1, "text-semibold", "text-danger", 3, "click"], ["colspan", "2", 1, "no-data-available"]], template: function InterviewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "form", 0)(1, "div", 1)(2, "div", 2)(3, "ul", 3)(4, "li", 4)(5, "a", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewComponent_Template_a_click_5_listener() { return ctx.fetchinterviews(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](6, "Upcoming");
@@ -4042,55 +4069,57 @@ InterviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](24, InterviewComponent_tbody_24_Template, 4, 0, "tbody", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](25, "div", 13)(26, "div", 14)(27, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](28, "Please Drag and Drop your mouse on the calender where you want to book a slot. You can also move or resize a time slot.");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](29, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](30, "If you want to delete a time slot, just click on it.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](28, "Please click and drag the mouse on the calender where you want to book a slot. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](29, "b");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](30, "Green slots represent interviewer availability.");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](31, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](32, "full-calendar", 16, 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](34, "a", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewComponent_Template_a_click_34_listener() { return ctx.updatecalendar(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](35, "Update");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](31, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](32, "If you want to delete a time slot, just click on it.");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](36, "div", 19)(37, "div", 10)(38, "table", 20)(39, "thead")(40, "tr")(41, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](42, "Date & Time");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](33, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](34, "full-calendar", 16, 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](43, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](44, "Feedback");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](36, "a", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewComponent_Template_a_click_36_listener() { return ctx.updatecalendar(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](37, "Update");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](38, "div", 19)(39, "div", 10)(40, "table", 20)(41, "thead")(42, "tr")(43, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](44, "Date & Time");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](45, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](46, "Feedback");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](45, InterviewComponent_tbody_45_Template, 2, 1, "tbody", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](46, InterviewComponent_tbody_46_Template, 4, 0, "tbody", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](47, InterviewComponent_tbody_47_Template, 2, 1, "tbody", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](48, InterviewComponent_tbody_48_Template, 4, 0, "tbody", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](47, "div", 21)(48, "div", 22)(49, "div", 23)(50, "div", 24)(51, "h4", 25);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](52, "Interview Feedback");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](49, "div", 21)(50, "div", 22)(51, "div", 23)(52, "div", 24)(53, "h4", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](54, "Interview Feedback");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](53, "button", 26);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](54, "\u00D7");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](55, "button", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](56, "\u00D7");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](55, "div", 27)(56, "textarea", 28);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](57);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](57, "div", 27)(58, "textarea", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](59);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](58, "div", 29)(59, "button", 30);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](60, "Close");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](60, "div", 29)(61, "button", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](62, "Close");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](61, "div", 31)(62, "div", 22)(63, "div", 23)(64, "div", 24)(65, "h4", 25);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](66, "Decline Interview");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](63, "div", 31)(64, "div", 22)(65, "div", 23)(66, "div", 24)(67, "h4", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](68, "Decline Interview");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](67, "button", 26);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](68, "\u00D7");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](69, "button", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](70, "\u00D7");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](69, "div", 27)(70, "div", 32)(71, "label", 33);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](72, "Reason");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](71, "div", 27)(72, "div", 32)(73, "label", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](74, "Reason");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](73, "select", 34);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function InterviewComponent_Template_select_ngModelChange_73_listener($event) { return ctx.cancel_reason = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](74, InterviewComponent_option_74_Template, 2, 1, "option", 35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](75, "select", 34);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function InterviewComponent_Template_select_ngModelChange_75_listener($event) { return ctx.cancel_reason = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](76, InterviewComponent_option_76_Template, 2, 1, "option", 35);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](75, "div", 29)(76, "button", 36);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewComponent_Template_button_click_76_listener() { return ctx.cancel_interview(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](77, "Submit ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](77, "div", 29)(78, "button", 36);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InterviewComponent_Template_button_click_78_listener() { return ctx.cancel_interview(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](79, "Submit ");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()()()()();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](16);
@@ -4099,7 +4128,7 @@ InterviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", (ctx.completed_data == null ? null : ctx.completed_data.length) != 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", (ctx.completed_data == null ? null : ctx.completed_data.length) == 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("options", ctx.calendarOptions);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("dtOptions", ctx.dtOptions_upcoming)("dtTrigger", ctx.dtTrigger_upcoming);
@@ -4113,7 +4142,7 @@ InterviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.cancel_reason)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](13, _c1));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.canceloptions);
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgForm, angular_datatables__WEBPACK_IMPORTED_MODULE_2__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_9__.FullCalendarComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_10__.NativeElementInjectorDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgSelectMultipleOption"]], styles: [".btn-common {\n  background: #26ae61;\n  position: relative;\n  z-index: 1;\n  float: right;\n  margin-top: 10px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImludGVydmlldy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJpbnRlcnZpZXcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idG4tY29tbW9uIHtcbiAgYmFja2dyb3VuZDogIzI2YWU2MTtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiAxO1xuICBmbG9hdDogcmlnaHQ7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG4iXX0= */"], encapsulation: 2 });
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgForm, angular_datatables__WEBPACK_IMPORTED_MODULE_2__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_9__.FullCalendarComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_10__.NativeElementInjectorDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ɵNgSelectMultipleOption"]], styles: [".btn-common {\n  background: #26ae61;\n  position: relative;\n  z-index: 1;\n  float: right;\n  margin-top: 10px;\n}\n.fc-bg-event\n{\n  opacity: 1 !important;\n}\n.full-calendar .fc-content .fc-event-container .fc-event {\n  background: #ef6262!important;\n  border-color: #eb3d3d!important;\n  color: #fff!important;\n  border-radius: 2;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImludGVydmlldy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsWUFBWTtFQUNaLGdCQUFnQjtBQUNsQjtBQUNBOztFQUVFLHFCQUFxQjtBQUN2QjtBQUVBO0VBQ0UsNkJBQTZCO0VBQzdCLCtCQUErQjtFQUMvQixxQkFBcUI7RUFDckIsZ0JBQWdCO0FBQ2xCIiwiZmlsZSI6ImludGVydmlldy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJ0bi1jb21tb24ge1xuICBiYWNrZ3JvdW5kOiAjMjZhZTYxO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IDE7XG4gIGZsb2F0OiByaWdodDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbn1cbi5mYy1iZy1ldmVudFxue1xuICBvcGFjaXR5OiAxICFpbXBvcnRhbnQ7XG59XG5cbi5mdWxsLWNhbGVuZGFyIC5mYy1jb250ZW50IC5mYy1ldmVudC1jb250YWluZXIgLmZjLWV2ZW50IHtcbiAgYmFja2dyb3VuZDogI2VmNjI2MiFpbXBvcnRhbnQ7XG4gIGJvcmRlci1jb2xvcjogI2ViM2QzZCFpbXBvcnRhbnQ7XG4gIGNvbG9yOiAjZmZmIWltcG9ydGFudDtcbiAgYm9yZGVyLXJhZGl1czogMjtcbn0iXX0= */"], encapsulation: 2 });
 
 
 /***/ }),
@@ -63643,7 +63672,13 @@ class Recorder {
       build: () => new XMLHttpRequest()
     }));
     this.chunks = [];
-    this.sessionId = Math.random().toString(36).slice(2, 7).toString();
+    this.sessionId = Math.random().toString(36).slice(2, 7).toString(); // const options = {
+    //   audioBitsPerSecond: 128000,
+    //   videoBitsPerSecond: 2500000,
+    //   mimeType: 'video/webm'
+    // }
+    // this.recorder = new MediaRecorder(stream, options);
+
     this.recorder = new MediaRecorder(stream);
 
     this.recorder.onstop = () => this.onStop();
