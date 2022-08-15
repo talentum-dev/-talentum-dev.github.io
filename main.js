@@ -63232,6 +63232,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
     aws: {
@@ -63239,8 +63242,8 @@ const environment = {
             aws_project_region: "ap-south-1",
             aws_cognito_identity_pool_id: "ap-south-1:60b2dd3d-a726-438b-ad19-0856a04fffa6",
             aws_cognito_region: "ap-south-1",
-            aws_user_pools_id: "ap-south-1_iCypWpU58",
-            aws_user_pools_web_client_id: "5e9fenecetfpv0brnl2grskfkr",
+            aws_user_pools_id: "ap-south-1_QtLOf7oB5",
+            aws_user_pools_web_client_id: "60jdtn8s3jmfk1dm5152rdud1t",
             oauth: {},
             aws_cognito_login_mechanisms: [
                 "EMAIL"
@@ -63260,21 +63263,29 @@ const environment = {
                 endpoints: [
                     {
                         "name": "MyCustomLambda",
-                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/prod"
                     },
                     {
                         "name": "uploadresume",
-                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/prod"
                     },
                     {
                         "name": "serverless",
-                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/dev"
                     }
                 ]
             }
         }
     }
 };
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
