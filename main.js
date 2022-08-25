@@ -10061,6 +10061,8 @@ class InterviewComponent {
       skill: "",
       feedback: 0
     }];
+    this.submission_time = null;
+    this.allow_feedback_update = false;
     this.soft_feedback = [];
     this.softskills = ["Logical reasoning", "Technical skills", "Communication", "Behaviour"];
     this.candidate_skills = ["Core Java", "Angular", "Kubernetes", "Python", "Cobol", "Cloud"];
@@ -10617,9 +10619,11 @@ class InterviewComponent {
         score: 0
       }],
       overall_rating: 0,
-      attended: false
+      attended: false,
+      submission_time: null
     };
     complete_feedback.interview_id = this.interview_details.id;
+    complete_feedback.submission_time = new Date();
     complete_feedback.feedback = this.feedbacktext;
     complete_feedback.technical.pop();
     this.technical_feedback.forEach(element => {
@@ -10708,6 +10712,11 @@ class InterviewComponent {
     this.soft_feedback = general_feedback_temp;
     this.overall_feedback = JSON.parse(feedback).overall_rating;
     this.feedbacktext = JSON.parse(feedback).feedback;
+    this.submission_time = JSON.parse(feedback).submission_time;
+    this.allow_feedback_update = new Date(new Date(this.submission_time).getTime() + 1 * 24 * 60 * 60 * 1000) > new Date() ? true : false;
+    console.log(new Date(new Date(this.submission_time).getTime() + 1 * 24 * 60 * 60 * 1000));
+    console.log(new Date());
+    console.log(this.allow_feedback_update);
   }
 
   openDialog(message, type) {
@@ -10834,7 +10843,7 @@ InterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5
     }
   },
   decls: 320,
-  vars: 44,
+  vars: 45,
   consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#completed", 1, "nav-link", "active", 3, "click"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link", 3, "click"], ["data-toggle", "tab", "href", "#schedule-new", 1, "nav-link", 3, "click"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", 3, "click"], [1, "tab-content"], ["id", "completed", 1, "tab-pane", "active"], [1, "table-responsive", "mb-4"], ["datatable", "", "id", "completed-table", 1, "table", "table-bordered", "table-striped", "table-hover", "table-interview-completed", 3, "dtOptions", "dtTrigger"], [4, "ngIf"], ["id", "schedule", 1, "tab-pane"], [1, "alert", "alert-info", "alert-sm"], ["id", "calendar"], [3, "options"], ["mycalendar", ""], [1, "btn", "btn-common", "btn-sm", 3, "click"], ["id", "upcoming", 1, "tab-pane"], ["datatable", "", "id", "upcoming-table", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], ["id", "schedule-new", 1, "tab-pane"], [1, "table", "datatable4", "table-striped", "table-schedule", "table-slots"], [4, "ngFor", "ngForOf"], ["id", "fullProfile", 1, "modal"], [1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-header"], [1, "modal-title"], ["data-dismiss", "modal", "type", "button", 1, "close"], [1, "modal-body", "modal-full-height"], [1, "card-header"], [1, "card-title"], [1, "row"], [1, "col-md-3"], [1, "form-group"], [1, "control-label"], ["readonly", "", "type", "text", 1, "form-control", 3, "value"], [1, "col-md-9"], ["id", "watchInterview-pending", 1, "modal"], [1, "modal-dialog", "modal-lg"], [1, "modal-body"], [1, "card", "card-body", "text-center"], [1, "mb-2"], [1, "mb-4"], [1, "btn", "btn-primary", "update", "mr-3", 3, "click"], ["hidden", "", "type", "file", 3, "change"], ["fileInput", ""], ["class", "mb-2 text-center file-uploaded", 4, "ngIf"], ["class", "text-danger font-medium-2 text-bold", 4, "ngIf"], [1, "modal-footer"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-light", "btn-sm", "mr-1"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-primary", "btn-sm", "save", 3, "disabled", "click"], ["id", "feedback", 1, "modal"], [1, "modal-dialog", "modal-md"], ["disabled", "", "id", "message", "rows", "8", 1, "form-control"], ["type", "button", 1, "btn", "btn-light", "btn-sm", "mr-1"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-light", "btn-sm"], ["id", "watchInterview", 1, "modal"], [1, "upload-btn-wrapper"], [1, "btn", "btn-primary", "btn-sm"], ["name", "myfile", "type", "file", 3, "change"], ["height", "315", "src", "https://www.youtube.com/embed/tgbNymZ7vqY?controls=0", "width", "100%"], ["id", "cancel-interview", 1, "modal"], [1, "form-control", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["disabled", "", "hidden", "", "selected", "", "value", "reason"], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-primary", "btn-sm", "save", 3, "click"], ["id", "complete-interview", 1, "modal"], [1, "alert", "alert-info"], [1, "mb-0"], [1, "form-inline"], [1, "form-control", "width-80", "ml-2", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["disabled", "", "hidden", "", "selected", ""], ["id", "schedule-int", 1, "modal"], ["id", "calendar2"], ["mycalendar2", ""], ["data-dismiss", "modal", "type", "button", 1, "btn", "btn-primary", "btn-sm", "save"], ["id", "feedback-pending", 1, "modal"], [1, "modal-body", "modal-full-height", "with-footer"], [1, "mb-3"], [1, "badge", "badge-secondary", "mr-2"], [1, "mr-2", "badge", "badge-secondary"], [1, "row", "mb-4"], [1, "col-lg-6"], [1, "table-responsive", "mb-0"], ["datatable", "", "id", "upcoming-table", 1, "mb-0", "table", "table-bordered", "v-align-middle", "table-striped", "table-sm", 3, "dtOptions", "dtTrigger"], [1, "mb-0", "table", "table-bordered", "v-align-middle", "table-striped", "table-sm"], [1, "row", "mb-1"], [1, "col-4", "col-sm-5"], [1, "col-6", "col-sm-5"], [1, "rating"], ["id", "4star5", "name", "4rating", "type", "radio", "value", "5", 3, "checked", "click"], ["for", "4star5", 1, "full"], ["id", "4star4half", "name", "4rating", "type", "radio", "value", "4 and a half", 3, "checked", "click"], ["for", "4star4half", 1, "half"], ["id", "4star4", "name", "4rating", "type", "radio", "value", "4", 3, "checked", "click"], ["for", "4star4", 1, "full"], ["id", "4star3half", "name", "4rating", "type", "radio", "value", "3 and a half", 3, "checked", "click"], ["for", "4star3half", 1, "half"], ["id", "4star3", "name", "4rating", "type", "radio", "value", "3", 3, "checked", "click"], ["for", "4star3", 1, "full"], ["id", "4star2half", "name", "4rating", "type", "radio", "value", "2 and a half", 3, "checked", "click"], ["for", "4star2half", 1, "half"], ["id", "4star2", "name", "4rating", "type", "radio", "value", "2", 3, "checked", "click"], ["for", "4star2", 1, "full"], ["id", "4star1half", "name", "4rating", "type", "radio", "value", "1 and a half", 3, "checked", "click"], ["for", "4star1half", 1, "half"], ["id", "4star1", "name", "4rating", "type", "radio", "value", "1", 3, "checked", "click"], ["for", "4star1", 1, "full"], ["id", "4starhalf", "name", "4rating", "type", "radio", "value", "half", 3, "checked", "click"], ["for", "4starhalf", 1, "half"], [1, "col-2", "col-sm-2"], ["appearance", "outline", 1, "input-field", 2, "width", "100%"], ["matInput", "", "name", "feedbackText", "placeholder", "Enter feedback", "required", "", "rows", "8", 3, "ngModel", "ngModelChange"], [3, "candidateId", 4, "ngIf"], ["data-target", "#fullProfile", "data-toggle", "modal", "href", "#", 1, "link-blue", 3, "click"], [1, "badge", "badge-success"], [1, "icon-eye", "mr-1"], [1, "text-danger", "text-semibold"], ["data-target", "#feedback-pending", "data-toggle", "modal", "href", "#", 1, "text-semibold", 3, "click"], [1, "badge", "badge-warning"], [1, "icon-pencil", "mr-1"], ["data-target", "#watchInterview-pending", "data-toggle", "modal", "href", "#", 1, "text-semibold", 3, "click"], [1, "icon-checkmark4", "mr-1"], [1, "badge", "badge-danger"], ["colspan", "5", 1, "no-data-available"], [1, "btn", "btn-primary", "btn-xss"], [1, "icon-eye", "mr-1", "font-small-3"], ["download", "", 1, "text-semibold", 3, "href"], [1, "icon-file-download2", "mr-1"], ["data-target", "#cancel-interview", "data-toggle", "modal", "href", "#", 1, "text-semibold", "text-danger", 3, "click"], [1, "btn", "btn-danger", "btn-xss"], [1, "icon-cross3", "font-small-3", "mr-1"], [3, "candidateId", "interviewId", "name", 4, "ngIf"], ["data-target", "#complete-interview", "data-toggle", "modal", "href", "#", 1, "text-semibold", 3, "click"], [1, "ml-2", "btn", "btn-primary", "btn-xss"], [1, "icon-pause2", "font-small-3", "mr-1"], [3, "candidateId", "interviewId", "name"], ["interviewRecordButtonComponent", ""], [3, "value"], ["data-toggle", "modal", "href", "#", 1, "text-semibold", "text-danger", 3, "click"], [1, "mb-2", "text-center", "file-uploaded"], [1, "text-semibold", "pr-2"], ["class", "file-cancel", 3, "click", 4, "ngIf"], [1, "file-cancel", 3, "click"], [1, "icon-cross"], [1, "text-danger", "font-medium-2", "text-bold"], [1, "form-control", "xs", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["disabled", "", "hidden", "", "selected", "", "value", ""], ["feedback_column", ""], ["type", "radio", "value", "5", 3, "checked", "id", "name", "click"], [1, "full", 3, "for"], ["type", "radio", "value", "4 and a half", 3, "checked", "id", "name", "click"], [1, "half", 3, "for"], ["type", "radio", "value", "4", 3, "checked", "id", "name", "click"], ["type", "radio", "value", "3 and a half", 3, "checked", "id", "name", "click"], ["type", "radio", "value", "3", 3, "checked", "id", "name", "click"], ["type", "radio", "value", "2 and a half", 3, "checked", "id", "name", "click"], ["type", "radio", "value", "2", 3, "checked", "id", "name", "click"], ["type", "radio", "value", "1 and a half", 3, "checked", "id", "name", "click"], ["type", "radio", "value", "1", 3, "checked", "id", "name", "click"], ["type", "radio", "value", "half", 3, "checked", "id", "name", "click"], ["class", "ml-4 text-danger", "href", "javascript:void(0);", 3, "click", 4, "ngIf"], ["href", "javascript:void(0);", 1, "ml-4", "text-danger", 3, "click"], [1, "icon-bin", "icon-delete"], [3, "candidateId"]],
   template: function InterviewComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -11222,7 +11231,7 @@ InterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](314, "div", 51)(315, "button", 52);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](316, "Close");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](317, "button", 67);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](317, "button", 53);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InterviewComponent_Template_button_click_317_listener() {
         return ctx.submitfeedback();
       });
@@ -11266,11 +11275,11 @@ InterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](12);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx.interview_details.feedback);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](38);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.cancel_reason)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](42, _c3));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.cancel_reason)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](43, _c3));
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.canceloptions);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](22);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.candidate_attend)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](43, _c3));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.candidate_attend)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](44, _c3));
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.candidate_attend_options);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](19);
@@ -11305,7 +11314,9 @@ InterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"]("", ctx.overall_feedback, "/5");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.feedbacktext);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx.allow_feedback_update);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.start_recording);
     }
   },
