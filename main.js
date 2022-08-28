@@ -1437,14 +1437,31 @@ class ApiService {
         const apiName = 'MyCustomLambda';
         const path = '/fetchvideolink';
         const myInit = {
-          body: input,
-          headers: {
-            Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
-          }
+          body: input
         };
         return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
       });
       return _postData43.apply(this, arguments);
+    }
+
+    return postData();
+  }
+
+  generatePresignedVideoLink(input) {
+    function postData() {
+      return _postData44.apply(this, arguments);
+    }
+
+    function _postData44() {
+      _postData44 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        const apiName = 'MyCustomLambda';
+        const path = '/s3presignedvideolink';
+        const myInit = {
+          body: input
+        };
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+      });
+      return _postData44.apply(this, arguments);
     }
 
     return postData();
@@ -20988,13 +21005,12 @@ class VideoLinksComponent {
             window.open('/video-links/' + this.route.snapshot.paramMap.get('id'), '_blank', 'fullscreen=yes');
             this.router.navigate(['/']).catch(err => console.error(err)); // TODO change where to redirect to in case of accessed test directly
         }
-        console.log(this.route.snapshot.paramMap.get('id'));
+    }
+    ngAfterViewInit() {
+        this.watch_video();
         this.timing_event = setInterval(() => {
             this.video_play_css();
         }, 5000);
-        this.watch_video();
-    }
-    ngAfterViewInit() {
         this.videoplayer.nativeElement.onplaying = (event) => {
             this.video_play_css();
         };
@@ -21025,15 +21041,16 @@ class VideoLinksComponent {
                 this.user_name = video_url_details['user_name'];
                 this.corp_name = video_url_details['corp_name'];
                 this.video_file = '';
-                this.videoplayer.nativeElement.load();
+                // this.videoplayer.nativeElement.load();
                 this.spinnerVisibilityService.show();
                 const video_details = {
                     object_key: "video.mp4",
                     path: `assets/assessment/interview/videos/${video_url_details['candidate_id']}/${video_url_details['interview_id']}/`,
-                    method: "get_object"
+                    method: "get_object",
+                    auth_key: this.route.snapshot.paramMap.get('id')
                 };
                 console.log(video_details);
-                this.apiService.generatePresignedUrl(video_details)
+                this.apiService.generatePresignedVideoLink(video_details)
                     .then((data) => {
                     this.video_file = data;
                     this.videoplayer.nativeElement.load();
@@ -63543,9 +63560,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
     aws: {
@@ -63553,8 +63567,8 @@ const environment = {
             aws_project_region: "ap-south-1",
             aws_cognito_identity_pool_id: "ap-south-1:60b2dd3d-a726-438b-ad19-0856a04fffa6",
             aws_cognito_region: "ap-south-1",
-            aws_user_pools_id: "ap-south-1_QtLOf7oB5",
-            aws_user_pools_web_client_id: "60jdtn8s3jmfk1dm5152rdud1t",
+            aws_user_pools_id: "ap-south-1_iCypWpU58",
+            aws_user_pools_web_client_id: "5e9fenecetfpv0brnl2grskfkr",
             oauth: {},
             aws_cognito_login_mechanisms: [
                 "EMAIL"
@@ -63574,29 +63588,21 @@ const environment = {
                 endpoints: [
                     {
                         "name": "MyCustomLambda",
-                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
                     },
                     {
                         "name": "uploadresume",
-                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
                     },
                     {
                         "name": "serverless",
-                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/dev"
+                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
                     }
                 ]
             }
         }
     }
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
