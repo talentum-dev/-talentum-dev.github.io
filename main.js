@@ -17566,7 +17566,7 @@ function ViewSubscriptionComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
 } }
 function ViewSubscriptionComponent_div_13_span_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -17575,7 +17575,7 @@ function ViewSubscriptionComponent_div_13_span_11_Template(rf, ctx) { if (rf & 1
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.status);
 } }
 function ViewSubscriptionComponent_div_13_span_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -17584,7 +17584,7 @@ function ViewSubscriptionComponent_div_13_span_12_Template(rf, ctx) { if (rf & 1
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](subscription_r2.status);
 } }
 function ViewSubscriptionComponent_div_13_span_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -17630,7 +17630,7 @@ function ViewSubscriptionComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "span", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "div", 29)(39, "div", 30)(40, "div", 31)(41, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "div", 37)(39, "div", 30)(40, "div", 31)(41, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](42);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](43, "div", 32)(44, "span", 33);
@@ -17638,7 +17638,7 @@ function ViewSubscriptionComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](46, " Video ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](47, "div", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](48, "div", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](48, "div", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](49, "span", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](50);
@@ -17814,7 +17814,7 @@ class ViewSubscriptionComponent {
     }
 }
 ViewSubscriptionComponent.ɵfac = function ViewSubscriptionComponent_Factory(t) { return new (t || ViewSubscriptionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_4__.SpinnerVisibilityService)); };
-ViewSubscriptionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ViewSubscriptionComponent, selectors: [["app-view-subscription"]], decls: 14, vars: 3, consts: [[1, "tab-pane", "active"], ["class", "alert alert-info", 4, "ngIf"], [1, "form-group", "form-inline"], [1, "control-label", "pr-2"], [1, "form-control", "field-sm", "sm", 3, "ngModel", "change", "ngModelChange"], ["value", "active"], ["value", "inactive"], ["value", "expired"], [1, "subscriptions-list"], ["class", "subscriptions", 4, "ngFor", "ngForOf"], [1, "alert", "alert-info"], [1, "d-flex"], [1, "pr-2"], [1, "icon-info22", "m-2", "font-large-4", "text-primary"], [1, "text-bold"], [1, "subscriptions"], [1, "body"], [1, "row", "row-subscription", "align-items-center"], [1, "col", "col-md-2", "mb-2", "mb-md-0"], [1, "font-large-3"], [1, "font-small-3"], [1, "col", "col-status", "col-md-1", "mb-2", "mb-md-0"], ["class", "badge badge-success", 4, "ngIf"], ["class", "badge badge-warning", 4, "ngIf"], [1, "col", "col-expiry", "col-md-2", "mb-2", "mb-md-0"], [1, "text-head"], [1, "icon-calendar", "font-small-2"], [1, "col", "col-subscription", "col-md-5", "mb-2", "mb-md-0"], [1, "row", "row-seamless", "align-items-center"], [1, "col-sm-6", "mb-2", "mb-md-0"], [1, "alert", "alert-success", "p-2", "m-0", "mr-1", "ml-1"], [1, "pb-1"], [1, "font-small-3", "video-and-tests"], [1, "pr-3", "icons"], [3, "ngClass"], [1, "progress", "progress-subscription"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.tests_conducted/subscription.no_of_tests*100", "role", "progressbar", 1, "progress-bar", "bg-success"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.interviews_conducted/subscription.no_of_interviews*100", "role", "progressbar", 1, "progress-bar", "bg-success"], [1, "badge", "badge-success"], [1, "badge", "badge-warning"]], template: function ViewSubscriptionComponent_Template(rf, ctx) { if (rf & 1) {
+ViewSubscriptionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ViewSubscriptionComponent, selectors: [["app-view-subscription"]], decls: 14, vars: 3, consts: [[1, "tab-pane", "active"], ["class", "alert alert-info", 4, "ngIf"], [1, "form-group", "form-inline"], [1, "control-label", "pr-2"], [1, "form-control", "field-sm", "sm", 3, "ngModel", "change", "ngModelChange"], ["value", "active"], ["value", "inactive"], ["value", "expired"], [1, "subscriptions-list"], ["class", "subscriptions", 4, "ngFor", "ngForOf"], [1, "alert", "alert-info"], [1, "d-flex"], [1, "pr-2"], [1, "icon-info22", "m-2", "font-large-4", "text-primary"], [1, "text-bold"], [1, "subscriptions"], [1, "body"], [1, "row", "row-subscription", "align-items-center"], [1, "col", "col-md-2", "mb-2", "mb-md-0"], [1, "font-large-3"], [1, "font-small-3"], [1, "col", "col-status", "col-md-1", "mb-2", "mb-md-0"], ["class", "badge badge-success", 4, "ngIf"], ["class", "badge badge-warning", 4, "ngIf"], [1, "col", "col-expiry", "col-md-2", "mb-2", "mb-md-0"], [1, "text-head"], [1, "icon-calendar", "font-small-2"], [1, "col", "col-subscription", "col-md-2", "mb-2", "mb-md-0"], [1, "row", "row-seamless", "align-items-center"], [1, "col-sm-6", "mb-2", "mb-md-0"], [1, "alert", "alert-success", "p-2", "m-0", "mr-1", "ml-1"], [1, "pb-1"], [1, "font-small-3", "video-and-tests"], [1, "pr-3", "icons"], [3, "ngClass"], [1, "progress", "progress-subscription"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.tests_conducted/subscription.no_of_tests*100", "role", "progressbar", 1, "progress-bar", "bg-success"], [1, "col-sm-5", "mb-2", "mb-md-0"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "subscription.interviews_conducted/subscription.no_of_interviews*100", "role", "progressbar", 1, "progress-bar", "bg-success"], [1, "badge", "badge-success"], [1, "badge", "badge-warning"]], template: function ViewSubscriptionComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ViewSubscriptionComponent_div_1_Template, 14, 0, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2)(3, "label", 3);
@@ -63560,6 +63560,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
     aws: {
@@ -63567,8 +63570,8 @@ const environment = {
             aws_project_region: "ap-south-1",
             aws_cognito_identity_pool_id: "ap-south-1:60b2dd3d-a726-438b-ad19-0856a04fffa6",
             aws_cognito_region: "ap-south-1",
-            aws_user_pools_id: "ap-south-1_iCypWpU58",
-            aws_user_pools_web_client_id: "5e9fenecetfpv0brnl2grskfkr",
+            aws_user_pools_id: "ap-south-1_QtLOf7oB5",
+            aws_user_pools_web_client_id: "60jdtn8s3jmfk1dm5152rdud1t",
             oauth: {},
             aws_cognito_login_mechanisms: [
                 "EMAIL"
@@ -63588,21 +63591,29 @@ const environment = {
                 endpoints: [
                     {
                         "name": "MyCustomLambda",
-                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/prod"
                     },
                     {
                         "name": "uploadresume",
-                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/prod"
                     },
                     {
                         "name": "serverless",
-                        "endpoint": "https://ohimu9tn0f.execute-api.ap-south-1.amazonaws.com/prod"
+                        "endpoint": "https://vyuddgwzej.execute-api.ap-south-1.amazonaws.com/dev"
                     }
                 ]
             }
         }
     }
 };
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),

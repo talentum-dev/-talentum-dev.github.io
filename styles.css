@@ -7123,8 +7123,8 @@ a:not([href]):not([tabindex]):focus,
        max-width: 12.666667%;
    }
 .col.col-subscription {
-       flex: 0 0 51%;
-       max-width: 51%;
+       flex: 0 0 35%;
+       max-width: 35%;
    }
 .row-seamless {
        margin-left: 0;
