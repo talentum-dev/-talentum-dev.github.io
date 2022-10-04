@@ -64499,7 +64499,7 @@ function QuestionComponent_div_7_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function QuestionComponent_div_7_Template_button_click_8_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r32);
       const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return ctx_r31._endTest("Test Finished");
+      return ctx_r31._endTest(ctx_r31.testCloseReasons.TEST_SUBMITTED);
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Submit Test ");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
@@ -65487,6 +65487,7 @@ var TestCloseReasons;
   TestCloseReasons["TIME_UP"] = "Time Up !!";
   TestCloseReasons["KEY_PRESS"] = "You have Used your keyboard, submitting test";
   TestCloseReasons["SWITCH_SCREEN"] = "You have switched screens, submitting test";
+  TestCloseReasons["TEST_SUBMITTED"] = "Test Finished";
 })(TestCloseReasons || (TestCloseReasons = {}));
 
 /***/ }),
