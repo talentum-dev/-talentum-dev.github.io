@@ -64550,6 +64550,7 @@ class QuestionComponent {
     };
     this.currentQuestion = 0;
     this.testIdChange = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
+    this.testCloseReasons = _test_test_component__WEBPACK_IMPORTED_MODULE_1__.TestCloseReasons;
   }
 
   ngOnInit() {
@@ -64619,6 +64620,19 @@ class QuestionComponent {
     this.changeTotalDuration(durationLeft);
   }
 
+  split_text(text) {
+    console.log(text.split(":")[1]);
+
+    if (text.split(":")[0] == "IMAGE") {
+      this.question_image_path = "assets/assessment/questions/images/psychometric/" + text.split(":")[1] + ".jpg";
+      console.log(this.question_image_path);
+      return text.split(":")[1];
+    } else {
+      this.question_image_path = "";
+      return "";
+    }
+  }
+
   changeTestId(testId) {
     this.testId = testId;
     this.testIdChange.emit(testId);
@@ -64653,19 +64667,6 @@ class QuestionComponent {
     this._endTest(_test_test_component__WEBPACK_IMPORTED_MODULE_1__.TestCloseReasons.SWITCH_SCREEN);
 
     event.preventDefault();
-  }
-
-  split_text(text) {
-    console.log(text.split(":")[1]);
-
-    if (text.split(":")[0] == "IMAGE") {
-      this.question_image_path = "assets/assessment/questions/images/psychometric/" + text.split(":")[1] + ".jpg";
-      console.log(this.question_image_path);
-      return text.split(":")[1];
-    } else {
-      this.question_image_path = "";
-      return "";
-    }
   }
 
 }
@@ -65025,9 +65026,9 @@ SummaryComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__
   outputs: {
     viewAnswer: "viewAnswer"
   },
-  decls: 42,
+  decls: 40,
   vars: 8,
-  consts: [[1, "final-score-wizard"], ["role", "alert", 1, "alert", "alert-success"], [1, "text-success"], [1, "icon-checkmark4", "mr-2"], [1, "pl-4"], [1, "alert", "alert-secondary"], [1, "row"], [1, "col-md-6"], [1, "text-bold"], [1, "mb-4", "row"], [1, "col-md-6", "offset-md-3"], [1, "text-center"], [1, "font-medium-3"], [1, "progress"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "25", "role", "progressbar", 1, "progress-bar"], [1, "btn", "btn-primary", "view-answers", 3, "click"], ["data-dismiss", "modal", 1, "btn", "btn-primary", "ml-1", 3, "click"]],
+  consts: [[1, "final-score-wizard"], ["role", "alert", 1, "alert", "alert-success"], [1, "text-success"], [1, "icon-checkmark4", "mr-2"], [1, "pl-4"], [1, "alert", "alert-secondary"], [1, "row"], [1, "col-md-6"], [1, "text-bold"], [1, "mb-4", "row"], [1, "col-md-6", "offset-md-3"], [1, "text-center"], [1, "font-medium-3"], [1, "progress"], ["aria-valuemax", "100", "aria-valuemin", "0", "aria-valuenow", "25", "role", "progressbar", 1, "progress-bar"], ["data-dismiss", "modal", 1, "btn", "btn-primary", "ml-1", 3, "click"]],
   template: function SummaryComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h5", 2);
@@ -65070,15 +65071,9 @@ SummaryComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](37, "div", 11)(38, "button", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function SummaryComponent_Template_button_click_38_listener() {
-        return ctx._viewAnswers();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](39, "View Answers");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](40, "button", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function SummaryComponent_Template_button_click_40_listener() {
         return ctx.closeWindow();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](41, "Close Window ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](39, "Close Window ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
     }
 
