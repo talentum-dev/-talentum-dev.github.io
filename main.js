@@ -15382,14 +15382,14 @@ function InitiateReferenceComponent_tr_30_button_21_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
 
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 51);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateReferenceComponent_tr_30_button_21_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r17);
       const i_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]().index;
       const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return ctx_r15.fileChange_resume(null, i_r12);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "mat-icon", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "mat-icon", 52);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "close");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
@@ -15409,28 +15409,28 @@ function InitiateReferenceComponent_tr_30_Template(rf, ctx) {
       return row_r11.Name = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "td")(6, "input", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "td")(6, "input", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function InitiateReferenceComponent_tr_30_Template_input_ngModelChange_6_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
       const row_r11 = restoredCtx.$implicit;
       return row_r11.Email = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "td")(8, "input", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "td")(8, "input", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function InitiateReferenceComponent_tr_30_Template_input_ngModelChange_8_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
       const row_r11 = restoredCtx.$implicit;
       return row_r11.Phone = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "td")(10, "input", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "td")(10, "input", 43);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function InitiateReferenceComponent_tr_30_Template_input_ngModelChange_10_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
       const row_r11 = restoredCtx.$implicit;
       return row_r11.Experience = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "td")(12, "div", 41)(13, "div")(14, "div", 24)(15, "input", 4, 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "td")(12, "div", 44)(13, "div")(14, "div", 24)(15, "input", 4, 45);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function InitiateReferenceComponent_tr_30_Template_input_change_15_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
       const i_r12 = restoredCtx.index;
@@ -15438,7 +15438,7 @@ function InitiateReferenceComponent_tr_30_Template(rf, ctx) {
       return ctx_r23.fileChange_resume($event.target.files, i_r12);
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "button", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "button", 46);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateReferenceComponent_tr_30_Template_button_click_17_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
 
@@ -15448,18 +15448,18 @@ function InitiateReferenceComponent_tr_30_Template(rf, ctx) {
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "Resume");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "div")(20, "div", 41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, InitiateReferenceComponent_tr_30_button_21_Template, 3, 0, "button", 44);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](22, "input", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "div")(20, "div", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, InitiateReferenceComponent_tr_30_button_21_Template, 3, 0, "button", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](22, "input", 48);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "td")(24, "a", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "td")(24, "a", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function InitiateReferenceComponent_tr_30_Template_a_click_24_listener() {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
       const i_r12 = restoredCtx.index;
       const ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return ctx_r25.removeCandidate(i_r12);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](25, "i", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](25, "i", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
   }
 
@@ -15684,10 +15684,10 @@ class InitiateReferenceComponent {
   addDefaultRow() {
     for (let i = 0; i < this.blank_rows; i++) {
       this.referenceData.push({
-        Name: "John",
-        Email: "john@example.com",
-        Phone: "+919999999999",
-        Experience: "1"
+        Name: '',
+        Email: '',
+        Phone: '',
+        Experience: ''
       });
     }
   }
@@ -15806,7 +15806,7 @@ InitiateReferenceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵNgOnChangesFeature"]],
   decls: 67,
   vars: 11,
-  consts: [[1, "modal-body", "modal-full-height", "with-footer"], [1, "row", "mb-2"], [1, "col-md-3"], [1, "btn", "btn-primary", "btn-sm", 2, "float", "left", 3, "click"], ["hidden", "", "type", "file", 3, "change"], ["fileInput", ""], [1, "col-md-6"], ["class", "mb-2 text-center file-uploaded", 4, "ngIf"], ["class", "text-danger font-medium-2 text-bold", 4, "ngIf"], [1, "by-table"], [1, "table-responsive", "max-height-400"], ["id", "excel-table-template", 1, "table", "table-bordered", "table-striped", "table-fixed-head", "v-align-middle", "table-sm", "table-blue"], [4, "ngFor", "ngForOf"], [1, "d-flex", "align-items-center", "justify-content-center"], [1, "form-control", "width-50", "sm", "mr-2", "ml-2", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["type", "button", 1, "btn", "btn-primary", "btn-xs", "ml-2", 3, "click"], [1, "upload-excel-ui", 2, "display", "none"], [1, "card", "mb-1"], [1, "card-body", "p-3"], [1, "row", "align-items-center"], [1, "col-lg-4", "mb-2", "mb-lg-0"], [1, "card-title"], [1, "font-small-3", "text-muted"], [1, "col-lg-2"], [1, "upload-btn-wrapper"], [1, "mb-4"], [1, "btn", "btn-primary", "update", "mr-3", 3, "click"], [1, "col-lg-6"], [1, "modal-footer"], [1, "mat-error"], [1, "col-sm-6", "text-left"], ["type", "button", 1, "btn", "btn-border", "btn-xs", 3, "click"], [1, "icon-file-download", "mr-1", "font-small-2"], ["type", "button", 1, "btn", "btn-primary", "btn-sm", 3, "disabled", "click"], [1, "mb-2", "text-center", "file-uploaded"], [1, "text-semibold", "pr-2"], ["class", "file-cancel", 3, "click", 4, "ngIf"], [1, "file-cancel", 3, "click"], [1, "icon-cross"], [1, "text-danger", "font-medium-2", "text-bold"], ["type", "text", 1, "form-control", "xs", "field-md", 3, "ngModel", "ngModelChange"], [1, "d-flex"], ["fileInputResume", ""], [1, "btn", "btn-border", "btn-sm", 3, "click"], ["aria-labelledby", "Clear Selection", "class", "button-close-file", "mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["matInput", "", "readonly", "", "type", "text", 1, "font-small-3", "text-black", 3, "value"], ["href", "javascript:void(0);", "title", "Remove", 1, "delete-bin", 3, "click"], [1, "icon-bin"], ["aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", 1, "button-close-file", 3, "click"], [1, "font-medium-2", "text-danger"]],
+  consts: [[1, "modal-body", "modal-full-height", "with-footer"], [1, "row", "mb-2"], [1, "col-md-3"], [1, "btn", "btn-primary", "btn-sm", 2, "float", "left", 3, "click"], ["hidden", "", "type", "file", 3, "change"], ["fileInput", ""], [1, "col-md-6"], ["class", "mb-2 text-center file-uploaded", 4, "ngIf"], ["class", "text-danger font-medium-2 text-bold", 4, "ngIf"], [1, "by-table"], [1, "table-responsive", "max-height-400"], ["id", "excel-table-template", 1, "table", "table-bordered", "table-striped", "table-fixed-head", "v-align-middle", "table-sm", "table-blue"], [4, "ngFor", "ngForOf"], [1, "d-flex", "align-items-center", "justify-content-center"], [1, "form-control", "width-50", "sm", "mr-2", "ml-2", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["type", "button", 1, "btn", "btn-primary", "btn-xs", "ml-2", 3, "click"], [1, "upload-excel-ui", 2, "display", "none"], [1, "card", "mb-1"], [1, "card-body", "p-3"], [1, "row", "align-items-center"], [1, "col-lg-4", "mb-2", "mb-lg-0"], [1, "card-title"], [1, "font-small-3", "text-muted"], [1, "col-lg-2"], [1, "upload-btn-wrapper"], [1, "mb-4"], [1, "btn", "btn-primary", "update", "mr-3", 3, "click"], [1, "col-lg-6"], [1, "modal-footer"], [1, "mat-error"], [1, "col-sm-6", "text-left"], ["type", "button", 1, "btn", "btn-border", "btn-xs", 3, "click"], [1, "icon-file-download", "mr-1", "font-small-2"], ["type", "button", 1, "btn", "btn-primary", "btn-sm", 3, "disabled", "click"], [1, "mb-2", "text-center", "file-uploaded"], [1, "text-semibold", "pr-2"], ["class", "file-cancel", 3, "click", 4, "ngIf"], [1, "file-cancel", 3, "click"], [1, "icon-cross"], [1, "text-danger", "font-medium-2", "text-bold"], ["placeholder", "John Doe", "type", "text", 1, "form-control", "xs", "field-md", 3, "ngModel", "ngModelChange"], ["placeholder", "john@example.com", "type", "text", 1, "form-control", "xs", "field-md", 3, "ngModel", "ngModelChange"], ["placeholder", "+919999999999", "type", "text", 1, "form-control", "xs", "field-md", 3, "ngModel", "ngModelChange"], ["placeholder", "1", "type", "text", 1, "form-control", "xs", "field-md", 3, "ngModel", "ngModelChange"], [1, "d-flex"], ["fileInputResume", ""], [1, "btn", "btn-border", "btn-sm", 3, "click"], ["aria-labelledby", "Clear Selection", "class", "button-close-file", "mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["matInput", "", "readonly", "", "type", "text", 1, "font-small-3", "text-black", 3, "value"], ["href", "javascript:void(0);", "title", "Remove", 1, "delete-bin", 3, "click"], [1, "icon-bin"], ["aria-labelledby", "Clear Selection", "mat-icon-button", "", "matSuffix", "", 1, "button-close-file", 3, "click"], [1, "font-medium-2", "text-danger"]],
   template: function InitiateReferenceComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
