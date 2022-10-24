@@ -4058,7 +4058,8 @@ class InterviewComponent {
     fetchinterviews() {
         this.spinnerVisibilityService.show();
         let interviewdata = {
-            "role": "candidate"
+            "role": "candidate",
+            "candidateid": this.candidateid
         };
         this.completed_data = [];
         this.upcoming_data = [];
