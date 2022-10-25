@@ -4086,6 +4086,9 @@ class InterviewComponent {
             role: "candidate",
             user_id: 0
         };
+        if (this.candidateid != 0) {
+            interview_data.role = "recruiter";
+        }
         this.spinnerVisibilityService.show();
         this.apiService.cancel_interview(interview_data).then((data) => {
             this.fetchinterviews();
@@ -10102,6 +10105,7 @@ class InterviewComponent {
     this.apiService = apiService;
     this.http = http;
     this.spinnerVisibilityService = spinnerVisibilityService;
+    this.candidateid = 0;
     this.jd_file = "assets/corporate/reference/JD/";
     this.questions_file = "assets/corporate/reference/questions/";
     this.start_recording = false;
@@ -10317,8 +10321,12 @@ class InterviewComponent {
   }
 
   updatecalendar() {
+    let input = {
+      calendar_data: this.mycalendar.getApi().getEvents(),
+      candidateid: this.candidateid
+    };
     this.spinnerVisibilityService.show();
-    this.apiService.update_calendar(this.mycalendar.getApi().getEvents()).then(data => {
+    this.apiService.update_calendar(input).then(data => {
       this.openDialog("Schedule updated successfully", "success");
     }).finally(() => {
       this.spinnerVisibilityService.hide();
@@ -10841,6 +10849,9 @@ InterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.mycalendar = _t.first);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.interviewRecordButtonComponent = _t.first);
     }
+  },
+  inputs: {
+    candidateid: "candidateid"
   },
   decls: 320,
   vars: 45,
