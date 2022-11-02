@@ -17463,7 +17463,7 @@ class InitiateReferenceComponent {
   get validateReferenceError() {
     let regexp_phone = new RegExp('[+][0-9]+');
     let regexp_email = new RegExp('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9+_.-]+\.[a-zA-Z0-9+_.-]+$');
-    let regexp_experience = new RegExp('^[1-9]\d*$');
+    let regexp_experience = new RegExp('^[1-9]{0,2}$');
 
     for (const [i, data] of this.referenceData.entries()) {
       if (!data.Name) {
