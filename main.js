@@ -66504,10 +66504,12 @@ class AnswerComponent {
         this.currentQuestion = activeTab;
     }
     rightAnswer(question, option) {
-        return question.answer === option;
+        // TODO may need to fix this logic if we need to re enable answer summary page
+        return question.answer[option] > 0;
     }
     wrongAnswer(question, option) {
-        return question.selectedAnswer.answer === option && question.answer !== option;
+        // TODO may need to fix this logic if we need to re enable answer summary page
+        return question.selectedAnswer.answer === option && question.answer[option] <= 0;
     }
     reviewAnswerComplete() {
         this.reviewCompleteEvent.emit();
@@ -66805,7 +66807,7 @@ class QuestionComponent {
       questionId: question.id,
       skillId: question.skillId,
       answer: answer,
-      isCorrectAnswer: answer === question.answer
+      isCorrectAnswer: question.answer[answer]
     };
   }
 
@@ -67190,25 +67192,34 @@ class SummaryComponent {
   get testScore() {
     var _a;
 
-    return parseFloat((this.rightAnswered / ((_a = this.questions) === null || _a === void 0 ? void 0 : _a.length) * 100).toFixed(2));
+    return parseFloat((this.score / ((_a = this.questions) === null || _a === void 0 ? void 0 : _a.length) * 100).toFixed(2));
   }
 
   static answerSummary(questions) {
     let questions_answered = 0;
     let right_answered = 0;
     let wrong_answered = 0;
+    let score = 0;
 
     for (const question of questions) {
       if (question.selectedAnswer.answer !== '') {
         questions_answered++;
-        question.selectedAnswer.answer === question.answer ? right_answered++ : wrong_answered++;
+        const tempScore = question.answer[question.selectedAnswer.answer];
+
+        if (tempScore > 0) {
+          right_answered++;
+          score += tempScore;
+        } else {
+          wrong_answered++;
+        }
       }
     }
 
     return {
       total: questions_answered,
       right: right_answered,
-      wrong: wrong_answered
+      wrong: wrong_answered,
+      score: score
     };
   }
 
@@ -67217,6 +67228,7 @@ class SummaryComponent {
     this.rightAnswered = answerSummary.right;
     this.wrongAnswered = answerSummary.wrong;
     this.totalAnswered = answerSummary.total;
+    this.score = answerSummary.score;
   }
 
   _viewAnswers() {
