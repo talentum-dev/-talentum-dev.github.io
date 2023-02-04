@@ -9677,6 +9677,10 @@ body.stop-scrolling {
        color: #337ebb;
        font-weight: 700;
    }
+.card .card-header h5.card-title {
+    font-size: 18px;
+    margin: 0;
+}
 .card .card-header h4.card-title {
        font-size: 20px;
        margin: 0;
@@ -9744,7 +9748,7 @@ body.stop-scrolling {
        opacity: 1;
    }
 .card-profile .profile-image img {
-       width: 150%;
+       width: 100%;
    }
 .card-profile h5 {
        font-size: 14px;
@@ -10185,18 +10189,18 @@ body.stop-scrolling {
    }
 .pretty .state label:after,
    .pretty .state label:before {
-       content: '';
-       width: calc(1em + 2px);
-       height: calc(1em + 2px);
-       display: block;
-       box-sizing: border-box;
-       border-radius: 0;
-       border: 1px solid transparent;
-       z-index: 0;
-       position: absolute;
-       left: 0px;
-       top: -1px;
-       background-color: transparent
+    content: '';
+    width: calc(1em + 1px);
+    height: calc(1em + 1px);
+    display: block;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: 1px solid transparent;
+    z-index: 0;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    background-color: transparent;
    }
 .pretty.pretty-sm .state label:after,
    .pretty.pretty-sm .state label:before {
@@ -12463,6 +12467,18 @@ label {
   }
 .text-capitalize {
     text-transform: capitalize;
+  }
+.logo-vendor-test {
+    max-width: 200px;
+  }
+.logo-powered-by {
+    max-width: 130px;
+  }
+.align-items-center {
+    align-items: center;
+  }
+.justify-content-end {
+    justify-content: flex-end;
   }
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css ***!
