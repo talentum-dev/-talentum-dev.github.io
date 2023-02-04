@@ -20883,13 +20883,13 @@ function ProfilesComponent_div_332_div_13_a_39_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵelementStart"](0, "a", 133);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵelement"](1, "i", 134);
-    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵtext"](2, " Download Exceedance Cultural Report Report");
+    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵtext"](2, " Download Xceedance Cultural Report Report");
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵelementEnd"]();
   }
 
   if (rf & 2) {
     const ctx_r115 = _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵproperty"]("href", ctx_r115.reports == null ? null : ctx_r115.reports.exceedanceCulturalReport, _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵproperty"]("href", ctx_r115.reports == null ? null : ctx_r115.reports.xceedanceCulturalReport, _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵsanitizeUrl"]);
   }
 }
 
@@ -21375,7 +21375,7 @@ function ProfilesComponent_div_332_div_13_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵadvance"](35);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵproperty"]("href", ctx_r114.resume_file, _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵsanitizeUrl"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵproperty"]("ngIf", ctx_r114.reports == null ? null : ctx_r114.reports.exceedanceCulturalReport);
+    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵproperty"]("ngIf", ctx_r114.reports == null ? null : ctx_r114.reports.xceedanceCulturalReport);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵproperty"]("ngIf", !!ctx_r114.video_file);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵadvance"](1);
