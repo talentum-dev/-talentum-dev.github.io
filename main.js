@@ -67075,6 +67075,7 @@ class StartTestComponent {
     this.startTestChange = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
     this.cancelTestChange = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
     this.audioAndCameraPermissions = null;
+    this.iAgree = false;
     this._errorMessage = null; //
   }
 
@@ -67082,11 +67083,22 @@ class StartTestComponent {
     return this._errorMessage;
   }
 
+  get isStartButtonDisabled() {
+    return this.isVideoPermissionsRequired && this.audioAndCameraPermissions === null || !!this.errorMessage || !this.iAgree;
+  }
+
   ngOnInit() {
     var _this = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this.checkCameraAndAudioPermissions();
+      setTimeout( /*#__PURE__*/(0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        const ref = yield _this.testService.validateReferenceId(_this.referenceId);
+        _this.isVideoPermissionsRequired = ref.videoPermissionRequired;
+
+        if (ref.videoPermissionRequired) {
+          yield _this.checkCameraAndAudioPermissions();
+        }
+      }), 0);
     })();
   }
 
@@ -67126,19 +67138,33 @@ class StartTestComponent {
     var _this3 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      // need to check again before starting test to check if reference id is still valid.
       const ref = yield _this3.testService.validateReferenceId(_this3.referenceId);
-      yield _this3.checkCameraAndAudioPermissions();
+
+      if (ref.videoPermissionRequired) {
+        yield _this3.checkCameraAndAudioPermissions();
+      }
 
       if (ref === null || ref === void 0 ? void 0 : ref.errorMessage) {
         _this3._errorMessage = ref.errorMessage;
       } else {
         _this3._errorMessage = null;
 
+        if (!ref.videoPermissionRequired) {
+          _this3.startTestChange.emit();
+
+          return;
+        }
+
         if (_this3.audioAndCameraPermissions === 'granted') {
           _this3.startTestChange.emit();
         }
       }
     })();
+  }
+
+  changeIAgree($event) {
+    this.iAgree = !this.iAgree;
   }
 
 }
@@ -67158,8 +67184,8 @@ StartTestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
     cancelTestChange: "cancelTestChange"
   },
   decls: 22,
-  vars: 4,
-  consts: [[1, "start-test"], [1, "alert", "alert-warning", "fade", "in", "alert-dismissible", "show"], ["aria-label", "Close", "data-dismiss", "alert", "type", "button", 1, "close"], [1, "mb-0", "text-semibold"], [1, "mb-0"], [1, "text-semibold"], ["class", "mb-0", 4, "ngIf"], ["class", "alert mr-2 alert-danger", 4, "ngIf"], [1, "mb-4"], [1, "pretty", "pretty-sm", "p-default"], ["type", "checkbox"], [1, "state", "p-primary"], [1, "text-left", "mt-4"], ["type", "button", 1, "btn", "btn-sm", "mr-2", "btn-border", "light", 3, "click"], [1, "btn", "btn-primary", "btn-sm", "start-test-btn", "ml-2", 3, "disabled", "click"], [1, "alert", "mr-2", "alert-danger"]],
+  vars: 5,
+  consts: [[1, "start-test"], [1, "alert", "alert-warning", "fade", "in", "alert-dismissible", "show"], ["aria-label", "Close", "data-dismiss", "alert", "type", "button", 1, "close"], [1, "mb-0", "text-semibold"], [1, "mb-0"], [1, "text-semibold"], ["class", "mb-0", 4, "ngIf"], ["class", "alert mr-2 alert-danger", 4, "ngIf"], [1, "mb-4"], [1, "pretty", "pretty-sm", "p-default"], ["type", "checkbox", 3, "checked", "change"], [1, "state", "p-primary"], [1, "text-left", "mt-4"], ["type", "button", 1, "btn", "btn-sm", "mr-2", "btn-border", "light", 3, "click"], [1, "btn", "btn-primary", "btn-sm", "start-test-btn", "ml-2", 3, "disabled", "click"], [1, "alert", "mr-2", "alert-danger"]],
   template: function StartTestComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
@@ -67174,8 +67200,11 @@ StartTestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, StartTestComponent_p_9_Template, 2, 0, "p", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, StartTestComponent_div_10_Template, 2, 1, "div", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "div", 8)(12, "div", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](13, "input", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "div", 8)(12, "div", 9)(13, "input", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function StartTestComponent_Template_input_change_13_listener($event) {
+        return ctx.changeIAgree($event);
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "div", 11)(15, "label");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "I Agree. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
@@ -67200,8 +67229,10 @@ StartTestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.audioAndCameraPermissions && ctx.audioAndCameraPermissions === "granted");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.errorMessage);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("disabled", ctx.errorMessage || ctx.audioAndCameraPermissions === null);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.iAgree);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("disabled", ctx.isStartButtonDisabled);
     }
   },
   directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf],
