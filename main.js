@@ -67191,7 +67191,7 @@ StartTestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, " We need your permission to take your photos and monitor the exam through a webcam.");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "p", 4)(6, "span", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Please keep your keyboard aside an using it will end you test");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "please dont use your keyboard, as using the keyboard will end your test abruptly");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, StartTestComponent_p_8_Template, 5, 0, "p", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, StartTestComponent_p_9_Template, 2, 0, "p", 6);
