@@ -2337,7 +2337,7 @@ class ApiService {
 
     function _postData5() {
       _postData5 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-        const apiName = 'MyCustomLambda';
+        const apiName = 'serverless';
         const path = '/fetchreferrals';
         const myInit = {
           headers: {
@@ -22153,7 +22153,6 @@ class ProfilesComponent {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this3.reports = yield _this3.recruiterService.getReports(i.user_id, i.test_id);
-      debugger;
       console.log(_this3.reports);
     })();
   }
