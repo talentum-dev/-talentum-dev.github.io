@@ -67202,7 +67202,7 @@ StartTestComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "div", 11)(15, "label");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "The test is just to help us understand you better. There is no right or wrong answer. Hence, feel free to select the response that most appeals to you. Please click on I agree to begin.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "The test is just to help us understand you better. There is no right or wrong answer. Hence, feel free to select the response that most appeals to you. Please check the box to agree and start the assessment.");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "div", 12)(18, "button", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function StartTestComponent_Template_button_click_18_listener() {
