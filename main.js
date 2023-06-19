@@ -20927,7 +20927,7 @@ function ProfilesComponent_div_332_div_13_ng_container_55_Template(rf, ctx) {
 
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵelementStart"](1, "div", 80)(2, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵtext"](3, "The link is valid for 2 hours.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵtext"](3, "The link is valid for 24 hours.");
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵelementStart"](4, "div", 169);
     _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵtext"](5);
