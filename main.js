@@ -12434,9 +12434,9 @@ class InterviewComponent {
         id: "",
         cancelled_by: "",
         cancelreason: "",
-        video_status: "Pending",
-        payment_status: "Pending",
-        feedback_status: "Pending"
+        video_status: "pending",
+        payment_status: "pending",
+        feedback_status: "pending"
       },
       reference_id: reference_id
     };
