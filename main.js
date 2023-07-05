@@ -12486,7 +12486,7 @@ class InterviewComponent {
     };
     complete_feedback.interview_id = this.interview_details.id;
     complete_feedback.submission_time = new Date();
-    complete_feedback.feedback = this.feedbacktext;
+    complete_feedback.feedback = this.feedbacktext + "\n\n\n";
     complete_feedback.technical.pop();
     this.technical_feedback.forEach(element => {
       complete_feedback.technical.push({
