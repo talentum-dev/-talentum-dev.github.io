@@ -7962,6 +7962,7 @@ class SkillsComponent {
       yield _this2.skillsService.patchUserSkills({
         tagline: _this2.userPunchline,
         skills: _this2.userSkills.map(skills => skills.id),
+        skill_names: _this2.userSkills.map(skills => skills.skill_name),
         candidateid: _this2.candidateid
       });
 
@@ -7994,7 +7995,13 @@ class SkillsComponent {
   }
 
   selectedSkills(event) {
-    this.addUserSkills = this.allSkills.filter(_skill => _skill.skill_name === event.option.viewValue)[0];
+    let candidate_skill = {
+      id: 0,
+      skill_name: event.option.viewValue
+    };
+    let candidate_allskills = this.allSkills;
+    candidate_allskills.push(candidate_skill);
+    this.addUserSkills = candidate_allskills.filter(_skill => _skill.skill_name === event.option.viewValue)[0];
     this.skillInput.nativeElement.value = '';
     this.skillForm.get(_models_constants__WEBPACK_IMPORTED_MODULE_1__.SKILLS_CTRL).setValue(null);
   }
@@ -8004,7 +8011,22 @@ class SkillsComponent {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this3.isInterviewer = yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_3__.HAS_ROLE)(_models_auth_model__WEBPACK_IMPORTED_MODULE_4__.Roles.INTERVIEWER);
-      Promise.all([_this3.skillsService.getAllTagLines().then(data => _this3.punchLines = data), _this3.skillsService.getAllSkills().then(data => _this3.allSkills = data)]).then(_ => _this3.populateSkills().catch(err => console.error(err)));
+      let fetch_all_skills = [{
+        id: 0,
+        skill_name: "",
+        user_specific: 0
+      }];
+      Promise.all([_this3.skillsService.getAllTagLines().then(data => _this3.punchLines = data), _this3.skillsService.getAllSkills().then(data => {
+        fetch_all_skills = data;
+        fetch_all_skills.forEach(element => {
+          if (element.user_specific == 0) {
+            _this3._allSkills.push({
+              id: element.id,
+              skill_name: element.skill_name
+            });
+          }
+        });
+      })]).then(_ => _this3.populateSkills().catch(err => console.error(err)));
     })();
   }
 
@@ -8023,7 +8045,15 @@ class SkillsComponent {
   }
 
   _filterSkills(skill) {
-    return this.allSkills.filter(_skill => _skill.skill_name.toLowerCase().includes(skill === null || skill === void 0 ? void 0 : skill.toString().toLowerCase()));
+    // return this.allSkills
+    //   .filter(_skill => _skill.skill_name.toLowerCase().includes(skill?.toString().toLowerCase()))
+    let skills_array = this.allSkills.filter(_skill => _skill.skill_name.toLowerCase().includes(skill === null || skill === void 0 ? void 0 : skill.toString().toLowerCase()));
+    let candidate_skill = {
+      id: 0,
+      skill_name: skill
+    };
+    skills_array.push(candidate_skill);
+    return skills_array;
   }
 
 }
