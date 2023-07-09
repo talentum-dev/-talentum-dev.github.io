@@ -11971,7 +11971,7 @@ class InterviewComponent {
       skill: "",
       feedback: 0
     }];
-    this.submission_time = null;
+    this.submission_time = new Date();
     this.allow_feedback_update = false;
     this.soft_feedback = [];
     this.softskills = ["Logical reasoning", "Technical skills", "Communication", "Behaviour"];
@@ -12506,7 +12506,7 @@ class InterviewComponent {
       }],
       overall_rating: 0,
       attended: false,
-      submission_time: null
+      submission_time: new Date()
     };
     complete_feedback.interview_id = this.interview_details.id;
     complete_feedback.submission_time = new Date();
@@ -12571,29 +12571,37 @@ class InterviewComponent {
       }
     });
 
-    if (JSON.parse(feedback).technical.length > 0) {
-      JSON.parse(feedback).technical.forEach(element => {
-        technical_feedback_temp.push({
-          skill: element.name,
-          feedback: element.score
+    if (Object.values(feedback).length > 2) {
+      if (JSON.parse(feedback).technical.length > 0) {
+        JSON.parse(feedback).technical.forEach(element => {
+          technical_feedback_temp.push({
+            skill: element.name,
+            feedback: element.score
+          });
         });
-      });
-    }
+      }
 
-    if (JSON.parse(feedback).general.length > 0) {
-      JSON.parse(feedback).general.forEach(element => {
-        general_feedback_temp.push({
-          name: element.name,
-          score: element.score
+      if (JSON.parse(feedback).general.length > 0) {
+        JSON.parse(feedback).general.forEach(element => {
+          general_feedback_temp.push({
+            name: element.name,
+            score: element.score
+          });
         });
-      });
-    }
+      }
 
-    this.technical_feedback = technical_feedback_temp;
-    this.soft_feedback = general_feedback_temp;
-    this.overall_feedback = JSON.parse(feedback).overall_rating;
-    this.feedbacktext = JSON.parse(feedback).feedback;
-    this.submission_time = JSON.parse(feedback).submission_time;
+      this.technical_feedback = technical_feedback_temp;
+      this.soft_feedback = general_feedback_temp;
+      this.overall_feedback = JSON.parse(feedback).overall_rating;
+      this.feedbacktext = JSON.parse(feedback).feedback;
+      this.submission_time = JSON.parse(feedback).submission_time;
+    } else {
+      this.submission_time = new Date();
+    } // allow feedback update only 24 hours after first feedback submission.
+
+
+    console.log(this.submission_time);
+    console.log(new Date(new Date(this.submission_time).getTime() + 1 * 24 * 60 * 60 * 1000));
     this.allow_feedback_update = new Date(new Date(this.submission_time).getTime() + 1 * 24 * 60 * 60 * 1000) > new Date() ? true : false;
   }
 
