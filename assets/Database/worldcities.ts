@@ -40999,5 +40999,6 @@ export const cities: string[] = [
   "`Assal al Ward, Rif Dimashq, Syria",
   "`Ataq, Shabwah, Yemen",
   "`Ayn `Isa, Ar Raqqah, Syria",
-  "`Ibri, Ad Dakhiliyah, Oman"
+  "`Ibri, Ad Dakhiliyah, Oman",
+  "Noida, Uttar Pradesh, India"
 ]
