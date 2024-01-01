@@ -6299,7 +6299,8 @@ class TestComponent {
 
       if (_this2.referenceIdSummary.errorMessage !== null) {
         _this2.testURL = `/test/${btoa(JSON.stringify({
-          referenceId: _this2.referenceIdForm.value
+          referenceId: _this2.referenceIdForm.value,
+          corporate_id: _this2.referenceIdSummary.corporate_id
         }))};`;
       } else {
         _this2.testURL = null;
@@ -67726,15 +67727,17 @@ class TestComponent {
     (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(this.activatedRoute.paramMap).then(params => {
       const data = JSON.parse(atob(params.get("data")));
       this.referenceId = data.referenceId;
-      let input = {
-        reference_id: this.referenceId
-      };
-      this.spinnerVisibilityService.show();
-      this.apiService.fetch_reference_details(input).then(data1 => {
-        this.corporate_id = data1[0].corporate_id;
-      }).finally(() => {
-        this.spinnerVisibilityService.hide();
-      });
+      this.corporate_id = data.corporate_id; // Removed below code as it will open a security risk where candidates can find reference details. Instead I fetched
+      // corporate id from get_validate_reference. Maybe there is a better option ?
+      //   let input = {
+      //     reference_id: this.referenceId
+      //   }
+      //   this.spinnerVisibilityService.show();
+      //   this.apiService.fetch_reference_details(input).then((data1) => {
+      //     this.corporate_id = data1[0].corporate_id
+      //   }).finally(() => {
+      //     this.spinnerVisibilityService.hide();
+      //   });
     });
     this.view = {
       startTest: true
