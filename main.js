@@ -3495,6 +3495,13 @@ const routes = [
     { path: "privacy-policy", component: _general_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_20__.PrivacyPolicyComponent, },
     { path: "terms-and-conditions", component: _general_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_21__.TermsConditionsComponent, },
     { path: "testVideoRecording", component: _util_web_cam_record_video_record_video_component__WEBPACK_IMPORTED_MODULE_32__.RecordVideoComponent, },
+    {
+        path: "testVideoRecording",
+        canActivate: [_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_22__.AuthGuard],
+        data: { roles: [_models_auth_model__WEBPACK_IMPORTED_MODULE_23__.Roles.CANDIDATE, _models_auth_model__WEBPACK_IMPORTED_MODULE_23__.Roles.ADMIN] },
+        component: _util_web_cam_record_video_record_video_component__WEBPACK_IMPORTED_MODULE_32__.RecordVideoComponent
+    },
+    // {path: "testTranscribing", component: TranscribeAudioComponent,},
     { path: '**', component: _error_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_12__.NotFoundComponent, },
 ];
 class AppRoutingModule {
@@ -3759,41 +3766,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 90158);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 55041);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api.service */ 51491);
-/* harmony import */ var ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! ngx-doc-viewer */ 13778);
+/* harmony import */ var ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(/*! ngx-doc-viewer */ 13778);
 /* harmony import */ var ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-bootstrap/accordion */ 34495);
 /* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-bootstrap/modal */ 26528);
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(/*! ngx-toastr */ 34101);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(/*! ngx-toastr */ 34101);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(/*! @angular/platform-browser/animations */ 73598);
 /* harmony import */ var _recruiter_recruiter_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./recruiter/recruiter.component */ 43991);
 /* harmony import */ var _recruiter_profiles_profiles_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./recruiter/profiles/profiles.component */ 63493);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(/*! @angular/material/input */ 43365);
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(/*! @angular/material/table */ 97217);
-/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(/*! @angular/material/sort */ 64316);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! @angular/material/card */ 11961);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! @angular/material/button */ 87317);
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! @angular/material/toolbar */ 64517);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! @angular/material/icon */ 65590);
-/* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(/*! @angular/material/sidenav */ 7216);
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(/*! @angular/material/list */ 26131);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(/*! @angular/material/select */ 91434);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(/*! @angular/material/input */ 43365);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! @angular/material/table */ 97217);
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! @angular/material/sort */ 64316);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! @angular/material/card */ 11961);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(/*! @angular/material/button */ 87317);
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(/*! @angular/material/toolbar */ 64517);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(/*! @angular/material/icon */ 65590);
+/* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! @angular/material/sidenav */ 7216);
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! @angular/material/list */ 26131);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! @angular/material/select */ 91434);
 /* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home-page/home-page.component */ 5079);
 /* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! angular-datatables */ 51282);
-/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! @angular/material/slider */ 61859);
-/* harmony import */ var _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! @angular-slider/ngx-slider */ 92498);
+/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! @angular/material/slider */ 61859);
+/* harmony import */ var _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! @angular-slider/ngx-slider */ 92498);
 /* harmony import */ var src_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/guards/auth/auth.guard */ 9740);
 /* harmony import */ var src_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/services/auth/auth.service */ 74067);
 /* harmony import */ var _recruiter_video_links_video_links_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./recruiter/video-links/video-links.component */ 54781);
 /* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./header/header.component */ 93482);
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./footer/footer.component */ 10970);
 /* harmony import */ var _recruiter_assessment_test_assessment_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./recruiter/assessment-test/assessment-test.component */ 74913);
-/* harmony import */ var ngx_countdown__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! ngx-countdown */ 96439);
+/* harmony import */ var ngx_countdown__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! ngx-countdown */ 96439);
 /* harmony import */ var _candidate_recruitment_hiretest_hiretest_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./candidate/recruitment/hiretest/hiretest.component */ 83829);
 /* harmony import */ var _candidate_recruitment_recruitment_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./candidate/recruitment/recruitment.component */ 46752);
 /* harmony import */ var _candidate_profile_skills_skills_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./candidate/profile/skills/skills.component */ 36272);
@@ -3805,14 +3812,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _candidate_assessment_test_test_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./candidate/assessment/test/test.component */ 70616);
 /* harmony import */ var _candidate_assessment_profile_activity_profile_activity_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./candidate/assessment/profile-activity/profile-activity.component */ 90477);
 /* harmony import */ var _candidate_assessment_interview_interview_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./candidate/assessment/interview/interview.component */ 43796);
-/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! ng-http-loader */ 23020);
+/* harmony import */ var ng_http_loader__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! ng-http-loader */ 23020);
 /* harmony import */ var _error_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./error/not-found/not-found.component */ 48694);
 /* harmony import */ var _admin_verifytests_verify_tests_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./admin/verifytests/verify-tests.component */ 90145);
-/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! @angular/material/chips */ 81196);
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! @angular/material/autocomplete */ 43188);
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! @angular/material/chips */ 81196);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! @angular/material/autocomplete */ 43188);
 /* harmony import */ var _auth_candidate_sign_in_candidate_sign_in_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./auth/candidate-sign-in/candidate-sign-in.component */ 21091);
 /* harmony import */ var _auth_candidate_sign_up_candidate_sign_up_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./auth/candidate-sign-up/candidate-sign-up.component */ 73318);
-/* harmony import */ var _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! @fullcalendar/angular */ 35717);
+/* harmony import */ var _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! @fullcalendar/angular */ 35717);
 /* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fullcalendar/daygrid */ 13947);
 /* harmony import */ var _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fullcalendar/timegrid */ 69901);
 /* harmony import */ var _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fullcalendar/interaction */ 85194);
@@ -3820,9 +3827,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _interviewer_assessment_interview_interview_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./interviewer/assessment/interview/interview.component */ 72597);
 /* harmony import */ var _util_location_select_location_select_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./util/location-select/location-select.component */ 2129);
 /* harmony import */ var _util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./util/alert-dialog/alert-dialog.component */ 12278);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
 /* harmony import */ var _util_reference_select_reference_select_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./util/reference-select/reference-select.component */ 26984);
-/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
+/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
 /* harmony import */ var _candidate_assessment_test_take_test_take_test_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./candidate/assessment/test/take-test/take-test.component */ 90744);
 /* harmony import */ var _modules_test_test_module__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../modules/test/test.module */ 98459);
 /* harmony import */ var _util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./util/profile-card/profile-card.component */ 56078);
@@ -3852,12 +3859,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _recruiter_my_account_subscription_subscription_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./recruiter/my-account/subscription/subscription.component */ 43290);
 /* harmony import */ var _util_pdf_viewer_pdf_viewer_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./util/pdf-viewer/pdf-viewer.component */ 7624);
 /* harmony import */ var _admin_interviewers_interviewers_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./admin/interviewers/interviewers.component */ 26374);
-/* harmony import */ var ngx_autosize__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! ngx-autosize */ 93535);
+/* harmony import */ var ngx_autosize__WEBPACK_IMPORTED_MODULE_101__ = __webpack_require__(/*! ngx-autosize */ 93535);
 /* harmony import */ var _util_web_cam_record_video_record_video_component__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ./util/web-cam/record-video/record-video.component */ 75252);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! ./candidate/candidate-login/candidate-login.component */ 22271);
-/* harmony import */ var _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ./candidate/candidate-register/candidate-register.component */ 18638);
-/* harmony import */ var _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./candidate/profile/profile.component */ 27531);
+/* harmony import */ var _util_web_cam_transcribe_transcribe_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! ./util/web-cam/transcribe/transcribe.component */ 30545);
+/* harmony import */ var _util_web_cam_transcribe_audio_transcribe_audio_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ./util/web-cam/transcribe-audio/transcribe-audio.component */ 80539);
+/* harmony import */ var _candidate_assessment_bot_interview_bot_interview_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./candidate/assessment/bot-interview/bot-interview.component */ 39921);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! ./candidate/candidate-login/candidate-login.component */ 22271);
+/* harmony import */ var _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! ./candidate/candidate-register/candidate-register.component */ 18638);
+/* harmony import */ var _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! ./candidate/profile/profile.component */ 27531);
 
 
 
@@ -3964,7 +3974,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_fullcalendar_angular__WEBPACK_IMPORTED_MODULE_71__.FullCalendarModule.registerPlugins([
+
+
+
+_fullcalendar_angular__WEBPACK_IMPORTED_MODULE_74__.FullCalendarModule.registerPlugins([
     _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_30__["default"],
     _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_32__["default"],
     _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_31__["default"]
@@ -3972,43 +3985,43 @@ _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_71__.FullCalendarModule.registerP
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_72__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent] });
-AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_72__["ɵɵdefineInjector"]({ providers: [_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService, src_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__.AuthGuard, src_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_10__.AuthService], imports: [[
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_73__.BrowserModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_74__.ReactiveFormsModule,
+AppModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_75__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent] });
+AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_75__["ɵɵdefineInjector"]({ providers: [_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService, src_guards_auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__.AuthGuard, src_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_10__.AuthService], imports: [[
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_76__.BrowserModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_77__.ReactiveFormsModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_75__.HttpClientModule,
-            ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_76__.NgxDocViewerModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_78__.HttpClientModule,
+            ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_79__.NgxDocViewerModule,
             ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__.ModalModule.forRoot(),
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_77__.BrowserAnimationsModule,
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_78__.ToastrModule.forRoot(),
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_80__.BrowserAnimationsModule,
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_81__.ToastrModule.forRoot(),
             ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__.AccordionModule.forRoot(),
-            _angular_forms__WEBPACK_IMPORTED_MODULE_74__.FormsModule,
-            _angular_material_input__WEBPACK_IMPORTED_MODULE_79__.MatInputModule,
-            _angular_material_table__WEBPACK_IMPORTED_MODULE_80__.MatTableModule,
-            _angular_material_sort__WEBPACK_IMPORTED_MODULE_81__.MatSortModule,
-            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_82__.MatCheckboxModule,
-            _angular_material_card__WEBPACK_IMPORTED_MODULE_83__.MatCardModule,
-            _angular_material_button__WEBPACK_IMPORTED_MODULE_84__.MatButtonModule,
-            _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_85__.MatToolbarModule,
-            _angular_material_icon__WEBPACK_IMPORTED_MODULE_86__.MatIconModule,
-            _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_87__.MatSidenavModule,
-            _angular_material_list__WEBPACK_IMPORTED_MODULE_88__.MatListModule,
-            _angular_material_select__WEBPACK_IMPORTED_MODULE_89__.MatSelectModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_77__.FormsModule,
+            _angular_material_input__WEBPACK_IMPORTED_MODULE_82__.MatInputModule,
+            _angular_material_table__WEBPACK_IMPORTED_MODULE_83__.MatTableModule,
+            _angular_material_sort__WEBPACK_IMPORTED_MODULE_84__.MatSortModule,
+            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_85__.MatCheckboxModule,
+            _angular_material_card__WEBPACK_IMPORTED_MODULE_86__.MatCardModule,
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_87__.MatButtonModule,
+            _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_88__.MatToolbarModule,
+            _angular_material_icon__WEBPACK_IMPORTED_MODULE_89__.MatIconModule,
+            _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_90__.MatSidenavModule,
+            _angular_material_list__WEBPACK_IMPORTED_MODULE_91__.MatListModule,
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_92__.MatSelectModule,
             angular_datatables__WEBPACK_IMPORTED_MODULE_8__.DataTablesModule,
-            _angular_material_slider__WEBPACK_IMPORTED_MODULE_90__.MatSliderModule,
-            _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_91__.NgxSliderModule,
-            ngx_countdown__WEBPACK_IMPORTED_MODULE_92__.CountdownModule,
-            ng_http_loader__WEBPACK_IMPORTED_MODULE_93__.NgHttpLoaderModule.forRoot(),
-            _angular_material_chips__WEBPACK_IMPORTED_MODULE_94__.MatChipsModule,
-            _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_95__.MatAutocompleteModule,
-            _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_71__.FullCalendarModule,
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_96__.MatDialogModule,
-            ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_97__.NgxIntlTelInputModule,
+            _angular_material_slider__WEBPACK_IMPORTED_MODULE_93__.MatSliderModule,
+            _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_94__.NgxSliderModule,
+            ngx_countdown__WEBPACK_IMPORTED_MODULE_95__.CountdownModule,
+            ng_http_loader__WEBPACK_IMPORTED_MODULE_96__.NgHttpLoaderModule.forRoot(),
+            _angular_material_chips__WEBPACK_IMPORTED_MODULE_97__.MatChipsModule,
+            _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_98__.MatAutocompleteModule,
+            _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_74__.FullCalendarModule,
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_99__.MatDialogModule,
+            ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_100__.NgxIntlTelInputModule,
             _modules_test_test_module__WEBPACK_IMPORTED_MODULE_39__.TestModule,
-            ngx_autosize__WEBPACK_IMPORTED_MODULE_98__.AutosizeModule
+            ngx_autosize__WEBPACK_IMPORTED_MODULE_101__.AutosizeModule
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_72__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_68__.CandidateLoginComponent, _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_69__.CandidateRegisterComponent, _candidate_candidate_component__WEBPACK_IMPORTED_MODULE_19__.CandidateComponent, _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_70__.ProfileComponent, _candidate_profile_resume_resume_component__WEBPACK_IMPORTED_MODULE_20__.ResumeComponent, _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__.HomePageComponent, _candidate_recruitment_recruitment_component__WEBPACK_IMPORTED_MODULE_16__.RecruitmentComponent,
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_75__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _candidate_candidate_login_candidate_login_component__WEBPACK_IMPORTED_MODULE_71__.CandidateLoginComponent, _candidate_candidate_register_candidate_register_component__WEBPACK_IMPORTED_MODULE_72__.CandidateRegisterComponent, _candidate_candidate_component__WEBPACK_IMPORTED_MODULE_19__.CandidateComponent, _candidate_profile_profile_component__WEBPACK_IMPORTED_MODULE_73__.ProfileComponent, _candidate_profile_resume_resume_component__WEBPACK_IMPORTED_MODULE_20__.ResumeComponent, _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__.HomePageComponent, _candidate_recruitment_recruitment_component__WEBPACK_IMPORTED_MODULE_16__.RecruitmentComponent,
         _candidate_recruitment_hiretest_hiretest_component__WEBPACK_IMPORTED_MODULE_15__.HiretestComponent,
         _recruiter_recruiter_component__WEBPACK_IMPORTED_MODULE_5__.RecruiterComponent,
         _recruiter_profiles_profiles_component__WEBPACK_IMPORTED_MODULE_6__.ProfilesComponent,
@@ -4063,32 +4076,35 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_72__["ɵ�
         _recruiter_my_account_wallet_wallet_component__WEBPACK_IMPORTED_MODULE_62__.WalletComponent,
         _util_pdf_viewer_pdf_viewer_component__WEBPACK_IMPORTED_MODULE_65__.PdfViewerComponent,
         _admin_interviewers_interviewers_component__WEBPACK_IMPORTED_MODULE_66__.InterviewersComponent,
-        _util_web_cam_record_video_record_video_component__WEBPACK_IMPORTED_MODULE_67__.RecordVideoComponent], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_73__.BrowserModule,
-        _angular_forms__WEBPACK_IMPORTED_MODULE_74__.ReactiveFormsModule,
+        _util_web_cam_record_video_record_video_component__WEBPACK_IMPORTED_MODULE_67__.RecordVideoComponent,
+        _util_web_cam_transcribe_transcribe_component__WEBPACK_IMPORTED_MODULE_68__.TranscribeComponent,
+        _util_web_cam_transcribe_audio_transcribe_audio_component__WEBPACK_IMPORTED_MODULE_69__.TranscribeAudioComponent,
+        _candidate_assessment_bot_interview_bot_interview_component__WEBPACK_IMPORTED_MODULE_70__.BotInterviewComponent], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_76__.BrowserModule,
+        _angular_forms__WEBPACK_IMPORTED_MODULE_77__.ReactiveFormsModule,
         _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
-        _angular_common_http__WEBPACK_IMPORTED_MODULE_75__.HttpClientModule,
-        ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_76__.NgxDocViewerModule, ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__.ModalModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_77__.BrowserAnimationsModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_78__.ToastrModule, ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__.AccordionModule, _angular_forms__WEBPACK_IMPORTED_MODULE_74__.FormsModule,
-        _angular_material_input__WEBPACK_IMPORTED_MODULE_79__.MatInputModule,
-        _angular_material_table__WEBPACK_IMPORTED_MODULE_80__.MatTableModule,
-        _angular_material_sort__WEBPACK_IMPORTED_MODULE_81__.MatSortModule,
-        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_82__.MatCheckboxModule,
-        _angular_material_card__WEBPACK_IMPORTED_MODULE_83__.MatCardModule,
-        _angular_material_button__WEBPACK_IMPORTED_MODULE_84__.MatButtonModule,
-        _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_85__.MatToolbarModule,
-        _angular_material_icon__WEBPACK_IMPORTED_MODULE_86__.MatIconModule,
-        _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_87__.MatSidenavModule,
-        _angular_material_list__WEBPACK_IMPORTED_MODULE_88__.MatListModule,
-        _angular_material_select__WEBPACK_IMPORTED_MODULE_89__.MatSelectModule,
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_78__.HttpClientModule,
+        ngx_doc_viewer__WEBPACK_IMPORTED_MODULE_79__.NgxDocViewerModule, ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__.ModalModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_80__.BrowserAnimationsModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_81__.ToastrModule, ngx_bootstrap_accordion__WEBPACK_IMPORTED_MODULE_3__.AccordionModule, _angular_forms__WEBPACK_IMPORTED_MODULE_77__.FormsModule,
+        _angular_material_input__WEBPACK_IMPORTED_MODULE_82__.MatInputModule,
+        _angular_material_table__WEBPACK_IMPORTED_MODULE_83__.MatTableModule,
+        _angular_material_sort__WEBPACK_IMPORTED_MODULE_84__.MatSortModule,
+        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_85__.MatCheckboxModule,
+        _angular_material_card__WEBPACK_IMPORTED_MODULE_86__.MatCardModule,
+        _angular_material_button__WEBPACK_IMPORTED_MODULE_87__.MatButtonModule,
+        _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_88__.MatToolbarModule,
+        _angular_material_icon__WEBPACK_IMPORTED_MODULE_89__.MatIconModule,
+        _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_90__.MatSidenavModule,
+        _angular_material_list__WEBPACK_IMPORTED_MODULE_91__.MatListModule,
+        _angular_material_select__WEBPACK_IMPORTED_MODULE_92__.MatSelectModule,
         angular_datatables__WEBPACK_IMPORTED_MODULE_8__.DataTablesModule,
-        _angular_material_slider__WEBPACK_IMPORTED_MODULE_90__.MatSliderModule,
-        _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_91__.NgxSliderModule,
-        ngx_countdown__WEBPACK_IMPORTED_MODULE_92__.CountdownModule, ng_http_loader__WEBPACK_IMPORTED_MODULE_93__.NgHttpLoaderModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_94__.MatChipsModule,
-        _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_95__.MatAutocompleteModule,
-        _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_71__.FullCalendarModule,
-        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_96__.MatDialogModule,
-        ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_97__.NgxIntlTelInputModule,
+        _angular_material_slider__WEBPACK_IMPORTED_MODULE_93__.MatSliderModule,
+        _angular_slider_ngx_slider__WEBPACK_IMPORTED_MODULE_94__.NgxSliderModule,
+        ngx_countdown__WEBPACK_IMPORTED_MODULE_95__.CountdownModule, ng_http_loader__WEBPACK_IMPORTED_MODULE_96__.NgHttpLoaderModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_97__.MatChipsModule,
+        _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_98__.MatAutocompleteModule,
+        _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_74__.FullCalendarModule,
+        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_99__.MatDialogModule,
+        ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_100__.NgxIntlTelInputModule,
         _modules_test_test_module__WEBPACK_IMPORTED_MODULE_39__.TestModule,
-        ngx_autosize__WEBPACK_IMPORTED_MODULE_98__.AutosizeModule] }); })();
+        ngx_autosize__WEBPACK_IMPORTED_MODULE_101__.AutosizeModule] }); })();
 
 
 /***/ }),
@@ -5557,6 +5573,34 @@ AssessmentComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.assessmentView.myInterviews);
     } }, directives: [_util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_1__.ProfileCardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _test_test_component__WEBPACK_IMPORTED_MODULE_2__.TestComponent, _interview_interview_component__WEBPACK_IMPORTED_MODULE_3__.InterviewComponent], styles: ["a[_ngcontent-%COMP%] {\n  cursor: pointer\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2Vzc21lbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0FBQ0YiLCJmaWxlIjoiYXNzZXNzbWVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYSB7XG4gIGN1cnNvcjogcG9pbnRlclxufVxuIl19 */"] });
+
+
+/***/ }),
+
+/***/ 39921:
+/*!*******************************************************************************!*\
+  !*** ./src/app/candidate/assessment/bot-interview/bot-interview.component.ts ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BotInterviewComponent": () => (/* binding */ BotInterviewComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+
+class BotInterviewComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+BotInterviewComponent.ɵfac = function BotInterviewComponent_Factory(t) { return new (t || BotInterviewComponent)(); };
+BotInterviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BotInterviewComponent, selectors: [["app-bot-interview"]], decls: 2, vars: 0, template: function BotInterviewComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "bot-interview works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJib3QtaW50ZXJ2aWV3LmNvbXBvbmVudC5jc3MifQ== */"] });
 
 
 /***/ }),
@@ -24662,10 +24706,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _models_record_video_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../models/record.video.model */ 72468);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../api.service */ 51491);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-intl-tel-input */ 68831);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/form-field */ 44770);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/input */ 43365);
+/* harmony import */ var ngx_autosize__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-autosize */ 93535);
+
+
+
+
 
 
 
@@ -24678,9 +24730,9 @@ const _c0 = ["video"];
 const _c1 = ["video1"];
 const _c2 = ["canvas"];
 
-function RecordVideoComponent_p_11_Template(rf, ctx) {
+function RecordVideoComponent_p_12_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "p", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "p", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
@@ -24692,15 +24744,15 @@ function RecordVideoComponent_p_11_Template(rf, ctx) {
   }
 }
 
-function RecordVideoComponent_a_16_Template(rf, ctx) {
+function RecordVideoComponent_a_17_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "a", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_a_16_Template_a_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r5);
-      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return ctx_r4.startInterview();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "a", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_a_17_Template_a_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r6);
+      const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return ctx_r5.startInterview();
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Start interview");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -24713,11 +24765,19 @@ class RecordVideoComponent {
     this.WIDTH = 640;
     this.HEIGHT = 480;
     this.image_count = 1;
+    this.testId = "some_test_id";
     this.referenceIdForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl('', {
       validators: _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required
     });
     this.reference_id_valid = false;
-    this.recordingOn = false; //
+    this.recordingOn = false;
+    this.chunks = [];
+    this.interview_in_progress = false;
+    this.http = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient(new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpXhrBackend({
+      build: () => new XMLHttpRequest()
+    }));
+    this.sessionId = Math.random().toString(36).slice(2, 7).toString();
+    this.questionText = "please explain the concept of polymorphism in java and also how it is different from inheritance"; //
   }
 
   get errorMessage() {
@@ -24745,8 +24805,8 @@ class RecordVideoComponent {
       video: true,
       audio: true
     }).then(stream => {
-      this.video1.nativeElement.srcObject = stream; // this.video1.nativeElement.load();
-
+      this.video1.nativeElement.srcObject = stream;
+      this.video1.nativeElement.load();
       this.video1.nativeElement.play();
       this.videoRecorderInit(stream);
     }); // .catch(function (err0r) {
@@ -24768,7 +24828,7 @@ class RecordVideoComponent {
     })();
   }
 
-  completeRecording() {
+  completeRecordingTest() {
     var _this2 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -24777,16 +24837,17 @@ class RecordVideoComponent {
       _this2.videoRecorder.stopRecording(); // this.blob_video = await this.videoRecorder.flush()
 
 
-      _this2.videoRecorder.flush().then(response => {
+      _this2.videoRecorder.flush(false).then(response => {
         var URL = window.URL;
-        _this2.blob_video = URL.createObjectURL(response);
+        _this2.blob_video = URL.createObjectURL(response[0]);
         console.log(_this2.blob_video);
 
-        _this2.video.nativeElement.setAttribute("src", _this2.blob_video);
+        _this2.video.nativeElement.setAttribute("src", _this2.blob_video); // this.video.nativeElement.srcObject = this.blob_video
 
-        _this2.video.nativeElement.load();
 
-        _this2.video.nativeElement.play();
+        _this2.video.nativeElement.load(); // this.video.nativeElement.play();
+        // FileSaver.saveAs(this.blob_video, "testVideo10");
+
       });
     })();
   }
@@ -24794,6 +24855,15 @@ class RecordVideoComponent {
   startInterview() {
     // window.open(this.testURL, '_blank', 'fullscreen=yes');
     console.log("interview started");
+    this.interview_in_progress = true;
+    this.startRecording();
+  }
+
+  finishInterview() {
+    // window.open(this.testURL, '_blank', 'fullscreen=yes');
+    console.log("interview finished");
+    this.interview_in_progress = false;
+    this.videoRecorder.stopRecording();
   }
 
   checkValidateReferenceId() {
@@ -24804,19 +24874,23 @@ class RecordVideoComponent {
     })();
   }
 
-  combineAudioTracks(audioTracks) {
-    const audioIns = [];
-    const audioContext = new AudioContext();
+  askQuestion() {}
 
-    for (let audioTrack of audioTracks) {
-      let mediaStream = new MediaStream();
-      mediaStream.addTrack(audioTrack);
-      audioIns.push(audioContext.createMediaStreamSource(mediaStream));
-    }
+  submitAnswer() {
+    this.putAudio();
+  }
 
-    const dest = audioContext.createMediaStreamDestination();
-    audioIns.forEach(audioIn => audioIn.connect(dest));
-    return dest.stream;
+  putAudio() {
+    var _this4 = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this4.videoRecorder.flush(true); //session id & video_id in the put request should be mapped to a new question id and stored in DB. this can be taken care
+      // async upon trigger fired when chunk is put onto s3.
+    })();
+  }
+
+  getURI() {
+    return "/v1/bot_interview/chunk";
   }
 
 }
@@ -24846,9 +24920,9 @@ RecordVideoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
   inputs: {
     testId: "testId"
   },
-  decls: 34,
-  vars: 11,
-  consts: [["id", "test", 1, "tab-pane", "active"], [1, "card", "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#bot-interview", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#setup", 1, "nav-link"], [1, "tab-content"], ["id", "bot-interview", 1, "tab-pane", "active"], ["class", "mat-error", 4, "ngIf"], [1, "d-flex", "mb-3"], ["placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "formControl"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-border", "btn-sm", "ml-2", 3, "disabled", "click"], ["class", "btn btn-primary ml-2", "data-target", "#myModal", "data-toggle", "modal", 3, "click", 4, "ngIf"], ["id", "setup", 1, "tab-pane"], [1, "mb-3"], [1, "card-title", "mb-0"], [1, "badge", "badge-success", 3, "click"], [1, "badge", "badge-danger", 3, "click"], [3, "hidden"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 3, "height", "width"], ["video", ""], ["type", "video/mp4", 3, "src"], ["video1", ""], ["type", "video/mp4"], [1, "mat-error"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-primary", "ml-2", 3, "click"]],
+  decls: 46,
+  vars: 17,
+  consts: [["id", "test", 1, "tab-pane", "active"], [1, "card", "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#bot-interview", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#setup", 1, "nav-link"], [1, "tab-content"], ["id", "bot-interview", 1, "tab-pane", "active"], [3, "hidden"], ["class", "mat-error", 4, "ngIf"], [1, "d-flex", "mb-3"], ["placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "formControl"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-border", "btn-sm", "ml-2", 3, "disabled", "click"], ["class", "btn btn-primary ml-2", "data-target", "#myModal", "data-toggle", "modal", 3, "click", 4, "ngIf"], ["appearance", "outline", 1, "input-field", 2, "width", "30%", "height", "30%"], ["autosize", "", "matInput", "", "name", "questionText", "placeholder", "Please answer", "required", "", 3, "ngModel", "ngModelChange"], [1, "badge", "badge-success", 3, "click"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 3, "height", "width"], ["video1", ""], ["type", "video/mp4"], ["id", "setup", 1, "tab-pane"], [1, "mb-3"], [1, "card-title", "mb-0"], [1, "badge", "badge-danger", 3, "click"], ["video", ""], ["type", "video/mp4", 3, "src"], [1, "mat-error"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-primary", "ml-2", 3, "click"]],
   template: function RecordVideoComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "ul", 2)(3, "li", 3)(4, "a", 4);
@@ -24857,43 +24931,65 @@ RecordVideoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "li", 3)(7, "a", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "Setup");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "div", 6)(10, "div", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](11, RecordVideoComponent_p_11_Template, 2, 1, "p", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "div", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](13, "input", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](14, "button", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_button_click_14_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "div", 6)(10, "div", 7)(11, "div", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](12, RecordVideoComponent_p_12_Template, 2, 1, "p", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](13, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](14, "input", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "button", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_button_click_15_listener() {
         return ctx.checkValidateReferenceId();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](15, "Validate ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16, "Validate ");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](16, RecordVideoComponent_a_16_Template, 2, 0, "a", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](17, RecordVideoComponent_a_17_Template, 2, 0, "a", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](17, "div", 13)(18, "div", 14)(19, "h5", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](20, "Interview setup");
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](21, "div")(22, "a", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_22_listener() {
-        return ctx.completeRecording();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "div", 8)(19, "mat-form-field", 14)(20, "textarea", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("ngModelChange", function RecordVideoComponent_Template_textarea_ngModelChange_20_listener($event) {
+        return ctx.questionText = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](23, " Stop ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](21, "a", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_21_listener() {
+        return ctx.submitAnswer();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](22, " Submit ");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](24, "a", 17);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_24_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](23, "a", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_23_listener() {
+        return ctx.finishInterview();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](24, " Finish ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](25, "div", 8)(26, "video", 17, 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](28, "source", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](29, "div", 20)(30, "div", 21)(31, "h5", 22);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](32, "Interview setup");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](33, "div")(34, "a", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_34_listener() {
+        return ctx.completeRecordingTest();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](35, " Stop ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](36, "a", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_36_listener() {
         return ctx.startRecording();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](25, " Start ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](37, " Start ");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](26, "div", 18)(27, "video", 19, 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](29, "source", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](38, "div", 8)(39, "video", 17, 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](41, "source", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](30, "div", 18)(31, "video", 19, 22);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](33, "source", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](42, "div", 8)(43, "video", 17, 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](45, "source", 19);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()()()()()();
     }
 
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", ctx.interview_in_progress);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.errorMessage);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("formControl", ctx.referenceIdForm);
@@ -24901,7 +24997,15 @@ RecordVideoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx.referenceIdForm.invalid);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.reference_id_valid);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", !ctx.interview_in_progress);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.questionText);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", !ctx.recordingOn);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("height", ctx.HEIGHT)("width", ctx.WIDTH);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("hidden", ctx.recordingOn);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("height", ctx.HEIGHT)("width", ctx.WIDTH);
@@ -24913,9 +25017,786 @@ RecordVideoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("height", ctx.HEIGHT)("width", ctx.WIDTH);
     }
   },
-  directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlDirective, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_6__.NativeElementInjectorDirective],
+  directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlDirective, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_7__.NativeElementInjectorDirective, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_9__.MatInput, ngx_autosize__WEBPACK_IMPORTED_MODULE_10__.AutosizeDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgModel],
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZWNvcmQtdmlkZW8uY29tcG9uZW50LmNzcyJ9 */"]
 });
+
+/***/ }),
+
+/***/ 80539:
+/*!*****************************************************************************!*\
+  !*** ./src/app/util/web-cam/transcribe-audio/transcribe-audio.component.ts ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TranscribeAudioComponent": () => (/* binding */ TranscribeAudioComponent)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var p_event__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! p-event */ 80301);
+/* harmony import */ var p_event__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(p_event__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _aws_sdk_client_transcribe_streaming__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @aws-sdk/client-transcribe-streaming */ 13499);
+/* harmony import */ var _aws_sdk_client_transcribe_streaming__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @aws-sdk/client-transcribe-streaming */ 76013);
+/* harmony import */ var _aws_sdk_client_transcribe_streaming__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @aws-sdk/client-transcribe-streaming */ 3134);
+/* harmony import */ var _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @aws-sdk/client-transcribe */ 85137);
+/* harmony import */ var _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @aws-sdk/client-transcribe */ 82351);
+/* harmony import */ var _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @aws-sdk/client-transcribe */ 29209);
+/* harmony import */ var _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @aws-sdk/client-transcribe */ 80916);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+
+
+ // our global variables for managing state
+
+let languageCode;
+let region;
+let sampleRate;
+let transcription = "";
+
+const pcmEncode = input => {
+  const buffer = new ArrayBuffer(input.length * 2);
+  const view = new DataView(buffer);
+
+  for (let i = 0; i < input.length; i++) {
+    const s = Math.max(-1, Math.min(1, input[i]));
+    view.setInt16(i * 2, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+  }
+
+  return buffer;
+};
+
+let streamAudioToWebSocket = /*#__PURE__*/function () {
+  var _ref = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (mediaRecorder, transcribeClient) {
+    var e_1, _a;
+
+    var _b, _c;
+
+    const audioDataIterator = p_event__WEBPACK_IMPORTED_MODULE_1___default().iterator(mediaRecorder.port, 'message');
+
+    const getAudioStream = function () {
+      return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__asyncGenerator)(this, arguments, function* () {
+        var e_2, _a;
+
+        try {
+          for (var audioDataIterator_1 = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__asyncValues)(audioDataIterator), audioDataIterator_1_1; audioDataIterator_1_1 = yield (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__await)(audioDataIterator_1.next()), !audioDataIterator_1_1.done;) {
+            const chunk = audioDataIterator_1_1.value;
+
+            if (chunk.data.message === 'SHARE_RECORDING_BUFFER') {
+              const abuffer = pcmEncode(chunk.data.buffer[0]);
+              const audiodata = new Uint8Array(abuffer); // console.log(`processing chunk of size ${audiodata.length}`);
+
+              yield yield (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__await)({
+                AudioEvent: {
+                  AudioChunk: audiodata
+                }
+              });
+            }
+          }
+        } catch (e_2_1) {
+          e_2 = {
+            error: e_2_1
+          };
+        } finally {
+          try {
+            if (audioDataIterator_1_1 && !audioDataIterator_1_1.done && (_a = audioDataIterator_1.return)) yield (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__await)(_a.call(audioDataIterator_1));
+          } finally {
+            if (e_2) throw e_2.error;
+          }
+        }
+      });
+    };
+
+    const command = new _aws_sdk_client_transcribe_streaming__WEBPACK_IMPORTED_MODULE_3__.StartStreamTranscriptionCommand({
+      LanguageCode: languageCode,
+      MediaEncoding: 'pcm',
+      MediaSampleRateHertz: sampleRate,
+      PartialResultsStability: 'high',
+      EnablePartialResultsStabilization: true,
+      AudioStream: getAudioStream()
+    });
+    const data = yield transcribeClient.send(command);
+    console.log('Transcribe sesssion established ', data.SessionId);
+
+    if (data.TranscriptResultStream) {
+      try {
+        for (var _d = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__asyncValues)(data.TranscriptResultStream), _e; _e = yield _d.next(), !_e.done;) {
+          const event = _e.value;
+
+          if ((_b = event === null || event === void 0 ? void 0 : event.TranscriptEvent) === null || _b === void 0 ? void 0 : _b.Transcript) {
+            let results = (_c = event === null || event === void 0 ? void 0 : event.TranscriptEvent) === null || _c === void 0 ? void 0 : _c.Transcript.Results;
+            console.log(results);
+
+            if (results.length > 0) {
+              if (results[0].Alternatives.length > 0) {
+                let transcript = results[0].Alternatives[0].Transcript; // fix encoding for accented characters
+
+                transcript = decodeURIComponent(escape(transcript)); // update the textarea with the latest result
+
+                console.log('transcript', transcript); // if this transcript segment is final, add it to the overall transcription
+
+                if (!results[0].IsPartial) {
+                  //scroll the textarea down
+                  transcription += transcript + '\n';
+                  console.log(transcription);
+                }
+              }
+            } //   for (const result of event?.TranscriptEvent?.Transcript.Results || []) {
+            //     if (result?.Alternatives && result?.Alternatives[0].Items) {
+            //       // console.log(result)
+            //       let completeSentence = ``;
+            //       for (let i = 0; i < result?.Alternatives[0].Items?.length; i++) {
+            //         completeSentence += ` ${result?.Alternatives[0].Items[i].Content}`;
+            //         console.log(completeSentence)
+            //       }
+            //     }
+            //   }
+
+          }
+        }
+      } catch (e_1_1) {
+        e_1 = {
+          error: e_1_1
+        };
+      } finally {
+        try {
+          if (_e && !_e.done && (_a = _d.return)) yield _a.call(_d);
+        } finally {
+          if (e_1) throw e_1.error;
+        }
+      }
+    }
+  });
+
+  return function streamAudioToWebSocket(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+const stopStreaming = /*#__PURE__*/function () {
+  var _ref2 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (mediaRecorder, transcribeClient) {
+    if (mediaRecorder) {
+      mediaRecorder.port.postMessage({
+        message: 'UPDATE_RECORDING_STATE',
+        setRecording: false
+      });
+      mediaRecorder.port.close();
+      mediaRecorder.disconnect();
+    } else {
+      console.log('no media recorder available to stop');
+    }
+
+    if (transcribeClient) {
+      transcribeClient.destroy();
+      console.log("Destroying transcibe client");
+    }
+  });
+
+  return function stopStreaming(_x3, _x4) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+function setLanguage() {
+  languageCode = "en-US";
+  if (languageCode == "en-US" || languageCode == "es-US" || languageCode == "en-GB" || languageCode == "hi-IN") sampleRate = 44100;else sampleRate = 8000;
+}
+
+function setRegion() {
+  region = "ap-south-1";
+}
+
+class TranscribeAudioComponent {
+  ngOnInit() {}
+
+  startRecording() {
+    var _this = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this.transcription = ""; // set the language and region from the dropdowns
+
+      setLanguage();
+      setRegion(); // first we get the microphone input from the browser (as a promise)...
+
+      window.navigator.mediaDevices.getUserMedia({
+        video: false,
+        audio: true
+      }) // ...then we convert the mic stream to binary event stream messages when the promise resolves 
+      .then( /*#__PURE__*/function () {
+        var _ref3 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (userMediaStream) {
+          const audioContext = new window.AudioContext();
+          const source1 = audioContext.createMediaStreamSource(userMediaStream);
+          const recordingprops = {
+            numberOfChannels: 1,
+            sampleRate: audioContext.sampleRate,
+            maxFrameCount: audioContext.sampleRate * 1 / 10
+          };
+
+          try {
+            yield audioContext.audioWorklet.addModule('/assets/recording-processor.js'); // await audioContext.audioWorklet.addModule('/app/util/web-cam/transcribe-audio/recording-processor.js');
+          } catch (error) {
+            console.log(`Add module error ${error}`);
+          }
+
+          _this.mediaRecorder = new AudioWorkletNode(audioContext, 'recording-processor', {
+            processorOptions: recordingprops
+          });
+          const destination = audioContext.createMediaStreamDestination();
+
+          _this.mediaRecorder.port.postMessage({
+            message: 'UPDATE_RECORDING_STATE',
+            setRecording: true
+          });
+
+          source1.connect(_this.mediaRecorder).connect(destination);
+
+          _this.mediaRecorder.port.onmessageerror = error => {
+            console.log(`Error receving message from worklet ${error}`);
+          };
+
+          _this.transcribeClient = new _aws_sdk_client_transcribe_streaming__WEBPACK_IMPORTED_MODULE_4__.TranscribeStreamingClient({
+            region: region,
+            credentials: {
+              accessKeyId: "xxxxxxxxxx",
+              secretAccessKey: "xxxxxxxxxxxxx"
+            }
+          });
+          yield streamAudioToWebSocket(_this.mediaRecorder, _this.transcribeClient);
+        });
+
+        return function (_x5) {
+          return _ref3.apply(this, arguments);
+        };
+      }()).catch(function (error) {
+        console.log(error);
+      });
+    })();
+  }
+
+  stop_button() {
+    stopStreaming(this.mediaRecorder, this.transcribeClient);
+    this.transcription = transcription;
+    console.log(this.transcription);
+  }
+
+  batchStreaming() {
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      let transcribeBatchClient = new _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_5__.TranscribeClient({
+        region: 'ap-south-1',
+        credentials: {
+          accessKeyId: "xxxxxxx",
+          secretAccessKey: "xxxxxxxxxx"
+        }
+      });
+      let params = {
+        TranscriptionJobName: "JOB_NAME5",
+        LanguageCode: _aws_sdk_client_transcribe_streaming__WEBPACK_IMPORTED_MODULE_6__.LanguageCode.EN_US,
+        MediaFormat: _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_7__.MediaFormat.WEBM,
+        Media: {
+          MediaFileUri: "s3://speech2text.dev.ap-south-1/input/testVideo10.webm" // For example, "https://transcribe-demo.s3-REGION.amazonaws.com/hello_world.wav"
+
+        },
+        OutputBucketName: "speech2text.dev.ap-south-1"
+      };
+      let command = new _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_8__.StartTranscriptionJobCommand(params); // async/await.
+
+      try {
+        const data = yield transcribeBatchClient.send(command);
+        console.log(data);
+      } catch (error) {// error handling.
+      } finally {// finally.
+      }
+
+      let fetch_job_params = {
+        TranscriptionJobName: "JOB_NAME5"
+      };
+      let fetch_job_command = new _aws_sdk_client_transcribe__WEBPACK_IMPORTED_MODULE_9__.GetTranscriptionJobCommand(fetch_job_params);
+      let job_status;
+
+      for (let max_tries = 0; max_tries < 60; max_tries++) {
+        try {
+          let fetch_job_data;
+          fetch_job_data = yield transcribeBatchClient.send(fetch_job_command);
+          job_status = fetch_job_data["TranscriptionJob"]["TranscriptionJobStatus"];
+          console.log(job_status);
+
+          if (job_status == "COMPLETED") {
+            console.log(fetch_job_data['TranscriptionJob']['Transcript']['TranscriptFileUri']);
+            break;
+          }
+        } catch (error) {// error handling.
+        } finally {// finally.
+        }
+
+        yield new Promise(f => setTimeout(f, 1000));
+      } // while max_tries > 0:
+      // max_tries -= 1
+      // job = transcribe_client.get_transcription_job(TranscriptionJobName=job_name)
+      // job_status = job["TranscriptionJob"]["TranscriptionJobStatus"]
+      // if job_status in ["COMPLETED", "FAILED"]:
+      //     print(f"Job {job_name} is {job_status}.")
+      //     if job_status == "COMPLETED":
+      //         print(
+      //             f"Download the transcript from\n"
+      //             f"\t{job['TranscriptionJob']['Transcript']['TranscriptFileUri']}."
+      //         )
+      //     break
+      // else:
+      //     print(f"Waiting for {job_name}. Current status is {job_status}.")
+      // time.sleep(10)
+
+    })();
+  }
+
+}
+
+TranscribeAudioComponent.ɵfac = function TranscribeAudioComponent_Factory(t) {
+  return new (t || TranscribeAudioComponent)();
+};
+
+TranscribeAudioComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineComponent"]({
+  type: TranscribeAudioComponent,
+  selectors: [["app-transcribe-audio"]],
+  decls: 45,
+  vars: 1,
+  consts: [["role", "banner", 1, "toolbar"], ["width", "40", "alt", "Angular Logo", "src", "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="], [1, "spacer"], ["aria-label", "Angular on twitter", "target", "_blank", "rel", "noopener", "href", "", "title", "Twitter"], ["id", "linkedin-logo", "height", "24", "data-name", "Logo \u2014 FIXED", "xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 400 400"], ["width", "400", "height", "400", 1, "cls-1"], ["d", "M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23", 1, "cls-2"], ["role", "main", 1, "content"], [1, "card", "highlight-card", "card-small"], ["id", "rocket", "alt", "Rocket Ship", "xmlns", "http://www.w3.org/2000/svg", "width", "101.678", "height", "101.678", "viewBox", "0 0 101.678 101.678"], ["id", "Group_83", "data-name", "Group 83", "transform", "translate(-141 -696)"], ["id", "Ellipse_8", "data-name", "Ellipse 8", "cx", "50.839", "cy", "50.839", "r", "50.839", "transform", "translate(141 696)", "fill", "#dd0031"], ["id", "Group_47", "data-name", "Group 47", "transform", "translate(165.185 720.185)"], ["id", "Path_33", "data-name", "Path 33", "d", "M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z", "transform", "translate(0.371 3.363)", "fill", "#fff"], ["id", "Path_34", "data-name", "Path 34", "d", "M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z", "transform", "translate(0 0.005)", "fill", "#fff"], ["id", "rocket-smoke", "alt", "Rocket Ship Smoke", "xmlns", "http://www.w3.org/2000/svg", "width", "516.119", "height", "1083.632", "viewBox", "0 0 516.119 1083.632"], ["id", "Path_40", "data-name", "Path 40", "d", "M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z", "transform", "translate(-147.025 -140.939)", "fill", "#f5f5f5"], [1, "card-container"], [1, "card", 3, "click"], ["xmlns", "http://www.w3.org/2000/svg", "width", "24", "height", "24", "viewBox", "0 0 24 24", 1, "material-icons"], ["d", "M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"], ["d", "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"], ["id", "clouds", "alt", "Gray Clouds Background", "xmlns", "http://www.w3.org/2000/svg", "width", "2611.084", "height", "485.677", "viewBox", "0 0 2611.084 485.677"], ["id", "Path_39", "data-name", "Path 39", "d", "M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z", "transform", "translate(142.69 -634.312)", "fill", "#eee"]],
+  template: function TranscribeAudioComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](0, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](1, "img", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](2, "span");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](3, "Welcome");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](4, "div", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](5, "a", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](6, "svg", 4)(7, "defs")(8, "style");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](9, " .cls-1 { fill: none; } .cls-2 { fill: #ffffff; } ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](10, "rect", 5)(11, "path", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](12, "div", 7)(13, "div", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](14, "svg", 9)(15, "g", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](16, "circle", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](17, "g", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](18, "path", 13)(19, "path", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](20, "span");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](21, "Transcriptions app is running!");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](22, "svg", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](23, "path", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](24, "h2");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](25, "Transcriptions");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](26, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](28, "div", 17)(29, "a", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function TranscribeAudioComponent_Template_a_click_29_listener() {
+        return ctx.batchStreaming();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](30, "svg", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](31, "path", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](32, "span");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](33, "Start Recording");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](34, "svg", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](35, "path", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](36, "a", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵlistener"]("click", function TranscribeAudioComponent_Template_a_click_36_listener() {
+        return ctx.stop_button();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](37, "svg", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](38, "path", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](39, "span");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](40, "Stop Recording");
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](41, "svg", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](42, "path", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](43, "svg", 22);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](44, "path", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()();
+    }
+
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"](27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtextInterpolate1"]("Here is the output: ", ctx.transcription, " ");
+    }
+  },
+  styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0cmFuc2NyaWJlLWF1ZGlvLmNvbXBvbmVudC5jc3MifQ== */", "[_nghost-%COMP%] {\n      font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n      font-size: 14px;\n      color: #333;\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      -moz-osx-font-smoothing: grayscale;\n    }\n  \n    h1[_ngcontent-%COMP%], h2[_ngcontent-%COMP%], h3[_ngcontent-%COMP%], h4[_ngcontent-%COMP%], h5[_ngcontent-%COMP%], h6[_ngcontent-%COMP%] {\n      margin: 8px 0;\n    }\n  \n    p[_ngcontent-%COMP%] {\n      margin: 0;\n    }\n  \n    .spacer[_ngcontent-%COMP%] {\n      flex: 1;\n    }\n  \n    .toolbar[_ngcontent-%COMP%] {\n      height: 60px;\n      margin: -8px;\n      display: flex;\n      align-items: center;\n      background-color: #1976d2;\n      color: white;\n      font-weight: 600;\n    }\n  \n    .toolbar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n      margin: 0 16px;\n    }\n  \n    .toolbar[_ngcontent-%COMP%]   #twitter-logo[_ngcontent-%COMP%] {\n      height: 40px;\n      margin: 0 16px;\n    }\n  \n    .toolbar[_ngcontent-%COMP%]   #twitter-logo[_ngcontent-%COMP%]:hover {\n      opacity: 0.8;\n    }\n  \n    .content[_ngcontent-%COMP%] {\n      display: flex;\n      margin: 32px auto;\n      padding: 0 16px;\n      max-width: 960px;\n      flex-direction: column;\n      align-items: center;\n    }\n  \n    svg.material-icons[_ngcontent-%COMP%] {\n      height: 24px;\n      width: auto;\n    }\n  \n    svg.material-icons[_ngcontent-%COMP%]:not(:last-child) {\n      margin-right: 8px;\n    }\n  \n    .card[_ngcontent-%COMP%]   svg.material-icons[_ngcontent-%COMP%]   path[_ngcontent-%COMP%] {\n      fill: #888;\n    }\n  \n    .card-container[_ngcontent-%COMP%] {\n      display: flex;\n      flex-wrap: wrap;\n      justify-content: center;\n      margin-top: 16px;\n    }\n  \n    .card[_ngcontent-%COMP%] {\n      border-radius: 4px;\n      border: 1px solid #eee;\n      background-color: #fafafa;\n      height: 40px;\n      width: 200px;\n      margin: 0 8px 16px;\n      padding: 16px;\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      align-items: center;\n      transition: all 0.2s ease-in-out;\n      line-height: 24px;\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(:last-child) {\n      margin-right: 0;\n    }\n  \n    .card.card-small[_ngcontent-%COMP%] {\n      height: 16px;\n      width: 168px;\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(.highlight-card) {\n      cursor: pointer;\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(.highlight-card):hover {\n      transform: translateY(-3px);\n      box-shadow: 0 4px 17px rgba(black, 0.35);\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(.highlight-card):hover   .material-icons[_ngcontent-%COMP%]   path[_ngcontent-%COMP%] {\n      fill: rgb(105, 103, 103);\n    }\n  \n    .card.highlight-card[_ngcontent-%COMP%] {\n      background-color: #1976d2;\n      color: white;\n      font-weight: 600;\n      border: none;\n      width: auto;\n      min-width: 30%;\n      position: relative;\n    }\n  \n    .card.card.highlight-card[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n      margin-left: 60px;\n    }\n  \n    svg#rocket[_ngcontent-%COMP%] {\n      width: 80px;\n      position: absolute;\n      left: -10px;\n      top: -24px;\n    }\n  \n    svg#rocket-smoke[_ngcontent-%COMP%] {\n      height: 100vh;\n      position: absolute;\n      top: 10px;\n      right: 180px;\n      z-index: -10;\n    }\n  \n    a[_ngcontent-%COMP%], a[_ngcontent-%COMP%]:visited, a[_ngcontent-%COMP%]:hover {\n      color: #1976d2;\n      text-decoration: none;\n    }\n  \n    a[_ngcontent-%COMP%]:hover {\n      color: #125699;\n    }\n  \n    .terminal[_ngcontent-%COMP%] {\n      position: relative;\n      width: 80%;\n      max-width: 600px;\n      border-radius: 6px;\n      padding-top: 45px;\n      margin-top: 8px;\n      overflow: hidden;\n      background-color: rgb(15, 15, 16);\n    }\n  \n    .terminal[_ngcontent-%COMP%]::before {\n      content: \"\\2022 \\2022 \\2022\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      height: 4px;\n      background: rgb(58, 58, 58);\n      color: #c2c3c4;\n      width: 100%;\n      font-size: 2rem;\n      line-height: 0;\n      padding: 14px 0;\n      text-indent: 4px;\n    }\n  \n    .terminal[_ngcontent-%COMP%]   pre[_ngcontent-%COMP%] {\n      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;\n      color: white;\n      padding: 0 1rem 1rem;\n      margin: 0;\n    }\n  \n    .circle-link[_ngcontent-%COMP%] {\n      height: 40px;\n      width: 40px;\n      border-radius: 40px;\n      margin: 8px;\n      background-color: white;\n      border: 1px solid #eeeeee;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      cursor: pointer;\n      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n      transition: 1s ease-out;\n    }\n  \n    .circle-link[_ngcontent-%COMP%]:hover {\n      transform: translateY(-0.25rem);\n      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);\n    }\n  \n    footer[_ngcontent-%COMP%] {\n      margin-top: 8px;\n      display: flex;\n      align-items: center;\n      line-height: 20px;\n    }\n  \n    footer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n      display: flex;\n      align-items: center;\n    }\n  \n    .github-star-badge[_ngcontent-%COMP%] {\n      color: #24292e;\n      display: flex;\n      align-items: center;\n      font-size: 12px;\n      padding: 3px 10px;\n      border: 1px solid rgba(27,31,35,.2);\n      border-radius: 3px;\n      background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);\n      margin-left: 4px;\n      font-weight: 600;\n      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;\n    }\n  \n    .github-star-badge[_ngcontent-%COMP%]:hover {\n      background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);\n      border-color: rgba(27,31,35,.35);\n      background-position: -.5em;\n    }\n  \n    .github-star-badge[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n      height: 16px;\n      width: 16px;\n      margin-right: 4px;\n    }\n  \n    svg#clouds[_ngcontent-%COMP%] {\n      position: fixed;\n      bottom: -160px;\n      left: -230px;\n      z-index: -10;\n      width: 1920px;\n    }\n  \n  \n    \n    @media screen and (max-width: 767px) {\n  \n      .card-container[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:not(.circle-link), .terminal[_ngcontent-%COMP%] {\n        width: 100%;\n      }\n  \n      .card[_ngcontent-%COMP%]:not(.highlight-card) {\n        height: 16px;\n        margin: 8px 0;\n      }\n  \n      .card.highlight-card[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n        margin-left: 72px;\n      }\n  \n      svg#rocket-smoke[_ngcontent-%COMP%] {\n        right: 120px;\n        transform: rotate(-5deg);\n      }\n    }\n  \n    @media screen and (max-width: 575px) {\n      svg#rocket-smoke[_ngcontent-%COMP%] {\n        display: none;\n        visibility: hidden;\n      }\n    }"]
+});
+
+/***/ }),
+
+/***/ 30545:
+/*!*****************************************************************!*\
+  !*** ./src/app/util/web-cam/transcribe/transcribe.component.ts ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TranscribeComponent": () => (/* binding */ TranscribeComponent)
+/* harmony export */ });
+/* harmony import */ var _audioUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audioUtils */ 68431);
+/* harmony import */ var _aws_signature_v4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aws-signature-v4 */ 84598);
+/* harmony import */ var _aws_sdk_eventstream_marshaller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @aws-sdk/eventstream-marshaller */ 65977);
+/* harmony import */ var _aws_sdk_util_utf8_node__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @aws-sdk/util-utf8-node */ 99073);
+/* harmony import */ var microphone_stream__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! microphone-stream */ 62913);
+/* harmony import */ var microphone_stream__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(microphone_stream__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
+
+// import * as createHash from 'create-hash';
+ // to generate our pre-signed URL
+ // for converting binary event stream messages to and from JSON
+ // utilities for encoding and decoding UTF8
+ // collect microphone input as a stream of raw bytes
+
+const eventStreamMarshaller = new _aws_sdk_eventstream_marshaller__WEBPACK_IMPORTED_MODULE_2__.EventStreamMarshaller(_aws_sdk_util_utf8_node__WEBPACK_IMPORTED_MODULE_3__.toUtf8, _aws_sdk_util_utf8_node__WEBPACK_IMPORTED_MODULE_3__.fromUtf8);
+var createHash = __webpack_require__(/*! create-hash */ 70145);
+class TranscribeComponent {
+    constructor() {
+        this.chunks = [];
+        this.title = 'AngularTranscribe';
+        this.languageCode = 'en-US';
+        this.region = 'ap-south-1';
+        // sampleRate = 44100;
+        this.sampleRate = 16000;
+        this.transcription = '';
+        this.socketError = false;
+        this.transcribeException = false;
+        this.createPresignedUrlNew = () => {
+            let endpoint = 'transcribestreaming.' + this.region + '.amazonaws.com:8443';
+            console.log('start createPresignedUrlNew start ' + endpoint);
+            // get a preauthenticated URL that we can use to establish our WebSocket
+            return (0,_aws_signature_v4__WEBPACK_IMPORTED_MODULE_1__.createPresignedURL)('GET', endpoint, '/stream-transcription-websocket', 'transcribe', createHash('sha256').update('', 'utf8').digest('hex'), {
+                key: 'user_key_from_IAM_user',
+                secret: 'user_scret_from_IAM_user',
+                protocol: 'wss',
+                expires: 1,
+                region: 'ap-south-1',
+                query: 'language-code=' +
+                    this.languageCode +
+                    '&media-encoding=pcm&sample-rate=' +
+                    this.sampleRate
+            });
+        };
+        this.convertAudioToBinaryMessage = (audioChunk) => {
+            let raw = microphone_stream__WEBPACK_IMPORTED_MODULE_4___default().toRaw(audioChunk);
+            // let raw = audioChunk
+            // if (raw == null) return;
+            //downsample and convert the raw audio bytes to PCM
+            let downsampledBuffer = (0,_audioUtils__WEBPACK_IMPORTED_MODULE_0__.downsampleBuffer)(raw, this.sampleRate);
+            let pcmEncodedBuffer = (0,_audioUtils__WEBPACK_IMPORTED_MODULE_0__.pcmEncode)(downsampledBuffer);
+            // add the right JSON headers and structure to the message
+            let audioEventMessage = this.getAudioEventMessage(Buffer.from(pcmEncodedBuffer));
+            //convert the JSON object + headers into a binary event stream message
+            // @ts-ignore
+            let binary = eventStreamMarshaller.marshall(audioEventMessage);
+            return binary;
+        };
+        this.closeSocket = () => {
+            // this.micStream.stop()
+            this.recorder.stop();
+            console.log("this is closing the socket");
+            if (this.socket.OPEN) {
+                // this.micStream.stop();
+                this.recorder.stop();
+                // Send an empty frame so that Transcribe initiates a closure of the WebSocket after submitting all transcripts
+                let emptyMessage = this.getAudioEventMessage(Buffer.from(new Buffer([])));
+                // @ts-ignore
+                let emptyBuffer = eventStreamMarshaller.marshall(emptyMessage);
+                this.socket.send(emptyBuffer);
+            }
+        };
+        this.handleEventStreamMessage = (messageJson) => {
+            console.log(messageJson);
+            let results = messageJson.Transcript.Results;
+            if (results.length > 0) {
+                if (results[0].Alternatives.length > 0) {
+                    let transcript = results[0].Alternatives[0].Transcript;
+                    // fix encoding for accented characters
+                    transcript = decodeURIComponent(escape(transcript));
+                    // update the textarea with the latest result
+                    console.log('transcript', transcript);
+                    // if this transcript segment is final, add it to the overall transcription
+                    if (!results[0].IsPartial) {
+                        //scroll the textarea down
+                        this.transcription += transcript + '\n';
+                    }
+                }
+            }
+        };
+        this.wireSocketEvents = () => {
+            console.log("wiresocket event ");
+            // handle inbound messages from Amazon Transcribe
+            this.socket.onmessage = message => {
+                console.log("socket message");
+                //convert the binary event stream message to JSON
+                let messageWrapper = eventStreamMarshaller.unmarshall(Buffer(message.data));
+                let messageBody = JSON.parse(String.fromCharCode.apply(String, messageWrapper.body));
+                console.log(messageBody);
+                if (messageWrapper.headers[':message-type'].value === 'event') {
+                    console.log("getting respoonse from aws transcribe");
+                    this.handleEventStreamMessage(messageBody);
+                }
+                else {
+                    this.transcribeException = true;
+                    console.log(messageBody.Message);
+                    // toggleStartStop();
+                }
+            };
+            this.socket.onerror = function () {
+                this.socketError = true;
+                console.log('WebSocket connection error. Try again.');
+                // toggleStartStop();
+            };
+            this.socket.onclose = closeEvent => {
+                console.log(closeEvent);
+                // this.micStream.stop();
+                // this.recorder.stop()
+                // the close event immediately follows the error event; only handle one.
+                if (!this.socketError && !this.transcribeException) {
+                    if (closeEvent.code != 1000) {
+                        console.log('error' + closeEvent.reason);
+                    }
+                    // toggleStartStop();
+                }
+            };
+        };
+    }
+    startRecording() {
+        console.log('recording');
+        navigator.mediaDevices.getUserMedia({
+            video: false,
+            audio: true
+        })
+            // ...then we convert the mic stream to binary event stream messages when the promise resolves 
+            .then(stream => this.streamAudioToWebSocket(stream))
+            .catch(function (error) {
+            console.log('There was an error streaming your audio to Amazon Transcribe. Please try again.', error);
+        });
+    }
+    streamAudioToWebSocket(userMediaStream) {
+        //let's get the mic input from the browser, via the microphone-stream module
+        console.log('start streamAudioToWebSocket');
+        this.micStream = new (microphone_stream__WEBPACK_IMPORTED_MODULE_4___default())();
+        this.micStream.setStream(userMediaStream);
+        this.micStream.on('format', ({ sampleRate }) => console.log("sample rate" + sampleRate));
+        // this.recorder = new MediaRecorder(userMediaStream, {
+        //   mimeType: 'audio/webm;codecs=pcm',
+        //   bitsPerSecond: 16000,
+        //   audioBitsPerSecond: 16000,
+        // });
+        // this.recorder.onstop = () => this.onStop();
+        // recorder.ondataavailable = (blobEvent: BlobEvent) => this.onDataAvailable(blobEvent);
+        // Pre-signed URLs are a way to authenticate a request (or WebSocket connection, in this case)
+        // via Query Parameters. Learn more: https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html
+        let url = this.createPresignedUrlNew();
+        //open up our WebSocket connection
+        this.socket = new WebSocket(url);
+        this.socket.binaryType = 'arraybuffer';
+        // this.recorder.start(1000);
+        // when we get audio data from the mic, send it to the WebSocket if possible
+        this.socket.onopen = () => {
+            console.log("socket is open");
+            // this.recorder.ondataavailable = (blobEvent: BlobEvent) => {
+            //   console.log("data audio available")
+            //   const audioContext = new AudioContext();
+            //   const fileReader = new FileReader();
+            //   // Set up file reader on loaded end event
+            //   fileReader.onloadend = () => {
+            //     const arrayBuffer = fileReader.result as ArrayBuffer; // as ArrayBuffer;
+            //     console.log(arrayBuffer)
+            //     console.log("micstream data is available")
+            //     const vertexCount = arrayBuffer.byteLength / 4;
+            //     const float32array = new Float32Array(arrayBuffer,0,vertexCount)
+            //     // the audio stream is raw audio bytes. Transcribe expects PCM with additional metadata, encoded as binary
+            //     let binary = this.convertAudioToBinaryMessage(float32array);
+            //     // console.log(binary)
+            //     if (!this.socket.OPEN){
+            //       console.log("socket closed")
+            //       this.recorder.stop()
+            //     }
+            //     if (this.socket.OPEN) this.socket.send(arrayBuffer);
+            //   };
+            //   //Load blob
+            //   this.chunks.push(blobEvent.data)
+            //   // fileReader.readAsArrayBuffer(new Blob([blobEvent.data]));
+            //   fileReader.readAsArrayBuffer(new Blob([blobEvent.data]));
+            // };
+            this.micStream.on('data', function (rawAudioChunk) {
+                console.log("micstream data is available");
+                // the audio stream is raw audio bytes. Transcribe expects PCM with additional metadata, encoded as binary
+                let binary = this.convertAudioToBinaryMessage(rawAudioChunk);
+                console.log(binary);
+                if (this.socket.OPEN)
+                    this.socket.send(binary);
+            });
+        };
+        // this.micStream.on('data', function(rawAudioChunk) {
+        //   console.log("micstream data is available")
+        //   // the audio stream is raw audio bytes. Transcribe expects PCM with additional metadata, encoded as binary
+        //   let binary = this.convertAudioToBinaryMessage(rawAudioChunk);
+        //   console.log(binary)
+        //   if (this.socket.OPEN) this.socket.send(binary);
+        // });
+        // this.wireSocketEvents();
+        //  };
+        // handle messages, errors, and close events
+        this.wireSocketEvents();
+    }
+    getAudioEventMessage(buffer) {
+        // wrap the audio data in a JSON envelope
+        return {
+            'headers': {
+                ':message-type': {
+                    type: 'string',
+                    value: 'event'
+                },
+                ':event-type': {
+                    type: 'string',
+                    value: 'AudioEvent'
+                }
+            },
+            body: buffer
+        };
+    }
+    startRecord(timeInSec = 1) {
+        this.recorder.start(timeInSec * 1000);
+    }
+    stopRecording() {
+        if (this.recorder.state === 'recording') {
+            this.recorder.stop();
+        }
+        // this.stream.getTracks().forEach(track => track.stop());
+        // this.otherStreams.forEach(track => track.stop());
+    }
+    // protected onDataAvailable(blobEvent: BlobEvent): void {
+    //   this.chunks.push(blobEvent.data)
+    //   if (this.chunks.map(chunk => chunk.size).reduce((prev, curr) => prev + curr, 0) > this.getMaxSize()) {
+    //     // this.flush()
+    //     //   .then(_ => this.chunks = [])
+    //     //   .catch(err => console.error(err));
+    //     this.chunks = []
+    //   }
+    // }  
+    getMaxSize() {
+        return (1.1 * 1000 * 1000);
+    }
+    onStop() {
+        this.recorder.stop();
+        // this.flush()
+        //   .catch(err => console.error(err))
+    }
+}
+TranscribeComponent.ɵfac = function TranscribeComponent_Factory(t) { return new (t || TranscribeComponent)(); };
+TranscribeComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: TranscribeComponent, selectors: [["app-transcribe"]], decls: 49, vars: 2, consts: [["role", "banner", 1, "toolbar"], ["width", "40", "alt", "Angular Logo", "src", "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="], [1, "spacer"], ["aria-label", "Angular on twitter", "target", "_blank", "rel", "noopener", "href", "https://twitter.com/H4ORHimanshu", "title", "Twitter"], ["id", "linkedin-logo", "height", "24", "data-name", "Logo \u2014 FIXED", "xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 400 400"], ["width", "400", "height", "400", 1, "cls-1"], ["d", "M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23", 1, "cls-2"], ["role", "main", 1, "content"], [1, "card", "highlight-card", "card-small"], ["id", "rocket", "alt", "Rocket Ship", "xmlns", "http://www.w3.org/2000/svg", "width", "101.678", "height", "101.678", "viewBox", "0 0 101.678 101.678"], ["id", "Group_83", "data-name", "Group 83", "transform", "translate(-141 -696)"], ["id", "Ellipse_8", "data-name", "Ellipse 8", "cx", "50.839", "cy", "50.839", "r", "50.839", "transform", "translate(141 696)", "fill", "#dd0031"], ["id", "Group_47", "data-name", "Group 47", "transform", "translate(165.185 720.185)"], ["id", "Path_33", "data-name", "Path 33", "d", "M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z", "transform", "translate(0.371 3.363)", "fill", "#fff"], ["id", "Path_34", "data-name", "Path 34", "d", "M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z", "transform", "translate(0 0.005)", "fill", "#fff"], ["id", "rocket-smoke", "alt", "Rocket Ship Smoke", "xmlns", "http://www.w3.org/2000/svg", "width", "516.119", "height", "1083.632", "viewBox", "0 0 516.119 1083.632"], ["id", "Path_40", "data-name", "Path 40", "d", "M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z", "transform", "translate(-147.025 -140.939)", "fill", "#f5f5f5"], [1, "card-container"], [1, "card", 3, "click"], ["xmlns", "http://www.w3.org/2000/svg", "width", "24", "height", "24", "viewBox", "0 0 24 24", 1, "material-icons"], ["d", "M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"], ["d", "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"], ["href", "https://www.linkedin.com/in/creativehimanshu00/"], ["id", "clouds", "alt", "Gray Clouds Background", "xmlns", "http://www.w3.org/2000/svg", "width", "2611.084", "height", "485.677", "viewBox", "0 0 2611.084 485.677"], ["id", "Path_39", "data-name", "Path 39", "d", "M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z", "transform", "translate(142.69 -634.312)", "fill", "#eee"]], template: function TranscribeComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Welcome");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "svg", 4)(7, "defs")(8, "style");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, " .cls-1 { fill: none; } .cls-2 { fill: #ffffff; } ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](10, "rect", 5)(11, "path", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "div", 7)(13, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "svg", 9)(15, "g", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](16, "circle", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "g", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](18, "path", 13)(19, "path", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "svg", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](23, "path", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](24, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](25, "Transcriptions");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](26, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "div", 17)(29, "a", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function TranscribeComponent_Template_a_click_29_listener() { return ctx.startRecording(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "svg", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](31, "path", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "Start Recording");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "svg", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](35, "path", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "a", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function TranscribeComponent_Template_a_click_36_listener() { return ctx.closeSocket(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](37, "svg", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](38, "path", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](40, "Stop Recording");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "svg", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](42, "path", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](44, "Any doubt ping me on linkedin - ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "a", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](46, "Himanshu Sharma");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "svg", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](48, "path", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"]("", ctx.title, " app is running!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"]("Here is the output: ", ctx.transcription, " ");
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0cmFuc2NyaWJlLmNvbXBvbmVudC5jc3MifQ== */", "[_nghost-%COMP%] {\n      font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n      font-size: 14px;\n      color: #333;\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      -moz-osx-font-smoothing: grayscale;\n    }\n  \n    h1[_ngcontent-%COMP%], h2[_ngcontent-%COMP%], h3[_ngcontent-%COMP%], h4[_ngcontent-%COMP%], h5[_ngcontent-%COMP%], h6[_ngcontent-%COMP%] {\n      margin: 8px 0;\n    }\n  \n    p[_ngcontent-%COMP%] {\n      margin: 0;\n    }\n  \n    .spacer[_ngcontent-%COMP%] {\n      flex: 1;\n    }\n  \n    .toolbar[_ngcontent-%COMP%] {\n      height: 60px;\n      margin: -8px;\n      display: flex;\n      align-items: center;\n      background-color: #1976d2;\n      color: white;\n      font-weight: 600;\n    }\n  \n    .toolbar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n      margin: 0 16px;\n    }\n  \n    .toolbar[_ngcontent-%COMP%]   #twitter-logo[_ngcontent-%COMP%] {\n      height: 40px;\n      margin: 0 16px;\n    }\n  \n    .toolbar[_ngcontent-%COMP%]   #twitter-logo[_ngcontent-%COMP%]:hover {\n      opacity: 0.8;\n    }\n  \n    .content[_ngcontent-%COMP%] {\n      display: flex;\n      margin: 32px auto;\n      padding: 0 16px;\n      max-width: 960px;\n      flex-direction: column;\n      align-items: center;\n    }\n  \n    svg.material-icons[_ngcontent-%COMP%] {\n      height: 24px;\n      width: auto;\n    }\n  \n    svg.material-icons[_ngcontent-%COMP%]:not(:last-child) {\n      margin-right: 8px;\n    }\n  \n    .card[_ngcontent-%COMP%]   svg.material-icons[_ngcontent-%COMP%]   path[_ngcontent-%COMP%] {\n      fill: #888;\n    }\n  \n    .card-container[_ngcontent-%COMP%] {\n      display: flex;\n      flex-wrap: wrap;\n      justify-content: center;\n      margin-top: 16px;\n    }\n  \n    .card[_ngcontent-%COMP%] {\n      border-radius: 4px;\n      border: 1px solid #eee;\n      background-color: #fafafa;\n      height: 40px;\n      width: 200px;\n      margin: 0 8px 16px;\n      padding: 16px;\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      align-items: center;\n      transition: all 0.2s ease-in-out;\n      line-height: 24px;\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(:last-child) {\n      margin-right: 0;\n    }\n  \n    .card.card-small[_ngcontent-%COMP%] {\n      height: 16px;\n      width: 168px;\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(.highlight-card) {\n      cursor: pointer;\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(.highlight-card):hover {\n      transform: translateY(-3px);\n      box-shadow: 0 4px 17px rgba(black, 0.35);\n    }\n  \n    .card-container[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%]:not(.highlight-card):hover   .material-icons[_ngcontent-%COMP%]   path[_ngcontent-%COMP%] {\n      fill: rgb(105, 103, 103);\n    }\n  \n    .card.highlight-card[_ngcontent-%COMP%] {\n      background-color: #1976d2;\n      color: white;\n      font-weight: 600;\n      border: none;\n      width: auto;\n      min-width: 30%;\n      position: relative;\n    }\n  \n    .card.card.highlight-card[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n      margin-left: 60px;\n    }\n  \n    svg#rocket[_ngcontent-%COMP%] {\n      width: 80px;\n      position: absolute;\n      left: -10px;\n      top: -24px;\n    }\n  \n    svg#rocket-smoke[_ngcontent-%COMP%] {\n      height: 100vh;\n      position: absolute;\n      top: 10px;\n      right: 180px;\n      z-index: -10;\n    }\n  \n    a[_ngcontent-%COMP%], a[_ngcontent-%COMP%]:visited, a[_ngcontent-%COMP%]:hover {\n      color: #1976d2;\n      text-decoration: none;\n    }\n  \n    a[_ngcontent-%COMP%]:hover {\n      color: #125699;\n    }\n  \n    .terminal[_ngcontent-%COMP%] {\n      position: relative;\n      width: 80%;\n      max-width: 600px;\n      border-radius: 6px;\n      padding-top: 45px;\n      margin-top: 8px;\n      overflow: hidden;\n      background-color: rgb(15, 15, 16);\n    }\n  \n    .terminal[_ngcontent-%COMP%]::before {\n      content: \"\\2022 \\2022 \\2022\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      height: 4px;\n      background: rgb(58, 58, 58);\n      color: #c2c3c4;\n      width: 100%;\n      font-size: 2rem;\n      line-height: 0;\n      padding: 14px 0;\n      text-indent: 4px;\n    }\n  \n    .terminal[_ngcontent-%COMP%]   pre[_ngcontent-%COMP%] {\n      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;\n      color: white;\n      padding: 0 1rem 1rem;\n      margin: 0;\n    }\n  \n    .circle-link[_ngcontent-%COMP%] {\n      height: 40px;\n      width: 40px;\n      border-radius: 40px;\n      margin: 8px;\n      background-color: white;\n      border: 1px solid #eeeeee;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      cursor: pointer;\n      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n      transition: 1s ease-out;\n    }\n  \n    .circle-link[_ngcontent-%COMP%]:hover {\n      transform: translateY(-0.25rem);\n      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);\n    }\n  \n    footer[_ngcontent-%COMP%] {\n      margin-top: 8px;\n      display: flex;\n      align-items: center;\n      line-height: 20px;\n    }\n  \n    footer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n      display: flex;\n      align-items: center;\n    }\n  \n    .github-star-badge[_ngcontent-%COMP%] {\n      color: #24292e;\n      display: flex;\n      align-items: center;\n      font-size: 12px;\n      padding: 3px 10px;\n      border: 1px solid rgba(27,31,35,.2);\n      border-radius: 3px;\n      background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);\n      margin-left: 4px;\n      font-weight: 600;\n      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;\n    }\n  \n    .github-star-badge[_ngcontent-%COMP%]:hover {\n      background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);\n      border-color: rgba(27,31,35,.35);\n      background-position: -.5em;\n    }\n  \n    .github-star-badge[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n      height: 16px;\n      width: 16px;\n      margin-right: 4px;\n    }\n  \n    svg#clouds[_ngcontent-%COMP%] {\n      position: fixed;\n      bottom: -160px;\n      left: -230px;\n      z-index: -10;\n      width: 1920px;\n    }\n  \n  \n    \n    @media screen and (max-width: 767px) {\n  \n      .card-container[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:not(.circle-link), .terminal[_ngcontent-%COMP%] {\n        width: 100%;\n      }\n  \n      .card[_ngcontent-%COMP%]:not(.highlight-card) {\n        height: 16px;\n        margin: 8px 0;\n      }\n  \n      .card.highlight-card[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n        margin-left: 72px;\n      }\n  \n      svg#rocket-smoke[_ngcontent-%COMP%] {\n        right: 120px;\n        transform: rotate(-5deg);\n      }\n    }\n  \n    @media screen and (max-width: 575px) {\n      svg#rocket-smoke[_ngcontent-%COMP%] {\n        display: none;\n        visibility: hidden;\n      }\n    }"] });
+
 
 /***/ }),
 
@@ -66574,6 +67455,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ 47709);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 54363);
+
 
 
 
@@ -66617,29 +67500,37 @@ class Recorder {
   }
 
   onStop() {
-    this.flush().catch(err => console.error(err));
+    this.flush(false).catch(err => console.error(err));
   }
 
-  flush() {
+  flush(put_to_s3) {
     var _this = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const URL = `${_constants__WEBPACK_IMPORTED_MODULE_1__.END_POINT}/${_this.getURI()}`;
-      const httpHeaders = yield (0,_constants__WEBPACK_IMPORTED_MODULE_1__.HTTP_HEADERS)(); // const putURL = await firstValueFrom(this.http.put<string>(URL, {
-      //   testId: this.testId,
-      //   sessionId: this.sessionId,
-      //   id: new Date().getTime()
-      // }, { headers: httpHeaders }));
-      // console.log(putURL)
-      // this is where we PUT the blob to S3 using presigned url
-      // await firstValueFrom(this.http.put(putURL, new Blob(this.chunks, { type: 'video/webm' })))
-
       let blob = new Blob(_this.chunks, {
         type: 'video/webm;codecs=vp8'
       });
-      console.log(blob); // FileSaver.saveAs(blob, "testVideo");
 
-      return blob;
+      if (put_to_s3) {
+        const URL = `${_constants__WEBPACK_IMPORTED_MODULE_1__.END_POINT}/${_this.getURI()}`;
+        const httpHeaders = yield (0,_constants__WEBPACK_IMPORTED_MODULE_1__.HTTP_HEADERS)();
+        const putURL = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.firstValueFrom)(_this.http.put(URL, {
+          testId: _this.testId,
+          sessionId: _this.sessionId,
+          id: new Date().getTime()
+        }, {
+          headers: httpHeaders
+        }));
+        console.log(putURL); // this is where we PUT the blob to S3 using presigned url
+
+        yield (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.firstValueFrom)(_this.http.put(putURL, blob));
+      }
+
+      console.log(blob);
+      let chunks = _this.chunks;
+      _this.chunks = []; // FileSaver.saveAs(blob, "testVideo");
+
+      return [blob, chunks];
     })();
   }
 
@@ -66665,7 +67556,7 @@ class VideoRecorder extends Recorder {
   }
 
   getURI() {
-    return "v1/test/chunk";
+    return "/v1/bot_interview/chunk";
   }
 
 }
@@ -69409,6 +70300,210 @@ PasswordValidators.validateConfirmPassword = (formGroup) => {
 
 /***/ }),
 
+/***/ 68431:
+/*!*******************************************************!*\
+  !*** ./src/app/util/web-cam/transcribe/audioUtils.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "pcmEncode": () => (/* binding */ pcmEncode),
+/* harmony export */   "downsampleBuffer": () => (/* binding */ downsampleBuffer)
+/* harmony export */ });
+const inputSampleRate = 44100;
+
+function pcmEncode(input) {
+    var offset = 0;
+    var buffer = new ArrayBuffer(input.length * 2);
+    var view = new DataView(buffer);
+    for (var i = 0; i < input.length; i++, offset += 2) {
+        var s = Math.max(-1, Math.min(1, input[i]));
+        view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+    }
+    return buffer;
+}
+
+function downsampleBuffer(buffer, outputSampleRate = 16000) {
+    if (outputSampleRate === inputSampleRate) {
+        return buffer;
+    }
+
+    var sampleRateRatio = inputSampleRate / outputSampleRate;
+    var newLength = Math.round(buffer.length / sampleRateRatio);
+    var result = new Float32Array(newLength);
+    var offsetResult = 0;
+    var offsetBuffer = 0;
+    while (offsetResult < result.length) {
+        var nextOffsetBuffer = Math.round((offsetResult + 1) * sampleRateRatio);
+        var accum = 0,
+        count = 0;
+        for (var i = offsetBuffer; i < nextOffsetBuffer && i < buffer.length; i++) {
+            accum += buffer[i];
+            count++;
+        }
+        result[offsetResult] = accum / count;
+        offsetResult++;
+        offsetBuffer = nextOffsetBuffer;
+     }
+     return result;
+}
+
+/***/ }),
+
+/***/ 84598:
+/*!*************************************************************!*\
+  !*** ./src/app/util/web-cam/transcribe/aws-signature-v4.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createCanonicalRequest": () => (/* binding */ createCanonicalRequest),
+/* harmony export */   "createCanonicalQueryString": () => (/* binding */ createCanonicalQueryString),
+/* harmony export */   "createCanonicalHeaders": () => (/* binding */ createCanonicalHeaders),
+/* harmony export */   "createSignedHeaders": () => (/* binding */ createSignedHeaders),
+/* harmony export */   "createCredentialScope": () => (/* binding */ createCredentialScope),
+/* harmony export */   "createStringToSign": () => (/* binding */ createStringToSign),
+/* harmony export */   "createSignature": () => (/* binding */ createSignature),
+/* harmony export */   "createPresignedS3URL": () => (/* binding */ createPresignedS3URL),
+/* harmony export */   "createPresignedURL": () => (/* binding */ createPresignedURL)
+/* harmony export */ });
+/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! query-string */ 64100);
+// Copied from https://github.com/department-stockholm/aws-signature-v4
+// and fixed the sorting of query parameters by using 'query-string' package instead of 'querystring'
+
+
+// import * as crypto from 'asymmetric-crypto';
+
+// import * as createHmac from 'create-hmac';
+// import * as createHash from 'create-hash';
+
+var createHash = __webpack_require__(/*! create-hash */ 70145)
+var createHmac = __webpack_require__(/*! create-hmac */ 3640)
+const createCanonicalRequest = function(method, pathname, query, headers, payload) {
+  return [
+    method.toUpperCase(),
+    pathname,
+    createCanonicalQueryString(query),
+    createCanonicalHeaders(headers),
+    createSignedHeaders(headers),
+    payload
+  ].join('\n');
+};
+
+const createCanonicalQueryString = function(params) {
+  return Object.keys(params).sort().map(function(key) {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+  }).join('&');
+};
+
+const createCanonicalHeaders = function(headers) {
+  return Object.keys(headers).sort().map(function(name) {
+    return name.toLowerCase().trim() + ':' + headers[name].toString().trim() + '\n';
+  }).join('');
+};
+
+const createSignedHeaders = function(headers) {
+  return Object.keys(headers).sort().map(function(name) {
+    return name.toLowerCase().trim();
+  }).join(';');
+};
+
+const createCredentialScope = function(time, region, service) {
+  return [toDate(time), region, service, 'aws4_request'].join('/');
+};
+
+const createStringToSign = function(time, region, service, request) {
+  return [
+    'AWS4-HMAC-SHA256',
+    toTime(time),
+    createCredentialScope(time, region, service),
+    hash(request, 'hex')
+  ].join('\n');
+};
+
+const createSignature = function(secret, time, region, service, stringToSign) {
+  var h1 = hmac('AWS4' + secret, toDate(time)); // date-key
+  var h2 = hmac(h1, region); // region-key
+  var h3 = hmac(h2, service); // service-key
+  var h4 = hmac(h3, 'aws4_request'); // signing-key
+  return hmac(h4, stringToSign, 'hex');
+};
+
+const createPresignedS3URL = function(name, options) {
+  options = options || {};
+  options.method = options.method || 'GET';
+  options.bucket = options.bucket || process.env.AWS_S3_BUCKET;
+  return createPresignedURL(
+    options.method,
+    options.bucket + '.s3.amazonaws.com',
+    '/' + name,
+    's3',
+    'UNSIGNED-PAYLOAD',
+    options
+  );
+};
+
+const createPresignedURL = function(method, host, path, service, payload, options) {
+  options = options || {};
+  options.key = options.key || process.env.AWS_ACCESS_KEY_ID;
+  options.secret = options.secret || process.env.AWS_SECRET_ACCESS_KEY;
+  options.protocol = options.protocol || 'https';
+  options.headers = options.headers || {};
+  options.timestamp = options.timestamp || Date.now();
+  options.region = options.region || process.env.AWS_REGION || 'us-east-1';
+  options.expires = options.expires || 86400; // 24 hours
+  options.headers = options.headers || {};
+
+  // host is required
+  options.headers.Host = host;
+
+  var query = options.query ? query_string__WEBPACK_IMPORTED_MODULE_0__["default"].parse(options.query) : {};
+  query['X-Amz-Algorithm'] = 'AWS4-HMAC-SHA256';
+  query['X-Amz-Credential'] = options.key + '/' + createCredentialScope(options.timestamp, options.region, service);
+  query['X-Amz-Date'] = toTime(options.timestamp);
+  query['X-Amz-Expires'] = options.expires;
+  query['X-Amz-SignedHeaders'] = createSignedHeaders(options.headers);
+  if (options.sessionToken) {
+    query['X-Amz-Security-Token'] = options.sessionToken;
+  }
+
+  var canonicalRequest = createCanonicalRequest(method, path, query, options.headers, payload);
+  var stringToSign = createStringToSign(options.timestamp, options.region, service, canonicalRequest);
+  var signature = createSignature(options.secret, options.timestamp, options.region, service, stringToSign);
+  query['X-Amz-Signature'] = signature;
+  return options.protocol + '://' + host + path + '?' + query_string__WEBPACK_IMPORTED_MODULE_0__["default"].stringify(query);
+};
+
+function toTime(time) {
+  return new Date(time).toISOString().replace(/[:\-]|\.\d{3}/g, '');
+}
+
+function toDate(time) {
+  return toTime(time).substring(0, 8);
+}
+
+function hmac(key, string, encoding) {
+  console.info(createHmac('sha256', key)
+  .update(string, 'utf8')
+  .digest(encoding));
+  return createHmac('sha256', key)
+    .update(string, 'utf8')
+    .digest(encoding);
+}
+
+function hash(string, encoding) {
+  return createHash('sha256')
+    .update(string, 'utf8')
+    .digest(encoding);
+}
+
+
+/***/ }),
+
 /***/ 56249:
 /*!************************!*\
   !*** crypto (ignored) ***!
@@ -69423,6 +70518,66 @@ PasswordValidators.validateConfirmPassword = (formGroup) => {
 /*!************************!*\
   !*** crypto (ignored) ***!
   \************************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 69386:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 31616:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 91801:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 77531:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 69862:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 40964:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
 /***/ (() => {
 
 /* (ignored) */
