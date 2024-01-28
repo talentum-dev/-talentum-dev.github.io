@@ -7018,6 +7018,9 @@ a:not([href]):not([tabindex]):focus,
 .bg-gray {
        background: #f7f9fb;
    }
+ol li {
+    margin-bottom:5px;
+}
 .bg-cyan {
        background: #f2f7fb;
    }
@@ -7220,6 +7223,15 @@ hr {
        background-color: #e7e7e7;
        border-color: #f8f9fa;
    }
+button:disabled,
+   button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+   }
+button:disabled:hover,
+   button[disabled]:hover {
+    background-color: transparent;
+   }
 .btn-primary {
        background: #26ae61;
        position: relative;
@@ -7302,6 +7314,15 @@ hr {
 button:focus {
        outline: none !important;
    }
+.btn-link {
+    font-weight: 500!important;
+    color: #007bff!important;
+    text-decoration: none;
+}
+.btn-link:hover {
+    text-decoration: none;
+    color:#636363!important;
+}
 .btn-subtitle {
        color: #191c1e;
        background: #dbecff;
@@ -7541,6 +7562,10 @@ button:focus {
        color: #ccc !important;
        cursor: not-allowed;
    }
+.nav-item.disabled .nav-link {
+    color: #ccc !important;
+    cursor: not-allowed;
+}
 .navbar {
        padding: 5px;
    }
@@ -8312,10 +8337,10 @@ select:focus {
    }
 .btn.disabled,
    .btn:disabled {
-       background-color: #dfe1e3;
-       border-color: #d2d4d5;
-       color: #b8bdc1;
-       cursor: not-allowed;
+    background-color: #dfe1e3;
+    border-color: #d2d4d5;
+    color: #7e868c;
+    cursor: not-allowed;
    }
 .btn.disabled:hover,
    .btn:disabled:hover {
@@ -12480,6 +12505,132 @@ label {
 .justify-content-end {
     justify-content: flex-end;
   }
+.bot-image-profile {
+    border-radius: 100%;
+    width:50px;
+    height:50px;
+  }
+.question-widigt {
+    background-color: #faf1e7;
+    padding: 30px 15px 15px 15px;
+    border-radius: 20px;
+    border: 1px solid #ffe3c4;
+    box-shadow: 0px 1px 0px 0px #e1cbb340;
+    font-size: 15px;
+    margin-bottom:20px;
+    margin-top:20px;
+    position: relative;
+    text-align: center;
+  }
+.question-widigt .bot-image-profile {
+    position: absolute;
+    left:calc(50% - 20px);
+    top:-25px;
+  }
+.answer-widigt {
+    border-radius: 20px;
+    background-color: #eaf3ff;
+    border: 1px solid #d6e6fd;
+    box-shadow: 0px 1px 1px 0px #5f7ea82b;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    flex:1;
+  }
+.user-video img {
+    width:100%;
+  }
+.btn-speech {
+	border: none;
+  padding: 0;
+  border-radius: 100%;
+  width: 75px;
+  height: 75px;
+  font-size: 3em;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  background: red;
+	position: relative;
+	z-index: 999;
+  line-height: 70px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    background-image: none;
+    margin:0 auto;
+}
+.btn-speech .pulse-ring {
+  content: '';
+  width: 75px;
+  height: 75px;
+	background: #189BFF;
+  border: 5px solid #189BFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation: pulsate infinite 1s;
+}
+.btn-speech i {
+    font-size: 32px;
+    color: #ffffffdb;
+}
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
+.write-code {
+    position: relative;
+    margin-bottom:20px;
+    flex:2;
+    margin-left:10px;
+}
+.write-code .close-icon {
+    position: absolute;
+    right:10px;
+    top:10px;
+    z-index: 99;
+    opacity: 0.3;
+    cursor: pointer;
+}
+.write-code .close-icon:hover {
+    opacity: 0.7;
+}
+.write-code .code-textarea {
+    font-family: Menlo,Monaco,'Courier New',monospace;
+    height: 100%;
+    border: 2px solid #f0e8e8;
+    background-color: #fdfeff;
+}
+.tabs-bot-instructions {
+    border-bottom: none;
+    border-bottom: none;
+    margin-bottom: 0px;
+    z-index: 99;
+    position: relative;
+}
+.nav-tabs.tabs-bot-instructions .nav-link {
+    margin-left: 3px;
+}
+.tab-content.card {
+    box-shadow: none;
+}
+.text-notificiation {
+    font-size:12px;
+    line-height: 16px;
+    margin-top:5px;
+}
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css ***!
   \********************************************************************************************************************************************************************************************************/
