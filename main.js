@@ -2130,17 +2130,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ApiService": () => (/* binding */ ApiService)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var aws_amplify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aws-amplify */ 48562);
-/* harmony import */ var aws_amplify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! aws-amplify */ 62301);
+/* harmony import */ var aws_amplify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! aws-amplify */ 48562);
+/* harmony import */ var aws_amplify__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! aws-amplify */ 62301);
 /* harmony import */ var _models_auth_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/auth.constants */ 60135);
 /* harmony import */ var _models_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/constants */ 47709);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _aws_signature_v4__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aws-signature-v4 */ 5017);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 54363);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ 28784);
+
+
+
+ // import { createHmac } from "crypto" 
+
+ // to generate our pre-signed URL
+// var createHash = require('create-hash')
 
 
 
 
 
+var aws4 = __webpack_require__(/*! aws4 */ 48976);
+
+const {
+  SignatureV4
+} = __webpack_require__(/*! @aws-sdk/signature-v4 */ 55120);
+
+const {
+  Sha256
+} = __webpack_require__(/*! @aws-crypto/sha256-js */ 89984);
 
 class ApiService {
   constructor(httpClient) {
@@ -2167,7 +2185,7 @@ class ApiService {
 
     function _temp() {
       _temp = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-        const user = yield aws_amplify__WEBPACK_IMPORTED_MODULE_3__.Auth.currentAuthenticatedUser();
+        const user = yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.Auth.currentAuthenticatedUser();
         const token = yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_ID_TOKEN)();
       });
       return _temp.apply(this, arguments);
@@ -2188,7 +2206,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        console.log(yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.get(apiName, path, myInit));
+        console.log(yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.get(apiName, path, myInit));
       });
       return _postData.apply(this, arguments);
     }
@@ -2275,7 +2293,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData2.apply(this, arguments);
     }
@@ -2300,7 +2318,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData3.apply(this, arguments);
     }
@@ -2322,7 +2340,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.get(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.get(apiName, path, myInit);
       });
       return _postData4.apply(this, arguments);
     }
@@ -2344,7 +2362,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.get(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.get(apiName, path, myInit);
       });
       return _postData5.apply(this, arguments);
     }
@@ -2367,7 +2385,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData6.apply(this, arguments);
     }
@@ -2390,7 +2408,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData7.apply(this, arguments);
     }
@@ -2426,7 +2444,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.get(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.get(apiName, path, myInit);
       });
       return _postData8.apply(this, arguments);
     }
@@ -2449,7 +2467,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData9.apply(this, arguments);
     }
@@ -2471,7 +2489,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.get(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.get(apiName, path, myInit);
       });
       return _postData10.apply(this, arguments);
     }
@@ -2515,7 +2533,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData11.apply(this, arguments);
     }
@@ -2538,7 +2556,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData12.apply(this, arguments);
     }
@@ -2560,7 +2578,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.get(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.get(apiName, path, myInit);
       });
       return _postData13.apply(this, arguments);
     }
@@ -2583,7 +2601,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData14.apply(this, arguments);
     }
@@ -2606,7 +2624,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData15.apply(this, arguments);
     }
@@ -2629,7 +2647,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData16.apply(this, arguments);
     }
@@ -2652,7 +2670,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData17.apply(this, arguments);
     }
@@ -2675,7 +2693,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData18.apply(this, arguments);
     }
@@ -2698,7 +2716,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData19.apply(this, arguments);
     }
@@ -2721,7 +2739,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData20.apply(this, arguments);
     }
@@ -2744,7 +2762,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData21.apply(this, arguments);
     }
@@ -2767,7 +2785,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData22.apply(this, arguments);
     }
@@ -2790,7 +2808,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData23.apply(this, arguments);
     }
@@ -2813,7 +2831,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData24.apply(this, arguments);
     }
@@ -2836,7 +2854,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData25.apply(this, arguments);
     }
@@ -2859,7 +2877,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData26.apply(this, arguments);
     }
@@ -2882,7 +2900,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData27.apply(this, arguments);
     }
@@ -2905,7 +2923,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData28.apply(this, arguments);
     }
@@ -2928,7 +2946,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData29.apply(this, arguments);
     }
@@ -2951,7 +2969,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData30.apply(this, arguments);
     }
@@ -2974,7 +2992,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData31.apply(this, arguments);
     }
@@ -2997,7 +3015,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData32.apply(this, arguments);
     }
@@ -3020,7 +3038,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData33.apply(this, arguments);
     }
@@ -3043,7 +3061,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData34.apply(this, arguments);
     }
@@ -3066,7 +3084,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData35.apply(this, arguments);
     }
@@ -3089,7 +3107,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData36.apply(this, arguments);
     }
@@ -3109,7 +3127,7 @@ class ApiService {
         const myInit = {
           body: input
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData37.apply(this, arguments);
     }
@@ -3132,7 +3150,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData38.apply(this, arguments);
     }
@@ -3155,7 +3173,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData39.apply(this, arguments);
     }
@@ -3178,7 +3196,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData40.apply(this, arguments);
     }
@@ -3201,7 +3219,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData41.apply(this, arguments);
     }
@@ -3224,7 +3242,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData42.apply(this, arguments);
     }
@@ -3244,7 +3262,7 @@ class ApiService {
         const myInit = {
           body: input
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData43.apply(this, arguments);
     }
@@ -3264,7 +3282,7 @@ class ApiService {
         const myInit = {
           body: input
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData44.apply(this, arguments);
     }
@@ -3287,7 +3305,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData45.apply(this, arguments);
     }
@@ -3310,7 +3328,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData46.apply(this, arguments);
     }
@@ -3333,7 +3351,7 @@ class ApiService {
             Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
           }
         };
-        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_4__.API.post(apiName, path, myInit);
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
       });
       return _postData47.apply(this, arguments);
     }
@@ -3341,13 +3359,70 @@ class ApiService {
     return postData();
   }
 
+  bot_interview_function_url(input) {
+    var _this = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      input = {
+        "input": input
+      };
+      let resp = yield _this.fetchBotLambdaFunctionUrl(input);
+      console.log(resp); // let header = { 'Origin': 'http://example.com', 'Access-Control-Request-Method': 'POST', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '7', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'tuwk4y6c6d4szdeeic2j6ntnxm0rabki.lambda-url.ap-south-1.on.aws', 'X-AMZ-Date': '20240129T140910Z', 'x-amz-security-token': 'IQoJb3JpZ2luX2VjEDYaCmFwLXNvdXRoLTEiSDBGAiEAu2VV39QpzYfESoC7NwQA29lYPNFpd1FF1MF3jgHyyWoCIQDTkNA9NBoPH9suAI/o374oVd9NPEYCCXru8T3jpkP6sirzAQjv//////////8BEAMaDDk2OTE3MDI3MzEwNiIM9EpRNkw2g4ug6Bz0KscBwz9v5ctXSNRf3lIp9ACSZflsH2/sYFhJ240G1NhBqECHsGQaEL3VVi4IwXlH6f/L1Q08IEozgy2fUiTJ2scd719Glu7XQTmsZJlNvi/6AAJqaV60KVgAnjtHQrko2uT/ij44LDjD8ZM2ndIUH58J7WinZnOFuKj2L4gsCkqZeXCuWOfbVbY+m8jPGa1MPejNhbwCxLhMZGTq7BiDTr5oDoTAK3KV8SJgfWlvReracQ0XqfZlnqy/8t7vl4MwcktUXLlLb3BgATDl4t6tBjqXAYn6FXObehcobuwzvATeNeNoqVPEjKtn3L5ZIZk8f32jqc94GCHz5/khrg+M9or9Jh4QkWIjK8/G9dnaSNmxyXCeOnTkAFOB5aIkKm3hFQi3Vhkpo17c8Ah7jLEWqOdaEkUQRRfwUr/+go5Y8HEoZ46ci7KTXtXKyWAniE1ov47unLDY6veFklr6TUh+qwfOXrt1QvnikXk=', 'x-amz-content-sha256': '3ba8907e7a252327488df390ed517c45b96dead033600219bdca7107d1d3f88a', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ASIA6DJYMYNJG3NV4SRS/20240129/ap-south-1/lambda/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=70c3c80bd531a5bf053f8c5cda71c9eb10d2248957e730d197ea601cd65f8d97' }
+
+      let response = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.firstValueFrom)(_this.httpClient.post("https://tuwk4y6c6d4szdeeic2j6ntnxm0rabki.lambda-url.ap-south-1.on.aws", resp.input, {
+        headers: resp.headers
+      }));
+      console.log(response);
+      return response;
+    })();
+  }
+
+  fetchBotLambdaFunctionUrl(input) {
+    function postData() {
+      return _postData48.apply(this, arguments);
+    }
+
+    function _postData48() {
+      _postData48 = (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        const apiName = 'MyCustomLambda';
+        const path = '/getsignedurl';
+        const myInit = {
+          body: input,
+          headers: {
+            Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_1__.AUTH_GET_JWT_TOKEN)()}`
+          }
+        };
+        return yield aws_amplify__WEBPACK_IMPORTED_MODULE_5__.API.post(apiName, path, myInit);
+      });
+      return _postData48.apply(this, arguments);
+    }
+
+    return postData();
+  } // this is not used rt now. this calls aws-signature-v4.js. i think i was getting error only coz of payload or else it shud work.
+
+
+  createAwsSignedUrl() {
+    let endpoint = "tuwk4y6c6d4szdeeic2j6ntnxm0rabki.lambda-url.ap-south-1.on.aws";
+    return (0,_aws_signature_v4__WEBPACK_IMPORTED_MODULE_3__.createPresignedURL)('POST', endpoint, '', 'lambda', // createHash('sha256').update('{"data":"something"}', 'utf8').digest('hex'),
+    {
+      "data": "something"
+    }, {
+      key: 'access-key',
+      expires: 600,
+      secret: 'secret',
+      sessionToken: 'session-token',
+      protocol: 'https',
+      region: 'ap-south-1'
+    });
+  }
+
 }
 
 ApiService.ɵfac = function ApiService_Factory(t) {
-  return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClient));
+  return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_8__.HttpClient));
 };
 
-ApiService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({
+ApiService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjectable"]({
   token: ApiService,
   factory: ApiService.ɵfac,
   providedIn: 'root'
@@ -5689,7 +5764,7 @@ function BotInterviewComponent_p_110_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r0.referenceIdSummary.errorMessage);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", ctx_r0.referenceIdSummary.errorMessage, "");
   }
 }
 
@@ -5789,8 +5864,15 @@ class BotInterviewComponent {
       "interview_id": "",
       "requestType": "NEXT_QUESTION"
     };
-    this.spinnerVisibilityService.show();
-    this.apiService.bot_interview(input).then(data => {
+    this.spinnerVisibilityService.show(); // this.apiService.bot_interview(input).then((data) => {
+    //   console.log(data)
+    //   this.bot_interview_journey = data
+    //   this.questionText = data['question_details']["question"]
+    // }).finally(() => {
+    //   this.spinnerVisibilityService.hide();
+    // });
+
+    this.apiService.bot_interview_function_url(input).then(data => {
       console.log(data);
       this.bot_interview_journey = data;
       this.questionText = data['question_details']["question"];
@@ -5885,7 +5967,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
   selectors: [["app-bot-interview"]],
   decls: 221,
   vars: 16,
-  consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item", 3, "hidden"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link"], [1, "tab-content"], ["id", "schedule", 1, "tab-pane", "active"], [1, "row"], [1, "col-sm-6"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs", "tabs-bot-instructions"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-toggle", "tab", "data-target", "#step1", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-toggle", "tab", "data-target", "#step2", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step3", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step4", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "myTabContent", 1, "tab-content", "card", "card-body"], ["id", "step1", "role", "tabpanel", 1, "tab-pane", "fade", "show", "active"], ["id", "step2", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step3", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step4", "role", "tabpanel", 1, "tab-pane", "fade"], [1, "mb-2"], [1, "btn", "btn-primary", "btn-sm"], ["role", "alert", 1, "alert", "alert-danger"], ["href", "#", 1, "alert-link"], [3, "hidden"], ["src", "../../../../assets/Images/home-banner-1.jpg", 1, "img-fluid"], [1, "form-check", "mt-3"], ["type", "checkbox", "value", "", "id", "flexCheckDefault", 1, "form-check-input"], ["for", "flexCheckDefault", 1, "form-check-label"], ["id", "upcoming", 1, "tab-pane"], [1, "d-flex", "mb-3"], ["class", "mat-error", 4, "ngIf"], ["type", "text", "name", "name", "placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-border", "btn-sm", "ml-2", 3, "click"], ["data-toggle", "modal", "data-target", "#startInterview", 1, "btn", "btn-primary", "ml-2", 3, "hidden", "click"], ["id", "startInterview", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "false", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-body"], [1, "interview-step-1", 3, "hidden"], ["role", "alert", 1, "alert", "alert-info"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "interview-step-2", 3, "hidden"], [1, "col-sm-8"], [1, "question-widigt", "text-semibold"], ["src", "../../../../assets/Images/chatbot.png", "alt", "Avatar", 1, "bot-image-profile"], [1, "font-small-3", "text-muted"], [1, "answer-widigt"], [1, "mb-1", 3, "hidden"], [1, "row", "align-items-center"], [1, "col-sm-4", "offset-sm-1"], [1, "btn", "btn-primary", 3, "click"], [1, "icon-play4", "mr-2"], [1, "text-notificiation"], [1, "badge", "badge-primary"], [1, "col-sm-2"], [1, "px-4"], [1, "col-sm-4"], ["aria-hidden", "true", 1, "icon-circle-code", "mr-2"], [1, "btn-speech", "mb-2"], [1, "pulse-ring"], ["aria-hidden", "true", 1, "icon-mic2"], [1, "write-code", 3, "hidden"], [1, "close-icon", "icon-close2"], ["appearance", "outline", 1, "input-field", 2, "width", "30%", "height", "30%"], ["autosize", "", "matInput", "", "name", "questionText", "required", "", 3, "ngModel", "ngModelChange"], [1, "text-right"], [1, "col-sm-6", 3, "hidden"], [1, "btn", "btn-border", "mr-2"], ["aria-hidden", "true", 1, "icon-forward3", "ml-1"], [1, "col-sm-6", "text-right", 3, "hidden", "click"], [1, "btn", "btn-primary"], ["aria-hidden", "true", 1, "icon-arrow-right8", "ml-1"], [1, "user-video"], ["src", "../../../../assets/Images/video-call.jpg"], [1, "interview-step-3", 3, "hidden"], ["role", "alert", 1, "alert", "alert-success"], [1, "alert-heading", "mb-2"], [1, "btn", "mx-2", "btn-primary"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-link"], [1, "mat-error"]],
+  consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item", 3, "hidden"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link"], [1, "tab-content"], ["id", "schedule", 1, "tab-pane", "active"], [1, "row"], [1, "col-sm-6"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs", "tabs-bot-instructions"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-toggle", "tab", "data-target", "#step1", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-toggle", "tab", "data-target", "#step2", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step3", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step4", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "myTabContent", 1, "tab-content", "card", "card-body"], ["id", "step1", "role", "tabpanel", 1, "tab-pane", "fade", "show", "active"], ["id", "step2", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step3", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step4", "role", "tabpanel", 1, "tab-pane", "fade"], [1, "mb-2"], [1, "btn", "btn-primary", "btn-sm"], ["role", "alert", 1, "alert", "alert-danger"], ["href", "#", 1, "alert-link"], [3, "hidden"], ["src", "../../../../assets/Images/home-banner-1.jpg", 1, "img-fluid"], [1, "form-check", "mt-3"], ["type", "checkbox", "value", "", "id", "flexCheckDefault", 1, "form-check-input"], ["for", "flexCheckDefault", 1, "form-check-label"], ["id", "upcoming", 1, "tab-pane"], [1, "d-flex", "mb-3"], ["class", "mat-error", 4, "ngIf"], ["type", "text", "name", "name", "placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-border", "btn-sm", "ml-2", 3, "click"], ["data-toggle", "modal", "data-target", "#startInterview", 1, "btn", "btn-primary", "ml-2", 3, "hidden", "click"], ["id", "startInterview", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "false", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-body"], [1, "interview-step-1", 3, "hidden"], ["role", "alert", 1, "alert", "alert-info"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "interview-step-2", 3, "hidden"], [1, "col-sm-8"], [1, "question-widigt", "text-semibold"], ["src", "../../../../assets/Images/chatbot.png", "alt", "Avatar", 1, "bot-image-profile"], [1, "font-small-3", "text-muted"], [1, "answer-widigt"], [1, "mb-1", 3, "hidden"], [1, "row", "align-items-center"], [1, "col-sm-4", "offset-sm-1"], [1, "btn", "btn-primary", 3, "click"], [1, "icon-play4", "mr-2"], [1, "text-notificiation"], [1, "badge", "badge-primary"], [1, "col-sm-2"], [1, "px-4"], [1, "col-sm-4"], ["aria-hidden", "true", 1, "icon-circle-code", "mr-2"], [1, "btn-speech", "mb-2"], [1, "pulse-ring"], ["aria-hidden", "true", 1, "icon-mic2"], [1, "write-code", 3, "hidden"], [1, "close-icon", "icon-close2"], ["appearance", "outline", 1, "input-field", 2, "width", "30%", "height", "30%"], ["autosize", "", "matInput", "", "name", "questionText", "required", "", 3, "ngModel", "ngModelChange"], [1, "text-right"], [1, "col-sm-6", 3, "hidden"], [1, "btn", "btn-border", "mr-2"], ["aria-hidden", "true", 1, "icon-forward3", "ml-1"], [1, "col-sm-6", "text-right", 3, "hidden", "click"], [1, "btn", "btn-primary"], ["aria-hidden", "true", 1, "icon-arrow-right8", "ml-1"], [1, "user-video"], ["src", "../../../../assets/Images/video-call.jpg"], [1, "interview-step-3", 3, "hidden"], ["role", "alert", 1, "alert", "alert-success"], [1, "alert-heading", "mb-2"], [1, "btn", "mx-2", "btn-primary"], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-link"], [1, "mat-error"]],
   template: function BotInterviewComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "form", 0)(1, "div", 1)(2, "div", 2)(3, "ul", 3)(4, "li", 4)(5, "a", 5);
@@ -6146,7 +6228,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](217, "Thank you!");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](218, "div", 81)(219, "button", 82);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](220, "Cancel");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](220, "Close");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()()()()();
     }
 
@@ -71303,6 +71385,158 @@ PasswordValidators.validateConfirmPassword = (formGroup) => {
 
 /***/ }),
 
+/***/ 5017:
+/*!*************************************!*\
+  !*** ./src/app/aws-signature-v4.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createCanonicalRequest": () => (/* binding */ createCanonicalRequest),
+/* harmony export */   "createCanonicalQueryString": () => (/* binding */ createCanonicalQueryString),
+/* harmony export */   "createCanonicalHeaders": () => (/* binding */ createCanonicalHeaders),
+/* harmony export */   "createSignedHeaders": () => (/* binding */ createSignedHeaders),
+/* harmony export */   "createCredentialScope": () => (/* binding */ createCredentialScope),
+/* harmony export */   "createStringToSign": () => (/* binding */ createStringToSign),
+/* harmony export */   "createSignature": () => (/* binding */ createSignature),
+/* harmony export */   "createPresignedS3URL": () => (/* binding */ createPresignedS3URL),
+/* harmony export */   "createPresignedURL": () => (/* binding */ createPresignedURL)
+/* harmony export */ });
+/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! query-string */ 64100);
+// Copied from https://github.com/department-stockholm/aws-signature-v4
+// and fixed the sorting of query parameters by using 'query-string' package instead of 'querystring'
+
+
+// import * as crypto from 'asymmetric-crypto';
+
+// import * as createHmac from 'create-hmac';
+// import * as createHash from 'create-hash';
+
+var createHash = __webpack_require__(/*! create-hash */ 70145)
+var createHmac = __webpack_require__(/*! create-hmac */ 3640)
+const createCanonicalRequest = function(method, pathname, query, headers, payload) {
+  return [
+    method.toUpperCase(),
+    pathname,
+    createCanonicalQueryString(query),
+    createCanonicalHeaders(headers),
+    createSignedHeaders(headers),
+    payload
+  ].join('\n');
+};
+
+const createCanonicalQueryString = function(params) {
+  return Object.keys(params).sort().map(function(key) {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+  }).join('&');
+};
+
+const createCanonicalHeaders = function(headers) {
+  return Object.keys(headers).sort().map(function(name) {
+    return name.toLowerCase().trim() + ':' + headers[name].toString().trim() + '\n';
+  }).join('');
+};
+
+const createSignedHeaders = function(headers) {
+  return Object.keys(headers).sort().map(function(name) {
+    return name.toLowerCase().trim();
+  }).join(';');
+};
+
+const createCredentialScope = function(time, region, service) {
+  return [toDate(time), region, service, 'aws4_request'].join('/');
+};
+
+const createStringToSign = function(time, region, service, request) {
+  return [
+    'AWS4-HMAC-SHA256',
+    toTime(time),
+    createCredentialScope(time, region, service),
+    hash(request, 'hex')
+  ].join('\n');
+};
+
+const createSignature = function(secret, time, region, service, stringToSign) {
+  var h1 = hmac('AWS4' + secret, toDate(time)); // date-key
+  var h2 = hmac(h1, region); // region-key
+  var h3 = hmac(h2, service); // service-key
+  var h4 = hmac(h3, 'aws4_request'); // signing-key
+  return hmac(h4, stringToSign, 'hex');
+};
+
+const createPresignedS3URL = function(name, options) {
+  options = options || {};
+  options.method = options.method || 'GET';
+  options.bucket = options.bucket || process.env.AWS_S3_BUCKET;
+  return createPresignedURL(
+    options.method,
+    options.bucket + '.s3.amazonaws.com',
+    '/' + name,
+    's3',
+    'UNSIGNED-PAYLOAD',
+    options
+  );
+};
+
+const createPresignedURL = function(method, host, path, service, payload, options) {
+  options = options || {};
+  options.key = options.key || process.env.AWS_ACCESS_KEY_ID;
+  options.secret = options.secret || process.env.AWS_SECRET_ACCESS_KEY;
+  options.protocol = options.protocol || 'https';
+  options.headers = options.headers || {};
+  options.timestamp = options.timestamp || Date.now();
+  options.region = options.region || process.env.AWS_REGION || 'us-east-1';
+  options.expires = options.expires || 86400; // 24 hours
+  options.headers = options.headers || {};
+
+  // host is required
+  options.headers.Host = host;
+
+  var query = options.query ? query_string__WEBPACK_IMPORTED_MODULE_0__["default"].parse(options.query) : {};
+  query['X-Amz-Algorithm'] = 'AWS4-HMAC-SHA256';
+  query['X-Amz-Credential'] = options.key + '/' + createCredentialScope(options.timestamp, options.region, service);
+  query['X-Amz-Date'] = toTime(options.timestamp);
+  query['X-Amz-Expires'] = options.expires;
+  query['X-Amz-SignedHeaders'] = createSignedHeaders(options.headers);
+  if (options.sessionToken) {
+    query['X-Amz-Security-Token'] = options.sessionToken;
+  }
+
+  var canonicalRequest = createCanonicalRequest(method, path, query, options.headers, payload);
+  var stringToSign = createStringToSign(options.timestamp, options.region, service, canonicalRequest);
+  var signature = createSignature(options.secret, options.timestamp, options.region, service, stringToSign);
+  query['X-Amz-Signature'] = signature;
+  return options.protocol + '://' + host + path + '?' + query_string__WEBPACK_IMPORTED_MODULE_0__["default"].stringify(query);
+};
+
+function toTime(time) {
+  return new Date(time).toISOString().replace(/[:\-]|\.\d{3}/g, '');
+}
+
+function toDate(time) {
+  return toTime(time).substring(0, 8);
+}
+
+function hmac(key, string, encoding) {
+  console.info(createHmac('sha256', key)
+  .update(string, 'utf8')
+  .digest(encoding));
+  return createHmac('sha256', key)
+    .update(string, 'utf8')
+    .digest(encoding);
+}
+
+function hash(string, encoding) {
+  return createHash('sha256')
+    .update(string, 'utf8')
+    .digest(encoding);
+}
+
+
+/***/ }),
+
 /***/ 68431:
 /*!*******************************************************!*\
   !*** ./src/app/util/web-cam/transcribe/audioUtils.js ***!
@@ -71508,6 +71742,16 @@ function hash(string, encoding) {
 /***/ }),
 
 /***/ 56249:
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 23671:
 /*!************************!*\
   !*** crypto (ignored) ***!
   \************************/
