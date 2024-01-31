@@ -5895,7 +5895,7 @@ class BotInterviewComponent {
     };
     console.log;
     this.spinnerVisibilityService.show();
-    this.apiService.bot_interview(input).then(data => {
+    this.apiService.bot_interview_function_url(input).then(data => {
       console.log(data);
       this.bot_interview_journey = data;
       this.questionText = this.bot_interview_journey['question_details']["question"];
