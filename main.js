@@ -70276,6 +70276,10 @@ class QuestionComponent {
 
         _this.changeTestId(response.testId);
 
+        if (!response.questions[0].shuffleOptions) {
+          _this.randomOptions = ["a", "b", "c", "d"];
+        }
+
         _this.changeQuestions(response.questions);
 
         _this.durations = response.duration * 60;
