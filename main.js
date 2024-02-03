@@ -540,7 +540,6 @@ class BotInterviewsComponent {
             }
           }).subscribe(resp => {
             that.profiles_data = resp.data['table'];
-            console.log(that.profiles_data);
             that.datatable_row_keys = resp.data['row_keys'];
             that.skill_wise_scores = {};
             callback({
@@ -725,7 +724,6 @@ class BotInterviewsComponent {
       "interviewId": this.selected_row.interviewId
     };
     this.apiService.fetch_bot_interview_summary(input).then(data => {
-      console.log(data);
       this.interview_summary = data; // this.spinnerVisibilityService.hide();
     }).finally(() => {
       this.spinnerVisibilityService.hide();
@@ -739,11 +737,10 @@ class BotInterviewsComponent {
       "botInterviewApproved": this.botInterviewApproved
     };
     this.apiService.updateBotFeedback(input).then(data => {
-      console.log(data);
+      console.log("");
     }).finally(() => {
       this.spinnerVisibilityService.hide();
     });
-    console.log(this.interview_summary);
   }
 
 }
@@ -4242,13 +4239,11 @@ class ApiService {
       input = {
         "input": input
       };
-      let resp = yield _this.fetchBotLambdaFunctionUrl(input);
-      console.log(resp); // let header = { 'Origin': 'http://example.com', 'Access-Control-Request-Method': 'POST', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '7', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'tuwk4y6c6d4szdeeic2j6ntnxm0rabki.lambda-url.ap-south-1.on.aws', 'X-AMZ-Date': '20240129T140910Z', 'x-amz-security-token': 'IQoJb3JpZ2luX2VjEDYaCmFwLXNvdXRoLTEiSDBGAiEAu2VV39QpzYfESoC7NwQA29lYPNFpd1FF1MF3jgHyyWoCIQDTkNA9NBoPH9suAI/o374oVd9NPEYCCXru8T3jpkP6sirzAQjv//////////8BEAMaDDk2OTE3MDI3MzEwNiIM9EpRNkw2g4ug6Bz0KscBwz9v5ctXSNRf3lIp9ACSZflsH2/sYFhJ240G1NhBqECHsGQaEL3VVi4IwXlH6f/L1Q08IEozgy2fUiTJ2scd719Glu7XQTmsZJlNvi/6AAJqaV60KVgAnjtHQrko2uT/ij44LDjD8ZM2ndIUH58J7WinZnOFuKj2L4gsCkqZeXCuWOfbVbY+m8jPGa1MPejNhbwCxLhMZGTq7BiDTr5oDoTAK3KV8SJgfWlvReracQ0XqfZlnqy/8t7vl4MwcktUXLlLb3BgATDl4t6tBjqXAYn6FXObehcobuwzvATeNeNoqVPEjKtn3L5ZIZk8f32jqc94GCHz5/khrg+M9or9Jh4QkWIjK8/G9dnaSNmxyXCeOnTkAFOB5aIkKm3hFQi3Vhkpo17c8Ah7jLEWqOdaEkUQRRfwUr/+go5Y8HEoZ46ci7KTXtXKyWAniE1ov47unLDY6veFklr6TUh+qwfOXrt1QvnikXk=', 'x-amz-content-sha256': '3ba8907e7a252327488df390ed517c45b96dead033600219bdca7107d1d3f88a', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ASIA6DJYMYNJG3NV4SRS/20240129/ap-south-1/lambda/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=70c3c80bd531a5bf053f8c5cda71c9eb10d2248957e730d197ea601cd65f8d97' }
+      let resp = yield _this.fetchBotLambdaFunctionUrl(input); // let header = { 'Origin': 'http://example.com', 'Access-Control-Request-Method': 'POST', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '7', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': 'tuwk4y6c6d4szdeeic2j6ntnxm0rabki.lambda-url.ap-south-1.on.aws', 'X-AMZ-Date': '20240129T140910Z', 'x-amz-security-token': 'IQoJb3JpZ2luX2VjEDYaCmFwLXNvdXRoLTEiSDBGAiEAu2VV39QpzYfESoC7NwQA29lYPNFpd1FF1MF3jgHyyWoCIQDTkNA9NBoPH9suAI/o374oVd9NPEYCCXru8T3jpkP6sirzAQjv//////////8BEAMaDDk2OTE3MDI3MzEwNiIM9EpRNkw2g4ug6Bz0KscBwz9v5ctXSNRf3lIp9ACSZflsH2/sYFhJ240G1NhBqECHsGQaEL3VVi4IwXlH6f/L1Q08IEozgy2fUiTJ2scd719Glu7XQTmsZJlNvi/6AAJqaV60KVgAnjtHQrko2uT/ij44LDjD8ZM2ndIUH58J7WinZnOFuKj2L4gsCkqZeXCuWOfbVbY+m8jPGa1MPejNhbwCxLhMZGTq7BiDTr5oDoTAK3KV8SJgfWlvReracQ0XqfZlnqy/8t7vl4MwcktUXLlLb3BgATDl4t6tBjqXAYn6FXObehcobuwzvATeNeNoqVPEjKtn3L5ZIZk8f32jqc94GCHz5/khrg+M9or9Jh4QkWIjK8/G9dnaSNmxyXCeOnTkAFOB5aIkKm3hFQi3Vhkpo17c8Ah7jLEWqOdaEkUQRRfwUr/+go5Y8HEoZ46ci7KTXtXKyWAniE1ov47unLDY6veFklr6TUh+qwfOXrt1QvnikXk=', 'x-amz-content-sha256': '3ba8907e7a252327488df390ed517c45b96dead033600219bdca7107d1d3f88a', 'Authorization': 'AWS4-HMAC-SHA256 Credential=ASIA6DJYMYNJG3NV4SRS/20240129/ap-south-1/lambda/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=70c3c80bd531a5bf053f8c5cda71c9eb10d2248957e730d197ea601cd65f8d97' }
 
       let response = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.firstValueFrom)(_this.httpClient.post("https://tuwk4y6c6d4szdeeic2j6ntnxm0rabki.lambda-url.ap-south-1.on.aws", resp.input, {
         headers: resp.headers
       }));
-      console.log(response);
       return response;
     })();
   }
@@ -4703,7 +4698,7 @@ class AppComponent {
         const formData = new FormData();
         formData.append('file', this.checkoutForm.get('fileSource').value);
         this.apiService.postFile(formData).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
         console.warn('Your order has been submitted', this.checkoutForm.value.resume);
         this.apiService.getNews().subscribe((data) => {
@@ -4711,7 +4706,7 @@ class AppComponent {
             this.checkoutForm.patchValue({ name: this.test, email: '' });
         });
         this.apiService.postNews(JSON.stringify(this.checkoutForm.value)).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
     }
     /**
@@ -4753,7 +4748,6 @@ class AppComponent {
      * Set selected values to retain the state
      */
     setSelectedValues() {
-        console.log('selectFormControl', this.selectFormControl.value);
         if (this.selectFormControl.value && this.selectFormControl.value.length > 0) {
             this.selectFormControl.value.forEach((e) => {
                 if (this.selectedValues.indexOf(e) == -1) {
@@ -6715,7 +6709,6 @@ class BotInterviewComponent {
 
   startInterview() {
     // window.open(this.testURL, '_blank', 'fullscreen=yes');
-    console.log("interview started");
     this.interview_in_progress = true;
     this.elementShow.interviewPrep = false;
     this.askQuestion();
@@ -6726,7 +6719,6 @@ class BotInterviewComponent {
 
   finishInterview() {
     // window.open(this.testURL, '_blank', 'fullscreen=yes');
-    console.log("interview finished");
     this.interview_in_progress = false;
     this.UiStates(this.interviewStates['INTERVIEW-COMPLETED']); // this.videoRecorder.stopRecording();
   }
@@ -6739,9 +6731,7 @@ class BotInterviewComponent {
         "referenceId": _this.referenceId,
         "assessmentType": "BOT_INTERVIEW"
       };
-      console.log(input.referenceId);
       _this.referenceIdSummary = yield _this.testService.validateReferenceId(input);
-      console.log(_this.referenceIdSummary);
 
       if (_this.referenceIdSummary.errorMessage !== null) {
         _this.interviewURL = `/interview/${btoa(JSON.stringify({
@@ -6752,8 +6742,6 @@ class BotInterviewComponent {
       } else {
         _this.interviewURL = null;
       }
-
-      console.log(_this.interviewURL);
     })();
   }
 
@@ -6775,7 +6763,6 @@ class BotInterviewComponent {
     // });
 
     this.apiService.bot_interview_function_url(input).then(data => {
-      console.log(data);
       this.bot_interview_journey = data;
       this.questionText = data['question_details']["question"];
       this.text2speech(this.questionText);
@@ -6785,8 +6772,6 @@ class BotInterviewComponent {
   }
 
   submitAnswer() {
-    // this.putAudio()
-    console.log(this.bot_interview_journey);
     let input = {
       "questionId": this.bot_interview_journey["question_details"]["id"],
       "user_response": this.responseText,
@@ -6795,10 +6780,8 @@ class BotInterviewComponent {
       "interview_id": this.bot_interview_journey["question_details"]["interviewId"],
       "requestType": "SUBMIT_ANSWER"
     };
-    console.log;
     this.spinnerVisibilityService.show();
     this.apiService.bot_interview_function_url(input).then(data => {
-      console.log(data);
       this.bot_interview_journey = data;
       this.questionText = this.bot_interview_journey['question_details']["question"];
       this.responseText = "";
@@ -6814,8 +6797,6 @@ class BotInterviewComponent {
   }
 
   UiStates(state) {
-    console.log("change state: ", state);
-
     if (state == this.interviewStates['INTERVIEW-PREP']) {
       this.interview_in_progress = false;
       this.elementShow.interviewPrep = true;
@@ -6901,7 +6882,6 @@ class BotInterviewComponent {
       _this3.videoRecorder.flush(false).then(response => {
         var URL = window.URL;
         _this3.blob_video = URL.createObjectURL(response[0]);
-        console.log(_this3.blob_video);
 
         _this3.video.nativeElement.setAttribute("src", _this3.blob_video);
 
@@ -6919,12 +6899,14 @@ class BotInterviewComponent {
 
     if (speech.hasBrowserSupport()) {
       // returns a boolean
-      console.log("speech synthesis supported");
+      // console.log("speech synthesis supported")
+      console.log("");
     }
 
     speech.init().then(data => {
       // The "data" object contains the list of available voices and the voice synthesis params
-      console.log("Speech is ready, voices are available", data);
+      // console.log("Speech is ready, voices are available", data)
+      console.log("");
     }).catch(e => {
       console.error("An error occured while initializing : ", e);
     });
@@ -8035,12 +8017,10 @@ class TestComponent {
     var _this2 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      console.log(assessmentType);
       let input = {
         "referenceId": _this2.referenceIdForm.value,
         "assessmentType": assessmentType
       };
-      console.log(input.referenceId);
       _this2.referenceIdSummary = yield _this2.testService.validateReferenceId(input);
 
       if (_this2.referenceIdSummary.errorMessage !== null) {
@@ -8223,7 +8203,7 @@ class CandidateLoginComponent {
         const formData = new FormData();
         formData.append('file', this.checkoutForm.get('fileSource').value);
         this.apiService.postFile(formData).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
         console.warn('Your order has been submitted', this.checkoutForm.value.resume);
         this.apiService.getNews().subscribe((data) => {
@@ -8231,7 +8211,7 @@ class CandidateLoginComponent {
             this.checkoutForm.patchValue({ name: this.test, email: '' });
         });
         this.apiService.postNews(JSON.stringify(this.checkoutForm.value)).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
     }
 }
@@ -8341,7 +8321,7 @@ class CandidateRegisterComponent {
         const formData = new FormData();
         formData.append('file', this.checkoutForm.get('fileSource').value);
         this.apiService.postFile(formData).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
         console.warn('Your order has been submitted', this.checkoutForm.value.resume);
         this.apiService.getNews().subscribe((data) => {
@@ -8349,7 +8329,7 @@ class CandidateRegisterComponent {
             this.checkoutForm.patchValue({ name: this.test, email: '' });
         });
         this.apiService.postNews(JSON.stringify(this.checkoutForm.value)).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
     }
 }
@@ -10206,7 +10186,7 @@ class HiretestComponent {
     insert_test_results(user_test_details) {
         this.apiService.insert_test_results(user_test_details).then((data) => {
             // console.log(data.resume_base64);
-            console.log(data);
+            console.log("");
         });
     }
 }
@@ -10798,7 +10778,7 @@ class RecruitmentComponent {
         const formData = new FormData();
         formData.append('file', this.checkoutForm.get('fileSource').value);
         this.apiService.postFile(formData).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
         console.warn('Your order has been submitted', this.checkoutForm.value.resume);
         this.apiService.getNews().subscribe((data) => {
@@ -10806,7 +10786,7 @@ class RecruitmentComponent {
             this.checkoutForm.patchValue({ name: this.test, email: '' });
         });
         this.apiService.postNews(JSON.stringify(this.checkoutForm.value)).subscribe((data) => {
-            console.log(data);
+            console.log("");
         });
     }
     /**
@@ -11354,10 +11334,9 @@ class ContactUsComponent {
                 subject: this.subject,
                 message: this.message
             };
-            console.log("atul");
             this.spinnerVisibilityService.show();
             this.apiService.contactus(message).then((data) => {
-                console.log(data);
+                console.log("");
             }).finally(() => {
                 this.spinnerVisibilityService.hide();
                 this.openDialog("We have receive your enquiry and our representative will get back to you shortly. Thanks!", "SUCCESS");
@@ -13884,7 +13863,6 @@ class InterviewComponent {
   }
 
   ngAfterViewInit() {
-    console.log("Interviewer id: ", this.candidateid);
     this.fetchcalendar();
     this.fetchinterviews();
     this.mycalendar.getApi().render();
@@ -14045,9 +14023,11 @@ class InterviewComponent {
         this.candidate_skills = data; //should be user skills when interviewer is updating
       } else {
         this.candidate_skills = [];
+        let skills = [];
         this.interview_details.reference_skills.forEach(reference_skill => {
-          this.candidate_skills.push(reference_skill.name);
+          skills.push(reference_skill.name);
         });
+        this.candidate_skills = skills.concat(data); //combine reference + candidate skills
       }
 
       this.populatefeedback();
@@ -14076,7 +14056,6 @@ class InterviewComponent {
         });
       }
     }).finally(() => {
-      console.log(this.full_profile_details);
       this.spinnerVisibilityService.hide();
     }); // this.openDialog("Interview Declined","success")
   }
@@ -14094,7 +14073,7 @@ class InterviewComponent {
           headers: {
             'Content-Type': file.type
           }
-        }).subscribe(data => console.log(data));
+        }).subscribe(data => console.log(""));
       });
     }
   }
@@ -14347,8 +14326,6 @@ class InterviewComponent {
     } // allow feedback update only 24 hours after first feedback submission.
 
 
-    console.log(this.submission_time);
-    console.log(new Date(new Date(this.submission_time).getTime() + 1 * 24 * 60 * 60 * 1000));
     this.allow_feedback_update = new Date(new Date(this.submission_time).getTime() + 1 * 24 * 60 * 60 * 1000) > new Date() ? true : false;
   }
 
@@ -15299,7 +15276,6 @@ class UploadQuestionsComponent {
             };
             this.spinnerVisibilityService.show();
             this.apiService.uploadquestions(input).then((data) => {
-                console.log(data);
                 this.openDialog("Updated successfully", "success");
             }).finally(() => {
                 this.spinnerVisibilityService.hide();
@@ -16018,7 +15994,7 @@ class ViewQuestionsComponent {
             "complexities": complexities
         };
         this.apiService.complexity_bulk_update(input).then((data) => {
-            console.log(data);
+            console.log("");
         });
     }
     prevpage() {
@@ -16776,7 +16752,7 @@ class AssessmentTestComponent {
     }
     sendimage(imageurl) {
         this.apiService.sendimage(imageurl).then((data) => {
-            console.log(data);
+            console.log("");
         });
     }
     takeatest() {
@@ -16829,7 +16805,7 @@ class AssessmentTestComponent {
         let questions_answered = 0;
         let right_answered = 0;
         let wrong_answered = 0;
-        event.target.checked ? console.log("checked", i, a) : console.log("unchecked", i, a);
+        // event.target.checked ? console.log("checked", i, a) : console.log("unchecked", i, a)
         this.selectedanswers[i] = { "id": i + 1, "answer": a };
         this.selectedanswers.forEach((element, index) => {
             element.answer != "" ? questions_answered = questions_answered + 1 : "";
@@ -19501,7 +19477,7 @@ class InitiateReferenceComponent {
                 'Content-Type': _this2.file_resume[i].type
               }
             }).subscribe(data => {
-              console.log(data);
+              console.log("");
             }).add(() => {
               _this2.spinnerVisibilityService.hide();
             });
@@ -24183,7 +24159,6 @@ class ProfilesComponent {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this3.reports = yield _this3.recruiterService.getReports(i.user_id, i.test_id);
-      console.log(_this3.reports);
     })();
   }
 
@@ -24548,7 +24523,6 @@ class ProfilesComponent {
   }
 
   drop_candidature() {
-    console.log(this.drop_reason);
     let input = {
       candidate_id: Number(this.datatable_row_keys[this.selected_row_id]),
       drop_reason: this.drop_reason,
@@ -25601,7 +25575,6 @@ class BotFeedbackComponent {
             "interviewId": this.interview_id
         };
         this.apiService.fetch_bot_interview_summary(input).then((data) => {
-            console.log(data);
             this.interview_summary = data;
             // this.spinnerVisibilityService.hide();
         }).finally(() => {
@@ -26962,7 +26935,6 @@ class RecordVideoComponent {
       _this2.videoRecorder.flush(false).then(response => {
         var URL = window.URL;
         _this2.blob_video = URL.createObjectURL(response[0]);
-        console.log(_this2.blob_video);
 
         _this2.video.nativeElement.setAttribute("src", _this2.blob_video); // this.video.nativeElement.srcObject = this.blob_video
 
@@ -26976,13 +26948,11 @@ class RecordVideoComponent {
 
   startInterview() {
     // window.open(this.testURL, '_blank', 'fullscreen=yes');
-    console.log("interview started");
     this.interview_in_progress = true; // this.startRecording()
   }
 
   finishInterview() {
     // window.open(this.testURL, '_blank', 'fullscreen=yes');
-    console.log("interview finished");
     this.interview_in_progress = false;
     this.videoRecorder.stopRecording();
   }
@@ -27004,7 +26974,6 @@ class RecordVideoComponent {
     };
     this.spinnerVisibilityService.show();
     this.apiService.bot_interview(input).then(data => {
-      console.log(data);
       this.bot_interview_journey = data;
       this.questionText = data['question_details']["question"];
     }).finally(() => {
@@ -27014,7 +26983,6 @@ class RecordVideoComponent {
 
   submitAnswer() {
     // this.putAudio()
-    console.log(this.bot_interview_journey);
     let input = {
       "questionId": this.bot_interview_journey["question_details"]["id"],
       "user_response": this.responseText,
@@ -27023,10 +26991,8 @@ class RecordVideoComponent {
       "interview_id": this.bot_interview_journey["question_details"]["interviewId"],
       "requestType": "SUBMIT_ANSWER"
     };
-    console.log;
     this.spinnerVisibilityService.show();
     this.apiService.bot_interview(input).then(data => {
-      console.log(data);
       this.bot_interview_journey = data;
       this.questionText = this.bot_interview_journey['question_details']["question"];
     }).finally(() => {
@@ -27659,7 +27625,6 @@ class TranscribeComponent {
         this.transcribeException = false;
         this.createPresignedUrlNew = () => {
             let endpoint = 'transcribestreaming.' + this.region + '.amazonaws.com:8443';
-            console.log('start createPresignedUrlNew start ' + endpoint);
             // get a preauthenticated URL that we can use to establish our WebSocket
             return (0,_aws_signature_v4__WEBPACK_IMPORTED_MODULE_1__.createPresignedURL)('GET', endpoint, '/stream-transcription-websocket', 'transcribe', createHash('sha256').update('', 'utf8').digest('hex'), {
                 key: 'user_key_from_IAM_user',
@@ -69690,13 +69655,11 @@ class Recorder {
           id: new Date().getTime()
         }, {
           headers: httpHeaders
-        }));
-        console.log(putURL); // this is where we PUT the blob to S3 using presigned url
+        })); // this is where we PUT the blob to S3 using presigned url
 
         yield (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.firstValueFrom)(_this.http.put(putURL, blob));
       }
 
-      console.log(blob);
       let chunks = _this.chunks;
       _this.chunks = []; // FileSaver.saveAs(blob, "testVideo");
 
@@ -69810,8 +69773,7 @@ class Recorder {
         id: new Date().getTime()
       }, {
         headers: httpHeaders
-      }));
-      console.log(putURL); // this is where we PUT the blob to S3 using presigned url
+      })); // this is where we PUT the blob to S3 using presigned url
 
       yield (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.firstValueFrom)(_this.http.put(putURL, new Blob(_this.chunks, {
         type: 'video/webm'
@@ -70045,7 +70007,6 @@ class AnswerComponent {
     split_text(text) {
         if (text.split(":")[0] == "IMAGE") {
             this.question_image_path = "assets/assessment/questions/images/psychometric/" + text.split(":")[1] + ".jpg";
-            console.log(this.question_image_path);
             return text.split(":")[1];
         }
         else {
@@ -70376,7 +70337,6 @@ class QuestionComponent {
   split_text(text) {
     if (text.split(":")[0] == "IMAGE") {
       this.question_image_path = "assets/assessment/questions/images/psychometric/" + text.split(":")[1] + ".jpg";
-      console.log(this.question_image_path);
       return text.split(":")[1];
     } else {
       this.question_image_path = "";
@@ -70581,7 +70541,11 @@ class StartTestComponent {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       setTimeout( /*#__PURE__*/(0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-        const ref = yield _this.testService.validateReferenceId(_this.referenceId);
+        let input = {
+          "referenceId": _this.referenceId,
+          "assessmentType": "TEST"
+        };
+        const ref = yield _this.testService.validateReferenceId(input);
         _this.isVideoPermissionsRequired = ref.videoPermissionRequired;
 
         if (ref.videoPermissionRequired) {
@@ -70628,7 +70592,11 @@ class StartTestComponent {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       // need to check again before starting test to check if reference id is still valid.
-      const ref = yield _this3.testService.validateReferenceId(_this3.referenceId);
+      let input = {
+        "referenceId": _this3.referenceId,
+        "assessmentType": "TEST"
+      };
+      const ref = yield _this3.testService.validateReferenceId(input);
 
       if (ref.videoPermissionRequired) {
         yield _this3.checkCameraAndAudioPermissions();
@@ -72373,7 +72341,6 @@ class TestService {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const URL = `${_models_constants__WEBPACK_IMPORTED_MODULE_1__.END_POINT}/v1/test/reference/validate?referenceId=${input.referenceId}&assessmentType=${input.assessmentType}`;
-      console.log(URL);
       const httpHeaders = yield (0,_models_constants__WEBPACK_IMPORTED_MODULE_1__.HTTP_HEADERS)();
 
       try {
