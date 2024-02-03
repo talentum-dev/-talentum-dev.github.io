@@ -6530,22 +6530,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AssessmentComponent": () => (/* binding */ AssessmentComponent)
 /* harmony export */ });
 /* harmony import */ var _models_candidate_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../models/candidate.model */ 19533);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/profile-card/profile-card.component */ 56078);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _test_test_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./test/test.component */ 70616);
 /* harmony import */ var _interview_interview_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./interview/interview.component */ 43796);
+/* harmony import */ var _bot_interview_bot_interview_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./bot-interview/bot-interview.component */ 39921);
 
 
 
 
 
 
-function AssessmentComponent_candidate_test_15_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "candidate-test");
+
+function AssessmentComponent_candidate_test_18_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "candidate-test");
 } }
-function AssessmentComponent_candidate_interview_16_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "candidate-interview");
+function AssessmentComponent_candidate_interview_19_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "candidate-interview");
+} }
+function AssessmentComponent_app_bot_interview_20_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "app-bot-interview");
 } }
 class AssessmentComponent {
     constructor() {
@@ -6574,31 +6579,40 @@ class AssessmentComponent {
     }
 }
 AssessmentComponent.ɵfac = function AssessmentComponent_Factory(t) { return new (t || AssessmentComponent)(); };
-AssessmentComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: AssessmentComponent, selectors: [["candidate-assessment"]], decls: 17, vars: 6, consts: [[1, "section"], [1, "container"], [1, "row"], [1, "col-lg-3", "col-md-12", "col-xs-12"], [1, "left-sideabr"], ["role", "tablist", 1, "list-item", "nav"], [1, "nav-link", 3, "click"], [1, "col-lg-9", "col-md-12", "col-xs-12"], [1, "tab-content"], [4, "ngIf"]], template: function AssessmentComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "app-profile-card");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 4)(6, "ul", 5)(7, "li")(8, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AssessmentComponent_Template_a_click_8_listener() { return ctx.updateView(ctx.AssessmentEnum.TEST); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Test");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "li")(11, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AssessmentComponent_Template_a_click_11_listener() { return ctx.updateView(ctx.AssessmentEnum.MY_INTERVIEWS); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12, "My Interview");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "div", 7)(14, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](15, AssessmentComponent_candidate_test_15_Template, 1, 0, "candidate-test", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](16, AssessmentComponent_candidate_interview_16_Template, 1, 0, "candidate-interview", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()();
+AssessmentComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: AssessmentComponent, selectors: [["candidate-assessment"]], decls: 21, vars: 9, consts: [[1, "section"], [1, "container"], [1, "row"], [1, "col-lg-3", "col-md-12", "col-xs-12"], [1, "left-sideabr"], ["role", "tablist", 1, "list-item", "nav"], [1, "nav-link", 3, "click"], [1, "col-lg-9", "col-md-12", "col-xs-12"], [1, "tab-content"], [4, "ngIf"]], template: function AssessmentComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "app-profile-card");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 4)(6, "ul", 5)(7, "li")(8, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AssessmentComponent_Template_a_click_8_listener() { return ctx.updateView(ctx.AssessmentEnum.TEST); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "Test");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "li")(11, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AssessmentComponent_Template_a_click_11_listener() { return ctx.updateView(ctx.AssessmentEnum.MY_INTERVIEWS); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "My Interview");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "li")(14, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AssessmentComponent_Template_a_click_14_listener() { return ctx.updateView(ctx.AssessmentEnum.BOT_INTERVIEW); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](15, "Bot Interview");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "div", 7)(17, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](18, AssessmentComponent_candidate_test_18_Template, 1, 0, "candidate-test", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](19, AssessmentComponent_candidate_interview_19_Template, 1, 0, "candidate-interview", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, AssessmentComponent_app_bot_interview_20_Template, 1, 0, "app-bot-interview", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()()();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("active", ctx.assessmentView.test);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("active", ctx.assessmentView.myInterviews);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.assessmentView.test);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.assessmentView.myInterviews);
-    } }, directives: [_util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_1__.ProfileCardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _test_test_component__WEBPACK_IMPORTED_MODULE_2__.TestComponent, _interview_interview_component__WEBPACK_IMPORTED_MODULE_3__.InterviewComponent], styles: ["a[_ngcontent-%COMP%] {\n  cursor: pointer\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2Vzc21lbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0FBQ0YiLCJmaWxlIjoiYXNzZXNzbWVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYSB7XG4gIGN1cnNvcjogcG9pbnRlclxufVxuIl19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵclassProp"]("active", ctx.assessmentView.test);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵclassProp"]("active", ctx.assessmentView.myInterviews);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵclassProp"]("active", ctx.assessmentView.botInterview);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.assessmentView.test);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.assessmentView.myInterviews);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.assessmentView.botInterview);
+    } }, directives: [_util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_1__.ProfileCardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _test_test_component__WEBPACK_IMPORTED_MODULE_2__.TestComponent, _interview_interview_component__WEBPACK_IMPORTED_MODULE_3__.InterviewComponent, _bot_interview_bot_interview_component__WEBPACK_IMPORTED_MODULE_4__.BotInterviewComponent], styles: ["a[_ngcontent-%COMP%] {\n  cursor: pointer\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2Vzc21lbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0FBQ0YiLCJmaWxlIjoiYXNzZXNzbWVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYSB7XG4gIGN1cnNvcjogcG9pbnRlclxufVxuIl19 */"] });
 
 
 /***/ }),
