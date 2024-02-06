@@ -71288,14 +71288,14 @@ class TestComponent {
     };
   }
 
-  endTest() {
+  endTest(message) {
     this.view = {
       summary: true
     };
 
     if (!this.answersSaved) {
       const selectedAnswers = this.questions.map(question => question.selectedAnswer);
-      this.testService.saveAnswers(selectedAnswers, this.testId, this.referenceId).catch(err => console.error(err));
+      this.testService.saveAnswers(selectedAnswers, this.testId, this.referenceId, message).catch(err => console.error(err));
       this.answersSaved = true;
     }
   }
@@ -71331,7 +71331,7 @@ class TestComponent {
       return;
     }
 
-    this.endTest();
+    this.endTest(message);
     this.matDialog.open(_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_3__.AlertDialogComponent, {
       data: {
         message: message,
@@ -72427,7 +72427,7 @@ class TestService {
     })();
   }
 
-  saveAnswers(answers, testId, referenceId) {
+  saveAnswers(answers, testId, referenceId, TestCloseReasons) {
     var _this2 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -72436,7 +72436,8 @@ class TestService {
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.firstValueFrom)(_this2.http.post(URL, {
         answers,
         testId,
-        referenceId
+        referenceId,
+        TestCloseReasons
       }, {
         headers: httpHeaders
       }));
