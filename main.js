@@ -24396,7 +24396,7 @@ class ProfilesComponent {
 
     this.dynamic_html_position = "absolute";
     let text = `This video is playing for rererence id #` + reference_id + `. Copying this by any means is a breach of this platform's
-    policies and will attrach legal action.`;
+    policies and will attract legal action.`;
     let d_html = `<p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[0] + "\">" + text + `</p>
     <p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[1] + "\">" + text + `</p>
     <p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[2] + "\">" + text + `</p>
@@ -24413,7 +24413,7 @@ class ProfilesComponent {
     }
 
     let text = `This video is playing for rererence id #` + reference_id + `. Copying this by any means is a breach of this platform's
-    policies and will attrach legal action.`;
+    policies and will attract legal action.`;
     let d_html = `<p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[0] + "\">" + text + `</p>
     <p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[1] + "\">" + text + `</p>
     <p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[2] + "\">" + text + `</p>
@@ -25499,7 +25499,7 @@ class VideoLinksComponent {
         let text = `This video is playing for interview id #` + this.interview_id + `. This video was shared by ` + this.user_name +
             `for corporate ` + this.corp_name +
             `. Copying this by any means is a breach of this platform's
-    policies and will attrach legal action.`;
+    policies and will attract legal action.`;
         let d_html = `<p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[0] + "\">" + text + `</p>
     <p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[1] + "\">" + text + `</p>
     <p style=\"position: ` + this.dynamic_html_position + ";top:" + this.dynamic_html_top[2] + "\">" + text + `</p>
