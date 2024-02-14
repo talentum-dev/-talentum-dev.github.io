@@ -12309,7 +12309,7 @@ label {
     width:100%;
     border-radius: 12px;
     -moz-border-radius:12px;
-    height: 350px;
+    height: 250px;
     object-fit: cover;
    }
 .file-uploaded {
@@ -12511,6 +12511,9 @@ label {
   }
 .justify-content-end {
     justify-content: flex-end;
+  }
+.justify-content-start {
+    justify-content: flex-start;
   }
 .bot-image-profile {
     border-radius: 100%;
