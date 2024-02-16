@@ -7284,7 +7284,7 @@ class BotInterviewComponent {
     this.UiStates("WRITE-CODE");
     let duration = 0;
 
-    if (this.bot_interview_journey["question_details"]["questionType"] == "CODING") {
+    if (this.bot_interview_journey["question_details"]["question_type"] == "coding") {
       duration = this.interviewConfig.maxDurationCodingAnswer;
     } else {
       duration = this.interviewConfig.maxDurationTextAnswer;
@@ -15791,6 +15791,11 @@ class UploadQuestionsComponent {
         this.apiService = apiService;
         this.spinnerVisibilityService = spinnerVisibilityService;
         this.matDialog = matDialog;
+        this.questionType = "theory";
+        this.questionTypeOptions = [
+            "theory",
+            "coding"
+        ];
         this.mapping_skills = [];
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__.MatTableDataSource(ELEMENT_DATA);
         this.displayedColumns = ['select', 'name'];
