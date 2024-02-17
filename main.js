@@ -6795,7 +6795,7 @@ const _c5 = ["interviewVideo"];
 
 function BotInterviewComponent_li_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "li", 123)(1, "a", 124);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "li", 125)(1, "a", 126);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Interview");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
@@ -6803,7 +6803,7 @@ function BotInterviewComponent_li_7_Template(rf, ctx) {
 
 function BotInterviewComponent_li_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "li", 125)(1, "a", 126);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "li", 127)(1, "a", 128);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Interview");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
@@ -6811,8 +6811,8 @@ function BotInterviewComponent_li_8_Template(rf, ctx) {
 
 function BotInterviewComponent_p_105_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "p", 127);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "i", 128);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "p", 129);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "i", 130);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -6844,7 +6844,8 @@ class BotInterviewComponent {
       "END_INTERVIEW_BY_CANDIDATE": "END_INTERVIEW_BY_CANDIDATE",
       "CAM_PERMISSION_NOT_PROVIDED": "CAM_PERMISSION_NOT_PROVIDED",
       "CAM_PERMISSION_REVOKED": "CAM_PERMISSION_REVOKED",
-      "QUESTIONS_EXHAUSTED": "QUESTIONS_EXHAUSTED"
+      "QUESTIONS_EXHAUSTED": "QUESTIONS_EXHAUSTED",
+      "BACKEND_ERROR": "BACKEND_ERROR"
     };
     this.interviewConfig = {
       "interviewVideoRecording": false,
@@ -6853,9 +6854,8 @@ class BotInterviewComponent {
       "maxDurationAudioAnswer": 1,
       "interviewNearEndAlert": 5,
       "answerNearEndAlert": 15,
-      "maxDurationTextAnswer": 3,
+      "maxDurationTextAnswer": 2,
       "maxDurationCodingAnswer": 10,
-      "maxDurationTheoryAnswerWrite": 2,
       "flushInterviewChunkTiming": 10000
     };
     this.interviewStates = {
@@ -6878,7 +6878,8 @@ class BotInterviewComponent {
       "recordingInProgress": true,
       "questionSkip": false,
       "submitAnswer": true,
-      "completeInterview": true
+      "completeInterview": true,
+      "errorInterview": false
     };
     this.interviewLastMinutes = false;
     this.answerLastSeconds = false;
@@ -6953,27 +6954,36 @@ class BotInterviewComponent {
 
   finishInterview(completionReason) {
     if (this.interviewConfig.interviewVideoRecording) {
+      clearInterval(this.timing_event);
       this.stopRecordingInterview();
     }
 
     this.countDownAnswer.stop();
     this.countDownAnswerWriteText.stop();
     this.countDownInterview.stop();
-    let input = {
-      "reference_id": this.referenceId,
-      "interview_id": this.bot_interview_journey["question_details"]["interviewId"],
-      "requestType": "COMPLETE_INTERVIEW",
-      "completionReason": completionReason
-    };
-    this.spinnerVisibilityService.show();
-    this.apiService.bot_interview_function_url(input).then(data => {
-      this.text2speech("Interview completed");
-    }).finally(() => {
-      this.spinnerVisibilityService.hide();
+
+    if (this.bot_interview_journey["question_details"]["interviewId"] != 0) {
+      let input = {
+        "reference_id": this.referenceId,
+        "interview_id": this.bot_interview_journey["question_details"]["interviewId"],
+        "requestType": "COMPLETE_INTERVIEW",
+        "completionReason": completionReason
+      };
+      this.spinnerVisibilityService.show();
+      this.apiService.bot_interview_function_url(input).then(data => {
+        this.text2speech("Interview completed");
+      }).finally(() => {
+        this.spinnerVisibilityService.hide(); // this.UiStates(this.interviewStates['INTERVIEW-COMPLETED'])
+      }).catch(error => {
+        this.UiStates(this.interviewStates['INTERVIEW-ERROR']);
+      });
+    }
+
+    if (completionReason == this.interviewErrorCodes.QUESTIONS_EXHAUSTED || completionReason == this.interviewErrorCodes.TIME_LIMIT_EXCEEDED) {
       this.UiStates(this.interviewStates['INTERVIEW-COMPLETED']);
-    }).catch(error => {// do something here
-    });
-    this.UiStates(this.interviewStates['INTERVIEW-COMPLETED']);
+    } else {
+      this.UiStates(this.interviewStates['INTERVIEW-ERROR']);
+    }
   }
 
   checkValidateReferenceId() {
@@ -7019,12 +7029,28 @@ class BotInterviewComponent {
 
     this.apiService.bot_interview_function_url(input).then(data => {
       this.bot_interview_journey = data;
-      this.questionText = data['question_details']["question"]; // this.startRecordingInterview(this.bot_interview_journey["question_details"]["interviewId"])
+      this.interviewConfig.maxDurationInterview = this.bot_interview_journey["question_details"]["interviewDuration"];
+      this.interviewConfig.maxDurationCodingAnswer = this.bot_interview_journey["question_details"]["answerDuration"];
+      this.interviewConfig.maxDurationTextAnswer = this.bot_interview_journey["question_details"]["answerDuration"];
+      this.questionText = data['question_details']["question"];
+
+      if (this.bot_interview_journey["question_details"]["question_type"] == "coding") {
+        this.writeCode();
+      } // this.startRecordingInterview(this.bot_interview_journey["question_details"]["interviewId"])
+
 
       this.text2speech(this.questionText);
-      this.videoRecorder.setTestId(this.bot_interview_journey["question_details"]["interviewId"]);
+
+      if (this.interviewConfig.interviewVideoRecording) {
+        this.videoRecorder.setTestId(this.bot_interview_journey["question_details"]["interviewId"]);
+      }
     }).finally(() => {
       this.spinnerVisibilityService.hide();
+    }).catch(e => {
+      console.log(e);
+      this.UiStates("INTERVIEW-PREP");
+      this.openDialog("Something went wrong ! Please try again or contact WitMyWorld support !", "ERROR");
+      this.finishInterview(this.interviewErrorCodes.BACKEND_ERROR);
     }); // this.bot_interview_journey["question_details"]["interviewId"] = 53
   }
 
@@ -7062,18 +7088,32 @@ class BotInterviewComponent {
         _this3.questionText = _this3.bot_interview_journey['question_details']["question"];
         _this3.responseText = "";
 
-        _this3.UiStates("ASK-QUESTION");
-
         if (data["stage"] == "INTERVIEW_COMPLETED") {
           _this3.text2speech("Interview completed");
 
           _this3.UiStates(_this3.interviewStates['INTERVIEW-COMPLETED']);
+        } else {
+          if (_this3.bot_interview_journey["question_details"]["question_type"] == "coding") {
+            _this3.writeCode();
+          } else {
+            _this3.UiStates("ASK-QUESTION");
+          }
         }
 
         _this3.text2speech(_this3.questionText);
       }).finally(() => {
         _this3.spinnerVisibilityService.hide();
+      }).catch(e => {
+        console.log(e);
+
+        _this3.UiStates("INTERVIEW-PREP");
+
+        _this3.openDialog("Something went wrong ! Please try again or contact WitMyWorld support !", "ERROR");
+
+        _this3.finishInterview(_this3.interviewErrorCodes.BACKEND_ERROR);
       });
+
+      ;
     })();
   }
 
@@ -7084,6 +7124,7 @@ class BotInterviewComponent {
       this.elementShow.interviewPrep = true;
       this.elementShow.mainInterview = false;
       this.elementShow.completeInterview = false;
+      this.elementShow.errorInterview = false;
     }
 
     if (state == this.interviewStates['ASK-QUESTION']) {
@@ -7121,6 +7162,14 @@ class BotInterviewComponent {
       this.elementShow.interviewPrep = false;
       this.elementShow.mainInterview = false;
       this.elementShow.completeInterview = true;
+      this.elementShow.errorInterview = false;
+    }
+
+    if (state == this.interviewStates['INTERVIEW-ERROR']) {
+      this.elementShow.interviewPrep = false;
+      this.elementShow.mainInterview = false;
+      this.elementShow.completeInterview = false;
+      this.elementShow.errorInterview = true;
     }
   }
 
@@ -7222,8 +7271,8 @@ class BotInterviewComponent {
 
           camStream.getVideoTracks()[0].onended = function (event) {
             that.UiStates("INTERVIEW-PREP");
-            that.windowresize();
-            clearInterval(that.timing_event);
+            that.windowresize(); // clearInterval(that.timing_event);
+
             that.openDialog("Camera permissions revoked !", "ERROR");
             that.finishInterview(that.interviewErrorCodes.CAM_PERMISSION_REVOKED);
             throw "Camera permissions revoked !";
@@ -7432,9 +7481,9 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵloadQuery"]()) && (ctx.interviewVideo = _t.first);
     }
   },
-  decls: 275,
-  vars: 42,
-  consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item", 3, "hidden"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", "active"], ["class", "nav-item disabled", "data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 4, "ngIf"], ["class", "nav-item", 4, "ngIf"], [1, "tab-content"], ["id", "schedule", 1, "tab-pane", "active"], [1, "row"], [1, "col-sm-6"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs", "tabs-bot-instructions"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-toggle", "tab", "data-target", "#step1", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-toggle", "tab", "data-target", "#step2", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step3", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step4", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "myTabContent", 1, "tab-content", "card", "card-body"], ["id", "step1", "role", "tabpanel", 1, "tab-pane", "fade", "show", "active"], ["id", "step2", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step3", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step4", "role", "tabpanel", 1, "tab-pane", "fade"], [1, "mb-2"], [1, "d-flex", "alert", "alert-info", "alert-sm", "align-items-center", "mb-1"], [1, "icon-mic2", "pr-3", "font-large-2"], [1, "text-bold"], [1, "mb-3", "text-right"], ["href", "#", "data-toggle", "modal", "data-target", "#howtoGrant"], [1, "icon-help", "mr-2", "font-medium-1"], [1, "btn", "btn-primary", "btn-sm", 3, "hidden", "click"], [1, "btn", "btn-secondary", "btn-sm", 3, "hidden", "click"], [1, "mt-3", 3, "hidden"], [3, "hidden"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid"], ["video", ""], ["type", "video/mp4", 1, "video-fluid", 3, "src"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid", 3, "muted"], ["video1", ""], ["type", "video/mp4", 2, "width", "100%"], [1, "varivied-setup-check"], ["type", "checkbox", "name", "consent", "id", "flexCheckDefault", 3, "ngModel", "change", "ngModelChange"], ["for", "flexCheckDefault", 1, "pl-2", "text-bold"], ["id", "upcoming", 1, "tab-pane"], ["class", "mat-error text-bold", 4, "ngIf"], [1, "d-flex", "mb-3"], ["type", "text", "name", "name", "placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-border", "btn-sm", "ml-2", 3, "click"], ["data-toggle", "modal", "data-target", "#startInterview", 1, "btn", "btn-primary", "ml-2", 3, "hidden", "click"], ["id", "startInterview", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "false", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-body", "pb-5", "modal-full-height"], [1, "interview-step-1", 3, "hidden"], ["role", "alert", 1, "alert", "alert-info"], [1, "mb-4"], [1, "icon-info22", "mr-2"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "interview-step-2", 3, "hidden"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-vendor-test"], [1, "col-sm-8"], [1, "question-widigt", "text-semibold"], ["src", "../../../../assets/Images/chatbot.png", "alt", "Avatar", 1, "bot-image-profile"], [1, "font-small-3", "text-muted"], [1, "answer-widigt"], [1, "mb-1", 3, "hidden"], [1, "row", "align-items-center"], [1, "col-sm-4", "offset-sm-1", 3, "hidden"], [1, "btn", "btn-primary", 3, "click"], [1, "icon-play4", "mr-2"], [1, "text-notificiation"], [1, "col-sm-2", 3, "hidden"], [1, "px-4"], [1, "col-sm-4"], ["aria-hidden", "true", 1, "icon-circle-code", "mr-2"], [1, "btn-speech", "mb-3"], [1, "pulse-ring"], ["aria-hidden", "true", 1, "icon-mic2"], [1, "timer-recording"], [3, "ngClass"], [3, "config", "event"], ["countDownAnswer", ""], [1, "write-code", "mb-4"], [1, "close-icon", "icon-close2"], ["appearance", "outline", 1, "input-field", 2, "width", "100%"], ["autosize", "", "matInput", "", "name", "questionText", "required", "", "rows", "8", "cols", "20", "placeholder", "You can also use any IDE of your choice to code and then paste the code here !", 3, "ngModel", "ngModelChange"], ["countDownAnswerWriteText", ""], [1, "btn", "btn-border", "mr-2", 3, "click"], ["aria-hidden", "true", 1, "icon-forward3", "ml-1"], [1, "col-sm-6", "text-right"], ["aria-hidden", "true", 1, "icon-arrow-right8", "ml-1"], [1, "user-video"], ["controls", "controls", "preload", "none", 1, "video-fluid", 3, "muted"], ["interviewVideo", ""], ["type", "video/mp4"], [1, "interview-step-3", 3, "hidden"], ["role", "alert", 1, "alert", "alert-success"], [1, "alert-heading", "mb-2"], ["data-dismiss", "modal", 1, "btn", "mx-2", "btn-primary"], [1, "modal-footer", "text-right", 3, "hidden"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-danger"], [1, "modal-footer", 3, "hidden"], [1, "col-md-4"], [1, "d-flex", "align-items-center", "justify-content-start"], [1, "font-small-3", "pr-2"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-powered-by"], [1, "col-md-4", "text-center"], [1, "timer-bot"], [1, "icon"], [1, "icon-alarm"], ["countDownInterview", ""], [1, "col-md-4", "text-right"], ["type", "button", 1, "btn", "btn-danger", 3, "click"], ["id", "howtoGrant", 1, "modal"], [1, "modal-dialog", "modal-lg"], [1, "modal-header"], [1, "modal-title"], ["type", "button", "data-dismiss", "modal", 1, "close"], [1, "modal-body", "modal-full-height", "with-footer"], ["src", "../../../../assets/Images/request.png", 1, "img-fluid", "mb-2", 2, "max-width", "350px"], ["src", "../../../../assets/Images/change.png", 1, "img-fluid", "mb-2", 2, "max-width", "340px"], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary"], ["data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 1, "nav-item", "disabled"], ["href", "javascript:void(0);", 1, "nav-link"], [1, "nav-item"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link"], [1, "mat-error", "text-bold"], [1, "icon-warning22", "mr-2", "font-small-3"]],
+  decls: 284,
+  vars: 43,
+  consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item", 3, "hidden"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", "active"], ["class", "nav-item disabled", "data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 4, "ngIf"], ["class", "nav-item", 4, "ngIf"], [1, "tab-content"], ["id", "schedule", 1, "tab-pane", "active"], [1, "row"], [1, "col-sm-6"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs", "tabs-bot-instructions"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-toggle", "tab", "data-target", "#step1", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-toggle", "tab", "data-target", "#step2", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step3", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step4", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "myTabContent", 1, "tab-content", "card", "card-body"], ["id", "step1", "role", "tabpanel", 1, "tab-pane", "fade", "show", "active"], ["id", "step2", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step3", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step4", "role", "tabpanel", 1, "tab-pane", "fade"], [1, "mb-2"], [1, "d-flex", "alert", "alert-info", "alert-sm", "align-items-center", "mb-1"], [1, "icon-mic2", "pr-3", "font-large-2"], [1, "text-bold"], [1, "mb-3", "text-right"], ["href", "#", "data-toggle", "modal", "data-target", "#howtoGrant"], [1, "icon-help", "mr-2", "font-medium-1"], [1, "btn", "btn-primary", "btn-sm", 3, "hidden", "click"], [1, "btn", "btn-secondary", "btn-sm", 3, "hidden", "click"], [1, "mt-3", 3, "hidden"], [3, "hidden"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid"], ["video", ""], ["type", "video/mp4", 1, "video-fluid", 3, "src"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid", 3, "muted"], ["video1", ""], ["type", "video/mp4", 2, "width", "100%"], [1, "varivied-setup-check"], ["type", "checkbox", "name", "consent", "id", "flexCheckDefault", 3, "ngModel", "change", "ngModelChange"], ["for", "flexCheckDefault", 1, "pl-2", "text-bold"], ["id", "upcoming", 1, "tab-pane"], ["class", "mat-error text-bold", 4, "ngIf"], [1, "d-flex", "mb-3"], ["type", "text", "name", "name", "placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-border", "btn-sm", "ml-2", 3, "click"], ["data-toggle", "modal", "data-target", "#startInterview", 1, "btn", "btn-primary", "ml-2", 3, "hidden", "click"], ["id", "startInterview", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "false", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-body", "pb-5", "modal-full-height"], [1, "interview-step-1", 3, "hidden"], ["role", "alert", 1, "alert", "alert-info"], [1, "mb-4"], [1, "icon-info22", "mr-2"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "interview-step-2", 3, "hidden"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-vendor-test"], [1, "col-sm-8"], [1, "question-widigt", "text-semibold"], ["src", "../../../../assets/Images/chatbot.png", "alt", "Avatar", 1, "bot-image-profile"], [1, "font-small-3", "text-muted"], [1, "answer-widigt"], [1, "mb-1", 3, "hidden"], [1, "row", "align-items-center"], [1, "col-sm-4", "offset-sm-1", 3, "hidden"], [1, "btn", "btn-primary", 3, "click"], [1, "icon-play4", "mr-2"], [1, "text-notificiation"], [1, "col-sm-2", 3, "hidden"], [1, "px-4"], [1, "col-sm-4"], ["aria-hidden", "true", 1, "icon-circle-code", "mr-2"], [1, "btn-speech", "mb-3"], [1, "pulse-ring"], ["aria-hidden", "true", 1, "icon-mic2"], [1, "timer-recording"], [3, "ngClass"], [3, "config", "event"], ["countDownAnswer", ""], [1, "write-code", "mb-4"], [1, "close-icon", "icon-close2"], ["appearance", "outline", 1, "input-field", 2, "width", "100%"], ["autosize", "", "matInput", "", "name", "questionText", "required", "", "rows", "8", "cols", "20", "placeholder", "You can also use any IDE of your choice to code and then paste the code here !", 3, "ngModel", "ngModelChange"], ["countDownAnswerWriteText", ""], [1, "btn", "btn-border", "mr-2", 3, "click"], ["aria-hidden", "true", 1, "icon-forward3", "ml-1"], [1, "col-sm-6", "text-right"], ["aria-hidden", "true", 1, "icon-arrow-right8", "ml-1"], [1, "user-video"], ["controls", "controls", "preload", "none", 1, "video-fluid", 3, "muted"], ["interviewVideo", ""], ["type", "video/mp4"], [1, "interview-step-3", 3, "hidden"], ["role", "alert", 1, "alert", "alert-success"], [1, "alert-heading", "mb-2"], ["data-dismiss", "modal", 1, "btn", "mx-2", "btn-primary"], [1, "interview-step-4", 3, "hidden"], ["role", "alert", 1, "alert", "alert-danger"], [1, "modal-footer", "text-right", 3, "hidden"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-danger"], [1, "modal-footer", 3, "hidden"], [1, "col-md-4"], [1, "d-flex", "align-items-center", "justify-content-start"], [1, "font-small-3", "pr-2"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-powered-by"], [1, "col-md-4", "text-center"], [1, "timer-bot"], [1, "icon"], [1, "icon-alarm"], ["countDownInterview", ""], [1, "col-md-4", "text-right"], ["type", "button", 1, "btn", "btn-danger", 3, "click"], ["id", "howtoGrant", 1, "modal"], [1, "modal-dialog", "modal-lg"], [1, "modal-header"], [1, "modal-title"], ["type", "button", "data-dismiss", "modal", 1, "close"], [1, "modal-body", "modal-full-height", "with-footer"], ["src", "../../../../assets/Images/request.png", 1, "img-fluid", "mb-2", 2, "max-width", "350px"], ["src", "../../../../assets/Images/change.png", 1, "img-fluid", "mb-2", 2, "max-width", "340px"], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary"], ["data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 1, "nav-item", "disabled"], ["href", "javascript:void(0);", 1, "nav-link"], [1, "nav-item"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link"], [1, "mat-error", "text-bold"], [1, "icon-warning22", "mr-2", "font-small-3"]],
   template: function BotInterviewComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "form", 0)(1, "div", 1)(2, "div", 2)(3, "ul", 3)(4, "li", 4)(5, "a", 5);
@@ -7700,62 +7749,73 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](223, "button", 98);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](224, "Thank you!");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](225, "div", 99)(226, "button", 100);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](227, "Close");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](228, "div", 101)(229, "div", 66)(230, "div", 102)(231, "div", 103)(232, "label", 104);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](233, "Powered By: ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](225, "div", 99)(226, "div", 100)(227, "h5", 97);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](228, "Interview ended abruptly !");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](234, "span");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](235, "img", 105);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](229, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](230, "Something went wrong ! Please contact corporate who initiated your interview or reach out to WitMyWorld support ! ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](231, "hr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](232, "button", 98);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](233, "Thank you!");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](236, "div", 106)(237, "div", 107)(238, "div", 79)(239, "p", 108);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](240, "i", 109);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](234, "div", 101)(235, "button", 102);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](236, "Close");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](237, "div", 103)(238, "div", 66)(239, "div", 104)(240, "div", 105)(241, "label", 106);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](242, "Powered By: ");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](241, "countdown", 80, 110);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("event", function BotInterviewComponent_Template_countdown_event_241_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](243, "span");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](244, "img", 107);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](245, "div", 108)(246, "div", 109)(247, "div", 79)(248, "p", 110);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](249, "i", 111);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](250, "countdown", 80, 112);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("event", function BotInterviewComponent_Template_countdown_event_250_listener($event) {
         return ctx.interviewTimer($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](243, " $!h!:$!m!:$!s!timer ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](252, " $!h!:$!m!:$!s!timer ");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](244, "div", 111)(245, "button", 112);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function BotInterviewComponent_Template_button_click_245_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](253, "div", 113)(254, "button", 114);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function BotInterviewComponent_Template_button_click_254_listener() {
         return ctx.finishInterview(ctx.interviewErrorCodes.END_INTERVIEW_BY_CANDIDATE);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](246, "End Interview");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](255, "End Interview");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](247, "div", 113)(248, "div", 114)(249, "div", 51)(250, "div", 115)(251, "h4", 116);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](252, "How to grant microphone and camera access");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](256, "div", 115)(257, "div", 116)(258, "div", 51)(259, "div", 117)(260, "h4", 118);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](261, "How to grant microphone and camera access");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](253, "button", 117);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](254, "\u00D7");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](262, "button", 119);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](263, "\u00D7");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](255, "div", 118)(256, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](257, "Access to devices is prohibited by default for the sake of your privacy. You must clearly give permission to use of a camera and/or microphone.");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](258, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](259, " When you click on \"START MY MICROPHONE AND CAM TEST\" you may see a pop-up window at the top of the browser, similar to this:");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](260, "img", 119);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](261, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](262, "By clicking on the \"Allow\" button, the sound from your microphone or video from the webcam becomes available to the site only at the moment his use.");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](263, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](264, " If you click \"Block\", the site will not be able to access your devices, but you will not be able to continue using its corresponding functions.");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](265, "h5");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](266, "Change selection");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](264, "div", 120)(265, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](266, "Access to devices is prohibited by default for the sake of your privacy. You must clearly give permission to use of a camera and/or microphone.");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](267, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](268, "In order to return access to devices or, conversely, deny it, you can open the appropriate site settings in your browser.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](268, " When you click on \"START MY MICROPHONE AND CAM TEST\" you may see a pop-up window at the top of the browser, similar to this:");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](269, "img", 120);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](269, "img", 121);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](270, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](271, "Different browsers have these settings in different places, but most often there is a button somewhere near the address bar as in the image above.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](271, "By clicking on the \"Allow\" button, the sound from your microphone or video from the webcam becomes available to the site only at the moment his use.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](272, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](273, " If you click \"Block\", the site will not be able to access your devices, but you will not be able to continue using its corresponding functions.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](274, "h5");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](275, "Change selection");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](276, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](277, "In order to return access to devices or, conversely, deny it, you can open the appropriate site settings in your browser.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](278, "img", 122);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](279, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](280, "Different browsers have these settings in different places, but most often there is a button somewhere near the address bar as in the image above.");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](272, "div", 121)(273, "button", 122);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](274, "Close");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](281, "div", 123)(282, "button", 124);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](283, "Close");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()()()();
     }
 
@@ -7805,7 +7865,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](9);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", !ctx.elementShow.recordingInProgress);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](36, _c6, ctx.answerLastSeconds));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](37, _c6, ctx.answerLastSeconds));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("config", ctx.answerTimerConfig);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
@@ -7813,7 +7873,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx.responseText);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](38, _c6, ctx.answerLastSeconds));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](39, _c6, ctx.answerLastSeconds));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("config", ctx.answerWriteTextTimerConfig);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
@@ -7825,11 +7885,13 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", !ctx.elementShow.completeInterview);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", !ctx.elementShow.errorInterview);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](9);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", ctx.elementShow.mainInterview);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("hidden", !ctx.elementShow.mainInterview);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](40, _c6, ctx.interviewLastMinutes));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](41, _c6, ctx.interviewLastMinutes));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("config", ctx.interviewTimerConfig);
     }
