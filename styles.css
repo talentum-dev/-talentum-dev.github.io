@@ -6964,9 +6964,10 @@ h1,
    h3,
    h4,
    h5 {
-       font-size: 40px;
+       font-size: 44px;
        font-weight: 700;
        color: #191c1e;
+       margin-bottom: 25px;
    }
 h6 {
        font-weight: 600;
@@ -7146,7 +7147,7 @@ hr {
                Section Title
                ========================================================================== */
 .section {
-       padding: 25px 0px;
+       padding: 35px 0px;
    }
 .section-header {
        margin-bottom: 25px;
@@ -7161,16 +7162,67 @@ hr {
        position: relative;
    }
 #blog .blog-item-wrapper {
-       background: transparent;
+    overflow: hidden;
    }
 #blog .blog-item-wrapper .blog-item-img {
-       position: relative
+    position: relative;
+    overflow: hidden;
+    height: 200px;
    }
-#blog .blog-item-wrapper .blog-item-img img {}
+#blog .blog-item-wrapper .blog-item-img img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+   }
+#blog .blog-item-wrapper .blog-item-img img.img-auto {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+   }
+#blog .blog-item-wrapper .blog-item-img::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 100%;
+    background: #adcceb;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+#blog .blog-item-wrapper:hover .blog-item-img::before {
+    top: 0%;
+    opacity: 0.4;
+}
 #blog .blog-item-wrapper .blog-item-text {
-       padding: 15px 40px 15px 0px;
        text-align: justify;
+       position: relative;
+       overflow: hidden;
+       z-index: 0;
    }
+#blog .blog-item-wrapper .blog-item-text::before {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    border-radius: 0px 0px 5px 5px;
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background: #adcceb;
+    z-index: -1;
+}
+#blog .blog-item-wrapper:hover .blog-item-text::before {
+    top: 0;
+    opacity: 0.2;
+}
 #blog .blog-item-wrapper .blog-item-text h3 {
        font-size: 16px;
        line-height: 20px;
@@ -7178,25 +7230,15 @@ hr {
        margin-bottom: 5px
    }
 #blog .blog-item-wrapper .blog-item-text ul {
-       margin-left: 20px;
-       margin-top: 15px;
+        margin: 15px;
    }
 #blog .blog-item-wrapper .blog-item-text ul li {
        list-style-type: circle;
        margin-bottom: 10px;
-       text-align: justify;
-   }
-#blog .blog-item-wrapper .blog-item-text h3 a {
-       color: #333
-   }
-#blog .blog-item-wrapper .blog-item-text h3 a:hover {
-       color: #26ae61
+       text-align: left;
    }
 #blog .blog-item-wrapper .readmore {
-       margin-top: 15px
-   }
-#blog .blog-item-wrapper .readmore i {
-       vertical-align: middle
+       margin-top: 25px
    }
 /* ==========================================================================
                Buttons
@@ -7526,6 +7568,7 @@ button:focus {
    }
 .top-nav-collapse .navbar-brand {
        top: 0px;
+       flex-grow:1;
    }
 .top-nav-collapse .navbar-nav .nav-link {
        color: #000 !important;
@@ -7542,10 +7585,13 @@ button:focus {
 .theme-header .navbar-header {
        float: left;
    }
+.navbar-expand-lg .navbar-collapse {
+    flex-grow: 2;
+   }
 .navbar-expand-lg .navbar-nav .nav-link {
        font-size: 14px;
-       color: #4a4f5c !important;
-       padding: 5px 15px;
+       color: #000 !important;
+       padding: 6px;
        letter-spacing: 0.4px;
        border-radius: 4px;
        line-height: 36px;
@@ -8214,9 +8260,7 @@ select:focus {
 #carousel-area {
        position: relative;
        background: #f2f7fb;
-   }
-.horizontal-nav {
-       border-bottom: 1px solid #e1edff;
+       padding:25px 0;
    }
 .contents p {
        font-size: 16px;
@@ -8588,13 +8632,13 @@ footer .menu li .small-title {
     background-color: #e9358b;
 }
 #copyright {
-       background-color: #26ae61;
-       padding: 8px 0 10px;
+       background-color: #0b355d;
+       padding: 6px 0px;
        color: #fff;
    }
 #copyright p {
        line-height: 34px;
-       color: #fff;
+       color: #ffffff;
        font-size: 12px;
    }
 #copyright p a {
@@ -8878,79 +8922,6 @@ footer .menu li .small-title {
    }
 ::placeholder {
        color: #c1c1c1 !important;
-   }
-.home-banner {
-       padding: 20px 10px 130px 10px
-   }
-.home-banner-img {
-       position: absolute;
-   }
-.home-banner-img .img-1,
-   .home-banner-img .img-2,
-   .home-banner-img .img-3 {
-       width: 210px;
-       height: 210px;
-       border-radius: 12px;
-       position: relative;
-       top: 0;
-       background: #ccc;
-       margin: 4px;
-       background-image: url('home-banner-1.jpg');
-       background-size: cover;
-       background-position: 66% 100%;
-       transition: all 3s ease-out;
-   }
-.home-banner-img .img-1:hover,
-   .home-banner-img .img-2:hover,
-   .home-banner-img .img-3:hover {
-       background-position: 46% 100%;
-   }
-.home-banner-img .img-2 {
-
-       background-image: url('home-banner-2.jpg');
-       margin-bottom: 8px;
-   }
-.home-banner-img .img-3 {
-
-       background-image: url('home-banner-3.jpg');
-   }
-.home-banner-img .img-1 .txt,
-   .home-banner-img .img-2 .txt,
-   .home-banner-img .img-3 .txt {
-       background-color: rgb(255 255 255 / 95%);
-       position: absolute;
-       top: 60%;
-       border-radius: 8px;
-       letter-spacing: 0.4px;
-       width: 115%;
-       left: -60px;
-       text-align: center;
-       padding: 14px;
-       font-size: 12px;
-       font-weight: 700;
-       color: #26ae61;
-       text-transform: uppercase;
-       box-shadow: 0px 8px 12px #29344833;
-       transition: transform .2s;
-   }
-.home-banner-img .img-2 .txt {
-       right: -60px;
-       left: auto;
-   }
-.home-banner-img .img-3 .txt {
-       right: -60px;
-       left: auto;
-   }
-.home-banner-img .img-1:hover .txt,
-   .home-banner-img .img-2:hover .txt,
-   .home-banner-img .img-3:hover .txt {
-       background-color: #fff;
-       transform: scale(1.1);
-
-   }
-.home-banner .content {
-       padding-top: 80px;
-       padding-right: 100px;
    }
 .pt-5 {
        padding-top: 50px;
@@ -10104,14 +10075,34 @@ body.stop-scrolling {
        padding-right: 40px;
        text-align: justify;
    }
+.home-banner h1 {
+        font-size: 52px;
+    }
+.home-banner .content {
+        padding: 0 100px;
+    }
+.home-banner .description {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 25px;
+    }
 /* only small tablets */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
        .home-banner {
            padding: 20px;
        }
 
-       .home-banner h2 {
+       .home-banner .content {
+        padding: 0;
+    }
+
+       .home-banner h1 {
            font-size: 30px;
+       }
+
+       .home-banner .description {
+        font-size:14px;
+        line-height: 18px;
        }
 
        .home-banner .content {
@@ -10123,7 +10114,6 @@ body.stop-scrolling {
            width: 350px;
        }
 
-
        .btn {
            font-size: 13px;
            padding: 6px 20px;
@@ -10134,25 +10124,6 @@ body.stop-scrolling {
            padding-right: 0px;
        }
 
-   }
-@media (max-width: 768px) {
-       .home-banner {
-           padding: 20px;
-       }
-
-       .home-banner .content {
-           padding-top: 0;
-           padding-right: 0;
-       }
-
-       .home-banner-img {
-           position: relative;
-       }
-
-       .img-candidate img {
-           max-width: 200px;
-           margin: 25px 0;
-       }
    }
 .required {
        color: red;
@@ -11160,6 +11131,7 @@ body.stop-scrolling {
        font-weight: 700;
        position: relative;
        padding-right: 18px;
+       color: #00af4c!important;
    }
 .learn-more:after {
        font-family: 'icomoon';
@@ -12689,6 +12661,108 @@ label {
     padding-top:20px;
     display: flex;
     align-items: center;
+}
+/*-------------------- Home Banner ----------   */
+.registerarea__video {
+    display: flex;
+    align-items: center;
+    align-items: center;
+}
+.herobanner__video {
+    position: relative;
+}
+.herobanner__video > img {
+    width: 90%;
+    border-radius: 10px;
+}
+.herobanner__video .video__pop__btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.registerarea__video a {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 100%;
+    text-align: center;
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+}
+.registerarea__video a::before {
+    content: "";
+    border: 2px solid #007bff;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    animation: zoomBig 3.25s linear infinite;
+    animation-delay: 0.75s;
+}
+.registerarea__video a::after {
+    content: "";
+    border: 2px solid #007bff;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    animation: zoomBig 3.25s linear infinite;
+    animation-delay: 0s;
+}
+.registerarea__video a img {
+    width: auto;
+}
+@keyframes zoomBig {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+        border-width: 3px;
+    }
+    40% {
+        opacity: .5;
+        border-width: 2px;
+    }
+    65% {
+        border-width: 1px;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+@keyframes zoomBig {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+        border-width: 3px;
+    }
+    40% {
+        opacity: .5;
+        border-width: 2px;
+    }
+    65% {
+        border-width: 1px;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        border-width: 1px;
+    }
 }
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css ***!
