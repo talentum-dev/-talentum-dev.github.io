@@ -6848,7 +6848,7 @@ class BotInterviewComponent {
       "BACKEND_ERROR": "BACKEND_ERROR"
     };
     this.interviewConfig = {
-      "interviewVideoRecording": false,
+      "interviewVideoRecording": true,
       "speakAnswerOption": true,
       "maxDurationInterview": 30,
       "maxDurationAudioAnswer": 1,
