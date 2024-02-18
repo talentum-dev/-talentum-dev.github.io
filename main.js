@@ -619,6 +619,7 @@ class BotInterviewsComponent {
               Authorization: `Bearer ${yield (0,_models_auth_constants__WEBPACK_IMPORTED_MODULE_2__.AUTH_GET_JWT_TOKEN)()}`
             }
           }).subscribe(resp => {
+            console.log(resp);
             that.profiles_data = resp.data['table'];
             that.datatable_row_keys = resp.data['row_keys'];
             that.skill_wise_scores = {};
