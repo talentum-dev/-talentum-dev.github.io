@@ -6856,7 +6856,8 @@ class BotInterviewComponent {
       "answerNearEndAlert": 15,
       "maxDurationTextAnswer": 2,
       "maxDurationCodingAnswer": 10,
-      "flushInterviewChunkTiming": 10000
+      "flushInterviewChunkTiming": 10000,
+      "videoRecordingQuality": "LOW"
     };
     this.interviewStates = {
       "INTERVIEW-PREP": "INTERVIEW-PREP",
@@ -6883,6 +6884,26 @@ class BotInterviewComponent {
     };
     this.interviewLastMinutes = false;
     this.answerLastSeconds = false;
+    this.video_quality = {
+      "LOW": {
+        mandatory: {
+          maxWidth: 900,
+          maxHeight: 500
+        }
+      },
+      "MEDIUM": {
+        mandatory: {
+          maxWidth: 1280,
+          maxHeight: 720
+        }
+      },
+      "HIGH": {
+        mandatory: {
+          maxWidth: 1600,
+          maxHeight: 900
+        }
+      }
+    };
     this.interviewTimerConfig = {
       leftTime: 10,
       notify: 0,
@@ -7174,9 +7195,10 @@ class BotInterviewComponent {
   }
 
   startRecording() {
-    this.recordingOn = true;
+    this.recordingOn = true; // let webcam = navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+
     let webcam = navigator.mediaDevices.getUserMedia({
-      video: true,
+      video: this.video_quality[this.interviewConfig.videoRecordingQuality],
       audio: true
     }).then(stream => {
       this.video1.nativeElement.srcObject = stream;
@@ -7194,7 +7216,7 @@ class BotInterviewComponent {
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         const screen_share_stream = yield navigator.mediaDevices.getDisplayMedia({
-          video: true
+          video: _this4.video_quality[_this4.interviewConfig.videoRecordingQuality]
         });
         let displaySurface = screen_share_stream.getVideoTracks()[0].getSettings()["displaySurface"];
         console.log(displaySurface);
@@ -7252,10 +7274,7 @@ class BotInterviewComponent {
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         let camStream = yield navigator.mediaDevices.getUserMedia({
-          video: {
-            width: 900,
-            height: 600
-          },
+          video: _this6.video_quality[_this6.interviewConfig.videoRecordingQuality],
           audio: true
         });
         _this6.interviewVideo.nativeElement.srcObject = camStream;
