@@ -6834,7 +6834,8 @@ const _c6 = function (a1) {
     timer: true,
     blink: a1
   };
-};
+}; // the values here should match with keys in userMessages !
+
 
 const interviewErrorCodes = {
   "SCREEN_SHARE_STOPPED": "SCREEN_SHARE_STOPPED",
@@ -6845,22 +6846,33 @@ const interviewErrorCodes = {
   "CAM_PERMISSION_REVOKED": "CAM_PERMISSION_REVOKED",
   "QUESTIONS_EXHAUSTED": "QUESTIONS_EXHAUSTED",
   "BACKEND_ERROR": "BACKEND_ERROR",
+  "SUBMIT_ANSWER_ERROR": "SUBMIT_ANSWER_ERROR",
   "ANSWER_RECORDING_ERROR": "ANSWER_RECORDING_ERROR",
-  "PUSH_CHUNKS_ERROR": "PUSH_CHUNKS_ERROR"
+  "PUSH_CHUNKS_ERROR": "PUSH_CHUNKS_ERROR",
+  "GENERAL_RECORDING_ERROR": "GENERAL_RECORDING_ERROR"
 };
 const requestTypes = {
   "COMPLETE_INTERVIEW": "COMPLETE_INTERVIEW",
   "NEXT_QUESTION": "NEXT_QUESTION",
   "SUBMIT_ANSWER": "SUBMIT_ANSWER"
 };
-const userErrorMessages = {
-  "generalError": "Something went wrong ! Please try again or contact WitMyWorld support !",
-  "interviewCompleteSuccess": "Interview completed !",
-  "interviewCompletedError": "Interview aborted !",
-  "submitAnswerError": "Answer submission failed ! Ending interview !",
-  "generalRecordingError": "Recording error !",
-  "answerRecordingError": "Not able to record answer ! Ending interview !",
-  "pushChunksError": "Your system is blocking interview video to be uploaded on WitMyWorld server !"
+const userMessages = {
+  "GENERAL_ERROR": "Something went wrong ! Please try again or contact WitMyWorld support !",
+  "INTERVIEW_COMPLETE_SUCCESS": "Interview completed !",
+  "INTERVIEW_COMPLETE_ERROR": "Interview aborted !",
+  "SUBMIT_ANSWER_ERROR": "Answer submission failed ! Ending interview !",
+  "GENERAL_RECORDING_ERROR": "Recording error !",
+  "ANSWER_RECORDING_ERROR": "Not able to record answer ! Ending interview !",
+  "PUSH_CHUNKS_ERROR": "Your system is blocking interview video to be uploaded on WitMyWorld server !",
+  "SCREEN_SHARE_STOPPED": "You stopped sharing screen during interview !",
+  "SCREEN_NOT_SHARED": "You didn't share your full screen !",
+  "TIME_LIMIT_EXCEEDED": "Oops ! Interview time limit exceeded !",
+  "END_INTERVIEW_BY_CANDIDATE": "You have ended the interview mid-way !",
+  "CAM_PERMISSION_NOT_PROVIDED": "You have not provided permission for camera or mike !",
+  "CAM_PERMISSION_REVOKED": "You have revoked permission of camera or mike !",
+  "SYSTEM_AUDIO_NOT_SHARED": "You have not selected system audio option while sharing screen ! ",
+  "BACKEND_ERROR": "Something went wrong ! Please try again or contact WitMyWorld support !",
+  "ANSWER_RECORDING_NOT_SUPPORTED": "Oops ! Seems like your setup doesn't support mike input, switching to text mode !"
 };
 const mediaStreamOptions = {
   "USER_AUDIO": "USER_AUDIO",
@@ -6932,6 +6944,7 @@ class BotInterviewComponent {
     this.webCamSetupConsent = false;
     this.recordingPutURL = "";
     this.recordingOn = false;
+    this.recordingAnswer = false;
     this.interviewOn = false;
     this.referenceIdSummary = {};
     this.reference_id_valid = false;
@@ -6970,7 +6983,7 @@ class BotInterviewComponent {
       } catch (error) {
         _this.UiStates(_this.interviewStates['INTERVIEW-PREP']);
 
-        _this.openDialog(userErrorMessages.generalError, "ERROR");
+        _this.openDialog(userMessages.GENERAL_ERROR, "ERROR");
 
         return false;
       }
@@ -7003,10 +7016,10 @@ class BotInterviewComponent {
 
       if (completionReason == interviewErrorCodes.QUESTIONS_EXHAUSTED || completionReason == interviewErrorCodes.TIME_LIMIT_EXCEEDED) {
         this.UiStates(this.interviewStates['INTERVIEW-COMPLETED']);
-        this.text2speech(userErrorMessages.interviewCompleteSuccess);
+        this.text2speech(userMessages.INTERVIEW_COMPLETE_SUCCESS);
       } else {
         this.UiStates(this.interviewStates['INTERVIEW-ERROR']);
-        this.text2speech(userErrorMessages.interviewCompletedError);
+        this.text2speech(userMessages.INTERVIEW_COMPLETE_ERROR);
       }
 
       return true;
@@ -7015,7 +7028,7 @@ class BotInterviewComponent {
       this.countDownAnswer.stop();
       this.countDownAnswerWriteText.stop();
       this.countDownInterview.stop();
-      this.text2speech(userErrorMessages.interviewCompletedError);
+      this.text2speech(userMessages.INTERVIEW_COMPLETE_ERROR);
       return false;
     }
   }
@@ -7040,7 +7053,7 @@ class BotInterviewComponent {
       } catch (error) {
         _this2.elementShow.launchInterviewButton = false;
         _this2.referenceIdSummary = {
-          "errorMessage": userErrorMessages.generalError
+          "errorMessage": userMessages.GENERAL_ERROR
         };
       }
     })();
@@ -7090,7 +7103,7 @@ class BotInterviewComponent {
       console.log(error);
       this.interviewOn = true;
       this.UiStates(this.interviewStates['INTERVIEW-PREP']);
-      this.openDialog(userErrorMessages.generalError, "ERROR");
+      this.openDialog(userMessages.GENERAL_ERROR, "ERROR");
       return false;
     }
   }
@@ -7146,7 +7159,7 @@ class BotInterviewComponent {
       }).catch(e => {
         console.log(e);
 
-        _this3.openDialog(userErrorMessages.submitAnswerError, "ERROR");
+        _this3.openDialog(userMessages.SUBMIT_ANSWER_ERROR, "ERROR");
 
         _this3.finishInterview(interviewErrorCodes.BACKEND_ERROR);
       });
@@ -7179,7 +7192,7 @@ class BotInterviewComponent {
         console.log(errorMessage);
         _this4.recordingOn = false;
 
-        _this4.openDialog(errorMessage, "ERROR");
+        _this4.openDialog(userMessages[errorMessage], "ERROR");
       };
 
       if (yield _this4.videoRecording.startRecording(1)) {
@@ -7194,7 +7207,7 @@ class BotInterviewComponent {
 
   onRecordingError(errorMessage) {
     this.UiStates(this.interviewStates['INTERVIEW-PREP']);
-    this.openDialog(errorMessage, "ERROR");
+    this.openDialog(userMessages[errorMessage], "ERROR");
 
     if (this.recordingOn) {
       clearInterval(this.timing_event);
@@ -7253,7 +7266,7 @@ class BotInterviewComponent {
 
         return true;
       } catch (error) {
-        _this6.onRecordingError(userErrorMessages.generalRecordingError);
+        _this6.onRecordingError(interviewErrorCodes.GENERAL_RECORDING_ERROR);
 
         return false;
       }
@@ -7283,20 +7296,24 @@ class BotInterviewComponent {
       try {
         _this8.videoRecorderAnswer = new _video_recording__WEBPACK_IMPORTED_MODULE_3__.VideoRecording([mediaStreamOptions.USER_AUDIO]);
 
-        _this8.videoRecorderAnswer.onError = errorMessage => {
-          console.log(errorMessage);
+        if (yield _this8.videoRecorderAnswer.startRecording(1)) {
+          _this8.recordingAnswer = true; // if recording ends mid-way during answer then interview will END !
 
-          _this8.onRecordingError(errorMessage);
-        };
+          _this8.videoRecorderAnswer.onError = errorMessage => {
+            console.log(errorMessage);
 
-        if (yield _this8.videoRecorderAnswer.startRecording(1)) {} else {
+            _this8.onRecordingError(errorMessage);
+          };
+        } else {
+          // we dont want to END interview if recording is not supported, instead switch to text mode !
           console.log("recording answer not started");
+          _this8.recordingAnswer = false;
 
           _this8.countDownAnswer.stop();
 
           _this8.videoRecorderAnswer.stopRecording();
 
-          _this8.openDialog(userErrorMessages.answerRecordingError, "ERROR");
+          _this8.openDialog(userMessages.ANSWER_RECORDING_NOT_SUPPORTED, "ERROR");
 
           _this8.writeCode();
 
@@ -7305,11 +7322,13 @@ class BotInterviewComponent {
 
         return true;
       } catch (error) {
+        _this8.recordingAnswer = false;
+
         _this8.countDownAnswer.stop();
 
         _this8.videoRecorderAnswer.stopRecording();
 
-        _this8.openDialog(userErrorMessages.answerRecordingError, "ERROR");
+        _this8.openDialog(userMessages.ANSWER_RECORDING_NOT_SUPPORTED, "ERROR");
 
         _this8.writeCode();
 
@@ -7324,21 +7343,27 @@ class BotInterviewComponent {
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let s3Uri = "";
 
-      if (!_this9.elementShow.recordAnswer) {
+      try {
+        if (!_this9.recordingAnswer) {
+          return s3Uri;
+        }
+
+        _this9.spinnerVisibilityService.show();
+
+        yield _this9.pushRecordingChunks("ANSWER");
+
+        _this9.videoRecorderAnswer.stopRecording();
+
+        s3Uri = "s3://" + _this9.recordingPutURL.split("//", 2)[1].split("?", 2)[0].replace('s3.ap-south-1.amazonaws.com/', '');
+
+        _this9.spinnerVisibilityService.hide();
+
+        return s3Uri;
+      } catch (error) {
+        _this9.spinnerVisibilityService.hide();
+
         return s3Uri;
       }
-
-      _this9.spinnerVisibilityService.show();
-
-      yield _this9.pushRecordingChunks("ANSWER");
-
-      _this9.videoRecorderAnswer.stopRecording();
-
-      s3Uri = "s3://" + _this9.recordingPutURL.split("//", 2)[1].split("?", 2)[0].replace('s3.ap-south-1.amazonaws.com/', '');
-
-      _this9.spinnerVisibilityService.hide();
-
-      return s3Uri;
     })();
   }
 
@@ -7455,13 +7480,11 @@ class BotInterviewComponent {
           _this10.recordingPutURL = yield _this10.getRecordingPutUrl(chunkType, _this10.bot_interview_journey["question_details"]["interviewId"]);
 
           _this10.videoRecorderAnswer.flush(_this10.recordingPutURL);
-
-          _this10.videoRecording.flush(_this10.recordingPutURL);
         }
 
         return true;
       } catch (error) {
-        _this10.onRecordingError(userErrorMessages.pushChunksError);
+        _this10.onRecordingError(interviewErrorCodes.PUSH_CHUNKS_ERROR);
 
         return false;
       }
@@ -8129,7 +8152,10 @@ class VideoRecording {
     var _this2 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let blob = new Blob(_this2.chunks, {
+      let chunk = _this2.chunks; //if we dont do this then we will loose some audio durin puturl duration
+
+      _this2.chunks = [];
+      let blob = new Blob(chunk, {
         type: 'video/webm;codecs=vp8'
       });
 
