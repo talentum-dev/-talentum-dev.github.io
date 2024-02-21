@@ -6943,9 +6943,11 @@ class BotInterviewComponent {
     };
     this.webCamSetupConsent = false;
     this.recordingPutURL = "";
-    this.recordingOn = false;
+    this.recordingOn = false; //turning this OFF will stop sending recording chunks to S3 !
+
     this.recordingAnswer = false;
     this.interviewOn = false;
+    this.interviewId = 0;
     this.referenceIdSummary = {};
     this.reference_id_valid = false;
     this.referenceId = "";
@@ -6992,10 +6994,6 @@ class BotInterviewComponent {
 
   finishInterview(completionReason) {
     try {
-      if (this.interviewConfig.interviewVideoRecording) {
-        this.stopRecordingInterview();
-      }
-
       this.countDownAnswer.stop();
       this.countDownAnswerWriteText.stop();
       this.countDownInterview.stop();
@@ -7003,7 +7001,7 @@ class BotInterviewComponent {
       if (this.interviewOn) {
         let input = {
           "reference_id": this.referenceId,
-          "interview_id": this.bot_interview_journey["question_details"]["interviewId"],
+          "interview_id": this.interviewId,
           "requestType": requestTypes.COMPLETE_INTERVIEW,
           "completionReason": completionReason
         };
@@ -7011,7 +7009,6 @@ class BotInterviewComponent {
         this.apiService.bot_interview_function_url(input).then(data => {}).finally(() => {
           this.spinnerVisibilityService.hide();
         });
-        this.interviewOn = false;
       }
 
       if (completionReason == interviewErrorCodes.QUESTIONS_EXHAUSTED || completionReason == interviewErrorCodes.TIME_LIMIT_EXCEEDED) {
@@ -7022,9 +7019,18 @@ class BotInterviewComponent {
         this.text2speech(userMessages.INTERVIEW_COMPLETE_ERROR);
       }
 
+      if (this.interviewConfig.interviewVideoRecording) {
+        this.stopRecordingInterview();
+      }
+
       return true;
     } catch (error) {
       this.UiStates(this.interviewStates['INTERVIEW-ERROR']);
+
+      if (this.interviewConfig.interviewVideoRecording) {
+        this.stopRecordingInterview();
+      }
+
       this.countDownAnswer.stop();
       this.countDownAnswerWriteText.stop();
       this.countDownInterview.stop();
@@ -7075,15 +7081,10 @@ class BotInterviewComponent {
       // }).finally(() => {
       //   this.spinnerVisibilityService.hide();
       // });
-      //initialize, can check safely if non zero then interview started
 
-      this.bot_interview_journey = {
-        "question_details": {
-          "interviewId": 0
-        }
-      };
       this.apiService.bot_interview_function_url(input).then(data => {
         this.bot_interview_journey = data;
+        this.interviewId = this.bot_interview_journey["question_details"]["interviewId"];
         this.interviewConfig.maxDurationInterview = this.bot_interview_journey["question_details"]["interviewDuration"];
         this.interviewConfig.maxDurationCodingAnswer = this.bot_interview_journey["question_details"]["answerDuration"];
         this.interviewConfig.maxDurationTextAnswer = this.bot_interview_journey["question_details"]["answerDuration"];
@@ -7101,9 +7102,10 @@ class BotInterviewComponent {
       return true;
     } catch (error) {
       console.log(error);
-      this.interviewOn = true;
+      this.interviewOn = false;
       this.UiStates(this.interviewStates['INTERVIEW-PREP']);
       this.openDialog(userMessages.GENERAL_ERROR, "ERROR");
+      this.finishInterview(interviewErrorCodes.BACKEND_ERROR);
       return false;
     }
   }
@@ -7128,7 +7130,7 @@ class BotInterviewComponent {
         "user_response": _this3.responseText,
         "s3_url": s3Uri,
         "reference_id": _this3.referenceId,
-        "interview_id": _this3.bot_interview_journey["question_details"]["interviewId"],
+        "interview_id": _this3.interviewId,
         "requestType": requestTypes.SUBMIT_ANSWER
       };
 
@@ -7142,8 +7144,6 @@ class BotInterviewComponent {
         _this3.responseText = "";
 
         if (data["stage"] == "INTERVIEW_COMPLETED") {
-          _this3.interviewOn = false;
-
           _this3.finishInterview(interviewErrorCodes.QUESTIONS_EXHAUSTED);
         } else {
           if (_this3.bot_interview_journey["question_details"]["question_type"] == "coding") {
@@ -7277,11 +7277,13 @@ class BotInterviewComponent {
     var _this7 = this;
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      // await this.delay(2000)
+      yield _this7.delay(2000);
       yield _this7.pushRecordingChunks("INTERVIEW");
       clearInterval(_this7.timing_event);
 
       _this7.videoRecording.stopRecording();
+
+      _this7.interviewOn = false;
     })();
   }
 
@@ -7471,13 +7473,13 @@ class BotInterviewComponent {
         if (!_this10.interviewOn) return true;
 
         if (chunkType == "INTERVIEW") {
-          _this10.recordingPutURL = yield _this10.getRecordingPutUrl(chunkType, _this10.bot_interview_journey["question_details"]["interviewId"]);
+          _this10.recordingPutURL = yield _this10.getRecordingPutUrl(chunkType, _this10.interviewId);
 
           _this10.videoRecording.flush(_this10.recordingPutURL);
         }
 
         if (chunkType == "ANSWER") {
-          _this10.recordingPutURL = yield _this10.getRecordingPutUrl(chunkType, _this10.bot_interview_journey["question_details"]["interviewId"]);
+          _this10.recordingPutURL = yield _this10.getRecordingPutUrl(chunkType, _this10.interviewId);
 
           _this10.videoRecorderAnswer.flush(_this10.recordingPutURL);
         }
