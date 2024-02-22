@@ -7111,7 +7111,7 @@ class BotInterviewComponent {
   }
 
   skipQuestion() {
-    this.responseText = "Question skipped";
+    this.responseText = "__QUESTION_SKIPPED__";
     this.submitAnswer();
   }
 
@@ -8097,7 +8097,7 @@ class VideoRecording {
       if (!(yield _this.createDisplayStream())) return false; // if both display & cam then combine
 
       if (camStreamNeeded && displayStreamNeeded) {
-        stream = new MediaStream([..._this.displayStream.getVideoTracks(), ..._this.mergeAudioStreams(_this.camStream, _this.camStream)]);
+        stream = new MediaStream([..._this.displayStream.getVideoTracks(), ..._this.mergeAudioStreams(_this.displayStream, _this.camStream)]);
       } else if (camStreamNeeded) {
         stream = _this.camStream;
       } else if (displayStreamNeeded) {
@@ -8126,7 +8126,7 @@ class VideoRecording {
       // If you don't want to share Audio from the desktop it should still work with just the voice.
       const source1 = context.createMediaStreamSource(displayStream);
       const desktopGain = context.createGain();
-      desktopGain.gain.value = 0.7;
+      desktopGain.gain.value = 2;
       source1.connect(desktopGain).connect(destination);
       hasDisplay = true;
     }
@@ -8134,12 +8134,12 @@ class VideoRecording {
     if (camStream && camStream.getAudioTracks().length > 0) {
       const source2 = context.createMediaStreamSource(camStream);
       const voiceGain = context.createGain();
-      voiceGain.gain.value = 0.7;
+      voiceGain.gain.value = 1;
       source2.connect(voiceGain).connect(destination);
       hasCam = true;
     }
 
-    return hasDisplay || hasCam ? destination.stream.getAudioTracks() : [];
+    return hasDisplay || hasCam ? destination.stream.getTracks() : [];
   }
 
   onDataAvailable(blobEvent) {
@@ -8165,7 +8165,6 @@ class VideoRecording {
         yield (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.firstValueFrom)(_this2.http.put(putURL, blob));
       }
 
-      _this2.chunks = [];
       return blob;
     })();
   }
@@ -8214,7 +8213,10 @@ class VideoRecording {
           console.log("acquiring display stream");
           _this4.displayStream = yield navigator.mediaDevices.getDisplayMedia({
             video: _this4.videoQuality,
-            audio: _this4.recordingModes.includes(recordingModes.SYSTEM_AUDIO) ? true : false
+            audio: _this4.recordingModes.includes(recordingModes.SYSTEM_AUDIO) ? {
+              echoCancellation: false,
+              noiseSuppression: false
+            } : false
           });
 
           let displaySurface = _this4.displayStream.getVideoTracks()[0].getSettings()["displaySurface"];
