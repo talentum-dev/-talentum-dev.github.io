@@ -6956,7 +6956,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
   },
   decls: 140,
   vars: 14,
-  consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item", 3, "hidden"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", "active"], ["class", "nav-item disabled", "data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 4, "ngIf"], ["class", "nav-item", 4, "ngIf"], [1, "tab-content"], ["id", "schedule", 1, "tab-pane", "active"], [1, "row"], [1, "col-sm-6"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs", "tabs-bot-instructions"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-toggle", "tab", "data-target", "#step1", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-toggle", "tab", "data-target", "#step2", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step3", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step4", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "myTabContent", 1, "tab-content", "card", "card-body"], ["id", "step1", "role", "tabpanel", 1, "tab-pane", "fade", "show", "active"], ["id", "step2", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step3", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step4", "role", "tabpanel", 1, "tab-pane", "fade"], [1, "mb-2"], [1, "d-flex", "alert", "alert-info", "alert-sm", "align-items-center", "mb-1"], [1, "icon-mic2", "pr-3", "font-large-2"], [1, "text-bold"], [1, "mb-3", "text-right"], ["href", "#", "data-toggle", "modal", "data-target", "#howtoGrant"], [1, "icon-help", "mr-2", "font-medium-1"], [1, "btn", "btn-primary", "btn-sm", 3, "hidden", "click"], [1, "btn", "btn-secondary", "btn-sm", 3, "hidden", "click"], [1, "mt-3", 3, "hidden"], [3, "hidden"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid"], ["video", ""], ["type", "video/mp4", 1, "video-fluid", 3, "src"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid", 3, "muted"], ["video1", ""], ["type", "video/mp4", 2, "width", "100%"], [1, "varivied-setup-check"], ["type", "checkbox", "name", "consent", "id", "flexCheckDefault", 3, "ngModel", "change", "ngModelChange"], ["for", "flexCheckDefault", 1, "pl-2", "text-bold"], ["id", "upcoming", 1, "tab-pane"], ["class", "mat-error text-bold", 4, "ngIf"], [1, "d-flex", "mb-3"], ["type", "text", "name", "name", "placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-border", "btn-sm", "ml-2", 3, "click"], [1, "btn", "btn-primary", "ml-2", 3, "hidden", "click"], ["id", "howtoGrant", 1, "modal"], [1, "modal-dialog", "modal-lg"], [1, "modal-content"], [1, "modal-header"], [1, "modal-title"], ["type", "button", "data-dismiss", "modal", 1, "close"], [1, "modal-body", "modal-full-height", "with-footer"], ["src", "../../../../assets/Images/request.png", 1, "img-fluid", "mb-2", 2, "max-width", "350px"], ["src", "../../../../assets/Images/change.png", 1, "img-fluid", "mb-2", 2, "max-width", "340px"], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary"], ["data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 1, "nav-item", "disabled"], ["href", "javascript:void(0);", 1, "nav-link"], [1, "nav-item"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link"], [1, "mat-error", "text-bold"], [1, "icon-warning22", "mr-2", "font-small-3"]],
+  consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item", 3, "hidden"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", "active"], ["class", "nav-item disabled", "data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 4, "ngIf"], ["class", "nav-item", 4, "ngIf"], [1, "tab-content"], ["id", "schedule", 1, "tab-pane", "active"], [1, "row"], [1, "col-sm-6"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs", "tabs-bot-instructions"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-toggle", "tab", "data-target", "#step1", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-toggle", "tab", "data-target", "#step2", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step3", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step4", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "myTabContent", 1, "tab-content", "card", "card-body"], ["id", "step1", "role", "tabpanel", 1, "tab-pane", "fade", "show", "active"], ["id", "step2", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step3", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step4", "role", "tabpanel", 1, "tab-pane", "fade"], [1, "mb-2"], [1, "d-flex", "alert", "alert-info", "alert-sm", "align-items-center", "mb-1"], [1, "icon-mic2", "pr-3", "font-large-2"], [1, "text-bold"], [1, "mb-3", "text-right"], ["href", "#", "data-toggle", "modal", "data-target", "#howtoGrant"], [1, "icon-help", "mr-2", "font-medium-1"], [1, "btn", "btn-primary", "btn-sm", 3, "hidden", "click"], [1, "btn", "btn-secondary", "btn-sm", 3, "hidden", "click"], [1, "mt-3", 3, "hidden"], [3, "hidden"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid", "testing"], ["video", ""], ["type", "video/mp4", 3, "src"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid", "testing", 3, "muted"], ["video1", ""], ["type", "video/mp4", 2, "width", "100%"], [1, "varivied-setup-check"], ["type", "checkbox", "name", "consent", "id", "flexCheckDefault", 3, "ngModel", "change", "ngModelChange"], ["for", "flexCheckDefault", 1, "pl-2", "text-bold"], ["id", "upcoming", 1, "tab-pane"], ["class", "mat-error text-bold", 4, "ngIf"], [1, "d-flex", "mb-3"], ["type", "text", "name", "name", "placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-border", "btn-sm", "ml-2", 3, "click"], [1, "btn", "btn-primary", "ml-2", 3, "hidden", "click"], ["id", "howtoGrant", 1, "modal"], [1, "modal-dialog", "modal-lg"], [1, "modal-content"], [1, "modal-header"], [1, "modal-title"], ["type", "button", "data-dismiss", "modal", 1, "close"], [1, "modal-body", "modal-full-height", "with-footer"], ["src", "../../../../assets/Images/request.png", 1, "img-fluid", "mb-2", 2, "max-width", "350px"], ["src", "../../../../assets/Images/change.png", 1, "img-fluid", "mb-2", 2, "max-width", "340px"], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary"], ["data-tooltip", "Please check - I have verified that my web cam and microphone is working fine and i consent to share this video recording with corporate.", "data-tooltip-location", "right", 1, "nav-item", "disabled"], ["href", "javascript:void(0);", 1, "nav-link"], [1, "nav-item"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link"], [1, "mat-error", "text-bold"], [1, "icon-warning22", "mr-2", "font-small-3"]],
   template: function BotInterviewComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "form", 0)(1, "div", 1)(2, "div", 2)(3, "ul", 3)(4, "li", 4)(5, "a", 5);
@@ -7929,191 +7929,192 @@ MainInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       });
     }
   },
-  decls: 140,
+  decls: 144,
   vars: 29,
-  consts: [[1, "interview-step-1", 3, "hidden"], ["role", "alert", 1, "alert", "alert-info"], [1, "mb-4"], [1, "icon-info22", "mr-2"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "interview-step-2", 3, "hidden"], [1, "row"], [1, "col-sm-6"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-vendor-test"], [1, "col-sm-8"], [1, "question-widigt", "text-semibold"], ["src", "../../../../assets/Images/chatbot.png", "alt", "Avatar", 1, "bot-image-profile"], [1, "font-small-3", "text-muted"], [1, "answer-widigt"], [1, "mb-1", 3, "hidden"], [1, "row", "align-items-center"], [1, "col-sm-4", "offset-sm-1", 3, "hidden"], [1, "btn", "btn-primary", 3, "click"], [1, "icon-play4", "mr-2"], [1, "text-notificiation"], [1, "col-sm-2", 3, "hidden"], [1, "px-4"], [1, "col-sm-4"], ["aria-hidden", "true", 1, "icon-circle-code", "mr-2"], [1, "btn-speech", "mb-3"], [1, "pulse-ring"], ["aria-hidden", "true", 1, "icon-mic2"], [1, "timer-recording"], [3, "ngClass"], [3, "config", "event"], ["countDownAnswer", ""], [1, "write-code", "mb-4"], [3, "hidden"], [1, "close-icon", "icon-close2"], ["appearance", "outline", 1, "input-field", 2, "width", "100%"], ["autosize", "", "matInput", "", "name", "questionText", "required", "", "rows", "8", "cols", "20", "placeholder", "You can also use any IDE of your choice to code and then paste the code here !", 3, "ngModel", "ngModelChange"], ["countDownAnswerWriteText", ""], [1, "btn", "btn-border", "mr-2", 3, "click"], ["aria-hidden", "true", 1, "icon-forward3", "ml-1"], [1, "col-sm-6", "text-right"], ["aria-hidden", "true", 1, "icon-arrow-right8", "ml-1"], [1, "user-video"], ["controls", "controls", "preload", "none", 1, "video-fluid", 3, "muted"], ["interviewVideo", ""], ["type", "video/mp4"], [1, "interview-step-3", 3, "hidden"], ["role", "alert", 1, "alert", "alert-success"], [1, "alert-heading", "mb-2"], ["data-dismiss", "modal", 1, "btn", "mx-2", "btn-primary", 3, "click"], [1, "interview-step-4", 3, "hidden"], ["role", "alert", 1, "alert", "alert-danger"], [1, "text-right", 3, "hidden"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-danger", 3, "click"], [1, "col-md-4"], [1, "d-flex", "align-items-center", "justify-content-start"], [1, "font-small-3", "pr-2"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-powered-by"], [1, "col-md-4", "text-center"], [1, "timer-bot"], [1, "icon"], [1, "icon-alarm"], ["countDownInterview", ""], [1, "col-md-4", "text-right"], ["type", "button", 1, "btn", "btn-danger", 3, "click"]],
+  consts: [[1, "bot-window"], [1, "interview-step-1", 3, "hidden"], ["role", "alert", 1, "alert", "alert-info"], [1, "mb-4"], [1, "icon-info22", "mr-2"], [1, "row", "mt-4"], [1, "col-md-6"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "text-right", 3, "hidden"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-light", 3, "click"], [1, "interview-step-2", 3, "hidden"], [1, "row", "mb-3"], [1, "col-sm-6"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-vendor-test"], [1, "row"], [1, "col-sm-8"], [1, "question-widigt", "text-semibold"], ["src", "../../../../assets/Images/chatbot.png", "alt", "Avatar", 1, "bot-image-profile"], [1, "font-small-3", "text-muted"], [1, "answer-widigt"], [1, "mb-1", 3, "hidden"], [1, "row", "align-items-center"], [1, "col-sm-4", "offset-sm-1", 3, "hidden"], [1, "btn", "btn-primary", 3, "click"], [1, "icon-play4", "mr-2"], [1, "text-notificiation"], [1, "col-sm-2", 3, "hidden"], [1, "px-4"], [1, "col-sm-4"], ["aria-hidden", "true", 1, "icon-circle-code", "mr-2"], [1, "btn-speech", "mb-3"], [1, "pulse-ring"], ["aria-hidden", "true", 1, "icon-mic2"], [1, "timer-recording"], [3, "ngClass"], [3, "config", "event"], ["countDownAnswer", ""], [1, "write-code", "mb-4"], [3, "hidden"], [1, "close-icon", "icon-close2"], ["appearance", "outline", 1, "input-field", 2, "width", "100%"], ["autosize", "", "matInput", "", "name", "questionText", "required", "", "rows", "8", "cols", "20", "placeholder", "You can also use any IDE of your choice to code and then paste the code here !", 3, "ngModel", "ngModelChange"], ["countDownAnswerWriteText", ""], [1, "btn", "btn-border", "mr-2", 3, "click"], ["aria-hidden", "true", 1, "icon-forward3", "ml-1"], [1, "col-sm-6", "text-right"], ["aria-hidden", "true", 1, "icon-arrow-right8", "ml-1"], [1, "user-video"], ["controls", "controls", "preload", "none", 1, "video-fluid", 3, "muted"], ["interviewVideo", ""], ["type", "video/mp4"], [1, "interview-step-3", 3, "hidden"], ["role", "alert", 1, "alert", "alert-success"], [1, "alert-heading", "mb-2"], ["data-dismiss", "modal", 1, "btn", "mx-2", "btn-primary", 3, "click"], [1, "interview-step-4", 3, "hidden"], ["role", "alert", 1, "alert", "alert-danger"], [1, "mt-auto", 3, "hidden"], [1, "bot-footer"], [1, "col-md-4"], [1, "d-flex", "align-items-center", "justify-content-start"], [1, "font-small-3", "pr-2"], ["src", "/assets/Images/witmyworld-logo.png", 1, "logo-powered-by"], [1, "col-md-4", "text-center"], [1, "timer-bot"], [1, "icon"], [1, "icon-alarm"], ["countDownInterview", ""], [1, "col-md-4", "text-right"], ["type", "button", 1, "btn", "btn-border", 3, "click"]],
   template: function MainInterviewComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h5", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](3, "i", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4, "Important Instructions");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "h5", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](4, "i", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](5, "Important Instructions");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](5, "ol")(6, "li");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](7, "Click the ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](8, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](9, "\"Start Interview\"");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](6, "ol")(7, "li");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](8, "Click the ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](9, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](10, "\"Start Interview\"");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](10, " button to start your interview. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](11, " button to start your interview. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](11, "li");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](12, "On the \"Interview\" screen, read the questions carefully. You can either write or speak your answers.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](12, "li");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](13, "On the \"Interview\" screen, read the questions carefully. You can either write or speak your answers.");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](13, "li");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](14, "Once you finish speaking/writing you answer, click the ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](15, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](16, "\"Submit & Next\"");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](14, "li");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](15, "Once you finish speaking/writing you answer, click the ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](16, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](17, "\"Submit & Next\"");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](17, " button.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](18, " button.");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](18, "li");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](19, " You can always skip the question by clicking ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](20, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](21, "\"Skip\"");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](19, "li");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](20, " You can always skip the question by clicking ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](21, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](22, "\"Skip\"");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](22, " button if you don't know the answer.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](23, " button if you don't know the answer.");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](23, "li");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](24, "The interview will continue for a preset duration however you can always \"END\" the interview by clicking ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](25, "strong");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](26, "\"End Interview\"");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](24, "li");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](25, "The interview will continue for a preset duration however you can always \"END\" the interview by clicking ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](26, "strong");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](27, "\"End Interview\"");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](27, " button. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](28, " button. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](28, "button", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_28_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](29, "div", 5)(30, "div", 6)(31, "button", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_31_listener() {
         return ctx.startInterview();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](29, "Start Interview");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](32, "Start Interview");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](30, "div", 5)(31, "div", 6)(32, "div", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](33, "img", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](33, "div", 6)(34, "div", 8)(35, "button", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_35_listener() {
+        return ctx.clearAllInterviewCache();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](36, "Close");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](37, "div", 10)(38, "div", 11)(39, "div", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](40, "img", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](34, "div", 6)(35, "div", 9)(36, "div", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](37, "img", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](38, "p", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](39, "Question:");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](41, "div", 14)(42, "div", 15)(43, "div", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](44, "img", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](45, "p", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](46, "Question:");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](40, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](41);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](47, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](48);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](42, "div", 13)(43, "div", 14)(44, "div", 15)(45, "div", 16)(46, "button", 17);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_46_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](49, "div", 19)(50, "div", 20)(51, "div", 21)(52, "div", 22)(53, "button", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_53_listener() {
         return ctx.startRecordingAnswer();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](47, "i", 18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](48, "Record My Answer");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](54, "i", 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](55, "Record My Answer");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](49, "p", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](50, " Audio inputs are restricted to ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](51, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](52);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](53, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](56, "p", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](57, " Audio inputs are restricted to ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](58, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](59);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](60, "br");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](54, "div", 20)(55, "span", 21);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](56, "OR");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](61, "div", 26)(62, "span", 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](63, "OR");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](57, "div", 22)(58, "button", 17);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_58_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](64, "div", 28)(65, "button", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_65_listener() {
         return ctx.writeCode();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](59, "i", 23);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](60, " Write Code ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](66, "i", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](67, " Write Code ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](61, "p", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](62, " Click if you want to give the answer by writing code. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](68, "p", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](69, " Click if you want to give the answer by writing code. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](63, "div", 14)(64, "div", 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](65, "div", 25)(66, "i", 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](70, "div", 20)(71, "div", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](72, "div", 31)(73, "i", 32);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](67, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](68, "Recording in progress ...");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](74, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](75, "Recording in progress ...");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](69, "div", 27)(70, "div", 28)(71, "countdown", 29, 30);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("event", function MainInterviewComponent_Template_countdown_event_71_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](76, "div", 33)(77, "div", 34)(78, "countdown", 35, 36);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("event", function MainInterviewComponent_Template_countdown_event_78_listener($event) {
         return ctx.answerTimer($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](73, " $!h!:$!m!:$!s! ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](80, " $!h!:$!m!:$!s! ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](74, "div", 31)(75, "div", 32);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](76, "i", 33);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](77, "mat-form-field", 34)(78, "textarea", 35);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function MainInterviewComponent_Template_textarea_ngModelChange_78_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](81, "div", 37)(82, "div", 38);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](83, "i", 39);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](84, "mat-form-field", 40)(85, "textarea", 41);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function MainInterviewComponent_Template_textarea_ngModelChange_85_listener($event) {
         return ctx.responseText = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](79, "div", 27)(80, "div", 28)(81, "countdown", 29, 36);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("event", function MainInterviewComponent_Template_countdown_event_81_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](86, "div", 33)(87, "div", 34)(88, "countdown", 35, 42);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("event", function MainInterviewComponent_Template_countdown_event_88_listener($event) {
         return ctx.answerTimer($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](83, " $!h!:$!m!:$!s! ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](90, " $!h!:$!m!:$!s! ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](84, "div", 6)(85, "div", 7)(86, "div", 32)(87, "button", 37);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_87_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](91, "div", 14)(92, "div", 12)(93, "div", 38)(94, "button", 43);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_94_listener() {
         return ctx.skipQuestion();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](88, " Skip ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](89, "i", 38);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](95, " Skip ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](96, "i", 44);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](90, "div", 39)(91, "div", 32)(92, "button", 17);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_92_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](97, "div", 45)(98, "div", 38)(99, "button", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_99_listener() {
         return ctx.submitAnswer();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](93, " Submit & Next ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](94, "i", 40);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](100, " Submit & Next ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](101, "i", 46);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](95, "div", 22)(96, "div", 41)(97, "video", 42, 43);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](99, "source", 44);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](102, "div", 28)(103, "div", 47)(104, "video", 48, 49);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](106, "source", 50);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](100, "div", 45)(101, "div", 46)(102, "h5", 47);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](103, "Interview completed successfully!");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](107, "div", 51)(108, "div", 52)(109, "h5", 53);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](110, "Interview completed successfully!");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](104, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](105, "Thank you! You have successfully complted the interview. Your interview is submitted to the corporate. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](111, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](112, "Thank you! You have successfully complted the interview. Your interview is submitted to the corporate. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](106, "hr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](113, "hr");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](107, "button", 48);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_107_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](114, "button", 54);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_114_listener() {
         return ctx.clearAllInterviewCache();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](108, "Thank you!");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](115, "Thank you!");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](109, "div", 49)(110, "div", 50)(111, "h5", 47);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](112, "Interview ended abruptly !");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](116, "div", 55)(117, "div", 56)(118, "h5", 53);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](119, "Interview ended abruptly !");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](113, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](114, "Something went wrong ! Please contact corporate who initiated your interview or reach out to WitMyWorld support ! ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](115, "hr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](116, "button", 48);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_116_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](120, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](121, "Something went wrong ! Please contact corporate who initiated your interview or reach out to WitMyWorld support ! ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](122, "button", 54);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_122_listener() {
         return ctx.clearAllInterviewCache();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](117, "Thank you!");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](123, "Thank you!");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](118, "div", 51)(119, "button", 52);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_119_listener() {
-        return ctx.clearAllInterviewCache();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](120, "Close");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](121, "div", 32)(122, "div", 15)(123, "div", 53)(124, "div", 54)(125, "label", 55);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](126, "Powered By: ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](124, "div", 57)(125, "div", 58)(126, "div", 21)(127, "div", 59)(128, "div", 60)(129, "label", 61);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](130, "Powered By: ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](127, "span");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](128, "img", 56);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](131, "span");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](132, "img", 62);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](129, "div", 57)(130, "div", 58)(131, "div", 28)(132, "p", 59);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](133, "i", 60);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](133, "div", 63)(134, "div", 64)(135, "div", 34)(136, "p", 65);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](137, "i", 66);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](134, "countdown", 29, 61);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("event", function MainInterviewComponent_Template_countdown_event_134_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](138, "countdown", 35, 67);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("event", function MainInterviewComponent_Template_countdown_event_138_listener($event) {
         return ctx.interviewTimer($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](136, " $!h!:$!m!:$!s!timer ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](140, " $!h!:$!m!:$!s!timer ");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](137, "div", 62)(138, "button", 63);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_138_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](141, "div", 68)(142, "button", 69);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function MainInterviewComponent_Template_button_click_142_listener() {
         return ctx.endInterviewByCandidate();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](139, "End Interview");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](143, "End Interview");
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()()();
     }
 
     if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("hidden", !ctx.elementShow.interviewPrep);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](33);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("hidden", ctx.elementShow.mainInterview);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("hidden", !ctx.elementShow.mainInterview);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](11);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx.questionText);
@@ -8149,11 +8150,9 @@ MainInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("hidden", !ctx.elementShow.completeInterview);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](9);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("hidden", !ctx.elementShow.errorInterview);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("hidden", ctx.elementShow.mainInterview);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](8);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("hidden", !ctx.elementShow.mainInterview);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](11);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction1"](27, _c4, ctx.interviewLastMinutes));
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("config", ctx.interviewTimerConfig);
