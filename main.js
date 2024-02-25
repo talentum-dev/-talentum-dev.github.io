@@ -7166,10 +7166,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var speak_tts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! speak-tts */ 10000);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/dialog */ 95758);
-/* harmony import */ var src_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/util/alert-dialog/alert-dialog.component */ 12278);
-/* harmony import */ var _video_recording__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../video-recording */ 93021);
+/* harmony import */ var src_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/util/alert-dialog/alert-dialog.component */ 12278);
+/* harmony import */ var _video_recording__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../video-recording */ 93021);
+/* harmony import */ var _text2speech__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../text2speech */ 70211);
 /* harmony import */ var _models_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../models/constants */ 47709);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 54363);
 /* harmony import */ var _services_header_header_update_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../services/header/header-update.service */ 14946);
@@ -7575,7 +7575,7 @@ class MainInterviewComponent {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
-        _this6.videoRecording = new _video_recording__WEBPACK_IMPORTED_MODULE_3__.VideoRecording([_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.USER_AUDIO, _models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.USER_CAM, _models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.SCREEN_SHARE, _models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.SYSTEM_AUDIO]);
+        _this6.videoRecording = new _video_recording__WEBPACK_IMPORTED_MODULE_2__.VideoRecording([_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.USER_AUDIO, _models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.USER_CAM, _models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.SCREEN_SHARE, _models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.SYSTEM_AUDIO]);
 
         _this6.videoRecording.onError = errorMessage => {
           console.log(errorMessage);
@@ -7634,7 +7634,7 @@ class MainInterviewComponent {
       _this8.UiStates(_this8.interviewStates['RECORD-AUDIO']);
 
       try {
-        _this8.videoRecorderAnswer = new _video_recording__WEBPACK_IMPORTED_MODULE_3__.VideoRecording([_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.USER_AUDIO]);
+        _this8.videoRecorderAnswer = new _video_recording__WEBPACK_IMPORTED_MODULE_2__.VideoRecording([_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.USER_AUDIO]);
 
         if (yield _this8.videoRecorderAnswer.startRecording(1)) {
           _this8.recordingAnswer = true; // if recording ends mid-way during answer then interview will END !
@@ -7781,26 +7781,9 @@ class MainInterviewComponent {
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (!_this10.blockSpeech) {
         try {
-          const speech = new speak_tts__WEBPACK_IMPORTED_MODULE_1__["default"](); // will throw an exception if not browser supported
+          const speech = new _text2speech__WEBPACK_IMPORTED_MODULE_3__.text2speech(); // will throw an exception if not browser supported
 
-          if (speech.hasBrowserSupport()) {
-            // returns a boolean
-            // console.log("speech synthesis supported")
-            console.log("");
-          }
-
-          yield speech.init({
-            'volume': 1,
-            'lang': 'hi-IN',
-            'voice': "Google हिन्दी",
-            'rate': 1,
-            'pitch': 1,
-            'splitSentences': true
-          });
-          yield speech.speak({
-            text: text
-          });
-          console.log("speech over");
+          speech.speak(text);
         } catch (error) {
           console.log(error);
         }
@@ -7871,11 +7854,18 @@ class MainInterviewComponent {
       "message": message,
       "dialogLevel": type
     };
-    let dialogRef = this.matDialog.open(src_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_2__.AlertDialogComponent, dialogConfig);
+    let dialogRef = this.matDialog.open(src_app_util_alert_dialog_alert_dialog_component__WEBPACK_IMPORTED_MODULE_1__.AlertDialogComponent, dialogConfig);
   }
 
   endInterviewByCandidate() {
-    this.finishInterview(_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.interviewErrorCodes.END_INTERVIEW_BY_CANDIDATE);
+    var _this13 = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this13.finishInterview(_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.interviewErrorCodes.END_INTERVIEW_BY_CANDIDATE);
+      _this13.blockUiStateChange = true; //while this error event is fired something else might change the UI and override.
+
+      _this13.blockSpeech = true;
+    })();
   }
 
   delay(ms) {
@@ -8151,6 +8141,70 @@ MainInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   directives: [_angular_common__WEBPACK_IMPORTED_MODULE_15__.NgClass, ngx_countdown__WEBPACK_IMPORTED_MODULE_16__.CountdownComponent, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_18__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.DefaultValueAccessor, ngx_autosize__WEBPACK_IMPORTED_MODULE_20__.AutosizeDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_21__.NativeElementInjectorDirective],
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLWludGVydmlldy5jb21wb25lbnQuY3NzIn0= */"]
 });
+
+/***/ }),
+
+/***/ 70211:
+/*!*******************************************************************!*\
+  !*** ./src/app/candidate/assessment/bot-interview/text2speech.ts ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "text2speech": () => (/* binding */ text2speech)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var speak_tts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! speak-tts */ 10000);
+
+
+class text2speech {
+  //deprecated
+  speaktts(text) {
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      try {
+        const speech = new speak_tts__WEBPACK_IMPORTED_MODULE_1__["default"](); // will throw an exception if not browser supported
+
+        if (speech.hasBrowserSupport()) {
+          // returns a boolean
+          // console.log("speech synthesis supported")
+          console.log("");
+        }
+
+        yield speech.init({
+          'volume': 1,
+          'lang': 'hi-IN',
+          'voice': "Google हिन्दी",
+          'rate': 1,
+          'pitch': 1,
+          'splitSentences': true
+        });
+        yield speech.speak({
+          text: text
+        });
+        console.log("speech over");
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }
+
+  speak(text) {
+    let synthesis = window.speechSynthesis;
+    synthesis.cancel();
+    const textToSpeech = new SpeechSynthesisUtterance(text);
+    textToSpeech.lang = "hi-IN";
+    textToSpeech.text = text; // const voice = speechSynthesis.getVoices().filter((voice) => {
+    //   console.log(voice)
+    //   return voice.name === "Google हिन्दी";
+    // })[0];
+    // textToSpeech.voice = voice;
+
+    synthesis.speak(textToSpeech);
+  }
+
+}
 
 /***/ }),
 
@@ -28372,7 +28426,8 @@ class RecordVideoComponent {
     this.sessionId = Math.random().toString(36).slice(2, 7).toString();
     this.questionText = "";
     this.responseText = "";
-    this.bot_interview_journey = {}; //
+    this.bot_interview_journey = {};
+    this.speechState = false; //
   }
 
   get errorMessage() {
@@ -28545,6 +28600,65 @@ class RecordVideoComponent {
     })();
   }
 
+  speech2text() {
+    var _this5 = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      // let voiceHandler = this.hiddenSearchHandler?.nativeElement;
+      if (!_this5.speechState) {
+        _this5.speechState = true;
+
+        if ('webkitSpeechRecognition' in window) {
+          _this5.vSearch = new webkitSpeechRecognition();
+          _this5.vSearch.continuous = true;
+          _this5.vSearch.interimresults = false;
+          _this5.vSearch.lang = 'en-IN';
+
+          _this5.vSearch.start();
+
+          _this5.vSearch.onresult = e => {
+            console.log(e);
+
+            for (var i = e.resultIndex; i < e.results.length; ++i) {
+              if (e.results[i].isFinal) {
+                console.log(e.results[i][0].transcript);
+              }
+            }
+          }; // this.vSearch.onend = (e) => {
+          //   if(this.speechState){
+          //   console.log(e);
+          //   this.vSearch.start();
+          //   }
+          // };        
+
+        } else {
+          alert('Your browser does not support voice recognition!');
+        }
+      } else {
+        _this5.vSearch.stop();
+
+        _this5.speechState = false;
+      }
+    })();
+  }
+
+  texttospeech() {
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      let text = "hello how are you !";
+      let synthesis = window.speechSynthesis;
+      synthesis.cancel();
+      const textToSpeech = new SpeechSynthesisUtterance(text);
+      textToSpeech.lang = "hi-IN";
+      textToSpeech.text = text; // const voice = speechSynthesis.getVoices().filter((voice) => {
+      //   console.log(voice)
+      //   return voice.name === "Google हिन्दी";
+      // })[0];
+      // textToSpeech.voice = voice;
+
+      synthesis.speak(textToSpeech);
+    })();
+  }
+
 }
 
 RecordVideoComponent.ɵfac = function RecordVideoComponent_Factory(t) {
@@ -28572,7 +28686,7 @@ RecordVideoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
   inputs: {
     testId: "testId"
   },
-  decls: 56,
+  decls: 58,
   vars: 19,
   consts: [["id", "test", 1, "tab-pane", "active"], [1, "card", "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item"], ["data-toggle", "tab", "href", "#bot-interview", 1, "nav-link", "active"], ["data-toggle", "tab", "href", "#setup", 1, "nav-link"], ["data-toggle", "tab", "href", "#feedback", 1, "nav-link"], [1, "tab-content"], ["id", "bot-interview", 1, "tab-pane", "active"], [3, "hidden"], ["class", "mat-error", 4, "ngIf"], [1, "d-flex", "mb-3"], ["placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "formControl"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-border", "btn-sm", "ml-2", 3, "disabled", "click"], ["class", "btn btn-primary ml-2", "data-target", "#myModal", "data-toggle", "modal", 3, "click", 4, "ngIf"], ["appearance", "outline", 1, "input-field", 2, "width", "30%", "height", "30%"], ["autosize", "", "matInput", "", "name", "questionText", "placeholder", "Bot question", "required", "", 3, "ngModel", "ngModelChange"], ["autosize", "", "matInput", "", "name", "responseText", "placeholder", "Please answer", "required", "", 3, "ngModel", "ngModelChange"], [1, "badge", "badge-success", 3, "click"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 3, "height", "width"], ["video1", ""], ["type", "video/mp4"], ["id", "setup", 1, "tab-pane"], [1, "mb-3"], [1, "card-title", "mb-0"], [1, "badge", "badge-danger", 3, "click"], ["video", ""], ["type", "video/mp4", 3, "src"], ["id", "feedback", 1, "tab-pane"], [3, "interview_id"], [1, "mat-error"], ["data-target", "#myModal", "data-toggle", "modal", 1, "btn", "btn-primary", "ml-2", 3, "click"]],
   template: function RecordVideoComponent_Template(rf, ctx) {
@@ -28622,36 +28736,42 @@ RecordVideoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "a", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_30_listener() {
-        return ctx.text2speech();
+        return ctx.texttospeech();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](31, " Text2Speech ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "a", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_32_listener() {
+        return ctx.speech2text();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, " Speech2Text ");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "div", 9)(33, "video", 19, 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](35, "source", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "div", 9)(35, "video", 19, 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](37, "source", 21);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "div", 22)(37, "div", 23)(38, "h5", 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](39, "Interview setup");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](38, "div", 22)(39, "div", 23)(40, "h5", 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](41, "Interview setup");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "div")(41, "a", 18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_41_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "div")(43, "a", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_43_listener() {
         return ctx.completeRecordingTest();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](42, " Stop ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](44, " Stop ");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "a", 25);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_43_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "a", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function RecordVideoComponent_Template_a_click_45_listener() {
         return ctx.startRecording();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](44, " Start ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](46, " Start ");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "div", 9)(46, "video", 19, 26);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](48, "source", 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "div", 9)(48, "video", 19, 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](50, "source", 27);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](49, "div", 9)(50, "video", 19, 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](52, "source", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](51, "div", 9)(52, "video", 19, 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](54, "source", 21);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "div", 28)(54, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](55, "app-bot-feedback", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "div", 28)(56, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](57, "app-bot-feedback", 29);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()()();
     }
 
@@ -28672,7 +28792,7 @@ RecordVideoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.questionText);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.responseText);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](9);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("hidden", !ctx.recordingOn);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("height", ctx.HEIGHT)("width", ctx.WIDTH);
