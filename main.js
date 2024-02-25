@@ -7233,7 +7233,7 @@ class MainInterviewComponent {
     this.router = router;
     this.activatedRoute = activatedRoute;
     this.interviewConfig = {
-      "interviewVideoRecording": true,
+      "interviewVideoRecording": false,
       "speakAnswerOption": true,
       "maxDurationInterview": 30,
       "maxDurationAudioAnswer": 1,
@@ -7489,7 +7489,14 @@ class MainInterviewComponent {
 
         _this4.countDownAnswer.stop();
 
+        yield _this4.speech2text("STOP");
+        console.log(_this4.speech2textTranscription);
         let s3Uri = yield _this4.finishRecordingAnswer();
+
+        if (s3Uri != "" && _this4.responseText == "") {
+          _this4.responseText = _this4.speech2textTranscription;
+        }
+
         let input = {
           "questionId": _this4.bot_interview_journey["question_details"]["id"],
           "user_response": _this4.responseText,
@@ -7632,6 +7639,8 @@ class MainInterviewComponent {
       _this8.setAnswerCountdownTimer(_this8.interviewConfig.maxDurationAudioAnswer * 60);
 
       _this8.UiStates(_this8.interviewStates['RECORD-AUDIO']);
+
+      _this8.speech2text("START");
 
       try {
         _this8.videoRecorderAnswer = new _video_recording__WEBPACK_IMPORTED_MODULE_2__.VideoRecording([_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.mediaStreamOptions.USER_AUDIO]);
@@ -7874,6 +7883,44 @@ class MainInterviewComponent {
 
   onRightClick(event) {
     if (this.disableEvents.RIGHT_CLICK) event.preventDefault();
+  }
+
+  speech2text(requestType = "STOP") {
+    var _this14 = this;
+
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      try {
+        if (requestType == "START") {
+          console.log("called start");
+          _this14.speech2textTranscription = "";
+
+          if ('webkitSpeechRecognition' in window) {
+            _this14.speechRecognition = new webkitSpeechRecognition();
+            _this14.speechRecognition.continuous = true;
+            _this14.speechRecognition.interimresults = false;
+            _this14.speechRecognition.lang = 'en-IN';
+
+            _this14.speechRecognition.start();
+
+            _this14.speechRecognition.onresult = e => {
+              for (var i = e.resultIndex; i < e.results.length; ++i) {
+                if (e.results[i].isFinal) {
+                  console.log(e.results[i][0].transcript);
+                  _this14.speech2textTranscription += e.results[i][0].transcript;
+                  console.log(_this14.speech2textTranscription);
+                }
+              }
+            };
+          } else {
+            alert('Your browser does not support voice recognition!');
+          }
+        } else {
+          _this14.speechRecognition.stop();
+        }
+      } catch (e) {
+        console.log("Live transcription error => ", e); //everything should continue as normal even if this fails !
+      }
+    })();
   }
 
 }
