@@ -9866,6 +9866,9 @@ body.stop-scrolling {
 .text-cap {
        text-transform: capitalize;
    }
+.white-space-nowrap {
+    white-space: nowrap;
+   }
 .text-muted {
        color: rgb(0 0 0 / 60%) !important;
    }
@@ -9954,7 +9957,6 @@ body.stop-scrolling {
         color: #fff;
         font-size: 12px;
         border-radius: 9px;
-        margin-top: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
