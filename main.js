@@ -8233,7 +8233,8 @@ class text2speech {
 
   speak(text) {
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return true;
+      return true; //run build again dummy update
+
       return new Promise((resolve, reject) => {
         let synthesis = window.speechSynthesis;
         synthesis.cancel(); //dont know why but doesnt work in chrome without this !
