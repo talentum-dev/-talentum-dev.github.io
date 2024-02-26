@@ -7392,6 +7392,9 @@ class MainInterviewComponent {
         }
 
         _this2.interviewOn = false;
+        _this2.blockUiStateChange = true; //while we finish interview something else async might be fired & override the UI.
+
+        _this2.blockSpeech = true;
         return true;
       } catch (error) {
         _this2.UiStates(_this2.interviewStates['INTERVIEW-ERROR']);
@@ -7406,6 +7409,9 @@ class MainInterviewComponent {
 
         _this2.text2speech(_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.userMessages.INTERVIEW_COMPLETE_ERROR);
 
+        _this2.blockUiStateChange = true; //while this error event is fired something else might change the UI and override.
+
+        _this2.blockSpeech = true;
         return false;
       }
     })();
@@ -7445,11 +7451,8 @@ class MainInterviewComponent {
         _this3.interviewConfig.maxDurationCodingAnswer = _this3.bot_interview_journey["question_details"]["answerDuration"];
         _this3.interviewConfig.maxDurationTextAnswer = _this3.bot_interview_journey["question_details"]["answerDuration"];
         _this3.questionText = questionDetails['question_details']["question"];
-
-        _this3.text2speech(_this3.questionText); //await is waiting indefinitely on this. need to check
-
-
-        yield _this3.delay(6000); //wait for speech to text a lil bit
+        yield _this3.text2speech(_this3.questionText); //await is waiting indefinitely on this. need to check
+        // await this.delay(6000) //wait for speech to text a lil bit
 
         if (_this3.bot_interview_journey["question_details"]["question_type"] == "coding") {
           _this3.writeCode();
@@ -7521,9 +7524,7 @@ class MainInterviewComponent {
         if (questionDetails["stage"] == "INTERVIEW_COMPLETED") {
           yield _this4.finishInterview(_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.interviewErrorCodes.QUESTIONS_EXHAUSTED);
         } else {
-          _this4.text2speech(_this4.questionText);
-
-          yield _this4.delay(6000); //wait for speech to text a lil bit
+          yield _this4.text2speech(_this4.questionText); // await this.delay(6000) //wait for speech to text a lil bit
 
           if (_this4.bot_interview_journey["question_details"]["question_type"] == "coding") {
             _this4.writeCode();
@@ -7567,10 +7568,6 @@ class MainInterviewComponent {
 
       if (_this5.interviewOn) {
         _this5.finishInterview(errorMessage);
-
-        _this5.blockUiStateChange = true; //while this error event is fired something else might change the UI and override.
-
-        _this5.blockSpeech = true;
       } else {
         _this5.UiStates(_this5.interviewStates['INTERVIEW-PREP']);
       }
@@ -7792,7 +7789,7 @@ class MainInterviewComponent {
         try {
           const speech = new _text2speech__WEBPACK_IMPORTED_MODULE_3__.text2speech(); // will throw an exception if not browser supported
 
-          speech.speak(text);
+          yield speech.speak(text);
         } catch (error) {
           console.log(error);
         }
@@ -7871,9 +7868,6 @@ class MainInterviewComponent {
 
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield _this13.finishInterview(_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.interviewErrorCodes.END_INTERVIEW_BY_CANDIDATE);
-      _this13.blockUiStateChange = true; //while this error event is fired something else might change the UI and override.
-
-      _this13.blockSpeech = true;
     })();
   }
 
@@ -8238,17 +8232,24 @@ class text2speech {
   }
 
   speak(text) {
-    let synthesis = window.speechSynthesis;
-    synthesis.cancel();
-    const textToSpeech = new SpeechSynthesisUtterance(text);
-    textToSpeech.lang = "hi-IN";
-    textToSpeech.text = text; // const voice = speechSynthesis.getVoices().filter((voice) => {
-    //   console.log(voice)
-    //   return voice.name === "Google हिन्दी";
-    // })[0];
-    // textToSpeech.voice = voice;
+    return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return true;
+      return new Promise((resolve, reject) => {
+        let synthesis = window.speechSynthesis;
+        synthesis.cancel(); //dont know why but doesnt work in chrome without this !
 
-    synthesis.speak(textToSpeech);
+        const textToSpeech = new SpeechSynthesisUtterance(text);
+        textToSpeech.lang = "hi-IN";
+        textToSpeech.text = text; // const voice = speechSynthesis.getVoices().filter((voice) => {
+        //   console.log(voice)
+        //   return voice.name === "Google हिन्दी";
+        // })[0];
+        // textToSpeech.voice = voice;
+
+        synthesis.speak(textToSpeech);
+        textToSpeech.onend = resolve;
+      });
+    })();
   }
 
 }
