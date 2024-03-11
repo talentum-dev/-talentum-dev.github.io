@@ -7704,10 +7704,12 @@ class MainInterviewComponent {
 
         _this9.spinnerVisibilityService.hide();
 
+        _this9.recordingAnswer = false;
         return s3Uri;
       } catch (error) {
         _this9.spinnerVisibilityService.hide();
 
+        _this9.recordingAnswer = false;
         return s3Uri;
       }
     })();
