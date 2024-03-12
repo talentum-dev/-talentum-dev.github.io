@@ -7285,7 +7285,7 @@ class MainInterviewComponent {
       demand: true
     };
     this.disableEvents = {
-      "RIGHT_CLICK": false
+      "RIGHT_CLICK": true
     };
     this.recordingPutURL = "";
     this.recordingOn = false; //turning this OFF will stop sending recording chunks to S3 !
@@ -7337,9 +7337,10 @@ class MainInterviewComponent {
           }
         }
 
+        if (!(yield _this.askQuestion())) return false;
+
         _this.setInterviewCountdownTimer(_this.interviewConfig.maxDurationInterview * 60);
 
-        if (!(yield _this.askQuestion())) return false;
         return true;
       } catch (error) {
         _this.UiStates(_this.interviewStates['INTERVIEW-PREP']);
@@ -7447,6 +7448,8 @@ class MainInterviewComponent {
 
         _this3.bot_interview_journey = questionDetails;
         _this3.interviewId = _this3.bot_interview_journey["question_details"]["interviewId"];
+        _this3.interviewConfig.interviewVideoRecording = _this3.bot_interview_journey["question_details"]["video_required"] == 0 ? false : true; // above wont work as recording already started or not during startinterview. Need to fetch this from reference early
+
         _this3.interviewConfig.maxDurationInterview = _this3.bot_interview_journey["question_details"]["interviewDuration"];
         _this3.interviewConfig.maxDurationCodingAnswer = _this3.bot_interview_journey["question_details"]["answerDuration"];
         _this3.interviewConfig.maxDurationTextAnswer = _this3.bot_interview_journey["question_details"]["answerDuration"];
@@ -7493,7 +7496,6 @@ class MainInterviewComponent {
         _this4.countDownAnswer.stop();
 
         yield _this4.speech2text("STOP");
-        console.log(_this4.speech2textTranscription);
         let s3Uri = yield _this4.finishRecordingAnswer();
 
         if (s3Uri != "" && _this4.responseText == "") {
@@ -7545,8 +7547,6 @@ class MainInterviewComponent {
   }
 
   UiStates(UiElements) {
-    console.log(UiElements);
-
     if (!this.blockUiStateChange) {
       //dont allow any change to UI if there is an error
       for (let key in this.elementShow) {
@@ -7556,7 +7556,6 @@ class MainInterviewComponent {
       UiElements.forEach(element => {
         this.elementShow[element] = true;
       });
-      console.log(this.elementShow);
     }
   }
 
@@ -7745,8 +7744,6 @@ class MainInterviewComponent {
   }
 
   answerTimer(event) {
-    console.log(event['left']);
-
     if (event['left'] <= this.interviewConfig.answerNearEndAlert * 1000) {
       this.answerLastSeconds = true;
     }
@@ -7891,7 +7888,6 @@ class MainInterviewComponent {
     return (0,_home_runner_work_ui_ui_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         if (requestType == "START") {
-          console.log("called start");
           _this14.speech2textTranscription = "";
 
           if ('webkitSpeechRecognition' in window) {
@@ -7905,9 +7901,7 @@ class MainInterviewComponent {
             _this14.speechRecognition.onresult = e => {
               for (var i = e.resultIndex; i < e.results.length; ++i) {
                 if (e.results[i].isFinal) {
-                  console.log(e.results[i][0].transcript);
                   _this14.speech2textTranscription += e.results[i][0].transcript;
-                  console.log(_this14.speech2textTranscription);
                 }
               }
             };
