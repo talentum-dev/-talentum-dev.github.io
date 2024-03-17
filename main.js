@@ -6853,7 +6853,6 @@ class BotInterviewComponent {
           "assessmentType": "BOT_INTERVIEW"
         };
         _this.referenceIdSummary = yield _this.testService.validateReferenceId(input);
-        console.log(_this.referenceIdSummary);
 
         if (!("errorMessage" in _this.referenceIdSummary)) {
           _this.elementShow.launchInterviewButton = true;
@@ -7236,7 +7235,7 @@ class MainInterviewComponent {
       "interviewVideoRecording": false,
       "speakAnswerOption": true,
       "maxDurationInterview": 30,
-      "maxDurationAudioAnswer": 1,
+      "maxDurationAudioAnswer": 2,
       "interviewNearEndAlert": 5,
       "answerNearEndAlert": 15,
       "maxDurationTextAnswer": 2,
@@ -7246,7 +7245,7 @@ class MainInterviewComponent {
     };
     this.interviewStates = {
       "INTERVIEW-PREP": ["interviewPrep"],
-      "ASK-QUESTION": ["questionSkip", "mainInterview"],
+      "ASK-QUESTION": ["mainInterview"],
       "INPUT-OPTIONS": ["questionSkip", "mainInterview", "showInputOptions"],
       "RECORD-AUDIO": ["recordAnswer", "recordingInProgress", "submitAnswer", "mainInterview"],
       "WRITE-CODE": ["writeCode", "questionSkip", "submitAnswer", "mainInterview"],
@@ -7447,8 +7446,8 @@ class MainInterviewComponent {
         _this3.spinnerVisibilityService.hide();
 
         _this3.bot_interview_journey = questionDetails;
-        _this3.interviewId = _this3.bot_interview_journey["question_details"]["interviewId"];
-        _this3.interviewConfig.interviewVideoRecording = _this3.bot_interview_journey["question_details"]["video_required"] == 0 ? false : true; // above wont work as recording already started or not during startinterview. Need to fetch this from reference early
+        _this3.interviewId = _this3.bot_interview_journey["question_details"]["interviewId"]; // this.interviewConfig.interviewVideoRecording = this.bot_interview_journey["question_details"]["video_required"] == 0 ? false : true
+        // above wont work as recording already started or not during startinterview. Need to fetch this from reference early
 
         _this3.interviewConfig.maxDurationInterview = _this3.bot_interview_journey["question_details"]["interviewDuration"];
         _this3.interviewConfig.maxDurationCodingAnswer = _this3.bot_interview_journey["question_details"]["answerDuration"];
@@ -7522,6 +7521,8 @@ class MainInterviewComponent {
         _this4.bot_interview_journey = questionDetails;
         _this4.questionText = _this4.bot_interview_journey['question_details']["question"];
         _this4.responseText = "";
+        _this4.interviewConfig.maxDurationCodingAnswer = _this4.bot_interview_journey["question_details"]["answerDuration"];
+        _this4.interviewConfig.maxDurationTextAnswer = _this4.bot_interview_journey["question_details"]["answerDuration"];
 
         if (questionDetails["stage"] == "INTERVIEW_COMPLETED") {
           yield _this4.finishInterview(_models_bot_interview_constants__WEBPACK_IMPORTED_MODULE_7__.interviewErrorCodes.QUESTIONS_EXHAUSTED);
@@ -21262,7 +21263,7 @@ class InitiatedReferencesComponent {
         this.spinnerVisibilityService.show();
         this.apiService.initiatedReferences(this.initiated_references_input)
             .then(data => {
-            console.log(data);
+            // console.log(data)
             return data.map(data => {
                 data.time = new Date(data.time + ' UTC').toLocaleString();
                 return data;
@@ -21279,11 +21280,11 @@ class InitiatedReferencesComponent {
                     temp_array.forEach((temp, index) => {
                         if (element.name == temp.name && element.email == temp.email && element.phone == temp.phone) {
                             element_found = true;
-                            if (element.time > temp.time) {
-                                temp_array[index].time = element.time;
-                                temp_array[index].status = element.status;
-                                temp_array[index].next_steps = element.next_steps;
-                            }
+                            // if (element.time > temp.time) {
+                            //   temp_array[index].time = element.time
+                            //   temp_array[index].status = element.status
+                            //   temp_array[index].next_steps = element.next_steps
+                            // }
                         }
                     });
                     if (!element_found) {
