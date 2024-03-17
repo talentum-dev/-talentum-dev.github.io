@@ -6940,9 +6940,13 @@ body {
        padding-top: 58px;
        min-height: 100vh;
        position: relative;
+       scrollbar-width: thin;
    }
 html {
        overflow-x: hidden;
+   }
+div, section, span, p, table, tr, td, textarea, ul li, ol li {
+    scrollbar-width: thin;
    }
 p {
        font-size: 14px;
@@ -11209,6 +11213,7 @@ body.stop-scrolling {
        overflow: auto;
        padding: 10px 15px;
        overflow-x: hidden;
+       scrollbar-width: thin;
    }
 .modal-full-height.with-footer {
        max-height: calc(100vh - 125px);
@@ -11423,6 +11428,10 @@ body.stop-scrolling {
        width: 150px !important;
        min-width: 150px !important;
    }
+.width-160 {
+    width: 160px !important;
+    min-width: 160px !important;
+}
 .max-height-100 {
        max-height: 100px !important;
        overflow-y: auto;
@@ -11463,6 +11472,11 @@ body.stop-scrolling {
        height: 30px;
        padding: 4px 6px;
        font-size: 13px;
+   }
+.form-control.textarea-sm {
+    font-size: 12px;
+    padding: 4px;
+    width:180px;
    }
 .form-control.xs {
        height: 26px;
@@ -12783,8 +12797,6 @@ body:has(.bot-window) {
     background-color: #f6faff;
     margin-top: 35px;
     border-radius: 12px;
-
-
   }
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css ***!
@@ -12909,6 +12921,7 @@ body:has(.bot-window) {
 }.filter-card-body  .example-container {
   height: auto !important;
   max-height:180px!important;
+  overflow-y: auto;
 }.filter-card-body.create-test-skills-table.card-body {
   padding:15px;
 }.filter-card-body.create-test-skills-table .example-container {
