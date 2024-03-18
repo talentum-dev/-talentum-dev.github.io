@@ -248,7 +248,7 @@ function BotInterviewsComponent_tbody_67_Template(rf, ctx) {
 
 function BotInterviewsComponent_div_68_div_10_div_3_tr_28_Template(rf, ctx) {
   if (rf & 1) {
-    const _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "tr")(1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2);
@@ -265,68 +265,68 @@ function BotInterviewsComponent_div_68_div_10_div_3_tr_28_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](10);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](11, "td")(12, "textarea", 78);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](11, "td")(12, "textarea", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_div_3_tr_28_Template_textarea_ngModelChange_12_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r37);
-      const row_r34 = restoredCtx.$implicit;
-      return row_r34.user_response = $event;
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r38);
+      const row_r35 = restoredCtx.$implicit;
+      return row_r35.user_response = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](13, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](14, "td")(15, "textarea", 78);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](14, "td")(15, "textarea", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_div_3_tr_28_Template_textarea_ngModelChange_15_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r37);
-      const row_r34 = restoredCtx.$implicit;
-      return row_r34.genai_script_evaluation = $event;
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r38);
+      const row_r35 = restoredCtx.$implicit;
+      return row_r35.genai_script_evaluation = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](16, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "td")(18, "textarea", 78);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "td")(18, "textarea", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_div_3_tr_28_Template_textarea_ngModelChange_18_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r37);
-      const row_r34 = restoredCtx.$implicit;
-      return row_r34.genai_assessment_summary = $event;
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r38);
+      const row_r35 = restoredCtx.$implicit;
+      return row_r35.genai_assessment_summary = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](19, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "td")(21, "input", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "td")(21, "input", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_div_3_tr_28_Template_input_ngModelChange_21_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r37);
-      const row_r34 = restoredCtx.$implicit;
-      return row_r34.genai_assessment_score = $event;
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r38);
+      const row_r35 = restoredCtx.$implicit;
+      return row_r35.genai_assessment_score = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
   }
 
   if (rf & 2) {
-    const row_r34 = ctx.$implicit;
+    const row_r35 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r34.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r35.id);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r34.journey_id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r35.journey_id);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r34.skill);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r35.skill);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r34.parent_question);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r35.parent_question);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r34.question);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r35.question);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r34.user_response);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r35.user_response);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r34.genai_script_evaluation);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r35.genai_script_evaluation);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r34.genai_assessment_summary);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r35.genai_assessment_summary);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r34.genai_assessment_score);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r35.genai_assessment_score);
   }
 }
 
 function BotInterviewsComponent_div_68_div_10_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 7)(1, "div", 74)(2, "h5", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 7)(1, "div", 77)(2, "h5", 78);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "Question wise assessment");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 27)(5, "div", 76)(6, "table", 77)(7, "thead")(8, "tr")(9, "th");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 27)(5, "div", 79)(6, "table", 80)(7, "thead")(8, "tr")(9, "th");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](10, "Parent Id ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](11, "th");
@@ -369,45 +369,45 @@ function BotInterviewsComponent_div_68_div_10_div_3_Template(rf, ctx) {
 
 function BotInterviewsComponent_div_68_div_10_div_4_tr_16_Template(rf, ctx) {
   if (rf & 1) {
-    const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    const _r46 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "tr")(1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "td")(4, "textarea", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "td")(4, "textarea", 83);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_div_4_tr_16_Template_textarea_ngModelChange_4_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r45);
-      const row_r42 = restoredCtx.$implicit;
-      return row_r42.summary = $event;
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r46);
+      const row_r43 = restoredCtx.$implicit;
+      return row_r43.summary = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "td")(7, "input", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "td")(7, "input", 84);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_div_4_tr_16_Template_input_ngModelChange_7_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r45);
-      const row_r42 = restoredCtx.$implicit;
-      return row_r42.score = $event;
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r46);
+      const row_r43 = restoredCtx.$implicit;
+      return row_r43.score = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
   }
 
   if (rf & 2) {
-    const row_r42 = ctx.$implicit;
+    const row_r43 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r42.skill);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r43.skill);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r42.summary);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r43.summary);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r42.score);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r43.score);
   }
 }
 
 function BotInterviewsComponent_div_68_div_10_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 7)(1, "div", 74)(2, "h5", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 7)(1, "div", 77)(2, "h5", 78);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "Skill wise assessment");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 27)(5, "div", 76)(6, "table", 77)(7, "thead")(8, "tr")(9, "th");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 27)(5, "div", 79)(6, "table", 80)(7, "thead")(8, "tr")(9, "th");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](10, "Candidate skill ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](11, "th");
@@ -430,32 +430,118 @@ function BotInterviewsComponent_div_68_div_10_div_4_Template(rf, ctx) {
   }
 }
 
+function BotInterviewsComponent_div_68_div_10_div_5_tr_14_option_5_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "option", 87);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+
+  if (rf & 2) {
+    const c_r52 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngValue", c_r52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](c_r52);
+  }
+}
+
+const _c5 = function () {
+  return {
+    standalone: true
+  };
+};
+
+function BotInterviewsComponent_div_68_div_10_div_5_tr_14_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r54 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "tr")(1, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "td")(4, "select", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_div_5_tr_14_Template_select_ngModelChange_4_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r54);
+      const row_r49 = restoredCtx.$implicit;
+      return row_r49.score = $event;
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](5, BotInterviewsComponent_div_68_div_10_div_5_tr_14_option_5_Template, 2, 2, "option", 86);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
+  }
+
+  if (rf & 2) {
+    const row_r49 = ctx.$implicit;
+    const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](row_r49.skill);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", row_r49.score)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](4, _c5));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", ctx_r48.softskillscoreoptions);
+  }
+}
+
+function BotInterviewsComponent_div_68_div_10_div_5_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 7)(1, "div", 77)(2, "h5", 78);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "Soft Skill assessment");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 27)(5, "div", 79)(6, "table", 80)(7, "thead")(8, "tr")(9, "th");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](10, "Soft skill ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](11, "th");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](12, "Score");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "tbody");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](14, BotInterviewsComponent_div_68_div_10_div_5_tr_14_Template, 6, 5, "tr", 52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()()();
+  }
+
+  if (rf & 2) {
+    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("dtOptions", ctx_r33.dtOptions_feedback)("dtTrigger", ctx_r33.dtTrigger_feedback);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", ctx_r33.softSkillSummary);
+  }
+}
+
 function BotInterviewsComponent_div_68_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    const _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    const _r56 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 33)(1, "div", 67)(2, "div", 68);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](3, BotInterviewsComponent_div_68_div_10_div_3_Template, 29, 3, "div", 69);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](4, BotInterviewsComponent_div_68_div_10_div_4_Template, 17, 3, "div", 69);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](5, BotInterviewsComponent_div_68_div_10_div_5_Template, 15, 3, "div", 69);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](5, "div", 70)(6, "button", 71);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function BotInterviewsComponent_div_68_div_10_Template_button_click_6_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r48);
-      const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-      return ctx_r47.submitUpdates();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "div", 70)(7, "tr")(8, "td")(9, "button", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function BotInterviewsComponent_div_68_div_10_Template_button_click_9_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r56);
+      const ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+      return ctx_r55.submitUpdates();
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, "Update");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "input", 72);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_Template_input_ngModelChange_8_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r48);
-      const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-      return ctx_r49.botInterviewApproved = $event;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](10, "Update");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](11, "td")(12, "input", 72);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_Template_input_ngModelChange_12_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r56);
+      const ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+      return ctx_r57.botInterviewApproved = $event;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "label", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](10, " Approve Interview ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "label", 73);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](14, " Approve Interview ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](15, "td", 74)(16, "input", 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function BotInterviewsComponent_div_68_div_10_Template_input_ngModelChange_16_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r56);
+      const ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+      return ctx_r58.total_score = $event;
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "label", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](18, " Total Score: ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()()()();
   }
 
   if (rf & 2) {
@@ -464,28 +550,32 @@ function BotInterviewsComponent_div_68_div_10_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r30.updateQuestionWiseSummary);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r30.updateInterviewSummary);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r30.updateSoftSkills);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", ctx_r30.botInterviewApproved);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", ctx_r30.total_score);
   }
 }
 
 function BotInterviewsComponent_div_68_Template(rf, ctx) {
   if (rf & 1) {
-    const _r51 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    const _r60 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 58)(1, "div", 59)(2, "div", 60)(3, "div", 61)(4, "ul", 62)(5, "li", 63)(6, "a", 64);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, "Assessment Details");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "button", 65);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function BotInterviewsComponent_div_68_Template_button_click_8_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r51);
-      const ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-      ctx_r50.showfullprofile = false;
-      return ctx_r50.disable_right_click = false;
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r60);
+      const ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+      ctx_r59.showfullprofile = false;
+      return ctx_r59.disable_right_click = false;
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](9, "\u00D7");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](10, BotInterviewsComponent_div_68_div_10_Template, 11, 3, "div", 66);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](10, BotInterviewsComponent_div_68_div_10_Template, 19, 5, "div", 66);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
   }
 
@@ -512,13 +602,17 @@ class BotInterviewsComponent {
     this.apiService = apiService;
     this.domSanitizer = domSanitizer;
     this.http = http;
+    this.softskillscoreoptions = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
     this.updateQuestionWiseSummary = true;
     this.updateInterviewSummary = true;
+    this.updateSoftSkills = true;
     this.botInterviewApproved = false;
     this.interview_summary = [];
+    this.softSkillSummary = [];
     this.skill_summary = [];
     this.disable_right_click = false;
     this.skill_wise_scores = {};
+    this.total_score = 0;
     this.show_columns = 0;
     this.reference_columns = [{
       data: 'name'
@@ -814,20 +908,33 @@ class BotInterviewsComponent {
     };
     this.apiService.fetch_bot_interview_summary(input).then(data => {
       this.interview_summary = data;
+      this.total_score = data[0]['score'];
       let feedback = JSON.parse(data[0]['feedback']);
-      let skills = Object.keys(feedback);
+      let skills = Object.keys(feedback['techSkills']);
+      let soft_skills = Object.keys(feedback['softSkills']);
       let interview_summary = [];
+      let softSkillSummary = [];
 
       for (let i = 0; i < skills.length; i++) {
         let skill = skills[i];
         interview_summary.push({
           "skill": skill,
-          "summary": feedback[skill]['summary'],
-          "score": feedback[skill]['score']
+          "summary": feedback['techSkills'][skill]['summary'],
+          "score": feedback['techSkills'][skill]['score']
         });
       }
 
       this.skill_summary = interview_summary;
+
+      for (let i = 0; i < soft_skills.length; i++) {
+        let softskill = soft_skills[i];
+        softSkillSummary.push({
+          "skill": softskill,
+          "score": feedback['softSkills'][softskill]['score']
+        });
+      }
+
+      this.softSkillSummary = softSkillSummary;
     }).finally(() => {
       this.spinnerVisibilityService.hide();
     });
@@ -838,7 +945,9 @@ class BotInterviewsComponent {
       "interviewId": this.selected_row.interviewId,
       "questionWiseSummary": this.interview_summary,
       "skillWiseSummary": this.skill_summary,
-      "botInterviewApproved": this.botInterviewApproved
+      "softSkillSummary": this.softSkillSummary,
+      "botInterviewApproved": this.botInterviewApproved,
+      "total_score": this.total_score
     };
     this.spinnerVisibilityService.show();
     this.apiService.updateBotFeedback(input).then(data => {
@@ -887,7 +996,7 @@ BotInterviewsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   },
   decls: 69,
   vars: 11,
-  consts: [[1, "section"], [1, "container"], [1, "row", "with-filter-panel"], [1, "col-md-3", "col-lg-3"], [1, "left-sideabr"], [1, "filter-by"], ["id", "accordionFilter", "role", "tablist", "aria-multiselectable", "true", 1, "accordion", "filter-accordion"], [1, "card"], ["role", "tab", 1, "card-header"], ["data-toggle", "collapse", "href", "#skills", "aria-expanded", "false", "aria-controls", "skills", 1, ""], [1, "mb-0"], [1, "fas", "fa-angle-down", "rotate-icon"], ["id", "skills", "role", "tabpanel", "aria-labelledby", "skills", 1, "collapse"], [1, "card-body", "filter-card-body"], ["matInput", "", "placeholder", "Ex. search", 3, "keyup"], ["input", ""], [1, "example-container", "mat-elevation-z8"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["skillsMat", "", "skillsMatSort", "matSort"], ["matColumnDef", "select"], ["mat-header-cell", "", "class", "width-40", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "name"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], [1, "card-body"], [1, "form-inline", "justify-content-between"], [1, "form-group"], ["type", "textarea", "placeholder", "Reference ID", 1, "form-control", "width-150", "mr-2", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-primary", 3, "click"], [1, "col-md-9", "col-lg-9"], [1, "tab-content"], ["id", "profiles", 1, "tab-pane", "active"], [1, "filters-applied"], [1, "filter-category", 3, "hidden"], ["class", "badge badge-info", 3, "hidden", "click", 4, "ngFor", "ngForOf"], ["id", "display_table", 1, "mb-3"], ["id", "excel-table", "datatable", "", "width", "100%", 1, "table", "table-striped", "table-hover", "table-bordered", "table-fixed-head", 3, "dtOptions", "dtTrigger"], [4, "ngIf"], ["class", "modal", "id", "fullProfileInterviewer", 4, "ngIf"], ["mat-header-cell", "", 1, "width-40"], ["mat-cell", ""], [3, "ngModel", "ngModelChange"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "pl-2"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"], [1, "badge", "badge-info", 3, "hidden", "click"], [4, "ngFor", "ngForOf"], ["href", "#", "data-toggle", "modal", "data-target", "#fullProfileInterviewer", 1, "link-blue", 3, "click"], [1, "width-150"], [1, "width-120"], [1, "width-110"], ["colspan", "14", 1, "no-data-available"], ["id", "fullProfileInterviewer", 1, "modal"], [1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-header", "with-tabs"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "sm", "mb-0"], [1, "nav-item"], ["data-toggle", "tab", "href", "#view-assessment", 1, "nav-link"], ["type", "button", "data-dismiss", "modal", 1, "close", 3, "click"], ["class", "tab-content", 4, "ngIf"], ["id", "view-assessment", 1, "tab-pane", "active"], [1, "modal-body", "modal-full-height", "with-footer"], ["class", "card", 4, "ngIf"], [1, "modal-footer"], [1, "btn", "mx-2", "btn-primary", 3, "click"], ["type", "checkbox", "id", "approve", "name", "vehicle1", 3, "ngModel", "ngModelChange"], ["for", "approve"], [1, "card-header"], [1, "card-title"], [1, "table-responsive"], ["id", "upcoming-table", "datatable", "", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], ["type", "text", "cols", "20", "rows", "3", 1, "form-control", "textarea-sm", 3, "ngModel", "ngModelChange"], ["type", "text", 1, "form-control", "sm", "width-120", 3, "ngModel", "ngModelChange"], ["cols", "50", "rows", "5", 1, "form-control", "font-small-3", 3, "ngModel", "ngModelChange"], ["type", "number", 1, "form-control", 3, "ngModel", "ngModelChange"]],
+  consts: [[1, "section"], [1, "container"], [1, "row", "with-filter-panel"], [1, "col-md-3", "col-lg-3"], [1, "left-sideabr"], [1, "filter-by"], ["id", "accordionFilter", "role", "tablist", "aria-multiselectable", "true", 1, "accordion", "filter-accordion"], [1, "card"], ["role", "tab", 1, "card-header"], ["data-toggle", "collapse", "href", "#skills", "aria-expanded", "false", "aria-controls", "skills", 1, ""], [1, "mb-0"], [1, "fas", "fa-angle-down", "rotate-icon"], ["id", "skills", "role", "tabpanel", "aria-labelledby", "skills", 1, "collapse"], [1, "card-body", "filter-card-body"], ["matInput", "", "placeholder", "Ex. search", 3, "keyup"], ["input", ""], [1, "example-container", "mat-elevation-z8"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["skillsMat", "", "skillsMatSort", "matSort"], ["matColumnDef", "select"], ["mat-header-cell", "", "class", "width-40", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "name"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], [1, "card-body"], [1, "form-inline", "justify-content-between"], [1, "form-group"], ["type", "textarea", "placeholder", "Reference ID", 1, "form-control", "width-150", "mr-2", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-primary", 3, "click"], [1, "col-md-9", "col-lg-9"], [1, "tab-content"], ["id", "profiles", 1, "tab-pane", "active"], [1, "filters-applied"], [1, "filter-category", 3, "hidden"], ["class", "badge badge-info", 3, "hidden", "click", 4, "ngFor", "ngForOf"], ["id", "display_table", 1, "mb-3"], ["id", "excel-table", "datatable", "", "width", "100%", 1, "table", "table-striped", "table-hover", "table-bordered", "table-fixed-head", 3, "dtOptions", "dtTrigger"], [4, "ngIf"], ["class", "modal", "id", "fullProfileInterviewer", 4, "ngIf"], ["mat-header-cell", "", 1, "width-40"], ["mat-cell", ""], [3, "ngModel", "ngModelChange"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "pl-2"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"], [1, "badge", "badge-info", 3, "hidden", "click"], [4, "ngFor", "ngForOf"], ["href", "#", "data-toggle", "modal", "data-target", "#fullProfileInterviewer", 1, "link-blue", 3, "click"], [1, "width-150"], [1, "width-120"], [1, "width-110"], ["colspan", "14", 1, "no-data-available"], ["id", "fullProfileInterviewer", 1, "modal"], [1, "modal-dialog", "modal-xl"], [1, "modal-content"], [1, "modal-header", "with-tabs"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "sm", "mb-0"], [1, "nav-item"], ["data-toggle", "tab", "href", "#view-assessment", 1, "nav-link"], ["type", "button", "data-dismiss", "modal", 1, "close", 3, "click"], ["class", "tab-content", 4, "ngIf"], ["id", "view-assessment", 1, "tab-pane", "active"], [1, "modal-body", "modal-full-height", "with-footer"], ["class", "card", 4, "ngIf"], [1, "modal-footer"], [1, "btn", "mx-2", "btn-primary", 3, "click"], ["type", "checkbox", "id", "approve", "name", "vehicle1", 3, "ngModel", "ngModelChange"], ["for", "approve"], ["width", "20%"], ["id", "total_score", "type", "number", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "total_score"], [1, "card-header"], [1, "card-title"], [1, "table-responsive"], ["id", "upcoming-table", "datatable", "", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], ["type", "text", "cols", "20", "rows", "3", 1, "form-control", "textarea-sm", 3, "ngModel", "ngModelChange"], ["type", "text", 1, "form-control", "sm", "width-120", 3, "ngModel", "ngModelChange"], ["cols", "50", "rows", "5", 1, "form-control", "font-small-3", 3, "ngModel", "ngModelChange"], ["type", "number", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-control", 3, "ngModel", "ngModelOptions", "ngModelChange"], [3, "ngValue", 4, "ngFor", "ngForOf"], [3, "ngValue"]],
   template: function BotInterviewsComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3);
@@ -982,7 +1091,7 @@ BotInterviewsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.showfullprofile);
     }
   },
-  directives: [_util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_6__.ProfileCardComponent, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_17__.MatInput, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTable, _angular_material_sort__WEBPACK_IMPORTED_MODULE_18__.MatSort, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCell, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_19__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_20__.NativeElementInjectorDirective, _angular_material_sort__WEBPACK_IMPORTED_MODULE_18__.MatSortHeader, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatNoDataRow, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.DefaultValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_21__.NgForOf, angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_21__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.CheckboxControlValueAccessor],
+  directives: [_util_profile_card_profile_card_component__WEBPACK_IMPORTED_MODULE_6__.ProfileCardComponent, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_17__.MatInput, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTable, _angular_material_sort__WEBPACK_IMPORTED_MODULE_18__.MatSort, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCell, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_19__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgModel, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_20__.NativeElementInjectorDirective, _angular_material_sort__WEBPACK_IMPORTED_MODULE_18__.MatSortHeader, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatNoDataRow, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.DefaultValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_21__.NgForOf, angular_datatables__WEBPACK_IMPORTED_MODULE_1__.DataTableDirective, _angular_common__WEBPACK_IMPORTED_MODULE_21__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__.CheckboxControlValueAccessor],
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJib3QtaW50ZXJ2aWV3cy5jb21wb25lbnQuY3NzIn0= */"]
 });
 
@@ -27168,7 +27277,133 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function BotFeedbackComponent_tr_13_Template(rf, ctx) { if (rf & 1) {
+function BotFeedbackComponent_tr_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr")(1, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "td", null, 35)(5, "fieldset", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "input", 36)(7, "label", 37)(8, "input", 38)(9, "label", 39)(10, "input", 40)(11, "label", 37)(12, "input", 41)(13, "label", 39)(14, "input", 42)(15, "label", 37)(16, "input", 43)(17, "label", 39)(18, "input", 44)(19, "label", 37)(20, "input", 45)(21, "label", 39)(22, "input", 46)(23, "label", 37)(24, "input", 47)(25, "label", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+} if (rf & 2) {
+    const i_r4 = ctx.index;
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r0.interview_summary[i_r4].skill);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star5", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 90 && ctx_r0.interview_summary[i_r4].score <= 100);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star5", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star4half", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 80 && ctx_r0.interview_summary[i_r4].score <= 90);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star4half", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star4", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 70 && ctx_r0.interview_summary[i_r4].score <= 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star4", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star3half", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 60 && ctx_r0.interview_summary[i_r4].score <= 70);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star3half", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star3", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 50 && ctx_r0.interview_summary[i_r4].score <= 60);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star3", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star2half", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 40 && ctx_r0.interview_summary[i_r4].score <= 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star2half", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star2", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 30 && ctx_r0.interview_summary[i_r4].score <= 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star2", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star1half", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 20 && ctx_r0.interview_summary[i_r4].score <= 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star1half", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2star1", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 10 && ctx_r0.interview_summary[i_r4].score <= 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2star1", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "2starhalf", i_r4, "")("name", "2rating", i_r4, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r0.interview_summary[i_r4].score > 0 && ctx_r0.interview_summary[i_r4].score <= 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "2starhalf", i_r4, "");
+} }
+function BotFeedbackComponent_div_15_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 48)(1, "span", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 50)(4, "fieldset", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "input", 36)(6, "label", 37)(7, "input", 38)(8, "label", 39)(9, "input", 40)(10, "label", 37)(11, "input", 41)(12, "label", 39)(13, "input", 42)(14, "label", 37)(15, "input", 51)(16, "label", 39)(17, "input", 52)(18, "label", 37)(19, "input", 53)(20, "label", 39)(21, "input", 54)(22, "label", 37)(23, "input", 55)(24, "label", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+} if (rf & 2) {
+    const i_r7 = ctx.index;
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("", ctx_r1.softSkillSummary[i_r7].skill, ":");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star5", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star5", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star4half", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 4.5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star4half", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star4", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star4", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star3half", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 3.5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star3half", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star3", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star3", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star2half", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 2.5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star2half", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star2", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star2", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star1half", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 1.5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star1half", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4star1", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4star1", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "4starhalf", i_r7, "")("name", "4rating", i_r7, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx_r1.softSkillSummary[i_r7].score === 0.5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("for", "4starhalf", i_r7, "");
+} }
+function BotFeedbackComponent_tr_60_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr")(1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
@@ -27179,22 +27414,56 @@ function BotFeedbackComponent_tr_13_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
 } if (rf & 2) {
-    const i_r2 = ctx.index;
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    const i_r9 = ctx.index;
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r0.interview_summary[i_r2].skill);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r2.interview_summary[i_r9].skill);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r0.interview_summary[i_r2].summary);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r2.interview_summary[i_r9].summary);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r0.interview_summary[i_r2].score);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r2.interview_summary[i_r9].score);
 } }
 class BotFeedbackComponent {
     constructor(spinnerVisibilityService, apiService) {
         this.spinnerVisibilityService = spinnerVisibilityService;
         this.apiService = apiService;
+        this.test_feedback = {
+            "techSkills": {
+                "Agile": {
+                    "score": 25,
+                    "summary": "The candidate chose to skip both questions related to their experience with Agile development methodologies, specifically Agile Scrum and Kanban, and their experience with tools and frameworks for automation testing in Agile projects. This lack of response does not provide any evidence of their knowledge or experience in Agile methodologies or related tools. Therefore, it's challenging to assess their understanding or proficiency in Agile practices based on the information provided. Further engagement and detailed responses to the questions would be necessary to accurately evaluate their Agile skills and experience."
+                },
+                "Core Java": {
+                    "score": 86,
+                    "summary": "The candidate chose to skip all the questions presented, which makes it challenging to accurately assess their knowledge and expertise in Core Java. Without any responses to evaluate, it's impossible to gauge their understanding of serialization, the differences and use cases for ArrayList and LinkedList, or their grasp of the 'final' keyword in Java. This lack of engagement in the interview process does not provide any evidence of their theoretical or practical proficiency in Java, which is crucial for a candidate with 5 years of experience. Therefore, based on the information available, we cannot provide a meaningful assessment or score of their Core Java skills."
+                }
+            },
+            "softSkills": {
+                "Logical reasoning": {
+                    "name": "Logical reasoning",
+                    "score": 1.5
+                },
+                "Cognitive skills": {
+                    "name": "Cognitive skills",
+                    "score": 1.5
+                },
+                "Communication": {
+                    "name": "Communication",
+                    "score": 3
+                },
+                "Behaviour": {
+                    "name": "Behaviour",
+                    "score": 2.5
+                }
+            }
+        };
         this.interview_summary = [];
+        this.softSkillSummary = [];
         this.dtOptions_feedback = {};
         this.dtTrigger_feedback = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Subject();
+        this.dtOptions_feedback_2 = {};
+        this.dtTrigger_feedback_2 = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Subject();
+        this.overall_feedback = 0;
     }
     ngOnInit() {
         this.fetchBotInterviewSummary();
@@ -27209,36 +27478,126 @@ class BotFeedbackComponent {
             "role": "candidate"
         };
         this.apiService.fetch_bot_interview_summary(input).then((data) => {
+            this.overall_feedback = data['score'];
             let feedback = JSON.parse(data['feedback']);
-            let skills = Object.keys(feedback);
+            // let feedback = this.test_feedback
+            let skills = Object.keys(feedback['techSkills']);
+            let softskills = Object.keys(feedback['softSkills']);
             let interview_summary = [];
+            let softSkillSummary = [];
             for (let i = 0; i < skills.length; i++) {
                 let skill = skills[i];
-                interview_summary.push({ "skill": skill, "summary": feedback[skill]['summary'], "score": feedback[skill]['score'] });
+                interview_summary.push({ "skill": skill, "summary": feedback['techSkills'][skill]['summary'], "score": feedback['techSkills'][skill]['score'] });
             }
             this.interview_summary = interview_summary;
-            // this.spinnerVisibilityService.hide();
+            for (let i = 0; i < softskills.length; i++) {
+                let softskill = softskills[i];
+                softSkillSummary.push({ "skill": softskill, "score": feedback['softSkills'][softskill]['score'] });
+            }
+            this.softSkillSummary = softSkillSummary;
         }).finally(() => {
             this.spinnerVisibilityService.hide();
         });
     }
+    get ratingText() {
+        switch (true) {
+            case this.overall_feedback <= 30:
+                return 'Weak';
+            case this.overall_feedback <= 40:
+                return 'Below Average';
+            case this.overall_feedback <= 60:
+                return 'Average';
+            case this.overall_feedback <= 70:
+                return 'Above Average';
+            case this.overall_feedback <= 90:
+                return 'Strong';
+            case this.overall_feedback <= 100:
+                return 'Exceptional';
+            case null:
+            case undefined:
+                return '';
+            default:
+                console.error(this.overall_feedback);
+                return '';
+        }
+    }
 }
 BotFeedbackComponent.ɵfac = function BotFeedbackComponent_Factory(t) { return new (t || BotFeedbackComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](ng_http_loader__WEBPACK_IMPORTED_MODULE_4__.SpinnerVisibilityService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_0__.ApiService)); };
-BotFeedbackComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: BotFeedbackComponent, selectors: [["app-bot-feedback"]], inputs: { interview_id: "interview_id" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], decls: 14, vars: 3, consts: [[1, "row"], [1, "col-lg-8"], [1, "table-responsive"], ["contenteditable", "", "id", "upcoming-table", "datatable", "", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"]], template: function BotFeedbackComponent_Template(rf, ctx) { if (rf & 1) {
+BotFeedbackComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: BotFeedbackComponent, selectors: [["app-bot-feedback"]], inputs: { interview_id: "interview_id" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], decls: 61, vars: 29, consts: [[1, "row", "mb-4"], [1, "col-lg-6"], [1, "table-responsive", "mb-1"], ["id", "upcoming-table-2", "datatable", "", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "font-medium-3"], ["class", "row mb-1", 4, "ngFor", "ngForOf"], [1, "row"], [1, "col-5", "col-sm-3"], [1, "col-5", "col-sm-7"], [1, "rating"], ["id", "4star5", "name", "4rating", "type", "radio", "value", "5", 3, "checked"], ["for", "4star5", 1, "full"], ["id", "4star4half", "name", "4rating", "type", "radio", "value", "4 and a half", 3, "checked"], ["for", "4star4half", 1, "half"], ["id", "4star4", "name", "4rating", "type", "radio", "value", "4", 3, "checked"], ["for", "4star4", 1, "full"], ["id", "4star3half", "name", "4rating", "type", "radio", "value", "3 and a half", 3, "checked"], ["for", "4star3half", 1, "half"], ["id", "4star3", "name", "4rating", "type", "radio", "value", "3", 3, "checked"], ["for", "4star3", 1, "full"], ["id", "4star2half", "name", "4rating", "type", "radio", "value", "2 and a half", 3, "checked"], ["for", "4star2half", 1, "half"], ["id", "4star2", "name", "4rating", "type", "radio", "value", "2", 3, "checked"], ["for", "4star2", 1, "full"], ["id", "4star1half", "name", "4rating", "type", "radio", "value", "1 and a half", 3, "checked"], ["for", "4star1half", 1, "half"], ["id", "4star1", "name", "4rating", "type", "radio", "value", "1", 3, "checked"], ["for", "4star1", 1, "full"], ["id", "4starhalf", "name", "4rating", "type", "radio", "value", "half", 3, "checked"], ["for", "4starhalf", 1, "half"], ["disabled", "", 1, "badge", "ml-1"], [1, "col-lg-8"], [1, "table-responsive"], ["contenteditable", "", "id", "upcoming-table", "datatable", "", 1, "table", "table-bordered", "table-striped", "table-hover", 3, "dtOptions", "dtTrigger"], ["feedback_column", ""], ["type", "radio", "value", "5", 3, "id", "name", "checked"], [1, "full", 3, "for"], ["type", "radio", "value", "4 and a half", 3, "id", "name", "checked"], [1, "half", 3, "for"], ["type", "radio", "value", "4", 3, "id", "name", "checked"], ["type", "radio", "value", "3 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "3", 3, "id", "name", "checked"], ["type", "radio", "value", "2 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "2", 3, "id", "name", "checked"], ["type", "radio", "value", "1 and a half", 3, "id", "name", "checked"], ["type", "radio", "value", "1", 3, "id", "name", "checked"], ["type", "radio", "value", "half", 3, "id", "name", "checked"], [1, "row", "mb-1"], [1, "col-4", "col-sm-5"], [1, "col-6", "col-sm-5"], ["type", "radio", "value", "2 and a half", 3, "checked", "id", "name"], ["type", "radio", "value", "2", 3, "checked", "id", "name"], ["type", "radio", "value", "1 and a half", 3, "checked", "id", "name"], ["type", "radio", "value", "1", 3, "checked", "id", "name"], ["type", "radio", "value", "half", 3, "checked", "id", "name"]], template: function BotFeedbackComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "table", 3)(4, "thead")(5, "tr")(6, "th");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Candidate skill ");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "Bot summary");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11, "Score");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "Rating");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](13, BotFeedbackComponent_tr_13_Template, 7, 3, "tr", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](11, BotFeedbackComponent_tr_11_Template, 26, 41, "tr", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "div", 1)(13, "h6", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](14, "General");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](15, BotFeedbackComponent_div_15_Template, 25, 41, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "div", 0)(17, "div", 1)(18, "div", 7)(19, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](20, " Overall Rating: ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "div", 9)(22, "fieldset", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](23, "input", 11)(24, "label", 12)(25, "input", 13)(26, "label", 14)(27, "input", 15)(28, "label", 16)(29, "input", 17)(30, "label", 18)(31, "input", 19)(32, "label", 20)(33, "input", 21)(34, "label", 22)(35, "input", 23)(36, "label", 24)(37, "input", 25)(38, "label", 26)(39, "input", 27)(40, "label", 28)(41, "input", 29)(42, "label", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](43, "span", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](44);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](45, "span", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](46);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](47, "div", 7)(48, "div", 32)(49, "div", 33)(50, "table", 34)(51, "thead")(52, "tr")(53, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](54, "Candidate skill ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](55, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](56, "Bot summary");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](57, "th");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](58, "Score");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](59, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](60, BotFeedbackComponent_tr_60_Template, 7, 3, "tr", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()()();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dtOptions", ctx.dtOptions_feedback_2)("dtTrigger", ctx.dtTrigger_feedback_2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.interview_summary);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.softSkillSummary);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 90 && ctx.overall_feedback <= 100);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 80 && ctx.overall_feedback <= 90);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 70 && ctx.overall_feedback <= 80);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 60 && ctx.overall_feedback <= 70);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 50 && ctx.overall_feedback <= 60);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 40 && ctx.overall_feedback <= 50);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 30 && ctx.overall_feedback <= 40);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 20 && ctx.overall_feedback <= 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 10 && ctx.overall_feedback <= 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("checked", ctx.overall_feedback > 0 && ctx.overall_feedback <= 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("badge-danger", ctx.overall_feedback < 60)("success", ctx.overall_feedback >= 60);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.overall_feedback < 60 ? "Rejected" : "Cleared");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("badge-danger", ctx.overall_feedback < 60)("badge-warning", ctx.overall_feedback == 60)("success", ctx.overall_feedback > 60);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.ratingText);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dtOptions", ctx.dtOptions_feedback)("dtTrigger", ctx.dtTrigger_feedback);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.interview_summary);
