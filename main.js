@@ -7066,7 +7066,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵloadQuery"]()) && (ctx.video1 = _t.first);
     }
   },
-  decls: 130,
+  decls: 133,
   vars: 14,
   consts: [["id", "my-interviews", 1, "tab-pane"], [1, "card"], [1, "card-body"], [1, "nav", "nav-tabs", "nav-tabs-bottom", "mb-3"], [1, "nav-item", 3, "hidden"], ["data-toggle", "tab", "href", "#schedule", 1, "nav-link", "active"], ["class", "nav-item disabled", "data-tooltip", "Please provide your consent.", "data-tooltip-location", "right", 4, "ngIf"], ["class", "nav-item", 4, "ngIf"], [1, "tab-content"], ["id", "schedule", 1, "tab-pane", "active"], [1, "row"], [1, "col-sm-6"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs", "tabs-bot-instructions"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-toggle", "tab", "data-target", "#step1", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-toggle", "tab", "data-target", "#step2", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "contact-tab", "data-toggle", "tab", "data-target", "#step3", "type", "button", "role", "tab", "aria-controls", "contact", "aria-selected", "false", 1, "nav-link"], ["id", "myTabContent", 1, "tab-content", "card", "card-body"], ["id", "step1", "role", "tabpanel", 1, "tab-pane", "fade", "show", "active"], ["href", "mailto:contact-us@witmyworld.com", 1, "white-space-nowrap"], ["id", "step2", "role", "tabpanel", 1, "tab-pane", "fade"], ["id", "step3", "role", "tabpanel", 1, "tab-pane", "fade"], [1, "mb-2"], [1, "d-flex", "alert", "alert-info", "alert-sm", "align-items-center", "mb-1"], [1, "icon-mic2", "pr-3", "font-large-2"], [1, "text-bold"], [1, "mb-3", "text-right"], ["href", "#", "data-toggle", "modal", "data-target", "#howtoGrant"], [1, "icon-help", "mr-2", "font-medium-1"], [1, "btn", "btn-primary", "btn-sm", 3, "hidden", "click"], [1, "btn", "btn-secondary", "btn-sm", 3, "hidden", "click"], [1, "mt-3", 3, "hidden"], [3, "hidden"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid", "testing"], ["video", ""], ["type", "video/mp4", 3, "src"], ["controls", "controls", "preload", "none", "onclick", "this.play()", 1, "video-fluid", "testing", 3, "muted"], ["video1", ""], ["type", "video/mp4", 2, "width", "100%"], [1, "varivied-setup-check"], ["type", "checkbox", "name", "consent", "id", "flexCheckDefault", 3, "ngModel", "change", "ngModelChange"], ["for", "flexCheckDefault", 1, "pl-2", "text-bold"], ["id", "upcoming", 1, "tab-pane"], ["class", "mat-error text-bold", 4, "ngIf"], [1, "d-flex", "mb-3"], ["type", "text", "name", "name", "placeholder", "Please Enter Reference ID", 1, "form-control", "field-sm", 3, "ngModel", "ngModelChange"], [1, "btn", "btn-border", "btn-sm", "ml-2", 3, "click"], [1, "btn", "btn-primary", "ml-2", 3, "hidden", "click"], ["id", "howtoGrant", 1, "modal"], [1, "modal-dialog", "modal-lg"], [1, "modal-content"], [1, "modal-header"], [1, "modal-title"], ["type", "button", "data-dismiss", "modal", 1, "close"], [1, "modal-body", "modal-full-height", "with-footer"], ["src", "../../../../assets/Images/request.png", 1, "img-fluid", "mb-2", 2, "max-width", "350px"], ["src", "../../../../assets/Images/change.png", 1, "img-fluid", "mb-2", 2, "max-width", "340px"], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-primary"], ["data-tooltip", "Please provide your consent.", "data-tooltip-location", "right", 1, "nav-item", "disabled"], ["href", "javascript:void(0);", 1, "nav-link"], [1, "nav-item"], ["data-toggle", "tab", "href", "#upcoming", 1, "nav-link"], [1, "mat-error", "text-bold"], [1, "icon-warning22", "mr-2", "font-small-3"]],
   template: function BotInterviewComponent_Template(rf, ctx) {
@@ -7112,7 +7112,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "strong");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](46, "\"Validate\"");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](47, " and then \"Launch Interview\".");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](47, " and then \"Launch Interview\". ");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](48, "div", 21)(49, "ol")(50, "li");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](51, "Read the questions carefully and either speak or write your answers.");
@@ -7177,54 +7177,57 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](94, "div", 42);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](95, BotInterviewComponent_p_95_Template, 3, 1, "p", 43);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](96, "div", 44)(97, "input", 45);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function BotInterviewComponent_Template_input_ngModelChange_97_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](96, "div", 23)(97, "span", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](98, "Make sure you are giving this interview on either Edge/Chrome browsers.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](99, "div", 44)(100, "input", 45);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function BotInterviewComponent_Template_input_ngModelChange_100_listener($event) {
         return ctx.referenceId = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](98, "button", 46);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BotInterviewComponent_Template_button_click_98_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](101, "button", 46);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BotInterviewComponent_Template_button_click_101_listener() {
         return ctx.checkValidateReferenceId();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](99, "Validate ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](102, "Validate ");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](100, "a", 47);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BotInterviewComponent_Template_a_click_100_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](103, "a", 47);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BotInterviewComponent_Template_a_click_103_listener() {
         return ctx.launchInterview();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](101, "Launch Interview");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](104, "Launch Interview");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](102, "div", 48)(103, "div", 49)(104, "div", 50)(105, "div", 51)(106, "h4", 52);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](107, "How to grant microphone and camera access");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](105, "div", 48)(106, "div", 49)(107, "div", 50)(108, "div", 51)(109, "h4", 52);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](110, "How to grant microphone and camera access");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](108, "button", 53);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](109, "\u00D7");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](111, "button", 53);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](112, "\u00D7");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](110, "div", 54)(111, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](112, "Access to devices is prohibited by default for the sake of your privacy. You must clearly give permission to use of a camera and/or microphone.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](113, "div", 54)(114, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](115, "Access to devices is prohibited by default for the sake of your privacy. You must clearly give permission to use of a camera and/or microphone.");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](113, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](114, " When you click on \"START MY MICROPHONE AND CAM TEST\" you may see a pop-up window at the top of the browser, similar to this:");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](115, "img", 55);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](116, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](117, "By clicking on the \"Allow\" button, the sound from your microphone or video from the webcam becomes available to the site only at the moment his use.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](117, " When you click on \"START MY MICROPHONE AND CAM TEST\" you may see a pop-up window at the top of the browser, similar to this:");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](118, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](119, " If you click \"Block\", the site will not be able to access your devices, but you will not be able to continue using its corresponding functions.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](118, "img", 55);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](119, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](120, "By clicking on the \"Allow\" button, the sound from your microphone or video from the webcam becomes available to the site only at the moment his use.");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](120, "h5");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](121, "Change selection");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](121, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](122, " If you click \"Block\", the site will not be able to access your devices, but you will not be able to continue using its corresponding functions.");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](122, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](123, "In order to return access to devices or, conversely, deny it, you can open the appropriate site settings in your browser.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](123, "h5");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](124, "Change selection");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](124, "img", 56);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](125, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](126, "Different browsers have these settings in different places, but most often there is a button somewhere near the address bar as in the image above.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](126, "In order to return access to devices or, conversely, deny it, you can open the appropriate site settings in your browser.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](127, "img", 56);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](128, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](129, "Different browsers have these settings in different places, but most often there is a button somewhere near the address bar as in the image above.");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](127, "div", 57)(128, "button", 58);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](129, "Close");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](130, "div", 57)(131, "button", 58);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](132, "Close");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()()()();
     }
 
@@ -7253,7 +7256,7 @@ BotInterviewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.webCamSetupConsent);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.referenceIdSummary.errorMessage);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.referenceId);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("hidden", !ctx.elementShow.launchInterviewButton);
@@ -8352,8 +8355,9 @@ class text2speech {
         let synthesis = window.speechSynthesis;
         synthesis.cancel(); //dont know why but doesnt work in chrome without this !
 
-        const textToSpeech = new SpeechSynthesisUtterance(text);
-        textToSpeech.lang = "hi-IN";
+        const textToSpeech = new SpeechSynthesisUtterance(text); //be careful while changing voice/language if its non-local then there would be a max limit on words it can speak
+
+        textToSpeech.lang = "en-EN";
         textToSpeech.text = text; // const voice = speechSynthesis.getVoices().filter((voice) => {
         //   console.log(voice)
         //   return voice.name === "Google हिन्दी";
