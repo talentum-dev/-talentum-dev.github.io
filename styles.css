@@ -7231,6 +7231,7 @@ hr {
        font-size: 16px;
        line-height: 20px;
        font-weight: 600;
+       text-align:left;
        margin-bottom: 5px
    }
 #blog .blog-item-wrapper .blog-item-text ul {
@@ -10082,9 +10083,6 @@ body.stop-scrolling {
 .home-banner h1 {
         font-size: 52px;
     }
-.home-banner .content {
-        padding: 0 100px;
-    }
 .home-banner .description {
         font-size: 18px;
         line-height: 26px;
@@ -11779,7 +11777,7 @@ label {
        .container-md,
        .container-sm,
        .container-xl {
-           max-width: 96%;
+           max-width: 1300px;
        }
 
        .modal-xl {
@@ -12106,8 +12104,14 @@ label {
        line-height: 26px;
        border-radius: 100px;
    }
+.upper-roman {
+    list-style-type:upper-roman
+   }
 .lower-roman {
        list-style-type: lower-roman;
+   }
+.lower-alpha {
+    list-style-type:lower-alpha
    }
 .lower-latin {
        list-style-type: lower-latin;
@@ -12169,8 +12173,14 @@ label {
 .pricing-table .heading {
        text-align: center;
        border-bottom: 1px solid #e1efff;
-       padding: 10px;
+       padding: 15px;
        background: #f2f7fb;
+   }
+.pricing-table .pricing-discount {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #858585;
+    font-weight: 600;
    }
 .pricing-table .heading h4 {
        text-transform: uppercase;
@@ -12215,17 +12225,26 @@ label {
 .pricing-table .features ul li {
        position: relative;
        padding-left: 35px;
-       margin-bottom: 5px;
+       margin-bottom: 10px;
+   }
+.pricing-table .features ul li.not-included {
+    color:#ccc;
+    text-decoration: line-through;
    }
 .pricing-table .features ul li:before {
        font-family: 'icomoon';
        position: absolute;
        left: 0px;
-       font-size: 11px;
+       font-size: 13px;
        top: 3px;
        padding-left: 15px;
        content: "\ed6f";
        color: #04c155;
+   }
+.pricing-table .features ul li.not-included:before {
+    content: "\ed6a";
+    color: #ff3131;
+    font-family: 'icomoon';
    }
 .pricing-table .price h4 {
        margin: 10px 0;
@@ -12233,6 +12252,12 @@ label {
        text-align: center;
        color: #0375e5;
    }
+.pricing-table .price h2 {
+    margin: 10px 0;
+    font-size: 32px;
+    text-align: center;
+    color: #0375e5;
+}
 .pricing-table .price h4 span {
        font-size: 16px;
        font-weight: 400;
@@ -12798,6 +12823,51 @@ body:has(.bot-window) {
     margin-top: 35px;
     border-radius: 12px;
   }
+.service-detials-step-2 .single-service-step {
+    background: #fff;
+    padding: 40px 20px;
+    border: 1px solid #EEEEEE;
+    height: 100%;
+    box-shadow: 0px 6px 39px #0000000a;
+  }
+.service-detials-step-2 .single-service-step p.step {
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    margin-bottom: 52px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 29px;
+  }
+.service-detials-step-2 .single-service-step p.step::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    background: #26ae61;
+    height: 60px;
+    width: 60px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+  }
+.service-detials-step-2 .single-service-step p.step::before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    background: #26ae6129;
+    height: 90px;
+    width: 90px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+  }
+.service-detials-step-2 .single-service-step .title {
+    margin-bottom: 8px;
+  }
+  
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css ***!
   \********************************************************************************************************************************************************************************************************/
